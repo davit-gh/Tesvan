@@ -45,4 +45,9 @@ Route::post('/courses', [
     'as' => 'courses'
 ]);
 
+Route::get('/projects', [
+    'uses' => 'ProjectController@index',
+    'as' => 'projects'
+]);
+
 Route::get('lang/{locale}', 'LocalizationController@index');

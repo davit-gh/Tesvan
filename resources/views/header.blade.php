@@ -51,8 +51,11 @@
                     <li id="menu-item-3" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3">
                         <a class="hue_blue" href="{{ url('courses') }}">{{ __("Courses")}} </a>
                     </li>
-                    <li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4">
+                    <!-- <li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4">
                         <a href="{{ url('/#QA') }}" class="hue_blue">{{ __("Quality")}}</a>
+                    </li> -->
+                    <li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4">
+                        <a href="{{ route('projects') }}" class="hue_blue">{{ __("Projects")}}</a>
                     </li>
                     <li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5">
                         <a href="{{ url('/#co_workers') }}" class="hue_blue">{{ __("Co-Workers")}}</a>
