@@ -50,4 +50,14 @@ Route::get('/projects', [
     'as' => 'projects'
 ]);
 
+Route::get('/project/{id}', [
+    'uses' => 'ProjectController@detail',
+    'as' => 'project.detail'
+]);
+
+// Route::get('/admin', [
+//     'uses' => 'AdminController@index',
+//     'as' => 'admin'
+// ]);
+
 Route::get('lang/{locale}', 'LocalizationController@index');
