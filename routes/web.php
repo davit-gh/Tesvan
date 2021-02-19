@@ -55,9 +55,9 @@ Route::get('/project/{id}', [
     'as' => 'project.detail'
 ]);
 
-// Route::get('/admin', [
-//     'uses' => 'AdminController@index',
-//     'as' => 'admin'
-// ]);
+Route::get('/admin', [
+    'uses' => 'AdminController@index',
+    'as' => 'admin'
+]);
 
 Route::get('lang/{locale}', 'LocalizationController@index');
