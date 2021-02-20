@@ -4,7 +4,7 @@
 
         <div class="d-flex">
             <a href="{{ url('/') }}">
-                <img src="images/logo.png" class="logo" alt="Logo"></a>
+                <img src="/images/logo.png" class="logo" alt="Logo"></a>
             <div class="w-100 text-right">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
                     <span class="navbar-toggler-icon"></span>
