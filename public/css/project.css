@@ -330,7 +330,7 @@
 }
 
 .project-management {
-	background-image: url('images/project-management.png'); 
+	background-image: url('images/settings.png'); 
 	background-repeat: no-repeat;
 }
 
@@ -363,8 +363,6 @@
     padding-right: 40px;
     padding-bottom: 0px;
     padding-left: 40px;
-    font-family: Open Sans;
-    font-style: normal;
     font-weight: 600;
     font-size: 40px;
     line-height: 130%;
@@ -379,8 +377,6 @@
     padding-right: 40px;
     padding-bottom: 40px;
     padding-left: 40px;
-    font-family: Open Sans;
-    font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 160%;

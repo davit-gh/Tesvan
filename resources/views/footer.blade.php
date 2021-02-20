@@ -3,7 +3,7 @@
         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
             <div class="footer_row">
                 <div class="footer-logo">
-                    <img src="uploads/2020/05/logo.png" alt="" width="50">
+                    <img src="/uploads/2020/05/logo.png" alt="" width="50">
                     <span class="hue_blue">Tesvan</span>
                 </div>
                 <p class="hue_black mb-0 tesvan_LLC_txt">{{__("Tesvan LLC, Sevan, Armenia")}}</p>
@@ -57,16 +57,16 @@
                 <div class="single-icon">
                     <a href="https://www.facebook.com/tesvanllc" target="_blank">
                         <div class="icon-bg">
-                            <img src="images/social_icons/facebook.svg">
+                            <img src="/images/social_icons/facebook.svg">
                         </div>
                     </a>
                     <a href="https://www.upwork.com/o/companies/~01e834c1caa24e2f82/" target="_blank">
                         <div class="icon-bg">
-                            <img src="images/social_icons/upwork.svg"></div>
+                            <img src="/images/social_icons/upwork.svg"></div>
                     </a>
                     <a href="https://www.linkedin.com/company/tesvan/" target="_blank">
                         <div class="icon-bg">
-                            <img src="images/social_icons/linkedin.svg"></div>
+                            <img src="/images/social_icons/linkedin.svg"></div>
                     </a>
                 </div>
             </div>
