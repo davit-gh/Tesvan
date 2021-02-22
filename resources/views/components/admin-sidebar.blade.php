@@ -23,13 +23,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="AdminLTE-3.0.5/pages/forms/general.html" class="nav-link">
+                <a href="{{ route('project.list') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Lists</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="AdminLTE-3.0.5/pages/forms/advanced.html" class="nav-link">
+                <a href="{{ route('admin') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create New</p>
                 </a>

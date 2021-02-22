@@ -55,9 +55,44 @@ Route::get('/project/{id}', [
     'as' => 'project.detail'
 ]);
 
-Route::get('/admin', [
-    'uses' => 'AdminController@index',
-    'as' => 'admin'
-]);
+Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [
+        'uses' => 'AdminController@index',
+        'as' => 'admin'
+    ]);
+
+    Route::get('/project-list', [
+        'uses' => 'AdminController@projectList',
+        'as' => 'project.list'
+    ]);
+
+    Route::get('/project-edit/{id}', [
+        'uses' => 'AdminController@projectEdit',
+        'as' => 'project.edit'
+    ]);
+
+    Route::get('/projects-dt', [
+        'uses' => 'AdminController@projectListDatatable',
+        'as' => 'project.list.dt'
+    ]);
+
+    Route::post('/storeProject', [
+        'uses' => 'AdminController@storeProject',
+        'as' => 'project.store'
+    ]);
+
+    Route::post('/updateProject', [
+        'uses' => 'AdminController@updateProject',
+        'as' => 'project.update'
+    ]);
+
+    Route::post('/deleteProject', [
+        'uses' => 'AdminController@deleteProject',
+        'as' => 'project.delete'
+    ]);
+});
+
 
 Route::get('lang/{locale}', 'LocalizationController@index');

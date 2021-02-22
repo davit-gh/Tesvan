@@ -21,101 +21,20 @@
 
         <div class="row hire_row">
 
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle" >
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/logo-orange.png') }}">
-                        </div>
+            @if (count($project)>0)
+                @foreach($project as $p)
+                    <div class="col-md-4" style="padding: 40px;">
+                        <a href="{{ route('project.detail',['id'=>$p->id]) }}">
+                            <div class="rectangle" >
+                                <div class="image-entry">
+                                    <img src='{{ url("uploads/images/project/logo/$p->project_logo") }}'>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
+                @endforeach
+            @endif
 
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle" >
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/cropped-small-transparent-foldink.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle">
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/globalam.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="row hire_row">
-
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle">
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/DISQO_Logo_Black_1600x400-01_pp3383007637088364882935894.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle" >
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/globalam.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle" >
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/cropped-small-transparent-foldink.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="row hire_row">
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle">
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/globalam.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle" >
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/cropped-small-transparent-foldink.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4">
-                <a href="{{ route('project.detail',['id'=>1]) }}">
-                    <div class="rectangle" >
-                        <div class="image-entry">
-                            <img src="{{ url('images/project/logo-orange.png') }}">
-                        </div>
-                    </div>
-                </a>
-            </div>
         </div>
     </div>
 
