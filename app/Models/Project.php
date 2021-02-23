@@ -10,12 +10,7 @@ class Project extends Model
     protected $table = 'projects';
 
     public static function getList(){
-    	$data = static::
-    	join('project_objectives','project_objectives.project_id','=','projects.id')
-    	->join('project_results','project_results.project_id','=','projects.id')
-    	->join('technology_tools','technology_tools.project_id','=','projects.id')
-    	->join('client_feedbacks','client_feedbacks.project_id','=','projects.id')
-    	->select('projects.id','projects.project_name','projects.project_logo')
+    	$data = static::select('projects.id','projects.project_name','projects.project_logo')
     	->get();
     	return $data;
     }
