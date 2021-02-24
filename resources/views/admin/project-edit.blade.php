@@ -38,18 +38,24 @@
         <label for="exampleInputEmail1">Project Overview</label>
         <textarea class="form-control" name="project_overview">{{ $project->project_overview }}</textarea>
       </div>
-     <!--  <div class="form-group">
+      <div class="form-group">
         <label for="exampleInputEmail1">Objective</label>
+        <textarea class="form-control" name="project_objective_desc">{{ $project->project_objective_desc }}</textarea>
         <div class="objective-container container col-md-6 pull-right">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Objective</label>
-             <input class="form-control" type="text" name="project_objective[]">
-          </div>
+          @if (count($project_objective)>0)
+            @foreach($project_objective as $po)
+              <div class="form-group">
+                <label for="exampleInputEmail1">Objective</label>
+                 <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
+                 <input class="form-control" value="{{ $po->objective }}" type="text" name="project_objective[]">
+              </div>
+            @endforeach
+          @endif
           <div class="form-group" id="objective-action">
             <button class="btn btn-primary btn-sm addMoreObjective">Add More</button>
           </div>
         </div>
-      </div> -->
+      </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Challenge</label>
         <textarea class="form-control" name="project_challenge">{{ $project->project_challenge }}</textarea>
@@ -58,61 +64,85 @@
         <label for="exampleInputEmail1">Our Solution</label>
         <textarea class="form-control" name="project_solution">{{ $project->project_solution }}</textarea>
       </div>
-      <!-- <div class="form-group">
+      <div class="form-group">
         <label for="exampleInputEmail1">Result</label>
+        <textarea class="form-control" name="project_result_desc">{{ $project->project_result_desc }}</textarea>
         <div class="result-container container col-md-6 pull-right">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Result</label>
-             <input class="form-control" type="text" name="project_result[]">
-          </div>
+          @if (count($project_result)>0)
+            @foreach($project_result as $pr)
+              <div class="form-group">
+                <label for="exampleInputEmail1">Result</label>
+                 <input class="form-control" value="{{ $pr->id }}" type="hidden" name="project_result_id[]">
+                 <input class="form-control" value="{{ $pr->result }}" type="text" name="project_result[]">
+              </div>
+            @endforeach
+          @endif
           <div class="form-group" id="result-action">
             <button class="btn btn-primary btn-sm addMoreResult">Add More</button>
           </div>
         </div>
-      </div> -->
-     <!--  <div class="form-group">
-        <label for="exampleInputEmail1">Technology We Used</label>
-        <div class="twu-container container col-md-6 pull-right">
+      </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-             <input class="form-control" type="text" name="project_twu_name[]">
+            <label for="exampleInputEmail1">Technology We Used</label>
+            <textarea class="form-control" name="project_twu_desc">{{ $project->project_twu_desc }}</textarea>
+            <div class="twu-container container col-md-6 pull-right">
+              @if (count($technology_tool)>0)
+                @foreach($technology_tool as $t)
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input class="form-control" value="{{ $t->id }}" type="hidden" name="project_twu_id[]">
+                     <input class="form-control" value="{{ $t->name }}" type="text" name="project_twu_name[]">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Logo</label>
+                     <input class="form-control" value="{{ $t->logo }}" type="file" name="project_twu_logo[]">
+                  </div>
+                @endforeach
+              @endif
+              <div class="form-group" id="twu-action">
+                <button class="btn btn-primary btn-sm addMoreTwu">Add More</button>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Logo</label>
-             <input class="form-control" type="file" name="project_twu_logo[]">
-          </div>
-          <div class="form-group" id="twu-action">
-            <button class="btn btn-primary btn-sm addMoreTwu">Add More</button>
-          </div>
-        </div>
-      </div> -->
-     <!--  <div class="form-group">
+      <div class="form-group">
       <hr>
         <label for="exampleInputEmail1">Client Feedback</label>
+        <textarea class="form-control" name="project_cf_desc">{{ $project->project_cf_desc }}</textarea>
         <div class="cf-container container col-md-6 pull-right">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Client Feedback</label>
-            <textarea class="form-control" name="project_cf_feedback[]"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Client Name</label>
-            <input class="form-control" type="text" name="project_cf_name[]">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Client Photo</label>
-             <input class="form-control" type="file" name="project_cf_photo[]">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Client Website</label>
-            <input class="form-control" type="text" name="project_cf_website[]">
-          </div>
+          @if (count($client_feedback)>0)
+            @foreach($client_feedback as $cf)
+              <div class="form-group">
+                <label for="exampleInputEmail1">Client Feedback</label>
+                <input class="form-control" value="{{ $cf->id }}" type="hidden" name="project_cf_id[]">
+                <textarea class="form-control" name="project_cf_feedback[]">{{ $cf->client_feedback }}</textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Client Name</label>
+                <input class="form-control" value="{{ $cf->client_name }}" type="text" name="project_cf_name[]">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Client Photo</label>
+                 <input class="form-control" value="{{ $cf->client_photo }}" type="file" name="project_cf_photo[]">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Client Website</label>
+                <input class="form-control" value="{{ $cf->client_website }}" type="text" name="project_cf_website[]">
+              </div>
+            @endforeach
+          @endif
           <div class="form-group" id="cf-action">
             <button class="btn btn-primary btn-sm addMoreCF">Add More</button>
           </div>
         </div>
         <hr>
       </div>
-    </div> -->
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Other Cases</label>
+        <textarea class="form-control" name="other_cases">{{ $project->other_case }}</textarea>
+      </div>
+
+    </div>
     <!-- /.card-body -->
 
     <div class="card-footer">

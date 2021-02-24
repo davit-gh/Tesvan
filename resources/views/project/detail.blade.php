@@ -84,7 +84,7 @@
                     Result
                 </div>
                 <div class="project-overview-description" align="left">
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.
+                    {{ $project->project_result_desc }}
                 </div>
             </div>            
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col" style="padding: 40px;">
@@ -109,7 +109,7 @@
         <div class="text-center job_hire_text_col">
             <h2 class="hue_blue">{{__("Technology We Used")}}</h2>
             <p class="hue_black">
-                {{__("Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}}
+                {{ $project->project_twu_desc }}
             </p>
         </div>
         <div class="row hire_row">
@@ -129,7 +129,7 @@
         <div class="testmonail_container">
             <div class="text-center testiomanials_heder_txt_col">
                 <h2 class="hue_blue">Client Feedback</h2>
-                <p class="hue_black">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                <p class="hue_black">{{ $project->project_cf_desc }}</p>
             </div>
             <div class="testimonials-slider mb-4 slick-initialized slick-slider slick-dotted"><button class="slick-prev slick-arrow slick-disabled" aria-label="Previous" type="button" aria-disabled="true" style="">Previous</button>
                 <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1480px; transform: translate3d(0px, 0px, 0px);">
@@ -164,7 +164,7 @@
         <div class="text-center job_hire_text_col">
             <h2 class="hue_blue">{{__("Other Cases")}}</h2>
             <p class="hue_black">
-                {{__("Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}}
+                {{ $project->other_case }}
             </p>
         </div>
 

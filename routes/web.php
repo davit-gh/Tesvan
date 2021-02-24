@@ -55,6 +55,11 @@ Route::get('/project/{id}', [
     'as' => 'project.detail'
 ]);
 
+Route::get('/admin/logout', [
+    'uses' => 'AdminController@logout',
+    'as' => 'admin.logout'
+]);
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {

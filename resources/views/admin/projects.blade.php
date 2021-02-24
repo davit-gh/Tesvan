@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-
+<a href="{{ route('admin') }}" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i></a><br><br>
 <div class="card card-primary">
   @if(session('success'))
      <span class="alert alert-success" role="alert">

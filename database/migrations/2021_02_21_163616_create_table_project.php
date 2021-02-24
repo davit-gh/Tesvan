@@ -20,6 +20,11 @@ class CreateTableProject extends Migration
             $table->text("project_overview");
             $table->text("project_challenge");
             $table->text("project_solution");
+            $table->text("project_objective_desc");
+            $table->text("project_result_desc");
+            $table->text("project_cf_desc");
+            $table->text("project_twu_desc");
+            $table->text("other_case");
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

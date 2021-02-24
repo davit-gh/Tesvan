@@ -27,22 +27,23 @@
     <div class="card-body">
       <div class="form-group">
         <label for="exampleInputEmail1">Project Name</label>
-        <input type="text" class="form-control" placeholder="Project Name" name="project_name"> 
+        <input value="{{ old('project_name') }}" type="text" class="form-control" placeholder="Project Name" name="project_name"> 
       </div>
       <div class="form-group">
         <label for="exampleInputFile">Project Logo</label>
-        <input type="file" class="form-control" name="project_logo">
+        <input value="{{ old('project_logo') }}" type="file" class="form-control" name="project_logo">
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Project Overview</label>
-        <textarea class="form-control" name="project_overview"></textarea>
+        <textarea class="form-control" name="project_overview">{{ old('project_overview') }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Objective</label>
+        <textarea class="form-control" name="project_objective_desc"></textarea>
         <div class="objective-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Objective</label>
-             <input class="form-control" type="text" name="project_objective[]">
+             <input value="{{ old('project_objective.0') }}" class="form-control" type="text" name="project_objective[]">
           </div>
           <div class="form-group" id="objective-action">
             <button class="btn btn-primary btn-sm addMoreObjective">Add More</button>
@@ -51,18 +52,19 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Challenge</label>
-        <textarea class="form-control" name="project_challenge"></textarea>
+        <textarea class="form-control" name="project_challenge">{{ old('project_challenge') }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Our Solution</label>
-        <textarea class="form-control" name="project_solution"></textarea>
+        <textarea class="form-control" name="project_solution">{{ old('project_solution') }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Result</label>
+        <textarea class="form-control" name="project_result_desc">{{ old('project_result_desc') }}</textarea>
         <div class="result-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Result</label>
-             <input class="form-control" type="text" name="project_result[]">
+             <input value="{{ old('project_result.0') }}" class="form-control" type="text" name="project_result[]">
           </div>
           <div class="form-group" id="result-action">
             <button class="btn btn-primary btn-sm addMoreResult">Add More</button>
@@ -71,10 +73,11 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Technology We Used</label>
+        <textarea class="form-control" name="project_twu_desc"></textarea>
         <div class="twu-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
-             <input class="form-control" type="text" name="project_twu_name[]">
+             <input value="{{ old('project_twu_name.0') }}" class="form-control" type="text" name="project_twu_name[]">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Logo</label>
@@ -88,14 +91,15 @@
       <div class="form-group">
       <hr>
         <label for="exampleInputEmail1">Client Feedback</label>
+        <textarea class="form-control" name="project_cf_desc">{{ old('project_cf_desc') }}</textarea>
         <div class="cf-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Client Feedback</label>
-            <textarea class="form-control" name="project_cf_feedback[]"></textarea>
+            <textarea class="form-control" name="project_cf_feedback[]">{{ old('project_cf_feedback.0') }}</textarea>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Client Name</label>
-            <input class="form-control" type="text" name="project_cf_name[]">
+            <input value="{{ old('project_cf_name.0') }}" class="form-control" type="text" name="project_cf_name[]">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Client Photo</label>
@@ -103,7 +107,7 @@
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Client Website</label>
-            <input class="form-control" type="text" name="project_cf_website[]">
+            <input value="{{ old('project_cf_website.0') }}" class="form-control" type="text" name="project_cf_website[]">
           </div>
           <div class="form-group" id="cf-action">
             <button class="btn btn-primary btn-sm addMoreCF">Add More</button>
@@ -111,6 +115,12 @@
         </div>
         <hr>
       </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Other Cases</label>
+        <textarea class="form-control" name="other_cases">{{ old('other_cases') }}</textarea>
+      </div>
+
     </div>
     <!-- /.card-body -->
 
