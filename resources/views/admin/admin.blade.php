@@ -39,7 +39,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Objective</label>
-        <textarea class="form-control" name="project_objective_desc"></textarea>
+        <textarea class="form-control" name="project_objective_desc">{{ old('project_objective_desc') }}</textarea>
         <div class="objective-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Objective</label>
@@ -73,7 +73,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Technology We Used</label>
-        <textarea class="form-control" name="project_twu_desc"></textarea>
+        <textarea class="form-control" name="project_twu_desc">{{ old('project_twu_desc') }}</textarea>
         <div class="twu-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Name</label>
