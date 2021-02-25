@@ -112,11 +112,11 @@
                 {{ $project->project_twu_desc }}
             </p>
         </div>
-        <div class="row hire_row">
+        <div class="tech-used-slider row hire_row">
             @if (count($technology_tool)>0)
                 @foreach($technology_tool as $tt)
                     <div class="col-md-3" style="padding: 20px;">
-                        <img height="auto" width="100%" class="img-responsive" src='{{ url("uploads/images/project/twu/$tt->project_id/$tt->logo") }}'>
+                        <img style="max-height: 110px;" width="auto" class="img-responsive" src='{{ url("uploads/images/project/twu/$tt->project_id/$tt->logo") }}'>
                     </div>
                 @endforeach
             @endif
@@ -131,35 +131,31 @@
                 <h2 class="hue_blue">Client Feedback</h2>
                 <p class="hue_black">{{ $project->project_cf_desc }}</p>
             </div>
-            <div class="testimonials-slider mb-4 slick-initialized slick-slider slick-dotted"><button class="slick-prev slick-arrow slick-disabled" aria-label="Previous" type="button" aria-disabled="true" style="">Previous</button>
-                <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 1480px; transform: translate3d(0px, 0px, 0px);">
-                @if (count($client_feedback)>0)
-                    @foreach($client_feedback as $cf)
-                    
-                        <div class="testimonials-single text-center slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 370px;">
-                            <div class="testimonials_row">
+            <div class="testimonials-slider" align="center">
+                    @if (count($client_feedback)>0)
+                        @foreach($client_feedback as $key => $cf)
+
+                            <div class="testimonials_row" style="margin-left:40px;">
                                 <p class="hue_black">
                                     {{ $cf->client_feedback }}
                                 </p>
                                 <div class="testimonials_svg_txt_row">
-                                    <img class="rounded-circle" width="100%" src='{{ url("uploads/images/project/cf/$cf->project_id/$cf->client_photo") }}'/>
+                                    <img style="max-height: 110px;" class="rounded-circle" width="auto" src='{{ url("uploads/images/project/cf/$cf->project_id/$cf->client_photo") }}'/>
                                     <h4 class="hue_blue">{{ $cf->client_name }}</h4>
                                     <p class="hue_black">{{ $cf->client_website }}</p>
                                 </div>
                             </div>
-                        </div>
-                   
-                    @endforeach
-                @endif
-             </div>
-            <button class="slick-next slick-arrow" aria-label="Next" type="button" style="" aria-disabled="false">Next</button><ul class="slick-dots" style=""><li class="slick-active"><button type="button">1</button></li><li><button type="button">2</button></li></ul></div>
+                       
+                        @endforeach
+                    @endif
+            </div>
         </div>
     </div>
 </section>
 
 
 
-<section id="job_hire" class="project-management">
+<section id="job_hire" class="project-management" style="padding-top: 40px;">
     <div class="container">
         <div class="text-center job_hire_text_col">
             <h2 class="hue_blue">{{__("Other Cases")}}</h2>
@@ -168,14 +164,14 @@
             </p>
         </div>
 
-        <div class="row hire_row">
+        <div class="row hire_row other-cases-slider">
             @if (count($related)>0)
                 @foreach($related as $r)
                     <div class="col-md-4">
                         <a href="{{ route('project.detail',['id'=>$r->id]) }}">
                             <div class="rectangle" >
                                 <div class="image-entry">
-                                    <img height="auto" width="100%" src='{{ url("uploads/images/project/logo/$r->id/$r->project_logo") }}'>
+                                    <img style="max-height: 130px;" width="100%" src='{{ url("uploads/images/project/logo/$r->id/$r->project_logo") }}'>
                                 </div>
                             </div>
                         </a>
@@ -184,5 +180,14 @@
             @endif
         </div>
 </section>
+
+@endsection
+
+@section('scripts')
+
+<script src="/js/blockRotate.js"></script>
+<script src="/js/slick.js"></script>
+<script src="/js/slick.min.js"></script>
+<script src="/js/customSlick.js"></script>
 
 @endsection

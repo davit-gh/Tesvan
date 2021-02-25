@@ -74,4 +74,68 @@ $(document).ready(function () {
         ]
     });
 
+    $('.tech-used-slider').slick({
+        swipeToSlide: true,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        accessibility: false,
+        responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }
+            }
+
+        ]
+    });
+
+    $('.other-cases-slider').slick({
+        swipeToSlide: true,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        dots: true,
+        accessibility: false,
+        responsive: [{
+                breakpoint: 1199,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }
+            }
+
+        ]
+    });
+
 });

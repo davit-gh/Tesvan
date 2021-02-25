@@ -43,7 +43,7 @@
         <div class="objective-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Objective</label>
-             <input value="{{ old('project_objective.0') }}" class="form-control" type="text" name="project_objective[]">
+              <input value="{{ old('project_objective.0') }}" class="form-control" type="text" name="project_objective[]">
           </div>
           <div class="form-group" id="objective-action">
             <button class="btn btn-primary btn-sm addMoreObjective">Add More</button>
@@ -63,8 +63,8 @@
         <textarea class="form-control" name="project_result_desc">{{ old('project_result_desc') }}</textarea>
         <div class="result-container container col-md-6 pull-right">
           <div class="form-group">
-            <label for="exampleInputEmail1">Result</label>
-             <input value="{{ old('project_result.0') }}" class="form-control" type="text" name="project_result[]">
+            <label for="exampleInputEmail1">Result</label>  
+            <input value="{{ old('project_result.0') }}" class="form-control" type="text" name="project_result[]">
           </div>
           <div class="form-group" id="result-action">
             <button class="btn btn-primary btn-sm addMoreResult">Add More</button>
@@ -75,16 +75,19 @@
         <label for="exampleInputEmail1">Technology We Used</label>
         <textarea class="form-control" name="project_twu_desc">{{ old('project_twu_desc') }}</textarea>
         <div class="twu-container container col-md-6 pull-right">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-             <input value="{{ old('project_twu_name.0') }}" class="form-control" type="text" name="project_twu_name[]">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Logo</label>
-             <input class="form-control" type="file" name="project_twu_logo[]">
+          <div id="twu-container-field">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+               <input value="{{ old('project_twu_name.0') }}" class="form-control" type="text" name="project_twu_name[]">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Logo</label>
+               <input class="form-control" type="file" name="project_twu_logo[]">
+            </div>
           </div>
           <div class="form-group" id="twu-action">
             <button class="btn btn-primary btn-sm addMoreTwu">Add More</button>
+            <button class="btn btn-danger btn-sm rmTwu">Remove</button>
           </div>
         </div>
       </div>
@@ -111,6 +114,7 @@
           </div>
           <div class="form-group" id="cf-action">
             <button class="btn btn-primary btn-sm addMoreCF">Add More</button>
+            <button class="btn btn-danger btn-sm rmCf">Remove</button>
           </div>
         </div>
         <hr>

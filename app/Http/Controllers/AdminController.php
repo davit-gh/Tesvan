@@ -369,6 +369,7 @@ class AdminController extends Controller
                 if (count($request->project_twu_name)>0){
                     foreach ($request->project_twu_name as $key => $value) {
                         if ($request->project_twu_name[$key]!==""){
+                            
                             $tt = TechnologyTool::find($request->project_twu_id[$key]);
                             $tt->name = $request->project_twu_name[$key];
                             $tt->logo = "";

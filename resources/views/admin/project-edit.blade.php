@@ -43,12 +43,25 @@
         <textarea class="form-control" name="project_objective_desc">{{ $project->project_objective_desc }}</textarea>
         <div class="objective-container container col-md-6 pull-right">
           @if (count($project_objective)>0)
-            @foreach($project_objective as $po)
-              <div class="form-group">
-                <label for="exampleInputEmail1">Objective</label>
-                 <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
-                 <input class="form-control" value="{{ $po->objective }}" type="text" name="project_objective[]">
-              </div>
+            @foreach($project_objective as $key => $po)
+                @if($key>0)
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Objective</label>
+                  <div class="input-group">
+                    <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
+                    <input value="{{ old('project_objective.0',$po->objective) }}" class="form-control" type="text" name="project_objective[]">
+                    <div class="input-group-prepend">
+                      <button class="rmObjective btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+                    </div>
+                  </div>
+                </div>
+                @else
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Objective</label>
+                       <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
+                       <input class="form-control" value="{{ $po->objective }}" type="text" name="project_objective[]">
+                    </div>
+                @endif
             @endforeach
           @endif
           <div class="form-group" id="objective-action">
@@ -69,12 +82,25 @@
         <textarea class="form-control" name="project_result_desc">{{ $project->project_result_desc }}</textarea>
         <div class="result-container container col-md-6 pull-right">
           @if (count($project_result)>0)
-            @foreach($project_result as $pr)
+            @foreach($project_result as $key => $pr)
+              @if ($key>0)
+              <div class="form-group">
+                <label for="exampleInputEmail1">Result</label>
+                <div class="input-group">
+                  <input class="form-control" value="{{ $pr->id }}" type="hidden" name="project_result_id[]">
+                  <input value="{{ old('project_result.0',$pr->result) }}" class="form-control" type="text" name="project_result[]">
+                  <div class="input-group-prepend">
+                    <button class="rmResult btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+                  </div>
+                </div>
+              </div>
+              @else
               <div class="form-group">
                 <label for="exampleInputEmail1">Result</label>
                  <input class="form-control" value="{{ $pr->id }}" type="hidden" name="project_result_id[]">
                  <input class="form-control" value="{{ $pr->result }}" type="text" name="project_result[]">
               </div>
+              @endif
             @endforeach
           @endif
           <div class="form-group" id="result-action">
@@ -87,16 +113,30 @@
             <textarea class="form-control" name="project_twu_desc">{{ $project->project_twu_desc }}</textarea>
             <div class="twu-container container col-md-6 pull-right">
               @if (count($technology_tool)>0)
-                @foreach($technology_tool as $t)
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Name</label>
-                    <input class="form-control" value="{{ $t->id }}" type="hidden" name="project_twu_id[]">
-                     <input class="form-control" value="{{ $t->name }}" type="text" name="project_twu_name[]">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Logo</label>
-                     <input class="form-control" value="{{ $t->logo }}" type="file" name="project_twu_logo[]">
-                  </div>
+                @foreach($technology_tool as $key => $t)
+                  @if ($key>0)
+                      <div id="twu-container-field">
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Name</label>
+                          <input class="form-control" value="{{ $t->id }}" type="hidden" name="project_twu_id[]">
+                           <input class="form-control" value="{{ $t->name }}" type="text" name="project_twu_name[]">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Logo</label>
+                           <input class="form-control" value="{{ $t->logo }}" type="file" name="project_twu_logo[]">
+                        </div>
+                      </div>
+                  @else
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                        <input class="form-control" value="{{ $t->id }}" type="hidden" name="project_twu_id[]">
+                         <input class="form-control" value="{{ $t->name }}" type="text" name="project_twu_name[]">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Logo</label>
+                         <input class="form-control" value="{{ $t->logo }}" type="file" name="project_twu_logo[]">
+                      </div>
+                  @endif
                 @endforeach
               @endif
               <div class="form-group" id="twu-action">
@@ -110,28 +150,51 @@
         <textarea class="form-control" name="project_cf_desc">{{ $project->project_cf_desc }}</textarea>
         <div class="cf-container container col-md-6 pull-right">
           @if (count($client_feedback)>0)
-            @foreach($client_feedback as $cf)
-              <div class="form-group">
-                <label for="exampleInputEmail1">Client Feedback</label>
-                <input class="form-control" value="{{ $cf->id }}" type="hidden" name="project_cf_id[]">
-                <textarea class="form-control" name="project_cf_feedback[]">{{ $cf->client_feedback }}</textarea>
+            @foreach($client_feedback as $key => $cf)
+            @if ($key>0)
+              <div id="cf-container-gen">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Feedback</label>
+                  <input class="form-control" value="{{ $cf->id }}" type="hidden" name="project_cf_id[]">
+                  <textarea class="form-control" name="project_cf_feedback[]">{{ $cf->client_feedback }}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Name</label>
+                  <input class="form-control" value="{{ $cf->client_name }}" type="text" name="project_cf_name[]">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Photo</label>
+                   <input class="form-control" value="{{ $cf->client_photo }}" type="file" name="project_cf_photo[]">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Website</label>
+                  <input class="form-control" value="{{ $cf->client_website }}" type="text" name="project_cf_website[]">
+                </div>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Client Name</label>
-                <input class="form-control" value="{{ $cf->client_name }}" type="text" name="project_cf_name[]">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Client Photo</label>
-                 <input class="form-control" value="{{ $cf->client_photo }}" type="file" name="project_cf_photo[]">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Client Website</label>
-                <input class="form-control" value="{{ $cf->client_website }}" type="text" name="project_cf_website[]">
-              </div>
+            @else
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Feedback</label>
+                  <input class="form-control" value="{{ $cf->id }}" type="hidden" name="project_cf_id[]">
+                  <textarea class="form-control" name="project_cf_feedback[]">{{ $cf->client_feedback }}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Name</label>
+                  <input class="form-control" value="{{ $cf->client_name }}" type="text" name="project_cf_name[]">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Photo</label>
+                   <input class="form-control" value="{{ $cf->client_photo }}" type="file" name="project_cf_photo[]">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Client Website</label>
+                  <input class="form-control" value="{{ $cf->client_website }}" type="text" name="project_cf_website[]">
+                </div>
+            @endif
             @endforeach
           @endif
           <div class="form-group" id="cf-action">
             <button class="btn btn-primary btn-sm addMoreCF">Add More</button>
+            <button class="btn btn-danger btn-sm rmCf">Remove</button>
           </div>
         </div>
         <hr>
