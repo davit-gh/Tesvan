@@ -10,7 +10,7 @@ class Project extends Model
     protected $table = 'projects';
 
     public static function getList(){
-    	$data = static::select('projects.id','projects.project_name','projects.project_logo')
+    	$data = static::select('projects.id','projects.project_name','projects.project_logo')->orderBy("id","desc")
     	->get();
     	return $data;
     }

@@ -28,7 +28,7 @@
       <div class="form-group">
         <label for="exampleInputEmail1">Project Name</label>
         <input value="{{ $project->id }}" type="hidden" class="form-control" name="id">
-        <input value="{{ $project->project_name }}" type="text" class="form-control" name="project_name"> 
+        <input value="{{ old('project_name',$project->project_name) }}" type="text" class="form-control" name="project_name"> 
       </div>
       <div class="form-group">
         <label for="exampleInputFile">Project Logo</label>
@@ -36,11 +36,11 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Project Overview</label>
-        <textarea class="form-control" name="project_overview">{{ $project->project_overview }}</textarea>
+        <textarea class="form-control" name="project_overview">{{ old('project_overview',$project->project_overview) }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Objective</label>
-        <textarea class="form-control" name="project_objective_desc">{{ $project->project_objective_desc }}</textarea>
+        <textarea class="form-control" name="project_objective_desc">{{ old('project_objective_desc',$project->project_objective_desc) }}</textarea>
         <div class="objective-container container col-md-6 pull-right">
           @if (count($project_objective)>0)
             @foreach($project_objective as $key => $po)
@@ -59,7 +59,7 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Objective</label>
                        <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
-                       <input class="form-control" value="{{ $po->objective }}" type="text" name="project_objective[]">
+                       <input class="form-control" value="{{ old('project_objective.0',$po->objective) }}" type="text" name="project_objective[]">
                     </div>
                 @endif
             @endforeach
@@ -71,11 +71,11 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Challenge</label>
-        <textarea class="form-control" name="project_challenge">{{ $project->project_challenge }}</textarea>
+        <textarea class="form-control" name="project_challenge">{{ old('project_challenge',$project->project_challenge) }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Our Solution</label>
-        <textarea class="form-control" name="project_solution">{{ $project->project_solution }}</textarea>
+        <textarea class="form-control" name="project_solution">{{ old('project_solution',$project->project_solution) }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Result</label>
@@ -98,7 +98,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Result</label>
                  <input class="form-control" value="{{ $pr->id }}" type="hidden" name="project_result_id[]">
-                 <input class="form-control" value="{{ $pr->result }}" type="text" name="project_result[]">
+                 <input class="form-control" value="{{ old('project_result.0',$pr->result) }}" type="text" name="project_result[]">
               </div>
               @endif
             @endforeach
@@ -118,8 +118,8 @@
                       <div id="twu-container-field">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Name</label>
-                          <input class="form-control" value="{{ $t->id }}" type="hidden" name="project_twu_id[]">
-                           <input class="form-control" value="{{ $t->name }}" type="text" name="project_twu_name[]">
+                          <input class="form-control" value="{{ old('project_twu_id.0',$t->id) }}" type="hidden" name="project_twu_id[]">
+                           <input class="form-control" value="{{ old('project_twu_name.0',$t->name) }}" type="text" name="project_twu_name[]">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Logo</label>
@@ -130,7 +130,7 @@
                       <div class="form-group">
                         <label for="exampleInputEmail1">Name</label>
                         <input class="form-control" value="{{ $t->id }}" type="hidden" name="project_twu_id[]">
-                         <input class="form-control" value="{{ $t->name }}" type="text" name="project_twu_name[]">
+                         <input class="form-control" value="{{ old('project_twu_name.0',$t->name) }}" type="text" name="project_twu_name[]">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Logo</label>
@@ -147,7 +147,7 @@
       <div class="form-group">
       <hr>
         <label for="exampleInputEmail1">Client Feedback</label>
-        <textarea class="form-control" name="project_cf_desc">{{ $project->project_cf_desc }}</textarea>
+        <textarea class="form-control" name="project_cf_desc">{{ old('project_cf_desc',$project->project_cf_desc) }}</textarea>
         <div class="cf-container container col-md-6 pull-right">
           @if (count($client_feedback)>0)
             @foreach($client_feedback as $key => $cf)
@@ -156,11 +156,11 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Feedback</label>
                   <input class="form-control" value="{{ $cf->id }}" type="hidden" name="project_cf_id[]">
-                  <textarea class="form-control" name="project_cf_feedback[]">{{ $cf->client_feedback }}</textarea>
+                  <textarea class="form-control" name="project_cf_feedback[]">{{ old('project_cf_feedback',$cf->client_feedback) }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Name</label>
-                  <input class="form-control" value="{{ $cf->client_name }}" type="text" name="project_cf_name[]">
+                  <input class="form-control" value="{{ old('project_cf_name.0',$cf->client_name) }}" type="text" name="project_cf_name[]">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Photo</label>
@@ -168,18 +168,18 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Website</label>
-                  <input class="form-control" value="{{ $cf->client_website }}" type="text" name="project_cf_website[]">
+                  <input class="form-control" value="{{ old('project_cf_website.0',$cf->client_website) }}" type="text" name="project_cf_website[]">
                 </div>
               </div>
             @else
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Feedback</label>
                   <input class="form-control" value="{{ $cf->id }}" type="hidden" name="project_cf_id[]">
-                  <textarea class="form-control" name="project_cf_feedback[]">{{ $cf->client_feedback }}</textarea>
+                  <textarea class="form-control" name="project_cf_feedback[]">{{ old('project_cf_feedback',$cf->client_feedback) }}</textarea>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Name</label>
-                  <input class="form-control" value="{{ $cf->client_name }}" type="text" name="project_cf_name[]">
+                  <input class="form-control" value="{{ old('project_cf_name.0',$cf->client_name) }}" type="text" name="project_cf_name[]">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Photo</label>
@@ -187,7 +187,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Client Website</label>
-                  <input class="form-control" value="{{ $cf->client_website }}" type="text" name="project_cf_website[]">
+                  <input class="form-control" value="{{ old('project_cf_website.0',$cf->client_website) }}" type="text" name="project_cf_website[]">
                 </div>
             @endif
             @endforeach
@@ -202,7 +202,7 @@
 
       <div class="form-group">
         <label for="exampleInputEmail1">Other Cases</label>
-        <textarea class="form-control" name="other_cases">{{ $project->other_case }}</textarea>
+        <textarea class="form-control" name="other_cases">{{ old('other_cases',$project->other_case) }}</textarea>
       </div>
 
     </div>
