@@ -77,7 +77,7 @@ $(document).ready(function () {
     $('.tech-used-slider').slick({
         swipeToSlide: true,
         infinite: false,
-        slidesToShow: 5,
+        slidesToShow: 6,
         slidesToScroll: 1,
         arrows: true,
         dots: true,
