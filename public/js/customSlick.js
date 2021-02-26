@@ -77,7 +77,7 @@ $(document).ready(function () {
     $('.tech-used-slider').slick({
         swipeToSlide: true,
         infinite: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         arrows: true,
         dots: true,
@@ -109,7 +109,7 @@ $(document).ready(function () {
     $('.other-cases-slider').slick({
         swipeToSlide: true,
         infinite: false,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         arrows: true,
         dots: true,

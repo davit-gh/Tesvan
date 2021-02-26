@@ -51,7 +51,7 @@
                     <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
                     <input value="{{ old('project_objective.0',$po->objective) }}" class="form-control" type="text" name="project_objective[]">
                     <div class="input-group-prepend">
-                      <button class="rmObjective btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+                      <button data-id="{{ $po->id }}" class="rmObjective btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
                     </div>
                   </div>
                 </div>
@@ -90,7 +90,7 @@
                   <input class="form-control" value="{{ $pr->id }}" type="hidden" name="project_result_id[]">
                   <input value="{{ old('project_result.0',$pr->result) }}" class="form-control" type="text" name="project_result[]">
                   <div class="input-group-prepend">
-                    <button class="rmResult btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+                    <button data-id="{{ $pr->id }}" class="rmResult btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
                   </div>
                 </div>
               </div>
@@ -141,6 +141,7 @@
               @endif
               <div class="form-group" id="twu-action">
                 <button class="btn btn-primary btn-sm addMoreTwu">Add More</button>
+                <button data-id="{{ $project->id }}" class="btn btn-danger btn-sm rmTwu">Remove</button>
               </div>
             </div>
           </div>
@@ -194,7 +195,7 @@
           @endif
           <div class="form-group" id="cf-action">
             <button class="btn btn-primary btn-sm addMoreCF">Add More</button>
-            <button class="btn btn-danger btn-sm rmCf">Remove</button>
+            <button data-id="{{ $project->id }}" class="btn btn-danger btn-sm rmCf">Remove</button>
           </div>
         </div>
         <hr>

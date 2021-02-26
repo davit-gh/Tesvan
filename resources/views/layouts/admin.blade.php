@@ -77,7 +77,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" id="hello">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -154,7 +154,7 @@
 <!-- AdminLTE App -->
 <script src="/AdminLTE-3.0.5/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="/AdminLTE-3.0.5/js/pages/dashboard.js"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="/AdminLTE-3.0.5/js/demo.js"></script>
 

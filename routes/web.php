@@ -97,6 +97,11 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'AdminController@deleteProject',
         'as' => 'project.delete'
     ]);
+
+    Route::post('/deleteEntity', [
+        'uses' => 'AdminController@deleteEntity',
+        'as' => 'project.delete.entity'
+    ]);
 });
 
 

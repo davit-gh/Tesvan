@@ -1,5 +1,23 @@
 <script type="text/javascript">
 
+  function deleteEntity(id, caseEntity, returnData){
+    let data = {
+        "_token": "{{ csrf_token() }}",
+        "id":id,
+        "case":caseEntity
+     }
+    $.ajax({
+        url: "{{ route('project.delete.entity') }}",
+        data: data,
+        type: "POST",
+        dataType : "json",
+    }).done(function(data) {
+      returnData(data);
+    }).fail(function( xhr, status, errorThrown ) {
+      returnData(errorThrown);
+    });
+  }
+
 	$(document).ready(function(){
 
 		$(document).on("click",".addMoreObjective",function(e){
@@ -68,32 +86,59 @@
 
     $(document).on("click",".rmObjective",function(e){
       e.preventDefault();
+      thisEl = $(this);
       
       con = $(".objective-container > div").length;
       if (con>2){
-          $(this).parent().parent().parent().remove();
+          deleteEntity($(this).data('id'), "objective", function(returnData){
+            if(returnData=="success"){
+              thisEl.parent().parent().parent().remove();
+            } else {
+              
+            }
+          });
       }
     });
 
     $(document).on("click",".rmResult",function(e){
       e.preventDefault();
+      thisEl = $(this);
       
       con = $(".objective-container > div").length;
       if (con>2){
-          $(this).parent().parent().parent().remove();
+          deleteEntity($(this).data('id'), "result", function(returnData){
+            if(returnData=="success"){
+              thisEl.parent().parent().parent().remove();
+            } else {
+              
+            }
+          });
       }
     });
 
     $(document).on("click",".rmTwu",function(e){
-      e.preventDefault();  
-      $('.twu-container > #twu-container-field-gen:last').remove();
+      e.preventDefault();
+      deleteEntity($(this).data('id'), "tool", function(returnData){
+        if(returnData=="success"){
+          $('.twu-container > #twu-container-field-gen:last').remove();
+        } else {
+          
+        }
+      });  
     });
 
     $(document).on("click",".rmCf",function(e){
-      e.preventDefault();  
-      $('.cf-container > #cf-container-gen:last').remove();
+      e.preventDefault();
+      deleteEntity($(this).data('id'), "cf", function(returnData){
+        if(returnData=="success"){
+          $('.cf-container > #cf-container-gen:last').remove();
+        } else {
+          
+        }
+      });   
     });
 
-	});
+    
 
+	});
 </script>

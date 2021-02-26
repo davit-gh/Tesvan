@@ -478,4 +478,37 @@ class AdminController extends Controller
         }
     }
 
+    public function deleteEntity(Request $request){
+
+        $case = $request->case;
+        $id = $request->id;
+
+        try {
+
+            switch ($case) {
+                case 'objective':
+                    ProjectObjective::where('id',$id)->first()->delete();
+                    break;
+                case 'result':
+                    ProjectResult::where('id',$id)->first()->delete();
+                    break;
+
+                case 'tool':
+                    TechnologyTool::where('project_id',$id)->orderBy("id","desc")->first()->delete();
+                    break;
+
+                case 'cf':
+                    ClientFeedback::where('project_id',$id)->orderBy("id","desc")->first()->delete();
+                    break;
+                default:
+                    return response()->json('success', 400);
+                    break;
+            }      
+
+            return response()->json('success', 200);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
 }
