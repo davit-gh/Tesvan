@@ -104,7 +104,7 @@
       e.preventDefault();
       thisEl = $(this);
       
-      con = $(".objective-container > div").length;
+      con = $(".result-container > div").length;
       if (con>2){
           deleteEntity($(this).data('id'), "result", function(returnData){
             //if(returnData=="success"){
