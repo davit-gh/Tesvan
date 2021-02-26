@@ -91,11 +91,11 @@
       con = $(".objective-container > div").length;
       if (con>2){
           deleteEntity($(this).data('id'), "objective", function(returnData){
-            if(returnData=="success"){
+            //if(returnData=="success"){
               thisEl.parent().parent().parent().remove();
-            } else {
+            //} else {
               
-            }
+            //}
           });
       }
     });
@@ -107,11 +107,11 @@
       con = $(".objective-container > div").length;
       if (con>2){
           deleteEntity($(this).data('id'), "result", function(returnData){
-            if(returnData=="success"){
+            //if(returnData=="success"){
               thisEl.parent().parent().parent().remove();
-            } else {
+            //} else {
               
-            }
+            //}
           });
       }
     });
@@ -119,22 +119,22 @@
     $(document).on("click",".rmTwu",function(e){
       e.preventDefault();
       deleteEntity($(this).data('id'), "tool", function(returnData){
-        if(returnData=="success"){
+        //if(returnData=="success"){
           $('.twu-container > #twu-container-field-gen:last').remove();
-        } else {
+        //} else {
           
-        }
+        //}
       });  
     });
 
     $(document).on("click",".rmCf",function(e){
       e.preventDefault();
       deleteEntity($(this).data('id'), "cf", function(returnData){
-        if(returnData=="success"){
+        //if(returnData=="success"){
           $('.cf-container > #cf-container-gen:last').remove();
-        } else {
+        //} else {
           
-        }
+        //}
       });   
     });
 
