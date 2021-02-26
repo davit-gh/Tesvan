@@ -109,7 +109,7 @@ $(document).ready(function () {
     $('.other-cases-slider').slick({
         swipeToSlide: true,
         infinite: false,
-        slidesToShow: 5,
+        slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
         dots: true,

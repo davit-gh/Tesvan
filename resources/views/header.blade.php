@@ -58,14 +58,14 @@
                         <a href="{{ route('projects') }}" class="hue_blue">{{ __("Projects")}}</a>
                     </li>
                     <li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5">
-                        <a href="{{ url('/#co_workers') }}" class="hue_blue">{{ __("Co-Workers")}}</a>
+                        <a href="{{ url('/#co_workers') }}" class="hue_blue">{{ __("Partners")}}</a>
                     </li>
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
                         <a href="{{ url('/#team') }}" class="hue_blue">{{ __("Team ")}}</a>
                     </li>
                     <li class="menu-btn menu-item menu-item-type-custom menu-item-object-custom
                menu-item-8" id="menu-item-8">
-                        <a href="{{ url('/#contact_us') }}" class="hue_blue">{{ __("Request Demo")}}</a>
+                        <a href="{{ url('/#contact_us') }}" class="hue_blue">{{ __("Contact Us")}}</a>
                     </li>
                     <!-- Localizaton start-->
                     <li id="menu-item-9" class="flag menu-item menu-item-type-custom menu-item-object-custom menu-item-9">
