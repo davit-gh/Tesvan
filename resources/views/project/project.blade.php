@@ -19,11 +19,12 @@
             </p>
         </div>
 
-        <div class="row hire_row">
+        <div class="row hire_row container-content">
 
             @if (count($project)>0)
-                @foreach($project as $p)
-                    <div class="col-md-4" style="padding: 40px;">
+                @foreach($project as $key => $p)
+                    @if ($key>=6)
+                    <div class="col-md-4" style="padding: 40px; display: none;" id="tab{{ $key }}">
                         <a href="{{ route('project.detail',['id'=>$p->id]) }}">
                             <div class="rectangle" >
                                 <div class="image-entry">
@@ -32,19 +33,32 @@
                             </div>
                         </a>
                     </div>
+                    @else
+                    <div class="col-md-4 showElement" style="padding: 40px;" id="tab{{ $key }}">
+                        <a href="{{ route('project.detail',['id'=>$p->id]) }}">
+                            <div class="rectangle" >
+                                <div class="image-entry">
+                                    <img style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endif
                 @endforeach
             @endif
 
         </div>
     </div>
 
-    <div class="container">
+    @if (count($project)>6)
+    <div class="container showMoreContainer">
         <div class="text-center job_hire_text_col" style="padding: 49px;">
             <div class="custom-btn">
-                <a href="#">Show More</a>
+                <a id="showMore" href="#">Show More</a>
             </div>
         </div>
     </div>
+    @endif
 </section>
 
 
@@ -59,4 +73,23 @@
 <script src="{{ url('js/map.js') }}"></script>
 <script src="{{ url('js/customSlick.js') }}"></script>
 
+<script type="text/javascript">
+    $(document).on("click","#showMore",function(e){
+        e.preventDefault();
+        showNext = 6;
+        showElement = $(".showElement").length;
+        totalDb = Number("{{ count($project) }}");
+        total = showNext + showElement;
+        for (var i = showElement; i < total; i++) {
+             $("#tab"+i).show();
+             $("#tab"+i).addClass("showElement");
+             if (i==totalDb){
+                $(".showMoreContainer").hide();
+             }
+        } 
+    });
+</script>
+
 @endsection
+
+
