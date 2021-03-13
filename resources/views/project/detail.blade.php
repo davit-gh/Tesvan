@@ -177,7 +177,7 @@
             </p> -->
         </div>
 
-        <div class="row hire_row other-cases-slider">
+        <div class='row hire_row {{ (count($related)>2) ? "other-cases-slider" : "" }}'>
             @if (count($related)>0)
                 @foreach($related as $r)
                     <div class="col-md-4">
