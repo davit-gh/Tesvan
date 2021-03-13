@@ -19,7 +19,10 @@
     }
     .entry{
         position: relative;
-        bottom: 5px;
+        bottom: 6px;
+    }
+    ul.list_project {
+        line-height: 25px;
     }
 </style>
 
