@@ -121,9 +121,9 @@
     <div class="container">
         <div class="newLine text-center job_hire_text_col">
             <h2 class="hue_blue">{{__("Technology We Used")}}</h2>
-            <p class="hue_black newLine">
-                {{ $project->project_twu_desc }}
-            </p>
+            <!-- <p class="hue_black newLine">
+                
+            </p> -->
         </div>
         <div class="tech-used-slider row hire_row">
             @if (count($technology_tool)>0)
@@ -142,7 +142,7 @@
         <div class="testmonail_container">
             <div class="text-center testiomanials_heder_txt_col">
                 <h2 class="hue_blue">Client Feedback</h2>
-                <p class="hue_black">{{ $project->project_cf_desc }}</p>
+                <!-- <p class="hue_black"></p> -->
             </div>
             <div class="testimonials-slider" align="center">
                     @if (count($client_feedback)>0)
@@ -172,9 +172,9 @@
     <div class="container">
         <div class="text-center job_hire_text_col newLine">
             <h2 class="hue_blue">{{__("Other Cases")}}</h2>
-            <p class="hue_black">
-                {{ $project->other_case }}
-            </p>
+            <!-- <p class="hue_black">
+                
+            </p> -->
         </div>
 
         <div class="row hire_row other-cases-slider">

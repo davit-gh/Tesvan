@@ -95,9 +95,9 @@ class AdminController extends Controller
             'project_objective_desc.required',
             'project_objective.*'=>'required',
             // 'project_result'=>'required',
-            // 'project_result_desc'=>'required',
+            'project_result_desc'=>'required',
             // 'project_result.*'=>'required',
-            'project_twu_desc'=>'required',
+            // 'project_twu_desc'=>'required',
             'project_twu_name'=>'required',
             'project_twu_name.*'=>'required',
             'project_twu_logo'=>'required',
@@ -111,7 +111,7 @@ class AdminController extends Controller
             // 'project_cf_photo.*'=>'required',
             // 'project_cf_name.*'=>'required',
             // 'project_cf_website.*'=>'required',
-            'other_cases'=>'required'
+            //'other_cases'=>'required'
         ];
 
         $validator = Validator::make($request->all(),$rule,$messages);
@@ -262,23 +262,23 @@ class AdminController extends Controller
             'project_objective_desc.required'=>'Objective required!',
             'project_objective.required'=>'Objective required!',
             'project_objective.*.required'=>'Objective required!',
-            // 'project_result.required'=>'Result required!',
-            // 'project_result.*.required'=>'Result required!',
-            // 'project_result_desc.required'=>'Result required!',
+            'project_result.required'=>'Result required!',
+            'project_result.*.required'=>'Result required!',
+            'project_result_desc.required'=>'Result required!',
             'project_twu_desc.required'=>'Technology We Used Name required!',
             'project_twu_name.required'=>'Technology We Used Name required!',
             'project_twu_name.*.required'=>'Technology We Used Name required!',
             'project_twu_logo.required'=>'Technology We Used Logo required!',
             'project_twu_logo.*.required'=>'Technology We Used Logo required!',
-            // 'project_cf_desc.required'=>'Client Feedback required!',
-            // 'project_cf_feedback.required'=>'Client Feedback required!',
-            // 'project_cf_photo.required'=>'Client Photo required!',
-            // 'project_cf_name.required'=>'Client Name required!',
-            // 'project_cf_website.required'=>'Client Website required!',
-            // 'project_cf_feedback.*.required'=>'Client Feedback required!',
-            // 'project_cf_photo.*.required'=>'Client Photo required!',
-            // 'project_cf_name.*.required'=>'Client Name required!',
-            // 'project_cf_website.*.required'=>'Client Website required!',
+            'project_cf_desc.required'=>'Client Feedback required!',
+            'project_cf_feedback.required'=>'Client Feedback required!',
+            'project_cf_photo.required'=>'Client Photo required!',
+            'project_cf_name.required'=>'Client Name required!',
+            'project_cf_website.required'=>'Client Website required!',
+            'project_cf_feedback.*.required'=>'Client Feedback required!',
+            'project_cf_photo.*.required'=>'Client Photo required!',
+            'project_cf_name.*.required'=>'Client Name required!',
+            'project_cf_website.*.required'=>'Client Website required!',
             'other_cases.required'=>'Other Cases required!'
         ];
 
@@ -290,20 +290,20 @@ class AdminController extends Controller
             'project_objective'=>'required',
             'project_objective_desc.required',
             'project_objective.*'=>'required',
-            'project_result'=>'required',
+            // 'project_result'=>'required',
             'project_result_desc'=>'required',
-            'project_result.*'=>'required',
-            'project_twu_desc'=>'required',
-            'project_twu_name'=>'required',
-            'project_twu_name.*'=>'required',
-            'project_cf_desc'=>'required',
+            // 'project_result.*'=>'required',
+            //'project_twu_desc'=>'required',
+            //'project_twu_name'=>'required',
+            //'project_twu_name.*'=>'required',
+            //'project_cf_desc'=>'required',
             'project_cf_feedback'=>'required',
             'project_cf_name'=>'required',
             'project_cf_website'=>'required',
             'project_cf_feedback.*'=>'required',
             'project_cf_name.*'=>'required',
             'project_cf_website.*'=>'required',
-            'other_cases'=>'required'
+            //'other_cases'=>'required'
         ];
 
         $validator = Validator::make($request->all(),$rule,$messages);

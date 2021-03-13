@@ -116,7 +116,7 @@
       </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Technology We Used</label>
-            <textarea class="form-control" name="project_twu_desc">{{ $project->project_twu_desc }}</textarea>
+            <textarea class="form-control hidden" name="project_twu_desc">{{ $project->project_twu_desc }}</textarea>
             <div class="twu-container container col-md-6 pull-right">
               @if (count($technology_tool)>0)
                 @foreach($technology_tool as $key => $t)
@@ -154,7 +154,7 @@
       <div class="form-group">
       <hr>
         <label for="exampleInputEmail1">Client Feedback</label>
-        <textarea class="form-control" name="project_cf_desc">{{ old('project_cf_desc',$project->project_cf_desc) }}</textarea>
+        <textarea class="form-control hidden" name="project_cf_desc">{{ old('project_cf_desc',$project->project_cf_desc) }}</textarea>
         <div class="cf-container container col-md-6 pull-right">
           @if (count($client_feedback)>0)
             @foreach($client_feedback as $key => $cf)
@@ -207,7 +207,7 @@
         <hr>
       </div>
 
-      <div class="form-group">
+      <div class="form-group hidden">
         <label for="exampleInputEmail1">Other Cases</label>
         <textarea class="form-control" name="other_cases">{{ old('other_cases',$project->other_case) }}</textarea>
       </div>

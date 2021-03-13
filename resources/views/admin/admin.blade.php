@@ -79,7 +79,7 @@
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Technology We Used</label>
-        <textarea class="form-control" name="project_twu_desc">{{ old('project_twu_desc') }}</textarea>
+        <textarea class="form-control hidden" name="project_twu_desc">{{ old('project_twu_desc') }}</textarea>
         <div class="twu-container container col-md-6 pull-right">
           <div id="twu-container-field">
             <div class="form-group hidden">
@@ -100,7 +100,7 @@
       <div class="form-group">
       <hr>
         <label for="exampleInputEmail1">Client Feedback</label>
-        <textarea class="form-control" name="project_cf_desc">{{ old('project_cf_desc') }}</textarea>
+        <textarea class="form-control hidden" name="project_cf_desc">{{ old('project_cf_desc') }}</textarea>
         <div class="cf-container container col-md-6 pull-right">
           <div class="form-group">
             <label for="exampleInputEmail1">Client Feedback</label>
@@ -126,7 +126,7 @@
         <hr>
       </div>
 
-      <div class="form-group">
+      <div class="form-group hidden">
         <label for="exampleInputEmail1">Other Cases</label>
         <textarea class="form-control" name="other_cases">{{ old('other_cases') }}</textarea>
       </div>
