@@ -45,9 +45,33 @@ class AdminController extends Controller
         return view('admin/project-edit',$data);
     }
 
+    private function limitWord($word){
+        $limit = 30;
+        if (strlen($word)>$limit){
+            return substr($word, 0,$limit)." ...";
+        }
+        return $word;
+    }
+
     public function projectListDatatable(Request $request){
         $project = Project::orderBy("id","desc")->get();
-        return DataTables::of($project)->addColumn('action','
+        return DataTables::of($project)
+            ->editColumn('project_name',function($d){
+                return $this->limitWord($d->project_name);
+            })
+            ->editColumn('project_logo',function($d){
+                return $this->limitWord($d->project_logo);
+            })
+            ->editColumn('project_solution',function($d){
+                return $this->limitWord($d->project_solution);
+            })
+            ->editColumn('project_challenge',function($d){
+                return $this->limitWord($d->project_challenge);
+            })
+            ->editColumn('project_overview',function($d){
+                return $this->limitWord($d->project_overview);
+            })
+            ->addColumn('action','
             <a href="{{ route("project.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
             ')->toJson();
     }
