@@ -11,6 +11,16 @@
       list-style-image: url('/images/project/Ellipse.png');
       line-height: 3;
     }
+    .newLine{
+        word-wrap: break-word;
+    }
+    .maxImage {
+        max-height:470px;
+    }
+    .entry{
+        position: relative;
+        bottom: 5px;
+    }
 </style>
 
 @endsection
@@ -23,21 +33,21 @@
     <div class="container">
         <div class="row flex-wrap" style="padding: 40px;">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <img src={{asset('images/why_we.png')}} alt="Job" class="job_page_header_svg">
+                <img src={{asset('images/why_we.png')}} alt="Job" class="job_page_header_svg maxImage">
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
                     <div class="project-overview-title">
                         Projects Overview
                     </div>
-                    <div class="project-overview-description" align="left">
+                    <div class="newLine project-overview-description" align="left">
                         {{ $project->project_overview }}
                     </div>
                 </div>
             </div>
         </div>
         <div class="row flex-wrap">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
+            <div class="newLine col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview-title">
                     Objectives
                 </div>
@@ -45,14 +55,14 @@
                 @if (count($project_objective)>0)
                     <ul class="list_project" align="left">
                         @foreach($project_objective as $pr)
-                            <li>{{ $pr->objective }}</li>
+                            <li><span class="entry">{{ $pr->objective }}</span></li>
                         @endforeach
                     </ul>
                 @endif
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <img src={{asset('images/completed-amico.png')}} alt="Job" class="job_page_header_svg">
+                <img src={{asset('images/completed-amico.png')}} alt="Job" class="job_page_header_svg maxImage">
             </div>
         </div>
 
@@ -62,7 +72,7 @@
                     <div class="project-overview-title">
                         Challenge
                     </div>
-                    <div class="project-overview-description" align="left">
+                    <div class="newLine project-overview-description" align="left">
                         {{ $project->project_challenge }}
                     </div>
                 </div>            </div>
@@ -71,7 +81,7 @@
                     <div class="project-overview-title">
                         Our Solution
                     </div>
-                    <div class="project-overview-description" align="left">
+                    <div class="newLine project-overview-description" align="left">
                         {{ $project->project_solution }}
                     </div>
                 </div>
@@ -83,15 +93,15 @@
                 <div class="project-overview-title">
                     Result
                 </div>
-                <div class="project-overview-description" align="left">
+                <div class="newLine project-overview-description" align="left">
                     {{ $project->project_result_desc }}
                 </div>
             </div>            
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col" style="padding: 40px;">
                 @if (count($project_result)>0)
-                    <ul class="list_project" align="left">
+                    <ul class="newLine list_project" align="left">
                         @foreach($project_result as $pr)
-                            <li>{{ $pr->result }}</li>
+                            <li><span class="entry">{{ $pr->result }}</span></li>
                         @endforeach
                     </ul>
                 @endif
@@ -106,9 +116,9 @@
 
 <section id="technology">
     <div class="container">
-        <div class="text-center job_hire_text_col">
+        <div class="newLine text-center job_hire_text_col">
             <h2 class="hue_blue">{{__("Technology We Used")}}</h2>
-            <p class="hue_black">
+            <p class="hue_black newLine">
                 {{ $project->project_twu_desc }}
             </p>
         </div>
@@ -136,13 +146,13 @@
                         @foreach($client_feedback as $key => $cf)
 
                             <div class="testimonials_row" style="margin-left:40px;">
-                                <p class="hue_black">
+                                <p class="hue_black newLine">
                                     {{ $cf->client_feedback }}
                                 </p>
                                 <div class="testimonials_svg_txt_row">
                                     <img style="max-height: 110px;" class="rounded-circle" width="auto" src='{{ url("uploads/images/project/cf/$cf->project_id/$cf->client_photo") }}'/>
-                                    <h4 class="hue_blue">{{ $cf->client_name }}</h4>
-                                    <p class="hue_black">{{ $cf->client_website }}</p>
+                                    <h4 class="hue_blue newLine">{{ $cf->client_name }}</h4>
+                                    <p class="hue_black newLine">{{ $cf->client_website }}</p>
                                 </div>
                             </div>
                        
@@ -157,7 +167,7 @@
 
 <section id="job_hire" class="project-management" style="padding-top: 40px;">
     <div class="container">
-        <div class="text-center job_hire_text_col">
+        <div class="text-center job_hire_text_col newLine">
             <h2 class="hue_blue">{{__("Other Cases")}}</h2>
             <p class="hue_black">
                 {{ $project->other_case }}

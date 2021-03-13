@@ -7,6 +7,12 @@
 
 @section('content')
 
+<style type="text/css">
+  .hidden{
+    display: none;
+  }
+</style>
+
 <div class="card card-primary">
   @if ($errors->any())
       <div class="alert alert-danger">
@@ -116,7 +122,7 @@
                 @foreach($technology_tool as $key => $t)
                   @if ($key>0)
                       <div id="twu-container-field">
-                        <div class="form-group">
+                        <div class="form-group hidden">
                           <label for="exampleInputEmail1">Name</label>
                           <input class="form-control" value="{{ old('project_twu_id.0',$t->id) }}" type="hidden" name="project_twu_id[]">
                            <input class="form-control" value="{{ old('project_twu_name.0',$t->name) }}" type="text" name="project_twu_name[]">
@@ -127,7 +133,7 @@
                         </div>
                       </div>
                   @else
-                      <div class="form-group">
+                      <div class="form-group hidden">
                         <label for="exampleInputEmail1">Name</label>
                         <input class="form-control" value="{{ $t->id }}" type="hidden" name="project_twu_id[]">
                          <input class="form-control" value="{{ old('project_twu_name.0',$t->name) }}" type="text" name="project_twu_name[]">

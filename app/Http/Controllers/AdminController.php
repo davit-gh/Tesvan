@@ -94,23 +94,23 @@ class AdminController extends Controller
             'project_objective'=>'required',
             'project_objective_desc.required',
             'project_objective.*'=>'required',
-            'project_result'=>'required',
-            'project_result_desc'=>'required',
-            'project_result.*'=>'required',
+            // 'project_result'=>'required',
+            // 'project_result_desc'=>'required',
+            // 'project_result.*'=>'required',
             'project_twu_desc'=>'required',
             'project_twu_name'=>'required',
             'project_twu_name.*'=>'required',
             'project_twu_logo'=>'required',
             'project_twu_logo.*'=>'required',
-            'project_cf_desc'=>'required',
-            'project_cf_feedback'=>'required',
-            'project_cf_photo'=>'required',
-            'project_cf_name'=>'required',
-            'project_cf_website'=>'required',
-            'project_cf_feedback.*'=>'required',
-            'project_cf_photo.*'=>'required',
-            'project_cf_name.*'=>'required',
-            'project_cf_website.*'=>'required',
+            // 'project_cf_desc'=>'required',
+            // 'project_cf_feedback'=>'required',
+            // 'project_cf_photo'=>'required',
+            // 'project_cf_name'=>'required',
+            // 'project_cf_website'=>'required',
+            // 'project_cf_feedback.*'=>'required',
+            // 'project_cf_photo.*'=>'required',
+            // 'project_cf_name.*'=>'required',
+            // 'project_cf_website.*'=>'required',
             'other_cases'=>'required'
         ];
 
@@ -155,7 +155,7 @@ class AdminController extends Controller
             if ($request->project_objective){
                 if (count($request->project_objective)>0){
                     foreach ($request->project_objective as $key => $value) {
-                        if ($request->project_objective[$key]!==""){
+                        if (!empty($request->project_objective[$key])){
                             $po = new ProjectObjective;
                             $po->objective = $request->project_objective[$key];
                             $po->project_id = $p->id;
@@ -168,7 +168,7 @@ class AdminController extends Controller
             if ($request->project_result){
                 if (count($request->project_result)>0){
                     foreach ($request->project_result as $key => $value) {
-                        if ($request->project_result[$key]!==""){
+                        if (!empty($request->project_result[$key])){
                             $pr = new ProjectResult;
                             $pr->result = $request->project_result[$key];
                             $pr->project_id = $p->id;
@@ -181,7 +181,7 @@ class AdminController extends Controller
             if ($request->project_twu_name){
                 if (count($request->project_twu_name)>0){
                     foreach ($request->project_twu_name as $key => $value) {
-                        if ($request->project_twu_name[$key]!==""){
+                        if (!empty($request->project_twu_name[$key])){
                             $tt = new TechnologyTool;
                             $tt->name = $request->project_twu_name[$key];
                             $tt->logo = "";
@@ -209,7 +209,7 @@ class AdminController extends Controller
             if ($request->project_cf_feedback){
                 if (count($request->project_cf_feedback)>0){
                     foreach ($request->project_cf_feedback as $key => $value) {
-                        if ($request->project_cf_feedback[$key]!==""){
+                        if (!empty($request->project_cf_feedback[$key])){
                             
                             $pr = new ClientFeedback;
                             $pr->client_feedback = $request->project_cf_feedback[$key];
@@ -262,23 +262,23 @@ class AdminController extends Controller
             'project_objective_desc.required'=>'Objective required!',
             'project_objective.required'=>'Objective required!',
             'project_objective.*.required'=>'Objective required!',
-            'project_result.required'=>'Result required!',
-            'project_result.*.required'=>'Result required!',
-            'project_result_desc.required'=>'Result required!',
+            // 'project_result.required'=>'Result required!',
+            // 'project_result.*.required'=>'Result required!',
+            // 'project_result_desc.required'=>'Result required!',
             'project_twu_desc.required'=>'Technology We Used Name required!',
             'project_twu_name.required'=>'Technology We Used Name required!',
             'project_twu_name.*.required'=>'Technology We Used Name required!',
             'project_twu_logo.required'=>'Technology We Used Logo required!',
             'project_twu_logo.*.required'=>'Technology We Used Logo required!',
-            'project_cf_desc.required'=>'Client Feedback required!',
-            'project_cf_feedback.required'=>'Client Feedback required!',
-            'project_cf_photo.required'=>'Client Photo required!',
-            'project_cf_name.required'=>'Client Name required!',
-            'project_cf_website.required'=>'Client Website required!',
-            'project_cf_feedback.*.required'=>'Client Feedback required!',
-            'project_cf_photo.*.required'=>'Client Photo required!',
-            'project_cf_name.*.required'=>'Client Name required!',
-            'project_cf_website.*.required'=>'Client Website required!',
+            // 'project_cf_desc.required'=>'Client Feedback required!',
+            // 'project_cf_feedback.required'=>'Client Feedback required!',
+            // 'project_cf_photo.required'=>'Client Photo required!',
+            // 'project_cf_name.required'=>'Client Name required!',
+            // 'project_cf_website.required'=>'Client Website required!',
+            // 'project_cf_feedback.*.required'=>'Client Feedback required!',
+            // 'project_cf_photo.*.required'=>'Client Photo required!',
+            // 'project_cf_name.*.required'=>'Client Name required!',
+            // 'project_cf_website.*.required'=>'Client Website required!',
             'other_cases.required'=>'Other Cases required!'
         ];
 
@@ -346,7 +346,7 @@ class AdminController extends Controller
             if ($request->project_objective){
                 if (count($request->project_objective)>0){
                     foreach ($request->project_objective as $key => $value) {
-                        if ($request->project_objective[$key]!==""){
+                        if (!empty($request->project_objective[$key])){
 
                             if (isset($request->project_objective_id[$key])){
                                 $po = ProjectObjective::find($request->project_objective_id[$key]);
@@ -364,7 +364,7 @@ class AdminController extends Controller
             if ($request->project_result){
                 if (count($request->project_result)>0){
                     foreach ($request->project_result as $key => $value) {
-                        if ($request->project_result[$key]!==""){
+                        if (!empty($request->project_result[$key])){
                             if (isset($request->project_result_id[$key])){
                                 $pr = ProjectResult::find($request->project_result_id[$key]);
                             } else {
@@ -381,7 +381,7 @@ class AdminController extends Controller
             if ($request->project_twu_name){
                 if (count($request->project_twu_name)>0){
                     foreach ($request->project_twu_name as $key => $value) {
-                        if ($request->project_twu_name[$key]!==""){
+                        if (!empty($request->project_twu_name[$key])){
                             
                             if (isset($request->project_twu_id[$key])){
                                 $tt = TechnologyTool::find($request->project_twu_id[$key]);
@@ -418,7 +418,7 @@ class AdminController extends Controller
             if ($request->project_cf_feedback){
                 if (count($request->project_cf_feedback)>0){
                     foreach ($request->project_cf_feedback as $key => $value) {
-                        if ($request->project_cf_feedback[$key]!==""){
+                        if (!empty($request->project_cf_feedback[$key])){
                             
                             if (isset($request->project_cf_id[$key])){
                                 $pr = ClientFeedback::find($request->project_cf_id[$key]);

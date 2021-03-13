@@ -7,6 +7,12 @@
 
 @section('content')
 
+<style type="text/css">
+  .hidden{
+    display: none;
+  }
+</style>
+
 <div class="card card-primary">
   @if ($errors->any())
       <div class="alert alert-danger">
@@ -76,9 +82,9 @@
         <textarea class="form-control" name="project_twu_desc">{{ old('project_twu_desc') }}</textarea>
         <div class="twu-container container col-md-6 pull-right">
           <div id="twu-container-field">
-            <div class="form-group">
+            <div class="form-group hidden">
               <label for="exampleInputEmail1">Name</label>
-               <input value="{{ old('project_twu_name.0') }}" class="form-control" type="text" name="project_twu_name[]">
+               <input value="tname" class="form-control" type="text" name="project_twu_name[]">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Logo</label>
