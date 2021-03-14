@@ -23,9 +23,12 @@
 
             @if (count($project)>0)
                 @foreach($project as $key => $p)
+                    @php 
+                        $project_name[$key] = strtolower(preg_replace('/\s+/', '-', $p->project_name));
+                    @endphp
                     @if ($key>=6)
                     <div class="col-md-4" style="padding: 40px; display: none;" id="tab{{ $key }}">
-                        <a href="{{ route('project.detail',['id'=>$p->id]) }}">
+                        <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
                                 <div class="image-entry">
                                     <img style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
@@ -35,7 +38,7 @@
                     </div>
                     @else
                     <div class="col-md-4 showElement" style="padding: 40px;" id="tab{{ $key }}">
-                        <a href="{{ route('project.detail',['id'=>$p->id]) }}">
+                        <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
                                 <div class="image-entry">
                                     <img style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>

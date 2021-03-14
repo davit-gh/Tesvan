@@ -50,7 +50,7 @@ Route::get('/projects', [
     'as' => 'projects'
 ]);
 
-Route::get('/project/{id}', [
+Route::get('/project/{project_name}', [
     'uses' => 'ProjectController@detail',
     'as' => 'project.detail'
 ]);

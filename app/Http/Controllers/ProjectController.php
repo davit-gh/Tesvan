@@ -19,8 +19,12 @@ class ProjectController extends Controller
         return view('project.project',$data);
     }
 
-    public function detail($id) {
-    	$data['project'] = Project::where("id",$id)->first();
+    public function detail($project_name) {
+
+        $project_name = strtr($project_name, ["-"=>" "]);
+
+    	$data['project'] = Project::whereRaw('LOWER(project_name) like "%'.$project_name.'%" ')->first();
+        $id = $data['project']->id;
     	$data['project_objective'] = ProjectObjective::where('project_id',$id)->get();
     	$data['project_result'] = ProjectResult::where('project_id',$id)->get();
     	$data['technology_tool'] = TechnologyTool::where('project_id',$id)->get();

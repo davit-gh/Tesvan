@@ -91,6 +91,7 @@
             </div>
         </div>
 
+        @if (count($project_result)>0)
         <div class="row flex-wrap" style="padding: 40px;">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="project-overview-title">
@@ -111,13 +112,14 @@
                 @endif
             </div>
         </div>
+        @endif
     </div>
 </section>
 
 
 
 
-
+@if (count($technology_tool)>0)
 <section id="technology">
     <div class="container">
         <div class="newLine text-center job_hire_text_col">
@@ -136,8 +138,9 @@
             @endif
         </div>
 </section>
+@endif
 
-
+@if (count($client_feedback)>0)
 <section id="clientfeedback" style="padding-top: 40px;">
     <div class="container">
         <div class="testmonail_container">
@@ -146,7 +149,6 @@
                 <!-- <p class="hue_black"></p> -->
             </div>
             <div class="testimonials-slider" align="center">
-                    @if (count($client_feedback)>0)
                         @foreach($client_feedback as $key => $cf)
 
                             <div class="testimonials_row" style="margin-left:40px;">
@@ -161,11 +163,11 @@
                             </div>
                        
                         @endforeach
-                    @endif
             </div>
         </div>
     </div>
 </section>
+@endif
 
 
 
@@ -180,9 +182,12 @@
 
         <div class='row hire_row {{ (count($related)>2) ? "other-cases-slider" : "" }}'>
             @if (count($related)>0)
-                @foreach($related as $r)
+                @foreach($related as $key => $r)
+                    @php 
+                        $project_name[$key] = strtolower(preg_replace('/\s+/', '-', $r->project_name));
+                    @endphp
                     <div class="col-md-4">
-                        <a href="{{ route('project.detail',['id'=>$r->id]) }}">
+                        <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
                                 <div class="image-entry">
                                     <img style="max-height: 130px;" width="100%" src='{{ url("uploads/images/project/logo/$r->id/$r->project_logo") }}'>
