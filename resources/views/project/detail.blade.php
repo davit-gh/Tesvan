@@ -41,7 +41,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
                     <div class="project-overview-title">
-                        Projects Overview
+                        Project Overview
                     </div>
                     <div class="newLine project-overview-description" align="left">
                         {{ $project->project_overview }}
