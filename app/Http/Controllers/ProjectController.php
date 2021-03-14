@@ -24,6 +24,11 @@ class ProjectController extends Controller
         $project_name = strtr($project_name, ["-"=>" "]);
 
     	$data['project'] = Project::whereRaw('LOWER(project_name) like "%'.$project_name.'%" ')->first();
+
+        if (!$data['project']){
+            abort(404);
+        }
+
         $id = $data['project']->id;
     	$data['project_objective'] = ProjectObjective::where('project_id',$id)->get();
     	$data['project_result'] = ProjectResult::where('project_id',$id)->get();
