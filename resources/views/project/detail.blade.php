@@ -100,7 +100,8 @@
                     {{ $project->project_result_desc }}
                 </div>
             </div>            
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col" style="padding: 40px;">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col" style="padding: 40px;position: relative;
+    top: 90px;">
                 @if (count($project_result)>0)
                     <ul class="newLine list_project" align="left">
                         @foreach($project_result as $pr)
