@@ -34,7 +34,7 @@ class ProjectController extends Controller
     	$data['project_result'] = ProjectResult::where('project_id',$id)->get();
     	$data['technology_tool'] = TechnologyTool::where('project_id',$id)->get();
     	$data['client_feedback'] = ClientFeedback::where('project_id',$id)->get();
-    	$data['related'] = Project::where('id','!=',$id)->get();
+    	$data['related'] = Project::where('id','!=',$id)->orderBy("id","desc")->limit(30)->get();
 
         return view('project.detail',$data);
     }

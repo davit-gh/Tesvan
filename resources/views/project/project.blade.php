@@ -73,7 +73,6 @@
 <script src="{{ url('js/blockRotate.js') }}"></script>
 <script src="{{ url('js/slick.js') }}"></script>
 <script src="{{ url('js/slick.min.js') }}"></script>
-<script src="{{ url('js/map.js') }}"></script>
 <script src="{{ url('js/customSlick.js') }}"></script>
 
 <script type="text/javascript">
