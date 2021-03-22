@@ -25,8 +25,8 @@ class DummyTest extends Seeder
         DB::table("projects")->where("id",">",0)->delete();
 
         $pathImage = public_path()."/test.jpg";
-        $defImage = 'https://pilariu.com/storage/2020/12/Google-Office.jpg';
-        file_put_contents($pathImage, file_get_contents($defImage));
+        //$defImage = 'https://pilariu.com/storage/2020/12/Google-Office.jpg';
+        //file_put_contents($pathImage, file_get_contents($defImage));
 
         for ($i=0; $i <= 1000; $i++) { 
         	$p = new Project;
