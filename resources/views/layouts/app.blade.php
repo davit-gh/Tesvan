@@ -12,11 +12,7 @@
     <link rel="icon" href="{{ url('/uploads/2020/05/logo.png') }}" sizes="192x192">
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrapCss/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/header.css">
-    <link rel="stylesheet" type="text/css" href="/css/banner.css">
-    <link rel="stylesheet" type="text/css" href="/css/footer.css">
+     <link rel="stylesheet" href="{{ url('merged.css') }}"/>
     @yield('styles')
 
 </head>
@@ -62,10 +58,13 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-    <script src="{{ url('js/bootstrap/bootstrap.js') }}"></script>
-    <script src="{{ url('js/custom.js') }}"></script>
+    <script src="{{ url('merged.js') }}"></script>
 
     @yield('scripts')
+    <script type="text/javascript">
+        const observer = lozad();
+        observer.observe();
+    </script>
 
 </body>
 </html>

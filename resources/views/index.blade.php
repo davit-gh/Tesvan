@@ -39,7 +39,7 @@
 @section('scripts')
 
 <script src="../js/blockRotate.js"></script>
-<script src=".,/js/slick.js"></script>
+<script src="../js/slick.js"></script>
 <script src="../js/slick.min.js"></script>
 <script src="../js/map.js"></script>
 <script src="../js/customSlick.js"></script>

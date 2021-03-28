@@ -31,7 +31,7 @@
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
                                 <div class="image-entry">
-                                    <img style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
+                                    <img class="lozad" style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
                                 </div>
                             </div>
                         </a>
@@ -41,7 +41,7 @@
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
                                 <div class="image-entry">
-                                    <img style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
+                                    <img class="lozad" style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
                                 </div>
                             </div>
                         </a>
