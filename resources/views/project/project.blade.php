@@ -14,9 +14,6 @@
     <div class="container">
         <div class="text-center job_hire_text_col">
             <h2 class="hue_blue">{{__("Projects")}}</h2>
-            <p class="hue_black">
-                {{__("Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}}
-            </p>
         </div>
 
         <div class="row hire_row container-content">
