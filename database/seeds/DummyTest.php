@@ -7,6 +7,7 @@ use App\Models\ProjectObjective;
 use App\Models\ProjectResult;
 use App\Models\TechnologyTool;
 use App\Models\ClientFeedback;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class DummyTest extends Seeder
 {
@@ -17,6 +18,9 @@ class DummyTest extends Seeder
      */
     public function run()
     {
+
+        $width = 200;
+        $height = 200;
             
         DB::table("project_objectives")->where("id",">",0)->delete();
         DB::table("project_results")->where("id",">",0)->delete();
@@ -49,6 +53,13 @@ class DummyTest extends Seeder
 	            mkdir($dir_upload, 0777, true);
 	        }
 	        $filename = "filename_".date("YmdHis").$i.".jpg";
+
+            $image_resize = Image::make($pathImage);              
+            $image_resize->resize($width, $height, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $image_resize->save($dir_upload.'/resize_'.$filename);
+
             copy($pathImage, $dir_upload."/".$filename);
 			$p->project_logo = $filename;
 			$p->save();

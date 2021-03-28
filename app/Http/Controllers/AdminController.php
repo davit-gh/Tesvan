@@ -11,6 +11,7 @@ use App\Models\ClientFeedback;
 use Illuminate\Support\Facades\Auth;
 use DataTables;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
 {
@@ -78,6 +79,9 @@ class AdminController extends Controller
 
     public function storeProject(Request $request) {
    
+        $width = 200;
+        $height = 200;
+
         $user = Auth::user();
 
         $messages = [
@@ -170,7 +174,16 @@ class AdminController extends Controller
                     mkdir($dir_upload, 0777, true);
                 }
                         // upload file
+
+                $image = $request->file("project_logo");
+                $image_resize = Image::make($image->getRealPath());              
+                $image_resize->resize($width, $height,function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload.'/resize_'.$file_name);
+
                 $request->file("project_logo")->move($dir_upload,$file_name);
+
                 $f = Project::find($p->id);
                 $f->project_logo = $file_name;
                 $f->save();
@@ -275,6 +288,9 @@ class AdminController extends Controller
 
     public function updateProject(Request $request) {
 
+        $width = 200;
+        $height = 200;
+
         $user = Auth::user();
 
         $messages = [
@@ -360,6 +376,14 @@ class AdminController extends Controller
                 if (!file_exists($dir_upload)) {
                     mkdir($dir_upload, 0777, true);
                 }
+
+                $image = $request->file("project_logo");
+                $image_resize = Image::make($image->getRealPath());              
+                $image_resize->resize($width, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload.'/resize_'.$file_name);
+
                         // upload file
                 $request->file("project_logo")->move($dir_upload,$file_name);
                 $f = Project::find($p->id);
