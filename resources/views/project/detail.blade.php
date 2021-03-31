@@ -116,7 +116,7 @@
     </div>
 </section>
 
-
+<div class="clearfix"></div><br>
 
 
 @if (count($technology_tool)>0)

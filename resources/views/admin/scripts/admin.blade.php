@@ -51,10 +51,6 @@
 		$(document).on("click",".addMoreTwu",function(e){
 			e.preventDefault();
 			$(`<div id="twu-container-field-gen">
-			<div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
-             <input class="form-control" type="text" name="project_twu_name[]">
-          </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Logo</label>
              <input class="form-control" type="file" name="project_twu_logo[]">
