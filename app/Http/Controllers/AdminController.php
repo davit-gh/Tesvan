@@ -215,9 +215,9 @@ class AdminController extends Controller
                 }
             }
 
-            if ($request->file("project_twu_logo")[$key]){
-                if (count($request->file("project_twu_logo")[$key])>0){
-                    foreach ($request->file("project_twu_logo")[$key] as $key => $value) {
+            if ($request->file("project_twu_logo")){
+                if (count($request->file("project_twu_logo"))>0){
+                    foreach ($request->file("project_twu_logo") as $key => $value) {
                         
                             $tt = new TechnologyTool;
                             $tt->name = $request->project_twu_name[$key];
@@ -245,9 +245,9 @@ class AdminController extends Controller
                 }
             }
 
-            if ($request->file("project_cf_photo")[$key]){
-                if (count($request->file("project_cf_photo")[$key])>0){
-                    foreach ($request->file("project_cf_photo")[$key] as $key => $value) {
+            if ($request->file("project_cf_photo")){
+                if (count($request->file("project_cf_photo"))>0){
+                    foreach ($request->file("project_cf_photo") as $key => $value) {
                         
                             
                             $pr = new ClientFeedback;
@@ -429,9 +429,9 @@ class AdminController extends Controller
                 }
             }
 
-            if ($request->file("project_twu_logo")[$key]){
-                if (count($request->file("project_twu_logo")[$key])>0){
-                    foreach ($request->file("project_twu_logo")[$key] as $key => $value) {
+            if ($request->file("project_twu_logo")){
+                if (count($request->file("project_twu_logo"))>0){
+                    foreach ($request->file("project_twu_logo") as $key => $value) {
                        
                             
                             if (isset($request->project_twu_id[$key])){
@@ -466,9 +466,9 @@ class AdminController extends Controller
                 }
             }
 
-            if ($request->file("project_cf_photo")[$key]){
-                if (count($request->file("project_cf_photo")[$key])>0){
-                    foreach ($request->file("project_cf_photo")[$key] as $key => $value) {
+            if ($request->file("project_cf_photo")){
+                if (count($request->file("project_cf_photo"))>0){
+                    foreach ($request->file("project_cf_photo") as $key => $value) {
                         
                             
                             if (isset($request->project_cf_id[$key])){
