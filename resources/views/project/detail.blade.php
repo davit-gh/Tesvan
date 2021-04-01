@@ -2,10 +2,10 @@
 
 @section('styles')
 
-<link rel="stylesheet" type="text/css" href="{{ url('css/slick-theme.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url('css/slick.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url('css/testiomanials.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ url('css/project.css') }}">
+<link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="/css/slick.css">
+<link rel="stylesheet" type="text/css" href="/css/testiomanials.css">
+<link rel="stylesheet" type="text/css" href="/css/project.css">
 <style type="text/css">
     ul.list_project {
       list-style-image: url('/images/project/Ellipse.png');
@@ -189,7 +189,9 @@
                     <div class="col-md-4">
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
-                                <img class="img-entry" src='{{ url("uploads/images/project/logo/$r->id/$r->project_logo") }}'>
+                                <div class="image-entry">
+                                    <img style="max-height: 130px;" width="100%" src='{{ url("uploads/images/project/logo/$r->id/$r->project_logo") }}'>
+                                </div>
                             </div>
                         </a>
                     </div>
