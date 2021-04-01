@@ -215,10 +215,10 @@ class AdminController extends Controller
                 }
             }
 
-            if ($request->project_twu_name){
-                if (count($request->project_twu_name)>0){
-                    foreach ($request->project_twu_name as $key => $value) {
-                        if (!empty($request->project_twu_name[$key])){
+            if ($request->file("project_twu_logo")[$key]){
+                if (count($request->file("project_twu_logo")[$key])>0){
+                    foreach ($request->file("project_twu_logo")[$key] as $key => $value) {
+                        
                             $tt = new TechnologyTool;
                             $tt->name = $request->project_twu_name[$key];
                             $tt->logo = "";
@@ -240,15 +240,15 @@ class AdminController extends Controller
                                 $ft->logo = $file_name;
                                 $ft->save();
                             }
-                        }
+                        
                     }
                 }
             }
 
-            if ($request->project_cf_feedback){
-                if (count($request->project_cf_feedback)>0){
-                    foreach ($request->project_cf_feedback as $key => $value) {
-                        if (!empty($request->project_cf_feedback[$key])){
+            if ($request->file("project_cf_photo")[$key]){
+                if (count($request->file("project_cf_photo")[$key])>0){
+                    foreach ($request->file("project_cf_photo")[$key] as $key => $value) {
+                        
                             
                             $pr = new ClientFeedback;
                             $pr->client_feedback = $request->project_cf_feedback[$key];
@@ -274,7 +274,7 @@ class AdminController extends Controller
                                 $f->client_photo = $file_name;
                                 $f->save();
                             }
-                        }
+                        
                     }
                 }
             }
@@ -429,10 +429,10 @@ class AdminController extends Controller
                 }
             }
 
-            if ($request->project_twu_name){
-                if (count($request->project_twu_name)>0){
-                    foreach ($request->project_twu_name as $key => $value) {
-                        if (!empty($request->project_twu_name[$key])){
+            if ($request->file("project_twu_logo")[$key]){
+                if (count($request->file("project_twu_logo")[$key])>0){
+                    foreach ($request->file("project_twu_logo")[$key] as $key => $value) {
+                       
                             
                             if (isset($request->project_twu_id[$key])){
                                 $tt = TechnologyTool::find($request->project_twu_id[$key]);
@@ -461,15 +461,15 @@ class AdminController extends Controller
                                 $ft->save();
 
                             }
-                        }
+                        
                     }
                 }
             }
 
-            if ($request->project_cf_feedback){
-                if (count($request->project_cf_feedback)>0){
-                    foreach ($request->project_cf_feedback as $key => $value) {
-                        if (!empty($request->project_cf_feedback[$key])){
+            if ($request->file("project_cf_photo")[$key]){
+                if (count($request->file("project_cf_photo")[$key])>0){
+                    foreach ($request->file("project_cf_photo")[$key] as $key => $value) {
+                        
                             
                             if (isset($request->project_cf_id[$key])){
                                 $pr = ClientFeedback::find($request->project_cf_id[$key]);
@@ -501,7 +501,7 @@ class AdminController extends Controller
                                 $f->save();
 
                             }
-                        }
+                        
                     }
                 }
             }
