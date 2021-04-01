@@ -2,10 +2,10 @@
 
 @section('styles')
 
-<link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
-<link rel="stylesheet" type="text/css" href="/css/slick.css">
-<link rel="stylesheet" type="text/css" href="/css/testiomanials.css">
-<link rel="stylesheet" type="text/css" href="/css/project.css">
+<link rel="stylesheet" type="text/css" href="{{ url('css/slick-theme.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url('css/slick.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url('css/testiomanials.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url('css/project.css') }}">
 <style type="text/css">
     ul.list_project {
       list-style-image: url('/images/project/Ellipse.png');
