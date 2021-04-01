@@ -27,9 +27,8 @@
                     <div class="col-md-4" style="padding: 40px; display: none;" id="tab{{ $key }}">
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
-                                <div class="image-entry">
-                                    <img class="lozad" style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/resize_$p->project_logo") }}'>
-                                </div>
+                                    <img class="lozad img-entry" style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/resize_$p->project_logo") }}'>
+                                
                             </div>
                         </a>
                     </div>
@@ -37,9 +36,9 @@
                     <div class="col-md-4 showElement" style="padding: 40px;" id="tab{{ $key }}">
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
-                                <div class="image-entry">
-                                    <img class="lozad" style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/resize_$p->project_logo") }}'>
-                                </div>
+                                
+                                    <img class="lozad img-entry" src='{{ url("uploads/images/project/logo/$p->id/resize_$p->project_logo") }}'>
+                                
                             </div>
                         </a>
                     </div>

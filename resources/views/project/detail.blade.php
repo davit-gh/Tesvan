@@ -189,9 +189,7 @@
                     <div class="col-md-4">
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
-                                <div class="image-entry">
-                                    <img style="max-height: 130px;" width="100%" src='{{ url("uploads/images/project/logo/$r->id/$r->project_logo") }}'>
-                                </div>
+                                <img class="img-entry" src='{{ url("uploads/images/project/logo/$r->id/$r->project_logo") }}'>
                             </div>
                         </a>
                     </div>

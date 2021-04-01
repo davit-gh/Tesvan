@@ -382,11 +382,12 @@
     color: #0D171D;
 }
 
-.image-entry {
-    padding-top: 80px;
-    padding-right: 50px;
-    padding-bottom: 80px;
-    padding-left: 50px;
+.img-entry {
+    position: relative;
+    top: 30px;
+    left: 40px;
+    width: 88%;
+    height: 185px;
 }
 
 .custom-btn a {
