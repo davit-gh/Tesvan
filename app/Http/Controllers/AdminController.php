@@ -225,19 +225,21 @@ class AdminController extends Controller
                             $tt->project_id = $p->id;
                             $tt->save();
 
-                            $ext = $request->file("project_twu_logo")[$key]->getClientOriginalExtension();
-                            $file_size = $request->file("project_twu_logo")[$key]->getSize();
-                            $file_name = date('YmdHis').rand(1,500).rand(501,1000).'.'.$ext;
-                            $path = 'uploads/images/project/twu/'.$p->id;
-                            $dir_upload = public_path($path);
-                            if (!file_exists($dir_upload)) {
-                                mkdir($dir_upload, 0777, true);
-                            }
+                            if ($request->file("project_twu_logo")[$key]){
+                                $ext = $request->file("project_twu_logo")[$key]->getClientOriginalExtension();
+                                $file_size = $request->file("project_twu_logo")[$key]->getSize();
+                                $file_name = date('YmdHis').rand(1,500).rand(501,1000).'.'.$ext;
+                                $path = 'uploads/images/project/twu/'.$p->id;
+                                $dir_upload = public_path($path);
+                                if (!file_exists($dir_upload)) {
+                                    mkdir($dir_upload, 0777, true);
+                                }
 
-                            $request->file("project_twu_logo")[$key]->move($dir_upload,$file_name);
-                            $ft = TechnologyTool::find($tt->id);
-                            $ft->logo = $file_name;
-                            $ft->save();
+                                $request->file("project_twu_logo")[$key]->move($dir_upload,$file_name);
+                                $ft = TechnologyTool::find($tt->id);
+                                $ft->logo = $file_name;
+                                $ft->save();
+                            }
                         }
                     }
                 }
@@ -257,20 +259,21 @@ class AdminController extends Controller
                             $pr->project_id = $p->id;
                             $pr->save();
 
-                            $ext = $request->file("project_cf_photo")[$key]->getClientOriginalExtension();
-                            $file_size = $request->file("project_cf_photo")[$key]->getSize();
-                            $file_name = date('YmdHis').rand(1,500).rand(501,1000).'.'.$ext;
-                            $path = 'uploads/images/project/cf/'.$p->id;
-                            $dir_upload = public_path($path);
-                            if (!file_exists($dir_upload)) {
-                                mkdir($dir_upload, 0777, true);
+                            if (isset($request->file("project_cf_photo")[$key])){
+                                $ext = $request->file("project_cf_photo")[$key]->getClientOriginalExtension();
+                                $file_size = $request->file("project_cf_photo")[$key]->getSize();
+                                $file_name = date('YmdHis').rand(1,500).rand(501,1000).'.'.$ext;
+                                $path = 'uploads/images/project/cf/'.$p->id;
+                                $dir_upload = public_path($path);
+                                if (!file_exists($dir_upload)) {
+                                    mkdir($dir_upload, 0777, true);
+                                }
+
+                                $request->file("project_cf_photo")[$key]->move($dir_upload,$file_name);
+                                $f = ClientFeedback::find($pr->id);
+                                $f->client_photo = $file_name;
+                                $f->save();
                             }
-
-                            $request->file("project_cf_photo")[$key]->move($dir_upload,$file_name);
-                            $f = ClientFeedback::find($pr->id);
-                            $f->client_photo = $file_name;
-                            $f->save();
-
                         }
                     }
                 }
