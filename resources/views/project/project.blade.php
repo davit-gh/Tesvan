@@ -2,7 +2,7 @@
 
 @section('styles')
 
-<link rel="stylesheet" type="text/css" href="/css/project.css">
+<link rel="stylesheet" type="text/css" href="/css/project.css?v={{ strtotime(date('YmdHis')) }}">
 
 @endsection
 

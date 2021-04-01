@@ -12,7 +12,7 @@
     <link rel="icon" href="{{ url('/uploads/2020/05/logo.png') }}" sizes="192x192">
 
     <!-- Styles -->
-     <link rel="stylesheet" href="{{ url('merged.css') }}"/>
+     <link rel="stylesheet" href="{{ url('merged.css') }}?v={{ strtotime(date('YmdHis')) }}"/>
     @yield('styles')
 
 </head>
@@ -58,7 +58,7 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-    <script src="{{ url('merged.js') }}"></script>
+    <script src="{{ url('merged.js') }}?v={{ strtotime(date('YmdHis')) }}"></script>
 
     @yield('scripts')
     <script type="text/javascript">

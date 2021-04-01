@@ -2,10 +2,10 @@
 
 @section('styles')
 
-<link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
-<link rel="stylesheet" type="text/css" href="/css/slick.css">
-<link rel="stylesheet" type="text/css" href="/css/testiomanials.css">
-<link rel="stylesheet" type="text/css" href="/css/project.css">
+<link rel="stylesheet" type="text/css" href="/css/slick-theme.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/slick.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/testiomanials.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/project.css?v={{ strtotime(date('YmdHis')) }}">
 <style type="text/css">
     ul.list_project {
       list-style-image: url('/images/project/Ellipse.png');
@@ -204,9 +204,9 @@
 
 @section('scripts')
 
-<script src="/js/blockRotate.js"></script>
-<script src="/js/slick.js"></script>
-<script src="/js/slick.min.js"></script>
-<script src="/js/customSlick.js"></script>
+<script src="/js/blockRotate.js?v={{ strtotime(date('YmdHis')) }}"></script>
+<script src="/js/slick.js?v={{ strtotime(date('YmdHis')) }}"></script>
+<script src="/js/slick.min.js?v={{ strtotime(date('YmdHis')) }}"></script>
+<script src="/js/customSlick.js?v={{ strtotime(date('YmdHis')) }}"></script>
 
 @endsection
