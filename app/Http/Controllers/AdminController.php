@@ -220,7 +220,7 @@ class AdminController extends Controller
                     foreach ($request->file("project_twu_logo") as $key => $value) {
                         
                             $tt = new TechnologyTool;
-                            $tt->name = $request->project_twu_name[$key];
+                            $tt->name = "tname";
                             $tt->logo = "";
                             $tt->project_id = $p->id;
                             $tt->save();
@@ -441,7 +441,7 @@ class AdminController extends Controller
                                 $tt->logo = "";
                             }
 
-                            $tt->name = $request->project_twu_name[$key];
+                            $tt->name = "tname";
                             $tt->project_id = $p->id;
                             $tt->save();
 
