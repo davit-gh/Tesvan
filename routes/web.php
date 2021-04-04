@@ -55,6 +55,11 @@ Route::get('/project/{project_name}', [
     'as' => 'project.detail'
 ]);
 
+Route::get('/blogs', [
+    'uses' => 'BlogController@index',
+    'as' => 'blogs'
+]);
+
 Route::get('/admin/logout', [
     'uses' => 'AdminController@logout',
     'as' => 'admin.logout'
@@ -102,6 +107,47 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'AdminController@deleteEntity',
         'as' => 'project.delete.entity'
     ]);
+
+    Route::get('/admin/blog/index', [
+        'uses' => 'AdminController@blogs',
+        'as' => 'admin.blog.index'
+    ]);
+
+    Route::get('/admin/blog/create', [
+        'uses' => 'AdminController@blogCreate',
+        'as' => 'admin.blog.create'
+    ]);
+
+    Route::get('/blog-edit/{id}', [
+        'uses' => 'AdminController@blogEdit',
+        'as' => 'blog.edit'
+    ]);
+
+    Route::get('/blog-dt', [
+        'uses' => 'AdminController@blogDatatable',
+        'as' => 'blog.dt'
+    ]);
+
+    Route::post('/storeBlog', [
+        'uses' => 'AdminController@storeBlog',
+        'as' => 'blog.store'
+    ]);
+
+    Route::post('/updateBlog', [
+        'uses' => 'AdminController@updateBlog',
+        'as' => 'blog.update'
+    ]);
+
+    Route::post('/deleteBlog', [
+        'uses' => 'AdminController@deleteBlog',
+        'as' => 'blog.delete'
+    ]);
+
+    Route::post('/deleteEntityBlog', [
+        'uses' => 'AdminController@deleteEntityBlog',
+        'as' => 'blog.delete.entity'
+    ]);
+
 });
 
 

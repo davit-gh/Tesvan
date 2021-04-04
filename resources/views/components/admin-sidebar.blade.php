@@ -36,7 +36,13 @@
               </li>
             </ul>
           </li>
-            </ul>
+          <li class="nav-item">
+            <a href="{{ route('admin.blog.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Blogs
+              </p>
+            </a>
           </li>
         </ul>
       </nav>

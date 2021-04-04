@@ -8,6 +8,7 @@ use App\Models\ProjectObjective;
 use App\Models\ProjectResult;
 use App\Models\TechnologyTool;
 use App\Models\ClientFeedback;
+use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
 use DataTables;
 use Illuminate\Support\Facades\Validator;
@@ -37,6 +38,39 @@ class AdminController extends Controller
         return view('admin/projects');
     }
 
+    public function blogs(Request $request){
+        return view('admin/blogs');
+    }
+
+    public function blogCreate(Request $request){
+        return view('admin/blogcreate');
+    }
+
+    public function blogDatatable(Request $request){
+        $blog = Blog::orderBy("id","desc")->get();
+        return DataTables::of($blog)
+            ->editColumn('title',function($d){
+                return $this->limitWord($d->title);
+            })
+            ->editColumn('description',function($d){
+                return $this->limitWord($d->description);
+            })
+            ->editColumn('image',function($d){
+                return "<img width='100' height='100' src='".url('uploads/images/blogs/'.$d->id.'/resize_'.$d->image)."'/>";
+            })
+            ->editColumn('status',function($d){
+                return $this->limitWord($d->status);
+            })
+            ->editColumn('published_date',function($d){
+                return $this->limitWord($d->published_date);
+            })
+            ->addColumn('action','
+            <a href="{{ route("blog.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+            ')
+            ->rawColumns(['image','action'])
+            ->make(true);
+    }
+
     public function projectEdit($id){
         $data['project'] = Project::where("id",$id)->first();
         $data['project_objective'] = ProjectObjective::where('project_id',$id)->get();
@@ -45,6 +79,7 @@ class AdminController extends Controller
         $data['client_feedback'] = ClientFeedback::where('project_id',$id)->get();
         return view('admin/project-edit',$data);
     }
+    
 
     private function limitWord($word){
         $limit = 30;
@@ -284,7 +319,7 @@ class AdminController extends Controller
             \Session::flash('success', 'Succesfully added project!'); 
             return redirect(route('admin'))->with(['success' => 'Succesfully added project!']);
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);
         }
     }
@@ -509,7 +544,7 @@ class AdminController extends Controller
             \Session::flash('success', 'Succesfully updated project!'); 
             return redirect(route('project.list'))->with(['success' => 'Succesfully updated project!']);
 
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);
         }
     }
@@ -556,6 +591,167 @@ class AdminController extends Controller
                     break;
             }      
 
+            return response()->json('success', 200);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function storeBlog(Request $request) {
+   
+        $width = 200;
+        $height = 200;
+
+        $user = Auth::user();
+
+        $messages = [
+            'title.required' => 'Title required!',
+            'description.required'=>'Description required!',
+            'image.required'=>'Image required!',
+            'status.required'=>'Status required!'
+        ];
+
+        $rule = [
+            'title'=>'required',
+            'description'=>'required',
+            'image'=>'required',
+            'status'=>'required'
+        ];
+
+        $validator = Validator::make($request->all(),$rule,$messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+
+            $p = new Blog;
+            $p->title = $request->title;
+            $p->description = $request->description;
+            $p->status = $request->status;
+            if (strtolower($request->status)=="publish") {
+                $p->published_date = date("Y-m-d H:i:s");
+            } else {
+                $p->published_date = "";
+            }
+            $p->user_id = $user->id;
+            $p->save();
+
+            if ($request->file("image")){
+                $ext = $request->file("image")->getClientOriginalExtension();
+                $file_size = $request->file("image")->getSize();
+                $file_name = date('YmdHis').rand(1,500).rand(501,1000).'.'.$ext;
+                $path = 'uploads/images/blogs/'.$p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                $image = $request->file("image");
+                $image_resize = Image::make($image->getRealPath());              
+                $image_resize->resize($width, $height,function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload.'/resize_'.$file_name);
+
+                $request->file("image")->move($dir_upload,$file_name);
+
+                $f = Blog::find($p->id);
+                $f->image = $file_name;
+                $f->save();
+            }
+
+            \Session::flash('success', 'Succesfully added blog!'); 
+            return redirect(route('admin.blog.index'))->with(['success' => 'Succesfully added blog!']);
+
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function blogEdit($id){
+        $data['blog'] = Blog::where("id",$id)->first();
+        return view('admin/blog-edit',$data);
+    }
+
+    public function updateBlog(Request $request) {
+
+        $width = 200;
+        $height = 200;
+
+        $user = Auth::user();
+
+        $messages = [
+            'title.required' => 'Title required!',
+            'description.required'=>'Description required!',
+            'status.required'=>'Status required!'
+        ];
+
+        $rule = [
+            'title'=>'required',
+            'description'=>'required',
+            'status'=>'required'
+        ];
+
+        $validator = Validator::make($request->all(),$rule,$messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+
+            $p = Blog::find($request->id);
+            $p->title = $request->title;
+            $p->description = $request->description;
+            $p->image = "";
+            $p->status = $request->status;
+            if (strtolower($request->status)=="publish") {
+                if (strlen($p->published_date) < 5 || strtolower($p->status)=="draft"){
+                    $p->published_date = date("Y-m-d H:i:s");
+                }
+            } else {
+                $p->published_date = "";
+            }
+            $p->user_id = $user->id;
+            $p->save();
+
+            if ($request->file("image")){
+                $ext = $request->file("image")->getClientOriginalExtension();
+                $file_size = $request->file("image")->getSize();
+                $file_name = date('YmdHis').rand(1,500).rand(501,1000).'.'.$ext;
+                $path = 'uploads/images/blogs/'.$p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                $image = $request->file("image");
+                $image_resize = Image::make($image->getRealPath());              
+                $image_resize->resize($width, $height,function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload.'/resize_'.$file_name);
+
+                $request->file("image")->move($dir_upload,$file_name);
+
+                $f = Blog::find($p->id);
+                $f->image = $file_name;
+                $f->save();
+            }
+
+            \Session::flash('success', 'Succesfully update blog!'); 
+            return redirect(route('admin.blog.index'))->with(['success' => 'Succesfully update blog!']);
+
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function deleteBlog(Request $request) {
+        try {
+            $id = $request->id;      
+            Blog::where('id',$id)->delete();
+            \Session::flash('success', 'Succesfully deleted blog!'); 
             return response()->json('success', 200);
         } catch (Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);
