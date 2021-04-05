@@ -83,6 +83,6 @@
 
 @section('scripts')
 
-@include('admin.scripts.admin')
+@include('admin.scripts.blogcreate')
 
 @endsection

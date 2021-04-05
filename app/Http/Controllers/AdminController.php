@@ -67,7 +67,7 @@ class AdminController extends Controller
             ->addColumn('action','
             <a href="{{ route("blog.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
             ')
-            ->rawColumns(['image','action'])
+            ->rawColumns(['image','action','description'])
             ->make(true);
     }
 
@@ -705,7 +705,6 @@ class AdminController extends Controller
             $p = Blog::find($request->id);
             $p->title = $request->title;
             $p->description = $request->description;
-            $p->image = "";
             $p->status = $request->status;
             if (strtolower($request->status)=="publish") {
                 if (strlen($p->published_date) < 5 || strtolower($p->status)=="draft"){

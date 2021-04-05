@@ -1,3 +1,4 @@
+<script src="https://cdn.tiny.cloud/1/n4ckgyan9s8odm1kuhbs7xxl5dkjr01p9px6jq1qfd1kdwlj/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript">
 
   function deleteEntity(id, caseEntity, returnData){
@@ -19,6 +20,13 @@
   }
 
 	$(document).ready(function(){
+
+    
+  tinymce.init({
+      selector: 'textarea',
+      plugins: 'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      toolbar_mode: 'floating',
+   });
 
 		$(document).on("click",".addMoreObjective",function(e){
 			e.preventDefault();
