@@ -35,7 +35,7 @@
                                     </small>
                                 </p>
                                 <p class="hue_black">
-                                    {!! $b->description !!}
+                                    {{ limitWord(strip_tags($b->description)) }}
                                 </p>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                             </small>
                         </p>
                         <p class="hue_black">
-                            {!! $b->description !!}
+                            {{ limitWord(strip_tags($b->description)) }}
                         </p>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                                 </small>
                             </p>
                             <p class="hue_black">
-                                {!! $b->description !!}
+                                {{ limitWord(strip_tags($b->description)) }}
                             </p>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                                 </small>
                             </p>
                             <p class="hue_black">
-                                {!! $b->description !!}
+                                {{ limitWord(strip_tags($b->description)) }}
                             </p>
                         </div>
                     </div>
