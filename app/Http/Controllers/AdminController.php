@@ -630,6 +630,7 @@ class AdminController extends Controller
             $p->title = $request->title;
             $p->description = $request->description;
             $p->status = $request->status;
+            $p->image = ""; 
             if (strtolower($request->status)=="publish") {
                 $p->published_date = date("Y-m-d H:i:s");
             } else {
