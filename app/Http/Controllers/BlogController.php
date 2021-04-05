@@ -8,6 +8,7 @@ use App\Models\ProjectObjective;
 use App\Models\ProjectResult;
 use App\Models\TechnologyTool;
 use App\Models\ClientFeedback;
+use App\Models\Blog;
 
 use Mail;
 
@@ -15,8 +16,11 @@ class BlogController extends Controller
 {
 
     public function index() {
-    	$data['project'] = Project::getList();
-        return view('project.project',$data);
+    	$data['blog'] = Blog::orderBy("id","desc")->with('user')->limit(4)->get();
+        $data['blog_popular'] = Blog::orderBy("id","desc")->limit(3)->get();
+        $data['blog_recent'] = Blog::orderBy("id","desc")->get();
+        $data['pathimage'] = url("uploads/images/blogs");
+        return view('blog.blog',$data);
     }
 
     public function detail($project_name) {

@@ -1,0 +1,1270 @@
+#qa_courses {
+    padding-bottom: 90px;
+}
+
+@media (max-width: 1199px) {
+    #qa_courses {
+        padding-bottom: 80px;
+    }
+}
+
+
+.qa_courses_hire_text_col>h2 {
+    font-weight: 600;
+    font-size: 40px;
+
+}
+
+@media (max-width: 991px) {
+    .qa_courses_hire_text_col>h2 {
+        font-size: 35px;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .qa_courses_hire_text_col>h2 {
+        font-size: 30px;
+
+    }
+}
+
+@media (max-width: 479px) {
+    .qa_courses_hire_text_col>h2 {
+        font-size: 25px;
+    }
+}
+
+.qa_courses_hire_text_col>p {
+    font-size: 18px;
+    margin-top: 35px;
+    width: 600px;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .qa_courses_hire_text_col>p {
+        font-size: 17px;
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    .qa_courses_hire_text_col>p {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+}
+
+.qa_courses_row {
+    padding-top: 60px;
+}
+
+@media (max-width: 991px) {
+    .qa_courses_row {
+        padding-top: 40px;
+    }
+
+}
+
+.qa_courses_txt_col {
+    max-width: 560px;
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .qa_courses_txt_col {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+.qa_courses_txt_col p {
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .qa_courses_txt_col p {
+        font-size: 17px;
+
+    }
+}
+
+@media (max-width: 479px) {
+    .qa_courses_txt_col p {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .qa_txt_blocks {
+        padding-top: 35px;
+    }
+}
+
+.qa_txt_single_blok {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 40px 36px 40px 36px;
+    max-height: 430px;
+}
+
+.qa_txt_single_blok:hover {
+    background: #CCEAFE;
+    transition: 0.3s;
+}
+
+
+
+@media (max-width: 991px) {
+    .qa_txt_single_blok {
+        margin: 0 auto;
+    }
+}
+
+
+.qa_txt_single_blok>h5 {
+    font-size: 24px;
+}
+
+@media (max-width: 991px) {
+    .qa_txt_single_blok>h5 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 479px) {
+    .qa_txt_single_blok>h5 {
+        font-size: 20px;
+    }
+}
+
+.qa_txt_single_blok>p {
+    font-size: 16px;
+}
+
+@media (max-width: 479px) {
+    .qa_txt_single_blok>p {
+        font-size: 15px;
+    }
+}
+
+.qa_txt_single_blok:first-child {
+    margin-bottom: 45px;
+}
+
+.qa_courses_icon_col_c {
+    border-radius: 50%;
+    width: 242px;
+    height: 242px;
+    background: #FBFBFB;
+    border: 3px dashed #F4B41A;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.13);
+    padding-top: 30px;
+    margin: 0 auto;
+}
+
+
+
+@media (max-width: 575px) {
+    .qa_courses_icon_col_c {
+        width: 200px;
+        height: 200px;
+        padding-top: 20px;
+    }
+}
+
+
+
+.qa_courses_num_icon {
+    padding: 17px 0 17px 0;
+}
+
+@media (max-width: 575px) {
+    .qa_courses_num_icon {
+        padding: 7px 0 7px 0;
+    }
+}
+
+.qa_courses_icon_col {
+    margin-bottom: 70px;
+}
+
+@media (max-width: 575px) {
+    .qa_courses_icon_col {
+        margin-bottom: 60px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .qa_courses_icon>svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .qa_courses_num_icon>svg {
+        width: 20px;
+        height: 30px;
+    }
+}
+
+
+.qa_courses_icon_col>p {
+    font-size: 24px;
+}
+
+@media (max-width: 1199px) {
+    .qa_courses_icon_col>p {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 575px) {
+    .qa_courses_icon_col>p {
+        font-size: 20px;
+    }
+}
+
+.qa_courses_icons_row>div:nth-child(2) {
+    padding-top: 60px;
+}
+
+@media (max-width: 991px) {
+    .qa_courses_icons_row>div:nth-child(2) {
+        padding-top: 0;
+        margin-top: -17px;
+
+    }
+}
+
+.found_job_col {
+    padding-top: 28px;
+}
+
+@media (max-width: 575px) {
+    .found_job_col {
+        padding-top: 0px;
+    }
+}
+
+
+.qa_courses_txt_icon_row {
+    padding-top: 90px;
+}
+
+@media (max-width: 575px) {
+    .qa_courses_txt_icon_row {
+        padding-top: 70px;
+    }
+}
+
+
+
+.left_qa_courses_icon_col,
+.left_qa_courses_icon_col {
+    min-width: 150px;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+
+    .left_qa_courses_icon_col,
+    .left_qa_courses_icon_col {
+        max-width: 100%;
+
+    }
+}
+
+
+.qa_courses_become_qa_col>h5 {
+    font-size: 22px;
+}
+
+@media (max-width: 991px) {
+    .qa_courses_become_qa_col>h5 {
+        text-align: center;
+    }
+}
+
+.qa_courses_become_qa_col>p {
+    font-size: 18px;
+    padding: 25px 0 25px 0;
+}
+
+@media (max-width: 767px) {
+    .qa_courses_become_qa_col>p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 479px) {
+    .qa_courses_become_qa_col>p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 991px) {
+    .qa_courses_become_qa_col>p {
+        text-align: center;
+    }
+}
+
+.qa_courses_become_qa_col>h6 {
+    font-size: 18px;
+}
+
+@media (max-width: 991px) {
+    .qa_courses_become_qa_col>h6 {
+        text-align: center;
+    }
+}
+
+
+.ability_col>span {
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .ability_col>span {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 479px) {
+    .ability_col>span {
+        font-size: 16px;
+    }
+}
+
+.underline_txt {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+    .underline_txt {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 479px) {
+    .underline_txt {
+        font-size: 16px;
+    }
+}
+
+.qa_courses_btn {
+    padding-top: 40px;
+}
+
+.qa_courses_btn>a {
+    background-color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #143E5A;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 33px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+@media (max-width: 767px) {
+    .qa_courses_btn>a {
+        padding: 12px 33px;
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .qa_courses_btn>a {
+        padding: 10px 28px;
+        font-size: 16px;
+    }
+}
+
+.qa_courses_btn>a:hover {
+    background: #143E5A;
+    color: #ffffff;
+}
+
+.abilities_col {
+    padding: 25px 0 25px 0;
+}
+
+#courses_reg {
+    padding-bottom: 130px;
+}
+
+/* @media (max-width: 1199px) {
+   #job_apply {
+       padding-bottom: 80px;
+   }
+}
+
+@media (max-width: 991px) {
+   #job_apply {
+       padding-bottom: 70px;
+   }
+}
+
+@media (max-width: 767px) {
+   #job_apply {
+       padding-bottom: 60px;
+   }
+} */
+
+.courses_reg_text_col>h2 {
+    font-weight: 600;
+    font-size: 40px;
+
+}
+
+@media (max-width: 767px) {
+    .courses_reg_text_col>h2 {
+        font-size: 35px;
+
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_text_col>h2 {
+        font-size: 25px;
+    }
+}
+
+.courses_reg_text_col>p {
+    font-size: 18px;
+    margin-top: 35px;
+    width: 600px;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .courses_reg_text_col>p {
+        font-size: 17px;
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_text_col>p {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+}
+
+
+/* ------------------------------------------------------ */
+
+
+
+.courses_reg_form_col,
+.courses_reg_form_contacts_col {
+    width: 600px;
+}
+
+@media (max-width: 1439px) {
+
+    .courses_reg_form_col,
+    .courses_reg_form_contacts_col {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    .courses_reg_form_col,
+    .courses_reg_form_contacts_col {
+        width: 410px;
+    }
+}
+
+@media (max-width: 991px) {
+
+    .courses_reg_form_col,
+    .courses_reg_form_contacts_col {
+        width: 100%;
+    }
+}
+
+.courses_reg_form_contacts_col {
+    min-height: 479px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 6px 0px 0px 6px;
+    position: relative;
+    top: 160px;
+    padding: 60px 60px 60px 60px;
+    background-color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .courses_reg_form_contacts_col {
+        top: 0;
+        min-height: auto;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_form_contacts_col {
+        padding: 40px 30px 30px 30px;
+    }
+}
+
+
+.courses_reg_form_col {
+    height: 100%;
+    min-height: 800px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #ffffff;
+}
+
+.courses_reg_form_row {
+    position: relative;
+    padding-top: 80px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+@media (max-width: 991px) {
+    .courses_reg_form_row {
+        padding-top: 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    .courses_reg_form_row {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_form_row {
+        padding-top: 40px;
+    }
+}
+
+
+
+.courses_reg_tesvan_form {
+    max-width: 434px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 1439px) {
+    .courses_reg_tesvan_form {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .courses_reg_tesvan_form {
+        max-width: 330px;
+    }
+}
+
+@media (max-width: 991px) {
+    .courses_reg_tesvan_form {
+        max-width: 70%;
+    }
+}
+
+
+.courses_reg_tesvan_form>p {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.courses_reg_custom_form_group {
+    position: relative;
+}
+
+.courses_reg_custom_form_group>label {
+    font-size: 16px;
+    position: absolute;
+    left: 36px;
+    top: -13px;
+    background-color: #fff;
+    text-align: center;
+    color: #A5A5A5;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 14px;
+}
+
+.email,
+.name,
+.phone,
+.surname,
+.city {
+    width: 100%;
+    border: 1px solid #A5A5A5;
+    box-sizing: border-box;
+    border-radius: 6px;
+    background-color: #ffffff;
+}
+
+
+
+.courses_reg_form_col>h5 {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+@media (max-width: 991px) {
+    .courses_reg_form_col>h5 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .courses_reg_form_col>h5 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_form_col>h5 {
+        font-size: 20px;
+    }
+}
+
+.courses_reg_tesvan_form_btn {
+    max-width: 241px;
+    width: 100%;
+    background-color: #143E59;
+    border: 1px solid #143E59;
+    color: #ffffff;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    font-weight: bold;
+    height: 58px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 18px;
+    margin: 0 auto;
+    display: block;
+
+}
+
+@media (max-width: 1439px) {
+    .courses_reg_tesvan_form_btn {
+        max-width: 210px;
+
+    }
+}
+
+@media (max-width: 1199px) {
+    .courses_reg_tesvan_form_btn {
+        max-width: 200px;
+
+    }
+}
+
+@media (max-width: 767px) {
+    .courses_reg_tesvan_form_btn {
+        max-width: 190px;
+
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_tesvan_form_btn {
+        max-width: 160px;
+
+    }
+}
+
+.courses_reg_tesvan_form_btn:hover {
+    background-color: #ffffff;
+    color: #143E5A;
+}
+
+.courses_reg_custom_form_input {
+    margin-bottom: 35px;
+}
+
+.form-control:focus {
+    color: #0D171D;
+    border: 1px solid #A5A5A5;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.01), 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.courses_reg_form_contacts_col>h5 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .courses_reg_form_contacts_col>h5 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .courses_reg_form_contacts_col>h5 {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_form_contacts_col>h5 {
+        font-size: 20px;
+    }
+}
+
+.courses_reg_form_contacts_col p {
+    font-size: 18px;
+}
+
+@media (max-width: 767px) {
+    .courses_reg_form_contacts_col p {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 479px) {
+    .courses_reg_form_contacts_col p {
+        font-size: 16px;
+    }
+}
+
+.courses_reg_form_contacts_col>.beginner_txt {
+    padding-top: 30px;
+    margin-bottom: 0px;
+}
+
+
+@media (max-width: 479px) {
+    .courses_reg_form_contacts_col>.beginner_txt {
+        padding-top: 20px;
+    }
+}
+
+.courses_reg_form_contacts_col>.contact_you {
+    padding-top: 30px;
+}
+
+@media (max-width: 479px) {
+    .courses_reg_form_contacts_col>.contact_you {
+        padding-top: 20px;
+    }
+}
+
+
+
+
+@media (max-width: 991px) {
+
+    .pointer_svg,
+    .pointer_svg>svg {
+        display: none;
+    }
+}
+
+
+.view_details {
+    font-size: 18px;
+    color: #018CCA;
+}
+
+.view_details:hover {
+    font-size: 18px;
+    color: #03a9f4;
+
+}
+
+
+
+
+.reg_btn {
+    width: 100%;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    font-weight: bold;
+    min-height: 58px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 18px;
+    outline: none;
+    padding: 7px;
+}
+
+
+.register_next_btn {
+    max-width: 241px;
+    background-color: #143E59;
+    border: 1px solid #143E59;
+    color: #ffffff;
+    margin: 0 auto;
+    display: block;
+
+}
+
+.register_back_btn,
+.register_btn {
+    max-width: 205px;
+
+}
+
+.register_btn {
+    background-color: #143E59;
+    border: 1px solid #143E59;
+    color: #ffffff;
+
+}
+
+.register_back_btn {
+    background-color: #ffffff;
+    border: 1px solid #143E59;
+    color: #143E59;
+    margin-right: 20px;
+}
+
+
+.register_btn:hover,
+.register_next_btn:hover {
+    background-color: #ffffff;
+    color: #143E5A;
+}
+
+.register_back_btn:hover {
+    background-color: #143E5A;
+    color: #ffffff;
+}
+
+.register_message {
+    resize: none;
+    line-height: 120%;
+}
+
+
+#job_hire {
+    padding-bottom: 90px;
+}
+
+@media (max-width: 1199px) {
+    #job_hire {
+        padding-bottom: 80px;
+    }
+}
+
+@media (max-width: 991px) {
+    #job_hire {
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 767px) {
+    #job_hire {
+        padding-bottom: 60px;
+    }
+}
+
+.job_hire_text_col>h2 {
+    font-weight: 600;
+    font-size: 40px;
+
+}
+
+@media (max-width: 767px) {
+    .job_hire_text_col>h2 {
+        font-size: 35px;
+
+    }
+}
+
+@media (max-width: 479px) {
+    .job_hire_text_col>h2 {
+        font-size: 25px;
+    }
+}
+
+.job_hire_text_col>p {
+    font-size: 18px;
+    margin-top: 35px;
+    width: 600px;
+    display: inline-block;
+}
+
+@media (max-width: 767px) {
+    .job_hire_text_col>p {
+        font-size: 17px;
+        margin-top: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    .job_hire_text_col>p {
+        font-size: 15px;
+        margin-top: 20px;
+    }
+}
+
+.will_join_col {
+    width: 242px;
+    height: 278px;
+    background: #FBFBFB;
+    border: 3px dashed #F4B41A;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.23);
+    border-radius: 12px;
+    padding-top: 40px;
+}
+
+@media (max-width: 1199px) {
+    .will_join_col {
+        width: 200px;
+        height: 250px;
+        padding-top: 21px;
+    }
+
+}
+
+.members_number_svg,
+.will_join_number_svg {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 479px) {
+
+    .members_number_svg,
+    .will_join_number_svg {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+}
+
+
+@media (max-width: 479px) {
+
+    .will_join_icon_svg>svg,
+    .members_icon_svg>svg {
+        width: 60px;
+        width: 60px;
+    }
+
+}
+
+@media (max-width: 479px) {
+
+    .will_join_number_svg>svg,
+    .members_number_svg>svg {
+        width: 40px;
+        width: 40px;
+
+    }
+
+}
+
+.members_col {
+    padding-top: 280px;
+}
+
+.members_col>p,
+.will_join_col>p {
+    font-size: 24px;
+}
+
+@media (max-width: 767px) {
+
+    .will_join_col>p,
+    .members_col>p {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 479px) {
+
+    .members_col>p,
+    .will_join_col>p {
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .give_txt_row {
+        text-align: center;
+    }
+}
+
+
+.give_txt_row>h5 {
+    font-size: 22px;
+}
+
+@media (max-width: 767px) {
+    .give_txt_row>h5 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 479px) {
+    .give_txt_row>h5 {
+        font-size: 18px;
+    }
+}
+
+
+.give_txt_row>p {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+@media (max-width: 479px) {
+    .give_txt_row>p {
+        font-size: 16px;
+    }
+}
+
+
+.hire_row {
+    padding-top: 70px;
+}
+
+@media (max-width: 767px) {
+    .hire_row {
+        padding-top: 50px;
+    }
+
+}
+
+@media (max-width: 479px) {
+    .hire_row {
+        padding-top: 30px;
+    }
+
+}
+
+@media (max-width: 991px) {
+    .hire_icons_col {
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto 30px;
+    }
+
+}
+
+.offer_col {
+    margin-left: 90px;
+}
+
+@media (max-width: 1439px) {
+    .offer_col {
+        margin-left: 80px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .offer_col {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+    .offer_col {
+        margin: 0 auto;
+    }
+}
+
+.single_offer_txt_col>span {
+    font-size: 18px;
+}
+
+@media (max-width: 479px) {
+    .single_offer_txt_col>span {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 1439px) {
+    [lang="en"] .single_offer_txt_col_1:nth-child(1)>span {
+        width: 170px;
+    }
+}
+
+@media (max-width: 1200px) {
+    [lang="en"] .single_offer_txt_col_1:nth-child(1)>span {
+        width: 100%;
+    }
+}
+
+.single_offer_txt_col>img {
+    margin-right: 15px;
+    margin-bottom: 25px;
+
+}
+
+.single_offer_txt_col {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+[lang="ru"] .single_offer_txt_col {
+    width: 290px;
+}
+
+@media (max-width: 1200px) {
+    [lang="ru"] .single_offer_txt_col {
+        width: 100%;
+    }
+}
+
+.single_offer_txt_col>img {
+    position: absolute;
+    top: 3px;
+}
+
+.single_offer_txt_col>span {
+    margin-left: 40px;
+    line-height: 160%;
+}
+
+.offer_container>h5 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+@media (max-width: 991px) {
+    .offer_container>h5 {
+        text-align: center;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .give_txt_row>h5 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 479px) {
+    .give_txt_row>h5 {
+        font-size: 18px;
+    }
+}
+
+.offer_txt_row {
+    padding-top: 20px;
+}
+
+.project {
+	position: absolute;
+	width: 405px;
+	height: 100px;
+	left: 757px;
+	top: 208px;
+	font-weight: 600;
+	font-size: 54px;
+}
+
+.project-management {
+	
+}
+
+.rectangle {
+	width: 370px;
+	height: 223px;
+	background: #FFFFFF;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+	border-radius: 12px;
+	background-image: url('images/rectangle.png');
+	background-repeat: no-repeat; 
+	background-size: auto;
+}
+
+.project-overview {
+    width: 100%;
+    height: auto;
+    left: 960px;
+    top: 503px;
+
+    background: #FFFFFF;
+    border: 3px dashed #F4B41A;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.project-overview-title {
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 0px;
+    padding-left: 40px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 130%;
+    /* identical to box height, or 52px */
+    display: flex;
+    align-items: center;
+    color: #143E59;
+}
+
+.project-overview-description {
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 160%;
+    /* or 29px */
+
+    color: #0D171D;
+}
+
+.img-entry {
+    position: relative;
+    top: 30px;
+    left: 40px;
+    width: 88%;
+    height: 185px;
+}
+
+.custom-btn a {
+	color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #143E5A;
+    font-size: 18px;
+    padding: 22px 70px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    font-weight: 700;
+    background: #143E59;
+	border: 2px solid #143E59;
+	box-sizing: border-box;
+	border-radius: 6px;"
+}
