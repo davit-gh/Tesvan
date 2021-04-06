@@ -4,7 +4,11 @@
 <link rel="stylesheet" type="text/css" href="/css/blog.css?v={{ strtotime(date('YmdHis')) }}">
 @endsection
 
-
+<style type="text/css">
+    .qa_txt_blocks{
+        cursor: pointer;
+    }
+</style>
 
 @section('content')
 
