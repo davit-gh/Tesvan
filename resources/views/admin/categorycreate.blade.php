@@ -18,12 +18,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Create Blog</h1>
+            <h1 class="m-0 text-dark">Create Category</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="{{ route('admin') }}">Blogs</a></li>
-              <li class="breadcrumb-item active">Create Blog</li>
+              <li class="breadcrumb-item active">Create Category</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -46,37 +46,12 @@
          <strong>{{ session('success') }}</strong>
      </span>
   @endif
-  <form method="POST" enctype="multipart/form-data" action="{{ route('blog.store') }}">
+  <form method="POST" enctype="multipart/form-data" action="{{ route('category.store') }}">
     @csrf
     <div class="card-body">
       <div class="form-group">
-        <label for="exampleInputEmail1">Title</label>
-        <input value="{{ old('title') }}" type="text" class="form-control" placeholder="Title" name="title"> 
-      </div>
-      <div class="form-group">
-        <label for="exampleInputFile">Image</label>
-        <input value="{{ old('image') }}" type="file" class="form-control" name="image">
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Description</label>
-        <textarea class="form-control" name="description">{{ old('description') }}</textarea>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Category</label>
-        <select class="form-control" name="category">
-        @if (count($categories)>0)
-          @foreach ($categories as $c)
-            <option value="{{ $c->id }}">{{ $c->name }}</option>
-          @endforeach
-        @endif
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Status</label>
-        <select class="form-control" name="status">
-            <option>Publish</option>
-            <option>Draft</option>
-        </select>
+        <label for="exampleInputEmail1">Category Name</label>
+        <input value="{{ old('name') }}" type="text" class="form-control" placeholder="Category Name" name="name"> 
       </div>
     </div>
     <!-- /.card-body -->
@@ -90,5 +65,5 @@
 @endsection
 
 @section('scripts')
-@include('admin.scripts.blogcreate')
+@include('admin.scripts.categorycreate')
 @endsection

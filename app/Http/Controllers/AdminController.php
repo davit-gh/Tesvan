@@ -9,6 +9,7 @@ use App\Models\ProjectResult;
 use App\Models\TechnologyTool;
 use App\Models\ClientFeedback;
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use DataTables;
 use Illuminate\Support\Facades\Validator;
@@ -43,7 +44,8 @@ class AdminController extends Controller
     }
 
     public function blogCreate(Request $request){
-        return view('admin/blogcreate');
+        $data["categories"] = Category::all();
+        return view('admin/blogcreate',$data);
     }
 
     public function blogDatatable(Request $request){
@@ -55,6 +57,14 @@ class AdminController extends Controller
             ->editColumn('description',function($d){
                 return $this->limitWord($d->description);
             })
+            ->addColumn('category',function($d){
+                $category_name = ""; 
+                $c = Category::where("id",$d->category_id)->first();
+                if ($c){
+                    $category_name = $c->name;
+                }
+                return $this->limitWord($category_name);
+            })
             ->editColumn('image',function($d){
                 return "<img width='100' height='100' src='".url('uploads/images/blogs/'.$d->id.'/resize_'.$d->image)."'/>";
             })
@@ -63,6 +73,9 @@ class AdminController extends Controller
             })
             ->editColumn('published_date',function($d){
                 return $this->limitWord($d->published_date);
+            })
+            ->addColumn('public_view',function($d){
+                return $d->view;
             })
             ->addColumn('action','
             <a href="{{ route("blog.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
@@ -608,14 +621,16 @@ class AdminController extends Controller
             'title.required' => 'Title required!',
             'description.required'=>'Description required!',
             'image.required'=>'Image required!',
-            'status.required'=>'Status required!'
+            'status.required'=>'Status required!',
+            'category_id.required'=>'Category required!'
         ];
 
         $rule = [
             'title'=>'required',
             'description'=>'required',
             'image'=>'required',
-            'status'=>'required'
+            'status'=>'required',
+            'category_id'=>'required!'
         ];
 
         $validator = Validator::make($request->all(),$rule,$messages);
@@ -630,6 +645,7 @@ class AdminController extends Controller
             $p->title = $request->title;
             $p->description = $request->description;
             $p->status = $request->status;
+            $p->category_id = $request->category;
             $p->image = ""; 
             if (strtolower($request->status)=="publish") {
                 $p->published_date = date("Y-m-d H:i:s");
@@ -671,6 +687,7 @@ class AdminController extends Controller
     }
 
     public function blogEdit($id){
+        $data["categories"] = Category::all();
         $data['blog'] = Blog::where("id",$id)->first();
         return view('admin/blog-edit',$data);
     }
@@ -685,13 +702,15 @@ class AdminController extends Controller
         $messages = [
             'title.required' => 'Title required!',
             'description.required'=>'Description required!',
-            'status.required'=>'Status required!'
+            'status.required'=>'Status required!',
+            'category_id.required'=>'Category required!'
         ];
 
         $rule = [
             'title'=>'required',
             'description'=>'required',
-            'status'=>'required'
+            'status'=>'required',
+            'category_id'=>'required'
         ];
 
         $validator = Validator::make($request->all(),$rule,$messages);
@@ -705,6 +724,7 @@ class AdminController extends Controller
             $p = Blog::find($request->id);
             $p->title = $request->title;
             $p->description = $request->description;
+            $p->category_id = $request->category;
             $p->status = $request->status;
             if (strtolower($request->status)=="publish") {
                 if (strlen($p->published_date) < 5 || strtolower($p->status)=="draft"){
@@ -752,6 +772,102 @@ class AdminController extends Controller
             $id = $request->id;      
             Blog::where('id',$id)->delete();
             \Session::flash('success', 'Succesfully deleted blog!'); 
+            return response()->json('success', 200);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+
+    public function categories(Request $request){
+        return view('admin/categories');
+    }
+
+    public function categoryCreate(Request $request){
+        return view('admin/categorycreate');
+    }
+
+    public function categoryDatatable(Request $request){
+        $blog = Category::orderBy("id","desc")->get();
+        return DataTables::of($blog)
+            ->editColumn('name',function($d){
+                return $this->limitWord($d->name);
+            })
+            ->addColumn('action','
+            <a href="{{ route("category.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+            ')
+            ->rawColumns(['image','action','description'])
+            ->make(true);
+    }
+
+    public function storeCategory(Request $request) {
+        $messages = [
+            'name.required' => 'Category name required!'
+        ];
+
+        $rule = [
+            'name'=>'required'
+        ];
+
+        $validator = Validator::make($request->all(),$rule,$messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+
+            $p = new Category;
+            $p->name = $request->name;
+            $p->save();
+
+            \Session::flash('success', 'Succesfully added category!'); 
+            return redirect(route('admin.category.index'))->with(['success' => 'Succesfully added category!']);
+
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function categoryEdit($id){
+        $data['category'] = Category::where("id",$id)->first();
+        return view('admin/category-edit',$data);
+    }
+
+    public function updateCategory(Request $request) {
+        $messages = [
+            'name.required' => 'Category name required!'
+        ];
+
+        $rule = [
+            'name'=>'required'
+        ];
+
+        $validator = Validator::make($request->all(),$rule,$messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+
+            $p = Category::find($request->id);
+            $p->name = $request->name;
+            $p->save();
+
+            \Session::flash('success', 'Succesfully update category!'); 
+            return redirect(route('admin.category.index'))->with(['success' => 'Succesfully update category!']);
+
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function deleteCategory(Request $request) {
+        try {
+            $id = $request->id;      
+            Category::where('id',$id)->delete();
+            \Session::flash('success', 'Succesfully deleted category!'); 
             return response()->json('success', 200);
         } catch (Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);

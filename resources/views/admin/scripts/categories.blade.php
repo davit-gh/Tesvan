@@ -4,15 +4,9 @@
       $("#datatable").DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{!! route('blog.dt') !!}",
+        ajax: "{!! route('category.dt') !!}",
         columns: [
-        { data: "title" },
-        { data: "description" },
-        { data: "category" },
-        { data: "image" },
-        { data: "status" },
-        { data: "published_date" },
-        { data: "public_view" },
+        { data: "name" },
         { data: "action", bSortable: false, className: "text-center" },
         ],
     });
@@ -28,7 +22,7 @@
        }
 
       $.ajax({
-          url: "{{ route('blog.delete') }}",
+          url: "{{ route('category.delete') }}",
           data: data,
           type: "POST",
           dataType : "json",

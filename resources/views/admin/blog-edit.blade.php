@@ -22,7 +22,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{ route('blogs') }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ route('blogs') }}">Blogs</a></li>
               <li class="breadcrumb-item active">Blog Edit</li>
             </ol>
           </div><!-- /.col -->
@@ -61,6 +61,20 @@
       <div class="form-group">
         <label for="exampleInputEmail1">Description</label>
         <textarea class="form-control" name="description">{{ old('description',$blog->description) }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Category</label>
+        <select class="form-control" name="category">
+        @if (count($categories)>0)
+          @foreach ($categories as $c)
+            @if ($blog->category_id==$c->id)
+              <option value="{{ $c->id }}" selected>{{ $c->name }}</option>
+              @else
+              <option value="{{ $c->id }}">{{ $c->name }}</option>
+            @endif
+          @endforeach
+        @endif
+        </select>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Status</label>

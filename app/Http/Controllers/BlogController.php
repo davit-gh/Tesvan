@@ -23,23 +23,19 @@ class BlogController extends Controller
         return view('blog.blog',$data);
     }
 
-    public function detail($project_name) {
+    public function detail($name, $id) {
 
-        $project_name = strtr($project_name, ["-"=>" "]);
+        $data['bd'] = Blog::where('id',$id)->first();
+    	$data['blog'] = Blog::where('id',"!=",$id)->get();
+        $data['blog_interest'] = Blog::where('id',"!=",$id)->get();
+        $data['pathimage'] = url("uploads/images/blogs");
 
-    	$data['project'] = Project::whereRaw('LOWER(project_name) like "%'.$project_name.'%" ')->first();
-
-        if (!$data['project']){
+        if (!$data['blog']){
             abort(404);
         }
 
-        $id = $data['project']->id;
-    	$data['project_objective'] = ProjectObjective::where('project_id',$id)->get();
-    	$data['project_result'] = ProjectResult::where('project_id',$id)->get();
-    	$data['technology_tool'] = TechnologyTool::where('project_id',$id)->get();
-    	$data['client_feedback'] = ClientFeedback::where('project_id',$id)->get();
-    	$data['related'] = Project::where('id','!=',$id)->orderBy("id","desc")->limit(30)->get();
+        viewBlog($id);
 
-        return view('project.detail',$data);
+        return view('blog.detail',$data);
     }
 }

@@ -55,6 +55,11 @@ Route::get('/project/{project_name}', [
     'as' => 'project.detail'
 ]);
 
+Route::get('/blog/{name}/{id}', [
+    'uses' => 'BlogController@detail',
+    'as' => 'blog.detail'
+]);
+
 Route::get('/blogs', [
     'uses' => 'BlogController@index',
     'as' => 'blogs'
@@ -147,6 +152,48 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'AdminController@deleteEntityBlog',
         'as' => 'blog.delete.entity'
     ]);
+
+
+
+
+
+
+
+    Route::get('/admin/category/index', [
+        'uses' => 'AdminController@categories',
+        'as' => 'admin.category.index'
+    ]);
+
+    Route::get('/admin/category/create', [
+        'uses' => 'AdminController@categoryCreate',
+        'as' => 'admin.category.create'
+    ]);
+
+    Route::get('/category-edit/{id}', [
+        'uses' => 'AdminController@categoryEdit',
+        'as' => 'category.edit'
+    ]);
+
+    Route::get('/category-dt', [
+        'uses' => 'AdminController@categoryDatatable',
+        'as' => 'category.dt'
+    ]);
+
+    Route::post('/storeCategory', [
+        'uses' => 'AdminController@storeCategory',
+        'as' => 'category.store'
+    ]);
+
+    Route::post('/updateCategory', [
+        'uses' => 'AdminController@updateCategory',
+        'as' => 'category.update'
+    ]);
+
+    Route::post('/deleteCategory', [
+        'uses' => 'AdminController@deleteCategory',
+        'as' => 'category.delete'
+    ]);
+
 
 });
 
