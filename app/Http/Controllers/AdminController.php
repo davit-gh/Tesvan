@@ -622,7 +622,7 @@ class AdminController extends Controller
             'description.required'=>'Description required!',
             'image.required'=>'Image required!',
             'status.required'=>'Status required!',
-            'category_id.required'=>'Category required!'
+            'category.required'=>'Category required!'
         ];
 
         $rule = [
@@ -630,7 +630,7 @@ class AdminController extends Controller
             'description'=>'required',
             'image'=>'required',
             'status'=>'required',
-            'category_id'=>'required!'
+            'category'=>'required!'
         ];
 
         $validator = Validator::make($request->all(),$rule,$messages);
@@ -703,14 +703,14 @@ class AdminController extends Controller
             'title.required' => 'Title required!',
             'description.required'=>'Description required!',
             'status.required'=>'Status required!',
-            'category_id.required'=>'Category required!'
+            'category.required'=>'Category required!'
         ];
 
         $rule = [
             'title'=>'required',
             'description'=>'required',
             'status'=>'required',
-            'category_id'=>'required'
+            'category'=>'required'
         ];
 
         $validator = Validator::make($request->all(),$rule,$messages);
