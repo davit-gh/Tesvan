@@ -18,7 +18,7 @@
             <h2 class="hue_blue">{{ $bd->title }}</h2>
             <p>
                 <small>
-                   Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | Created By $bd->user->name
+                   Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | Created By {{ $bd->user->name }}
                 </small>
             </p>
         </div>
