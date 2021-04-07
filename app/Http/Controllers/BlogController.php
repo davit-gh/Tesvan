@@ -17,7 +17,7 @@ class BlogController extends Controller
 
     public function index() {
     	$data['blog'] = Blog::orderBy("id","desc")->with('user')->limit(4)->get();
-        $data['blog_popular'] = Blog::orderBy("id","desc")->limit(3)->get();
+        $data['blog_popular'] = Blog::orderBy("view","desc")->limit(3)->get();
         $data['blog_recent'] = Blog::orderBy("id","desc")->get();
         $data['pathimage'] = url("uploads/images/blogs");
         return view('blog.blog',$data);

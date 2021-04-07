@@ -58,7 +58,7 @@
                                         </small>
                                     </p>
                                     <p class="hue_black">
-                                        By <a href="#" >{{ $b->user->name }}</a>
+                                        By {{ $b->user->name }}
                                     </p>
                                 </div>
                             </div>
