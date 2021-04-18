@@ -67,7 +67,7 @@
                     <img src="{{asset('images/team_images/Lena.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Lena Hambardzumyan")}}</h4>
                     <p class="hue_black pb-3">{{__("HR/Marketing Specialist")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -83,7 +83,7 @@
                     <img src="{{asset('images/team_images/Merine.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Merine Margaryan")}}</h4>
                     <p class="hue_black pb-3">{{__("QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -99,7 +99,7 @@
                     <img src="{{asset('images/team_images/Lusine.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Lusine Hovhannisyan")}}</h4>
                     <p class="hue_black pb-3">{{__("QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -115,7 +115,7 @@
                     <img src="{{asset('images/team_images/Vazgen.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Vazgen Arakelyan")}}</h4>
                     <p class="hue_black pb-3">{{__("QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -131,7 +131,7 @@
                     <img src="{{asset('images/team_images/Shogher.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Shogher Galstyan")}}</h4>
                     <p class="hue_black pb-3">{{__("QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -147,7 +147,7 @@
                     <img src="{{asset('images/team_images/Arman.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Arman Poghosyan")}}</h4>
                     <p class="hue_black pb-3">{{__("Junior QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -163,7 +163,7 @@
                     <img src="{{asset('images/team_images/Levon.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Levon Galstyan")}}</h4>
                     <p class="hue_black pb-3">{{__("Junior QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -179,7 +179,7 @@
                     <img src="{{asset('images/team_images/Vanuhi.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Vanuhi Melikyan")}}</h4>
                     <p class="hue_black pb-3">{{__("Junior QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -195,7 +195,7 @@
                     <img src="{{asset('images/team_images/Mariam.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Mariam Martirosyan")}}</h4>
                     <p class="hue_black pb-3">{{__("Junior QA Engineer")}}</p>
-                    <div class="layer hue_royal"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
