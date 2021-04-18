@@ -205,18 +205,18 @@
 }
 
 .custom-btn a {
-	color: #FFFFFF;
+    color: #143E5A;
     text-decoration: none;
     border-radius: 6px;
-    border: 1px solid #143E5A;
+    border: 0.5px solid #143E5A;
     font-size: 18px;
     padding: 22px 70px;
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
     font-weight: 700;
-    background: #143E59;
-	border: 2px solid #143E59;
-	box-sizing: border-box;
-	border-radius: 6px;"
+    /* background: #143E59; */
+    border: 2px solid #143E59;
+    box-sizing: border-box;
+    border-radius: 6px;
 }
