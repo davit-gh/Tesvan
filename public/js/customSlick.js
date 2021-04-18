@@ -48,7 +48,7 @@ $(document).ready(function () {
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
-        dots: true,
+        dots: false,
         accessibility: false,
         responsive: [{
                 breakpoint: 1199,

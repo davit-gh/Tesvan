@@ -31,4 +31,8 @@ class HomeController extends Controller
         return redirect("/#contact-us")->with('success', 'We have received your message. Thank you!');
     }
 
+    public function teams() {
+        return view('teams');
+    }
+
 }

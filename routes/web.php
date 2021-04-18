@@ -70,6 +70,11 @@ Route::get('/admin/logout', [
     'as' => 'admin.logout'
 ]);
 
+Route::get('/team', [
+    'uses' => 'HomeController@teams',
+    'as' => 'teams'
+]);
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {

@@ -15,6 +15,15 @@
      <link rel="stylesheet" href="{{ url('merged.css') }}?v={{ strtotime(date('YmdHis')) }}"/>
     @yield('styles')
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-05657KC6FK"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-05657KC6FK');
+    </script>
 </head>
 <body>
 
