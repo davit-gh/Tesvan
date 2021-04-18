@@ -45,6 +45,8 @@
         </div>
     </div>
     <div class="container" align="center">
-        <a class="btn btn-primary" href="{{ route('teams') }}">See All</a>
+        <div class="custom-btn">
+            <a class="hue_bg_b hue_blue" href="{{ route('teams') }}">See All</a>
+        </div>
     </div>
 </section>

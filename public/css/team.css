@@ -203,3 +203,20 @@
     /* Для Opera */
 
 }
+
+.custom-btn a {
+	color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid #143E5A;
+    font-size: 18px;
+    padding: 22px 70px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    font-weight: 700;
+    background: #143E59;
+	border: 2px solid #143E59;
+	box-sizing: border-box;
+	border-radius: 6px;"
+}
