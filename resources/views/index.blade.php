@@ -2,15 +2,15 @@
 
 @section('styles')
 
-<link rel="stylesheet" type="text/css" href="/css/slick-theme.css">
-<link rel="stylesheet" type="text/css" href="/css/slick.css">
-<link rel="stylesheet" type="text/css" href="/css/qa.css">
-<link rel="stylesheet" type="text/css" href="/css/co-workers.css">
-<link rel="stylesheet" type="text/css" href="/css/customers.css">
-<link rel="stylesheet" type="text/css" href="/css/team.css">
-<link rel="stylesheet" type="text/css" href="/css/testiomanials.css">
-<link rel="stylesheet" type="text/css" href="/css/partners.css">
-<link rel="stylesheet" type="text/css" href="/css/contact_us.css">
+<link rel="stylesheet" type="text/css" href="/css/slick-theme.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/slick.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/qa.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/co-workers.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/customers.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/team.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/testiomanials.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/partners.css?v={{ strtotime(date('YmdHis')) }}">
+<link rel="stylesheet" type="text/css" href="/css/contact_us.css?v={{ strtotime(date('YmdHis')) }}">
 
 
 @endsection
