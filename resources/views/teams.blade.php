@@ -24,7 +24,7 @@
 }
 </style>
 <section id="team">
-    <div class="container">
+    <div class="container" align="center">
         <div class="text-center team_heder_txt_col">
             <h2 class="hue_blue">{{__("Our Team")}}</h2>
             <p class="hue_black"></p>
