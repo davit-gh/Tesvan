@@ -14,7 +14,7 @@
                 <div class="team_member_row">
                     <img src="{{asset('images/team_images/Davit_.png')}}" alt="Davit" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Davit Grigoryan")}}</h4>
-                    <p class="hue_black pb-3">{{__("Senior QA Engineer")}}</p>
+                    <p class="hue_black pb-3"><small>{{__("Co-Founder/Senior QA Engineer")}}</small></p>
                     <div class="layer hue_aqua"></div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="team_member_row">
                     <img src="{{asset('images/team_images/Davit.png')}}" alt=" Davit" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Davit Kartashyan")}}</h4>
-                    <p class="hue_black pb-3">{{__("Senior QA Engineer")}}</p>
+                    <p class="hue_black pb-3"><small>{{__("Co-Founder/Senior QA Engineer")}}</small></p>
                     <div class="layer hue_royal"></div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="team_member_row">
                     <img src="{{asset('images/team_images/Armen.png')}}" alt="Armen" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Armen Grigoryan")}}</h4>
-                    <p class="hue_black pb-3">{{__("Product Lead")}}</p>
+                    <p class="hue_black pb-3"><small>{{__("Co-Founder/Product Lead")}}</small></p>
                     <div class="layer hue_aqua"></div>
                 </div>
             </div>

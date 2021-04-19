@@ -61,7 +61,7 @@
                         <a href="{{ url('/#co_workers') }}" class="hue_blue">{{ __("Partners")}}</a>
                     </li>
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
-                        <a href="{{ url('/#team') }}" class="hue_blue">{{ __("Team ")}}</a>
+                        <a href="{{ route('teams') }}" class="hue_blue">{{ __("Team ")}}</a>
                     </li>
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
                         <a href="{{ route('blogs') }}" class="hue_blue">{{ __("Blog")}}</a>
