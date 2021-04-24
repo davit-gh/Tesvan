@@ -28,7 +28,7 @@
         <div class="col-xl-12 col-lg-12 col-md-12">
             <div class="qa_txt_blocks">
                 <div class="qa_txt_single_blok">
-                <img style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
+                <img style="max-height: 250px;" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
                 </div>
             </div>
         </div>
@@ -43,6 +43,13 @@
                     </p>
                     <p class="hue_black">
                         {!! $bd->description !!}
+
+                        <a href="#">
+                            <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
+                        </a>
+                        <a href="#">
+                            <img width="30" height="30" src="{{url('images/linked_icon.png')}}"/>
+                        </a>
                     </p>
                 </div>
             </div>

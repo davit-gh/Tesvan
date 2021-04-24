@@ -43,10 +43,10 @@
                                 <path d="m59 21h-2v-14h-4v-2h4c1.103 0 2 .897 2 2z" />
                             </svg>
                         </div>
-                        <h6 class="qa_h6">{{__("Quality Assurance")}}</h6>
+                        <h6 class="qa_h6">{{__("Manual QA")}}</h6>
                         <div class="qa_h6_text_cont">
                             <span class="qa_h6_text">
-                                {{__("We are devoted to developing extensive quality test systems for small to large-scale companies to ensure the highest quality models and best customer experinece")}}
+                                {{__("Define, execute, and document manual tests, test data, and test results with necessary detail.")}}
                             </span>
                         </div>
                     </div>

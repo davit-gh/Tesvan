@@ -30,7 +30,7 @@
                     <div class="col-xl-7 col-lg-7 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
                         <div class="qa_txt_blocks">
                             <div class="qa_txt_single_blok">
-                            <img style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
+                            <img style="max-height: 250px;" height="auto"  src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                                 <br><br>
                                 <h5 class="hue_blue">{{ $b->title }}</h5>
                                 <p>
@@ -78,7 +78,7 @@
             <div class="col-xl-4 col-lg-4 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
                 <div class="qa_txt_blocks">
                     <div class="qa_txt_single_blok">
-                    <img style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
+                    <img style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                         <br><br>
                         <h5 class="hue_blue">{{ $b->title }}</h5>
                         <p>
@@ -107,7 +107,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-12" style="display: none;" id="tab{{ $key }}" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
                     <div class="qa_txt_blocks">
                         <div class="qa_txt_single_blok">
-                        <img style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
+                        <img style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                             <br><br>
                             <h5 class="hue_blue">{{ $b->title }}</h5>
                             <p>
@@ -125,7 +125,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-12 showElement" id="tab{{ $key }}" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
                     <div class="qa_txt_blocks">
                         <div class="qa_txt_single_blok">
-                        <img style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
+                        <img style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                             <br><br>
                             <h5 class="hue_blue">{{ $b->title }}</h5>
                             <p>

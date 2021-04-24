@@ -204,6 +204,46 @@
 
 }
 
+.cv_corner_blue {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    background-image: url(../images/cvcornerblue.png);
+    top: 0%;
+    background-repeat: no-repeat;
+    left: 78.5%;
+}
+
+.cv_corner_blue_md3 {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    background-image: url(../images/cvcornerblue.png);
+    top: 0%;
+    background-repeat: no-repeat;
+    left: 70.5%;
+}
+
+.cv_corner_yellow {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    background-image: url(../images/cvcorneryellow.png);
+    top: 0%;
+    background-repeat: no-repeat;
+    left: 78.5%;
+}
+
+.cv_corner_yellow_md3 {
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    background-image: url(../images/cvcorneryellow.png);
+    top: 0%;
+    background-repeat: no-repeat;
+    left: 70.5%;
+}
+
 .custom-btn a {
     color: #143E5A;
     text-decoration: none;

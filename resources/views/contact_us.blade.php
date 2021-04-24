@@ -19,7 +19,7 @@
                                         </div>
                                         <div class="email_row">
                                             <h5 class="hue_blue">{{__("Email ")}}</h5>
-                                            <p>{{__("info@tesvan.com")}}</p>
+                                            <p>{{__("info at tesvan dot com")}}</p>
                                         </div>
                                     </div>
                                 </div>

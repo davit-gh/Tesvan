@@ -27,7 +27,11 @@
 </head>
 <body>
 
-
+    <style type="text/css">
+    .img-fluid {
+        border-radius: 20px;
+    }
+    </style>
     {{-- <div id="cover">
         <div class="pb-3">
             <span> Tesvan </span>
@@ -73,6 +77,43 @@
     <script type="text/javascript">
         const observer = lozad();
         observer.observe();
+
+        function detCurrentMenu(hash, pathname){
+            if (hash=="#banner"){
+                $("#menu_aboutus").css("text-decoration","underline #ffc107").css("font-weight","bold");
+            }
+            if (hash=="#co_workers"){
+                $("#menu_education").css("text-decoration","underline #ffc107").css("font-weight","bold");
+            }
+            if (pathname=="/job"){
+                $("#menu_job").css("text-decoration","underline #ffc107").css("font-weight","bold");
+            }
+            if (pathname=="/courses"){
+                $("#menu_courses").css("text-decoration","underline #ffc107").css("font-weight","bold");
+            }
+            if (pathname=="/projects"){
+                $("#menu_projects").css("text-decoration","underline #ffc107").css("font-weight","bold");
+            }
+            if (pathname=="/team"){
+                $("#menu_team").css("text-decoration","underline #ffc107").css("font-weight","bold");
+            }
+            if (pathname=="/blogs"){
+                $("#menu_blog").css("text-decoration","underline #ffc107").css("font-weight","bold");
+            }
+        }
+
+        var pathname = window.location.pathname;
+        var hash = window.location.hash;
+        detCurrentMenu(hash, pathname);
+
+        $(document).on("click",function(e){
+            var pathname = window.location.pathname;
+            var hash = window.location.hash;
+            detCurrentMenu(hash, pathname);
+        })
+        
+
+        console.log(URL);
     </script>
 
 </body>

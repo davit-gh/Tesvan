@@ -1,7 +1,7 @@
 <section id="QA">
     <div class="container">
         <div class="text-center QA_header_col">
-            <h2 class="hue_blue">{{__("Quality Assurance ")}}</h2>
+            <h2 class="hue_blue">{{__("Our Services")}}</h2>
             <p class="hue_black">{{__("Our team is excited by the opportunity to set new standard of quality for your software on all levels of complexity")}}
             </p>
         </div>

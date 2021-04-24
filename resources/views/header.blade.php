@@ -43,32 +43,32 @@
             <div class="menu-menu-container">
                 <ul id="menu-menu" class="navigation navbar-nav ml-auto flex-nowrap custom_menu">
                     <li id="menu-item-1" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1">
-                        <a href="{{ url('/#banner') }}" class="hue_blue">{{ __("About Us")}}</a>
+                        <a id="menu_aboutus" href="{{ url('/#banner') }}" class="hue_blue">{{ __("About Us")}}</a>
                     </li>
                     <li id="menu-item-2" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2">
-                        <a class="hue_blue" href="{{ url('job') }}">{{ __("Job")}}</a>
+                        <a id="menu_job" class="hue_blue" href="{{ url('job') }}">{{ __("Job")}}</a>
                     </li>
                     <li id="menu-item-3" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3">
-                        <a class="hue_blue" href="{{ url('courses') }}">{{ __("Courses")}} </a>
+                        <a id="menu_courses" class="hue_blue" href="{{ url('courses') }}">{{ __("Courses")}} </a>
                     </li>
                     <!-- <li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4">
                         <a href="{{ url('/#QA') }}" class="hue_blue">{{ __("Quality")}}</a>
                     </li> -->
                     <li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4">
-                        <a href="{{ route('projects') }}" class="hue_blue">{{ __("Projects")}}</a>
+                        <a id="menu_projects" href="{{ route('projects') }}" class="hue_blue">{{ __("Projects")}}</a>
                     </li>
                     <li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5">
-                        <a href="{{ url('/#co_workers') }}" class="hue_blue">{{ __("Partners")}}</a>
+                        <a id="menu_education" href="{{ url('/#co_workers') }}" class="hue_blue">{{ __("Education")}}</a>
                     </li>
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
-                        <a href="{{ route('teams') }}" class="hue_blue">{{ __("Team ")}}</a>
+                        <a id="menu_team" href="{{ route('teams') }}" class="hue_blue">{{ __("Team ")}}</a>
                     </li>
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
-                        <a href="{{ route('blogs') }}" class="hue_blue">{{ __("Blog")}}</a>
+                        <a id="menu_blog" href="{{ route('blogs') }}" class="hue_blue">{{ __("Blog")}}</a>
                     </li>
                     <li class="menu-btn menu-item menu-item-type-custom menu-item-object-custom
                menu-item-8" id="menu-item-8">
-                        <a href="{{ url('/#contact_us') }}" class="hue_blue">{{ __("Contact Us")}}</a>
+                        <a id="contact" href="{{ url('/#contact_us') }}" class="hue_blue">{{ __("Contact Us")}}</a>
                     </li>
                     <!-- Localizaton start-->
                     <li id="menu-item-9" class="flag menu-item menu-item-type-custom menu-item-object-custom menu-item-9">
