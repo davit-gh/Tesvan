@@ -37,7 +37,7 @@
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
                                 
-                                    <img class="lozad img-entry" src='{{ url("uploads/images/project/logo/$p->id/resize_$p->project_logo") }}'>
+                                    <img class="lozad img-entry" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
                                 
                             </div>
                         </a>
