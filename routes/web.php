@@ -203,4 +203,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Route::get('lang/{locale}', 'LocalizationController@index');
+Route::get('loc/lang/{locale}', 'LocalizationController@index');

@@ -28,13 +28,13 @@
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right flags_dropdown_menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item hue_blue" href="lang/en">
+                <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
                     <img src="{{asset('images/us.png')}}" width="33px" height="23px">
                     {{ __("English")}}</a>
-                <a class="dropdown-item hue_blue" href="lang/am">
+                <a class="dropdown-item hue_blue" href="{{ url('loc/lang/am') }}">
                     <img src="{{asset('images/am.png')}}" width="33px" height="23px">
                     {{ __("Armenian")}}</a>
-                <a class="dropdown-item hue_blue" href="lang/ru">
+                <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
                     <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
                     {{ __("Russian")}}</a>
             </div>
@@ -87,13 +87,13 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right flags_dropdown_menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item hue_blue" href="lang/en">
+                                    <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
                                         <img src="{{asset('images/us.png')}}" width="33px" height="23px">
                                         {{ __("English")}}</a>
-                                    <a class="dropdown-item hue_blue" href="lang/am">
+                                    <a class="dropdown-item hue_blue" href="{{ url('loc/lang/am') }}">
                                         <img src="{{asset('images/am.png')}}" width="33px" height="23px">
                                         {{ __("Armenian")}}</a>
-                                    <a class="dropdown-item hue_blue" href="lang/ru">
+                                    <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
                                         <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
                                         {{ __("Russian")}}</a>
                                 </div>
