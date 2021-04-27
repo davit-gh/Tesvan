@@ -630,7 +630,7 @@ class AdminController extends Controller
             'description'=>'required',
             'image'=>'required',
             'status'=>'required',
-            'category'=>'required!'
+            'category'=>'required'
         ];
 
         $validator = Validator::make($request->all(),$rule,$messages);
@@ -646,7 +646,8 @@ class AdminController extends Controller
             $p->description = $request->description;
             $p->status = $request->status;
             $p->category_id = $request->category;
-            $p->image = ""; 
+            $p->image = "";
+            $p->view = 0;
             if (strtolower($request->status)=="publish") {
                 $p->published_date = date("Y-m-d H:i:s");
             } else {
