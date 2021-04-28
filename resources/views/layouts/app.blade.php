@@ -80,25 +80,25 @@
 
         function detCurrentMenu(hash, pathname){
             if (hash=="#banner"){
-                $("#menu_aboutus").css("text-decoration","underline #ffc107").css("font-weight","bold");
+                $("#menu_aboutus").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
             if (hash=="#co_workers"){
-                $("#menu_education").css("text-decoration","underline #ffc107").css("font-weight","bold");
+                $("#menu_education").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
             if (pathname=="/job"){
-                $("#menu_job").css("text-decoration","underline #ffc107").css("font-weight","bold");
+                $("#menu_job").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
             if (pathname=="/courses"){
-                $("#menu_courses").css("text-decoration","underline #ffc107").css("font-weight","bold");
+                $("#menu_courses").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
             if (pathname=="/projects"){
-                $("#menu_projects").css("text-decoration","underline #ffc107").css("font-weight","bold");
+                $("#menu_projects").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
             if (pathname=="/team"){
-                $("#menu_team").css("text-decoration","underline #ffc107").css("font-weight","bold");
+                $("#menu_team").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
             if (pathname=="/blogs"){
-                $("#menu_blog").css("text-decoration","underline #ffc107").css("font-weight","bold");
+                $("#menu_blog").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
         }
 
