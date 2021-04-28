@@ -15,11 +15,11 @@
                                     <div class="form_contacts_txt_row">
                                         <div class="address_row">
                                             <h5 class="hue_blue">{{__("Address")}}</h5>
-                                            <p>{{__("Armenia, Sevan")}}</p>
+                                            <p style="font-size: 13px;">{{__("Armenia, Sevan")}}</p>
                                         </div>
                                         <div class="email_row">
                                             <h5 class="hue_blue">{{__("Email ")}}</h5>
-                                            <p>{{__("info at tesvan dot com")}}</p>
+                                            <p style="font-size: 13px;">{{__("info at tesvan dot com")}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -27,7 +27,7 @@
                                     <div class="icons_phone_col">
                                         <div class="phone_row">
                                             <h5 class="hue_blue">{{__("Phone Number")}}</h5>
-                                            <p>+(374) 96 88 23 08</p>
+                                            <p style="font-size: 13px;">+(374) 96 88 23 08</p>
                                         </div>
                                         <div class="icons_row">
                                             <div class="single-icon">
