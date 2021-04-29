@@ -151,7 +151,7 @@
         <div class="hire-us" id="hire_us">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <img src={{asset('images/hire_us_new.svg')}} alt="Hire Us" class="hire_us_svg home_page_header_svg">
+                    <img src={{asset('images/hire_us.png')}} alt="Hire Us" class="hire_us_svg home_page_header_svg">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 hire_us_col d-flex align-items-center">
                     <div class="hire_us_text">
