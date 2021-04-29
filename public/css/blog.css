@@ -104,15 +104,19 @@
     }
 }
 
-.qa_txt_single_blok {
-    width: 100%;
+.qa_txt_blocks{
     background: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.qa_txt_single_blok {
+    width: 100%;
     padding: 40px 36px 40px 36px;
 }
 
-.qa_txt_single_blok:hover {
+.qa_txt_blocks:hover {
     background: #CCEAFE;
     transition: 0.3s;
 }

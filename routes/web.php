@@ -75,6 +75,11 @@ Route::get('/team', [
     'as' => 'teams'
 ]);
 
+Route::get('team/cv/{file_name}',[
+    'uses'=>'HomeController@teamsCv',
+    'as'=>'team.cv'
+]);
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {

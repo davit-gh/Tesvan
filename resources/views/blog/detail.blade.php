@@ -8,6 +8,9 @@
     .qa_txt_blocks{
         cursor: pointer;
     }
+    .blog_description{    
+        margin-bottom: 40px;
+    }
 </style>
 
 @section('content')
@@ -27,12 +30,9 @@
 
         <div class="col-xl-12 col-lg-12 col-md-12">
             <div class="qa_txt_blocks">
-                <div class="qa_txt_single_blok">
-                <img style="max-height: 250px;" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
-                </div>
+                <img style="max-height: 350px;" width="100%" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
             </div>
         </div>
-      
         <div class="col-xl-7 col-lg-7 col-md-12">
             <div class="qa_txt_blocks">
                 <div class="qa_txt_single_blok">
@@ -42,8 +42,9 @@
                     <small>Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | By {{ $bd->user->name }}</small>
                     </p>
                     <p class="hue_black">
-                        {!! $bd->description !!}
-
+                        <div class="blog_description">
+                            {!! $bd->description !!}
+                        </div>
                         <a href="#">
                             <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
                         </a>
@@ -56,6 +57,8 @@
         </div>
 
         <div class="col-xl-5 col-lg-5 col-md-12">
+        <h4 class="hue_blue">Recent Articles</h4>
+            <br/>
             @if (count($blog)>0)
                 @foreach($blog as $key => $b)
                     <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
@@ -88,8 +91,8 @@
                 @foreach($blog_interest as $key => $b)
                     <div class="col-xl-4 col-lg-4 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
                         <div class="qa_txt_blocks">
-                            <div class="qa_txt_single_blok">
                             <img style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
+                            <div class="qa_txt_single_blok">
                             <h5 class="hue_blue">{{ $b->title }}</h5>
                             <p>
                                 <small>

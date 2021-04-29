@@ -211,6 +211,7 @@
     top: 0%;
     background-repeat: no-repeat;
     left: 78.5%;
+    cursor: pointer;
 }
 
 .cv_corner_blue_md3 {
@@ -221,6 +222,7 @@
     top: 0%;
     background-repeat: no-repeat;
     left: 70.5%;
+    cursor: pointer;
 }
 
 .cv_corner_yellow {
@@ -231,6 +233,7 @@
     top: 0%;
     background-repeat: no-repeat;
     left: 78.5%;
+    cursor: pointer;
 }
 
 .cv_corner_yellow_md3 {
@@ -241,6 +244,7 @@
     top: 0%;
     background-repeat: no-repeat;
     left: 70.5%;
+    cursor: pointer;
 }
 
 .custom-btn a {

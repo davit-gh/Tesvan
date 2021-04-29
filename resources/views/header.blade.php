@@ -87,15 +87,21 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right flags_dropdown_menu" aria-labelledby="navbarDropdown">
+                                    @if ($locale!="en")
                                     <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
                                         <img src="{{asset('images/us.png')}}" width="33px" height="23px">
                                         {{ __("English")}}</a>
+                                    @endif
+                                    @if ($locale!="am")
                                     <a class="dropdown-item hue_blue" href="{{ url('loc/lang/am') }}">
                                         <img src="{{asset('images/am.png')}}" width="33px" height="23px">
                                         {{ __("Armenian")}}</a>
+                                    @endif
+                                    @if ($locale!="ru")
                                     <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
                                         <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
                                         {{ __("Russian")}}</a>
+                                    @endif
                                 </div>
                             </li>
                         </ul>

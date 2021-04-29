@@ -4,11 +4,8 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="productive_col">
                     <h1 class="hue_blue">
-                        <span class="we_are_txt">{{__("We are")}}</span>
-                        <br class="br">
-                        {{__("highly-productive")}}
-                        <span class="hue_yellow tesvan_txt">{{__("Tesvan")}}</span>
-                        {{__("Team")}}
+                        <span class="we_are_txt">{{__("A Company Of ")}}</span>
+                        <span class="hue_yellow tesvan_txt">{{__("Quality")}}</span>
                     </h1>
                     <p class="hue_blue">{{__("We are highly-productive quality assurance team that appreciates clean and elegant solutions to multifaceted real-world business problems.")}}
                     </p>
@@ -154,20 +151,20 @@
         <div class="hire-us" id="hire_us">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <img src={{asset('images/hire_us.svg')}} alt="Hire Us" class="hire_us_svg home_page_header_svg">
+                    <img src={{asset('images/hire_us_new.svg')}} alt="Hire Us" class="hire_us_svg home_page_header_svg">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 hire_us_col d-flex align-items-center">
                     <div class="hire_us_text">
                         <h4 class="hire_us_h4 mb-4 hue_blue">{{__("Why Should You Hire Us ?")}}</h4>
                         <span class="mb-3 d-block hue_blue">
-                            {{__("Tesvan promotes job creation for smart, capable young people by preventing them from emigrating to the capital city and abroad.")}}
+                            {{__("Tesvan promotes job creation for smart, capable young people by preventing them from emigrating to the capital and abroad.")}}
                         </span>
                         <span class="mb-3 d-block hue_black">
-                            {{__("Our activity started in 2019.It pursued one goal: to develop the IT sector in the regions, giving practical training opportunities to the young generation of the region. Our goal is to contribute to the development of the IT sector in the Gegharkunik region, particularly in Sevan and its surrounding areas, to support the increase of the efficiency of the activities of young people who want to work in the field.")}}
+                            {{__("Our activity started in 2019. It pursued one goal: to develop the IT sector in the regions, giving practical training opportunities to the young generation of the region.")}}
 
                         </span>
                         <span class="mb-3 d-block hue_black">
-                            {{__("We will drive a new level of quality to your products and services by hunting down and reproducing the trickiest of bugs.We take the ownership of automating and streamlining the testing process for detecting issues, facilitating you to scale your products and features efficiently without sacrificing quality.")}}
+                            {{__("We will drive a new level of quality to your products and services by hunting down and reproducing the trickiest of bugs.")}}
                         </span>
                     </div>
                 </div>

@@ -48,6 +48,8 @@
                     </a>
                 </div>
                 <br/>
+                <div><a target="_blank" href="https://www.topdevelopers.co/directory/software-development-companies"><img src="https://www.topdevelopers.co/assets/badges/app-2021/Software-Development/rectangle-Top-Software-Development-Companies-2021.png" alt="Custom Software Development Companies" title="Custom Software Development Companies" style="height:150px;width:500px"></a></div>
+                <br/>
                 <p class="hue_black">{{__("Copyright © 2021 Tesvan LLC. All rights reserved.")}}</p>
         </div>
     </div>

@@ -111,7 +111,11 @@
             var hash = window.location.hash;
             detCurrentMenu(hash, pathname);
         })
-        
+
+        $(document).on("click",".go_to_cv",function(e){
+            cv_name = $(this).data("cv-name");
+            window.open('{{url("team/cv")}}'+"/"+cv_name);
+        });
 
         console.log(URL);
     </script>
