@@ -43,10 +43,10 @@
                                 <path d="m59 21h-2v-14h-4v-2h4c1.103 0 2 .897 2 2z" />
                             </svg>
                         </div>
-                        <h6 class="qa_h6">{{__("Manual QA")}}</h6>
+                        <h6 class="qa_h6">{{__("Quality Assurance")}}</h6>
                         <div class="qa_h6_text_cont">
                             <span class="qa_h6_text">
-                                {{__("Define, execute, and document manual tests, test data, and test results with necessary detail.")}}
+                                {{__("Developing extensive quality test systems for customers to ensure the highest quality models")}}
                             </span>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                         <h6 class="qa_h6">{{__("Free Courses")}}</h6>
                         <div class="qa_h6_text_cont">
                             <span class="qa_h6_text">
-                                {{__("Free courses provide practical training opportunities for the young generation of the region, as well as an opportunity to work in our fast-growing team")}}
+                                {{__("Free courses provide practical trainings giving opportunity to join our fast-growing team")}}
                             </span>
                         </div>
                     </div>
@@ -102,10 +102,10 @@
                                 <path d="m240 376h16v16h-16zm0 0" />
                             </svg>
                         </div>
-                        <h6 class="qa_h6">{{__("Job Opportunity")}}</h6>
+                        <h6 class="qa_h6">{{__("Job Provision")}}</h6>
                         <div class="qa_h6_text_cont">
                             <span class="qa_h6_text">
-                                {{__("We provide an opportunity for beginners with no work experience to join our team and become experienced and lead IT specialists")}}
+                                {{__("Providing an opportunity for beginners  with no work experience to join our team")}}
                             </span>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                             <h6 class="qa_h6">{{__("Volunteering")}}</h6>
                             <div class="qa_h6_text_cont">
                                 <span class="qa_h6_text">
-                                    {{__("Our team takes part in  volunteer work aimed at the conservation of nature, organizing campaigns which  develop the spirit of the team")}}
+                                    {{__("Organizing social campaigns that light up the teamwork spirit in millennials")}}
                                 </span>
                             </div>
                         </div>
