@@ -55,7 +55,7 @@ Route::get('/project/{project_name}', [
     'as' => 'project.detail'
 ]);
 
-Route::get('/blog/{name}/{id}', [
+Route::get('/blog/{name}', [
     'uses' => 'BlogController@detail',
     'as' => 'blog.detail'
 ]);

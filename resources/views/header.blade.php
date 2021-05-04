@@ -27,17 +27,7 @@
                     <img alt="arrow" src="{{asset('images/arrow.png')}}" />
                 </span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right flags_dropdown_menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
-                    <img src="{{asset('images/us.png')}}" width="33px" height="23px">
-                    {{ __("English")}}</a>
-                <a class="dropdown-item hue_blue" href="{{ url('loc/lang/am') }}">
-                    <img src="{{asset('images/am.png')}}" width="33px" height="23px">
-                    {{ __("Armenian")}}</a>
-                <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
-                    <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
-                    {{ __("Russian")}}</a>
-            </div>
+          
         </div>
         <div class="collapse navbar-collapse flex-row-reverse text-center" id="myNavbar">
             <div class="menu-menu-container">
@@ -87,10 +77,12 @@
                                     </span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right flags_dropdown_menu" aria-labelledby="navbarDropdown">
-                                    @if ($locale!="en")
-                                    <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
-                                        <img src="{{asset('images/us.png')}}" width="33px" height="23px">
-                                        {{ __("English")}}</a>
+                                    @if (isset($locale))
+                                        @if ($locale!="en")
+                                        <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
+                                            <img src="{{asset('images/us.png')}}" width="33px" height="23px">
+                                            {{ __("English")}}</a>
+                                        @endif
                                     @endif
                                     @if ($locale!="am")
                                     <a class="dropdown-item hue_blue" href="{{ url('loc/lang/am') }}">

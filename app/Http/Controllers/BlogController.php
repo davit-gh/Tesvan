@@ -9,6 +9,7 @@ use App\Models\ProjectResult;
 use App\Models\TechnologyTool;
 use App\Models\ClientFeedback;
 use App\Models\Blog;
+use Illuminate\Support\Facades\DB;
 
 use Mail;
 
@@ -23,10 +24,14 @@ class BlogController extends Controller
         return view('blog.blog',$data);
     }
 
-    public function detail($name, $id) {
-
-        $data['bd'] = Blog::where('id',$id)->first();
-    	$data['blog'] = Blog::where('id',"!=",$id)->get();
+    public function detail($name) {
+        $name = str_ireplace("-"," ",$name);
+        $data['bd'] = Blog::where(DB::raw('lower(title)'),'like','%'.$name.'%')->first();
+    	if (!$data['bd']){
+            abort(404);
+        }
+        $id = $data['bd']->id;
+        $data['blog'] = Blog::where('id',"!=",$id)->get();
         $data['blog_interest'] = Blog::where('id',"!=",$id)->get();
         $data['pathimage'] = url("uploads/images/blogs");
 

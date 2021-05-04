@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="col-xl-7 col-lg-7 col-md-12">
-            <div class="qa_txt_blocks">
+            <div>
                 <div class="qa_txt_single_blok">
                     <br><br>
                     <h5 class="hue_blue">{{ $bd->title }}</h5>
@@ -45,10 +45,10 @@
                         <div class="blog_description">
                             {!! $bd->description !!}
                         </div>
-                        <a href="#">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ \Request::fullUrl() }}">
                             <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
                         </a>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ \Request::fullUrl() }}">
                             <img width="30" height="30" src="{{url('images/linked_icon.png')}}"/>
                         </a>
                     </p>
@@ -122,7 +122,12 @@
 <script src="{{ url('js/customSlick.js') }}"></script>
 
 <script type="text/javascript">
-    
+    const title = "{{ $b->title }}";
+    const description = "{{ $b->description }}";
+    $('meta[name="title"]').attr('content', title);
+    $('meta[name="description"]').attr('content', description);
+    $('meta[property="og:title"]').attr('content', title);
+    $('meta[property="og:description"]').attr('content', description);
 </script>
 
 @endsection

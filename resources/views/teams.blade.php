@@ -89,7 +89,7 @@
                     <img src="{{asset('images/team_images/Mariam_H.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Mariam Harutyunyan")}}</h4>
                     <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
-                    <div data-cv-name="Mariam_Harutyunya.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <div data-cv-name="Mariam_Harutyunyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
                     <div class="layer hue_aqua"></div>
                 </div>
             </div>

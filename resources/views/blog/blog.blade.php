@@ -27,7 +27,7 @@
             @if (count($blog)>0)
                 @foreach($blog as $key => $b)
                     @if ($key==0)
-                    <div class="col-xl-7 col-lg-7 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
+                    <div class="col-xl-7 col-lg-7 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                         <div class="qa_txt_blocks">
                             <img style="max-height: 250px;max-width: 635px;" height="auto"  src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                                 <br><br>
@@ -46,7 +46,7 @@
                     </div>
                     @endif
                 @endforeach
-                    <div class="col-xl-5 col-lg-5 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
+                    <div class="col-xl-5 col-lg-5 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                         @foreach($blog as $key => $b)
                             @if ($key>0)
                             <div class="qa_txt_blocks">
@@ -75,7 +75,7 @@
 
         <div class="row">
             @foreach($blog_popular as $key => $b)
-            <div class="col-xl-4 col-lg-4 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
+            <div class="col-xl-4 col-lg-4 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                 <div class="qa_txt_blocks">
                     <img style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                     <div class="qa_txt_single_blok">
@@ -103,7 +103,7 @@
         <div class="row">
             @foreach($blog_recent as $key => $b)
             @if ($key>=6)
-                <div class="col-xl-4 col-lg-4 col-md-12" style="display: none;" id="tab{{ $key }}" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
+                <div class="col-xl-4 col-lg-4 col-md-12" style="display: none;" id="tab{{ $key }}" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                     <div class="qa_txt_blocks">
                         <img style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                             <div class="qa_txt_single_blok">
@@ -120,7 +120,7 @@
                     </div>
                 </div>
             @else
-                <div class="col-xl-4 col-lg-4 col-md-12 showElement" id="tab{{ $key }}" onclick="window.open('{{ url('blog').'/'.slug($b->title).'/'.$b->id }}');">
+                <div class="col-xl-4 col-lg-4 col-md-12 showElement" id="tab{{ $key }}" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                     <div class="qa_txt_blocks">
                         <img style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                             <div class="qa_txt_single_blok">
