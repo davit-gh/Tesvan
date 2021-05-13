@@ -4,7 +4,7 @@
     "Courses": "Курсы",
     "Quality": "Сервисы",
     "Co-Workers": "Коллеги",
-    "Team": "команда",
+    "Team": "Команда",
     "Request Demo": "Связаться с нами",
     "English": "Английский",
     "Armenian": "Армянский",
@@ -154,7 +154,9 @@
     "Register": "Отправить",
     "Your message was sent successfully.": "Ваш запрос был успешно отправлен.",
     "Thank You!": "Спасибо!",
-    "OK": "Хорошо"
-    
+    "OK": "Хорошо",
+    "Projects":"Проекты",
+    "Blog":"Блог",
+    "A company of Quality":"Компания Качества"
 }
 
