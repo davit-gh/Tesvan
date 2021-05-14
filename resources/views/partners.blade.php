@@ -48,7 +48,7 @@
             </div>
                 <div class="col-xl-2 col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
                     <div class="logos_col big_bang_col" onmouseover="hvr(this, 'in')" onmouseleave="hvr(this, 'out')">
-                        <img src="images/logo_black/sgames.png" data-col="g" class="img-responsive logo_imgs">
+                        <img src="images/logo_black/sgames.svg" data-col="g" class="img-responsive logo_imgs">
                         <img src="images/logo_colorfull/sgames.png" style="display:none" data-col="b" class="img-responsive logo_imgs">
                     </div>
                 </div>
