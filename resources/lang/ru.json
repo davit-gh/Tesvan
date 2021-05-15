@@ -2,7 +2,7 @@
     "About Us": "О нас",
     "Job": "Работа",
     "Courses": "Курсы",
-    "Quality": "Сервисы",
+    "Quality": "Качества",
     "Co-Workers": "Коллеги",
     "Team": "Команда",
     "Request Demo": "Связаться с нами",
@@ -157,6 +157,6 @@
     "OK": "Хорошо",
     "Projects":"Проекты",
     "Blog":"Блог",
-    "A company of Quality":"Компания Качества"
+    "A Company Of Quality":"Компания Качества",
+    "A Company Of":"Компания"
 }
-
