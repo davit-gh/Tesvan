@@ -59,7 +59,7 @@
                         </svg>
                         <h5 class="hue_blue">Manual QA</h5>
                         <p class="pl-3 pr-3 hue_blue">
-                            {{__("Establish clear expectations of scope and timing of all testing deliverables with the team. Define, execute, and document manual tests, test data, and test results with necessary detail")}}
+                            {{__("Define, execute, and document manual tests, test data, and test results with necessary detail.")}}
                         </p>
                     </div>
                     <div class="square_d text-center square_pt square_d_hov">
@@ -83,7 +83,7 @@
                         </svg>
                         <h5 class="hue_blue">CI/CD</h5>
                         <p class="pl-3 pr-3 hue_blue">
-                            {{__("Drive Automation, integrate with CI/CD pipelines. Deploy and troubleshoot on local, staging environments to enable testing on all levels.")}}
+                            {{__("Drive automation, integration with CI/CD pipelines")}}
                         </p>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         </svg>
                         <h5 class="hue_blue">Automation QA</h5>
                         <p class="hue_blue">
-                            {{__("We take into our hands and lead the development and implementation of Automated Testing to further enhance your product’s growth and shorten your deliver cycles.")}}
+                            {{__("Implement Automated Testing to enhance your product’s growth and shorten your deliver cycles.")}}
                         </p>
                     </div>
                     <div class="square_d text-center square_pt square_d_hov">
@@ -141,7 +141,7 @@
                         </svg>
                         <h5 class="hue_blue">UI/UX</h5>
                         <p class="pl-3 pr-3 hue_blue">
-                            {{__("Understand product specifications and user psychology, develop wireframes and prototypes around customer needs. Implement attractive design finding creative ways to solve UX problems and following modern trends.")}}
+                            {{__("Understand product specifications, develop wireframes and prototypes around customer needs.")}}
                         </p>
                     </div>
                 </div>

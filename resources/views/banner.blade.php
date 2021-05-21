@@ -150,7 +150,20 @@
         </div>
         <div class="hire-us" id="hire_us">
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                <div style="
+                width: 530px;
+                height: 420px;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 25px rgb(0 0 0 / 10%);
+                border-radius: 12px;
+                background-image: url(images/rectangle.png);
+                background-repeat: no-repeat;
+                background-size: 525px 415px;
+                position: absolute;
+                left: 150px;
+                ">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">        
                     <img src={{asset('images/hire_us.png')}} alt="Hire Us" class="hire_us_svg home_page_header_svg">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 hire_us_col d-flex align-items-center">

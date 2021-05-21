@@ -148,7 +148,7 @@
         <div class="container showMoreContainer">
             <div class="text-center job_hire_text_col" style="padding: 49px;">
                 <div class="custom-btn">
-                    <a id="showMore" href="#">Load More</a>
+                    <a id="showMore" class="hue_bg_b hue_blue" href="#">Load More</a>
                 </div>
             </div>
         </div>

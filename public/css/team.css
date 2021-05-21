@@ -204,7 +204,7 @@
 }
 
 .cv_corner_blue {
-    width: 100%;
+    width: 58px;
     position: absolute;
     bottom: 0%;
     background-image: url(../images/cvcornerblue.png);
@@ -212,10 +212,11 @@
     background-repeat: no-repeat;
     left: 78.5%;
     cursor: pointer;
+    height: 39px;
 }
 
 .cv_corner_blue_md3 {
-    width: 100%;
+    width: 58px;
     position: absolute;
     bottom: 0%;
     background-image: url(../images/cvcornerblue.png);
@@ -223,10 +224,11 @@
     background-repeat: no-repeat;
     left: 70.5%;
     cursor: pointer;
+    height: 39px;
 }
 
 .cv_corner_yellow {
-    width: 100%;
+    width: 58px;
     position: absolute;
     bottom: 0%;
     background-image: url(../images/cvcorneryellow.png);
@@ -234,10 +236,11 @@
     background-repeat: no-repeat;
     left: 78.5%;
     cursor: pointer;
+    height: 39px;
 }
 
 .cv_corner_yellow_md3 {
-    width: 100%;
+    width: 58px;
     position: absolute;
     bottom: 0%;
     background-image: url(../images/cvcorneryellow.png);
@@ -245,6 +248,7 @@
     background-repeat: no-repeat;
     left: 70.5%;
     cursor: pointer;
+    height: 39px;
 }
 
 .custom-btn a {

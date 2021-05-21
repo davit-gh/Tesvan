@@ -1271,3 +1271,8 @@
 	box-sizing: border-box;
 	border-radius: 6px;"
 }
+
+.custom-btn a:hover {
+    background: #FFFFFF;
+    color: #143E5A;
+}

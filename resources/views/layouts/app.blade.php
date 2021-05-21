@@ -65,7 +65,7 @@
         </a>
     </div>
 
-    <footer class="hue_bg_grey">
+    <footer class="hue_bg_grey" style="width: auto !important;">
         @include('footer')
     </footer>
 
