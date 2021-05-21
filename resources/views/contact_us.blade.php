@@ -17,10 +17,10 @@
                                             <h5 class="hue_blue">{{__("Address")}}</h5>
                                             <p style="font-size: 13px;">{{__("Armenia, Sevan")}}</p>
                                         </div>
-                                        <div class="email_row">
+                                        <!-- <div class="email_row">
                                             <h5 class="hue_blue">{{__("Email ")}}</h5>
                                             <p style="font-size: 13px;">{{__("info at tesvan dot com")}}</p>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="col-x1-4 col-lg-5 col-md-5 col-6 offset-xl-2 offset-lg-1">
