@@ -24,6 +24,9 @@
     ul.list_project {
         line-height: 25px;
     }
+    .ability_col{
+        margin-bottom: 20px;
+    }
 </style>
 
 @endsection
@@ -36,7 +39,7 @@
     <div class="container">
         <div class="row flex-wrap" style="padding: 40px;">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <img src={{asset('images/why_we.png')}} alt="Job" class="job_page_header_svg maxImage">
+                <img src='{{ url("uploads/images/project/logo/$project->id/$project->project_logo") }}' alt="Job" class="job_page_header_svg maxImage">
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
@@ -50,17 +53,20 @@
             </div>
         </div>
         <div class="row flex-wrap">
-            <div class="newLine col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
+            <div class="newLine col-xl-6 col-lg-6 col-md-12 col-sm-12 home_page_col">
                 <div class="project-overview-title">
                     Objectives
                 </div>
                 <div class="project-overview-description" align="left">
                 @if (count($project_objective)>0)
-                    <ul class="list_project" align="left">
-                        @foreach($project_objective as $pr)
-                            <li><span class="entry">{{ $pr->objective }}</span></li>
-                        @endforeach
-                    </ul>
+                    @foreach($project_objective as $pr)
+                    <div class="ability_col">
+                        <img alt="Circle Yellow" src="/images/circle_yellow.svg">
+                        <span class="hue_black">
+                            {{ $pr->objective }}
+                        </span>
+                    </div>
+                    @endforeach
                 @endif
                 </div>
             </div>
