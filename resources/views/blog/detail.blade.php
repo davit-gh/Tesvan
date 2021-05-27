@@ -11,6 +11,9 @@
     .blog_description{    
         margin-bottom: 40px;
     }
+    .bradius{
+        border-radius: 12px;
+    }
 </style>
 
 @section('content')
@@ -30,7 +33,7 @@
 
         <div class="col-xl-12 col-lg-12 col-md-12">
             <div class="qa_txt_blocks">
-                <img style="max-height: 350px;" width="100%" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
+                <img class="bradius" style="max-height: 350px;" width="100%" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
             </div>
         </div>
         <div class="col-xl-7 col-lg-7 col-md-12">
@@ -91,7 +94,7 @@
                 @foreach($blog_interest as $key => $b)
                     <div class="col-xl-4 col-lg-4 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                         <div class="qa_txt_blocks">
-                            <img style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
+                            <img class="bradius" style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                             <div class="qa_txt_single_blok">
                             <h5 class="hue_blue">{{ $b->title }}</h5>
                             <p>

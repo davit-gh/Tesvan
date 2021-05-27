@@ -16,7 +16,7 @@
                         <a style="margin: 20px;" href="{{ url('projects') }}" class="hue_black">{{__("Projects")}}</a>
                         <a style="margin: 20px;" href="{{ url('team') }}" class="hue_black">{{__("Team")}}</a>
                         <a style="margin: 20px;" href="{{ url('blogs') }}" class="hue_black">{{__("Blog")}}</a>
-                        <a style="margin: 20px;" href="#contacts" class="hue_black">{{__("Contacts")}}</a>
+                        <a style="margin: 20px;" href="{{ url('/#contact_us') }}" class="hue_black">{{__("Contacts")}}</a>
                     </div>
                 </div>
                 <br/><br/>
