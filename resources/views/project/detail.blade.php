@@ -15,7 +15,7 @@
         word-wrap: break-word;
     }
     .maxImage {
-        max-height:470px;
+        max-width: 450px;
     }
     .entry{
         position: relative;
