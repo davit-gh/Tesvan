@@ -101,7 +101,7 @@
         <div class="row flex-wrap" style="padding: 40px;">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="project-overview-title">
-                    Result
+                    Results
                 </div>
                 <div class="newLine project-overview-description" align="left">
                     {{ $project->project_result_desc }}
@@ -110,12 +110,27 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col" style="padding: 40px;position: relative;
     top: 90px;">
                 @if (count($project_result)>0)
-                    <ul class="newLine list_project" align="left">
-                        @foreach($project_result as $pr)
-                            <li><span class="entry">{{ $pr->result }}</span></li>
+                    
+                        @foreach($project_result as $k => $pr)
+                            @if($k > 4)
+                                <div class="ability_col">
+                                    <img alt="Circle Yellow" src="/images/circle_yellow.svg">
+                                    <span class="hue_black">
+                                        {{ $pr->result }}
+                                    </span>
+                                </div>
+                            @else
+                                <div class="ability_col">
+                                    <img width="25px" alt="Circle Yellow" src="/images/results/{{ $k + 1 }}.png">
+                                    <span class="hue_black">
+                                        {{ $pr->result }}
+                                    </span>
+                                </div>
+                            @endif
                         @endforeach
-                    </ul>
+                    
                 @endif
+                
             </div>
         </div>
         @endif
