@@ -107,24 +107,20 @@
                     {{ $project->project_result_desc }}
                 </div>
             </div>            
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col" style="padding: 40px;position: relative;
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 home_page_col" style="padding: 40px;position: relative;
     top: 90px;">
                 @if (count($project_result)>0)
                     
                         @foreach($project_result as $k => $pr)
-                            @if($k > 4)
+                            @if($k >= 4)
                                 <div class="ability_col">
                                     <img alt="Circle Yellow" src="/images/circle_yellow.svg">
-                                    <span class="hue_black">
-                                        {{ $pr->result }}
-                                    </span>
+                                    <span class="hue_black"> {{ $pr->result }}</span>
                                 </div>
                             @else
                                 <div class="ability_col">
-                                    <img width="25px" alt="Circle Yellow" src="/images/results/{{ $k + 1 }}.png">
-                                    <span class="hue_black">
-                                        {{ $pr->result }}
-                                    </span>
+                                    <img width="18px" alt="Circle Yellow" src="/images/results/{{ $k + 1 }}.png">
+                                    <span class="hue_black"> {{ $pr->result }}</span>
                                 </div>
                             @endif
                         @endforeach
