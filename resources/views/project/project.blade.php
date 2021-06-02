@@ -9,7 +9,13 @@
 
 
 @section('content')
-
+<style type="text/css">
+.custom-btn a:hover {
+    background: #FFFFFF;
+    color: #143E5A;
+    border: 1px solid #143E5A;
+}
+</style>
 <section id="job_hire" class="project-management">
     <div class="container">
         <div class="text-center job_hire_text_col">
