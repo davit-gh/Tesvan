@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row flex-wrap" style="padding: 40px;">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <img src='{{ url("uploads/images/project/logo/$project->id/$project->project_logo") }}' alt="Job" class="job_page_header_svg maxImage">
+                <img style="height: auto;" src='{{ url("uploads/images/project/logo/$project->id/$project->project_logo") }}' alt="Job" class="job_page_header_svg maxImage">
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
@@ -103,12 +103,11 @@
                 <div class="project-overview-title">
                     Results
                 </div>
-                <div class="newLine project-overview-description" align="left">
+                <div class="newLine project-overview-description" align="left" style="position: relative;bottom: 30px;">
                     {{ $project->project_result_desc }}
                 </div>
             </div>            
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 home_page_col" style="padding: 40px;position: relative;
-    top: 90px;">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 home_page_col" style="padding: 40px;position: relative;">
                 @if (count($project_result)>0)
                     
                         @foreach($project_result as $k => $pr)
@@ -119,7 +118,7 @@
                                 </div>
                             @else
                                 <div class="ability_col">
-                                    <img width="18px" alt="Circle Yellow" src="/images/results/{{ $k + 1 }}.png">
+                                    <img width="22px" alt="Circle Yellow" src="/images/results/{{ $k + 1 }}.png">
                                     <span class="hue_black"> {{ $pr->result }}</span>
                                 </div>
                             @endif
