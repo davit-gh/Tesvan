@@ -15,15 +15,23 @@
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  
   .banhireus {
     width: 460px;
     height: 365px;
     background-size: 460px 360px;
     left: 30px;
   }
-
 }
+
+@media only screen and (max-width: 640px) {
+    .banhireus {
+    width: 370px;
+    height: 300px;
+    background-size: 365px 290px;
+    left: 30px;
+  }
+}
+
 </style>
 
 <section id="banner">
