@@ -32,6 +32,15 @@
   }
 }
 
+@media only screen and (max-width: 360px) {
+    .banhireus {
+        width: 325px;
+        height: 255px;
+        background-size: 325px 250px;
+        left: 30px;
+    }
+}
+
 </style>
 
 <section id="banner">
