@@ -438,3 +438,17 @@
      position: absolute;
      margin-top: 20px;
  }
+
+ /* new style 10 june */
+ .attach_cv{
+    background: url("../images/attach-file.svg")!important;
+    background-repeat: no-repeat!important;
+    background-position: right 14px center!important;
+    background-size: 18px !important;
+ }
+ .cv-cross-icon{
+    background: url("../images/cross-error-icon.svg")!important;
+    background-repeat: no-repeat!important;
+    background-position: right 14px center!important;
+    background-size: 18px !important;
+ }

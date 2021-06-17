@@ -67,7 +67,7 @@
                                             <input name="city" type="text" class="city form-control apply_custom_form_input" maxlength="50" id="city" onblur="cityValidate()">
                                             <div id="cityStatus" class="invalid-feedback">{{("City field is required")}}</div>
                                         </div>
-                                        <button data-next-id="form_apply" validationApplyDiv="apply" type="button" class="job_btn job_next_btn apply_continue button button-action hue_blue">{{__("Next")}}</button>
+                                        <button data-next-id="form_apply" validationApplyDiv="apply" type="submit" class="job_btn job_next_btn apply_continue button button-action hue_blue">{{__("Next")}}</button>
                                     </div>
                                     <div id="form_apply" class="apply_wizard">
                                         <div class="pt-2"></div>

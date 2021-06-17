@@ -55,6 +55,15 @@ Route::get('/project/{project_name}', [
     'as' => 'project.detail'
 ]);
 
+Route::get('/education', [
+    'uses' => 'EducationController@index',
+    'as' => 'education'
+]);
+Route::get('/education/{education_name}', [
+    'uses' => 'EducationController@list',
+    'as' => 'education.list'
+]);
+
 Route::get('/blog/{name}', [
     'uses' => 'BlogController@detail',
     'as' => 'blog.detail'
@@ -165,10 +174,6 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-
-
-
-
     Route::get('/admin/category/index', [
         'uses' => 'AdminController@categories',
         'as' => 'admin.category.index'
@@ -202,6 +207,36 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/deleteCategory', [
         'uses' => 'AdminController@deleteCategory',
         'as' => 'category.delete'
+    ]);
+    
+    
+    Route::get('/admin/education-category/index', [
+        'uses' => 'AdminController@educationCategories',
+        'as' => 'admin.education-categories.index'
+    ]);
+    Route::get('/admin/education-category-dt', [
+        'uses' => 'AdminController@educationCategoryDatatable',
+        'as' => 'education-category.dt'
+    ]);
+    Route::get('/admin/education-category/create', [
+        'uses' => 'AdminController@educationCategoryCreate',
+        'as' => 'admin.education-category.create'
+    ]);
+    Route::post('/storeEducationCategory', [
+        'uses' => 'AdminController@storeEducationCategory',
+        'as' => 'education-category.store'
+    ]);
+    Route::get('/education-category-edit/{id}', [
+        'uses' => 'AdminController@educationCategoryEdit',
+        'as' => 'education-category.edit'
+    ]);
+    Route::post('/updateEducationCategory', [
+        'uses' => 'AdminController@updateEducationCategory',
+        'as' => 'education-category.update'
+    ]);
+    Route::post('/deleteEducationCategory', [
+        'uses' => 'AdminController@deleteEducationCategory',
+        'as' => 'education-category.delete'
     ]);
 
 

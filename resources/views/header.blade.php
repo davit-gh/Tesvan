@@ -20,22 +20,44 @@
             </div>
         </div>
         <div class="nav-item dropdown d-lg-none _flag_row">
-            <a id="navbarDropdown" class="_flag" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre="v-pre">
-                @switch($locale)
-                @case('am')
-                <img src="{{asset('images/am.png')}}" width="33px" height="22px">
-                @break
-                @case('ru')
-                <img src="{{asset('images/ru.png')}}" width="33px" height="22px">
-                @break
-                @default
-                <img src="{{asset('images/us.png')}}" width="33px" height="22px">
-                @endswitch
-                <span class="arrow_img">
-                    <img alt="arrow" src="{{asset('images/arrow.png')}}" />
-                </span>
-            </a>
-          
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre="v-pre">
+                        @switch($locale) @case('am')
+                        <img src="{{asset('images/am.png')}}" width="33px" height="22px">
+                        @break @case('ru')
+                        <img src="{{asset('images/ru.png')}}" width="33px" height="22px">
+                        @break @default
+                        <img src="{{asset('images/us.png')}}" width="33px" height="22px">
+                        @endswitch
+                        <span class="arrow_img">
+                            <img alt="arrow" src="{{asset('images/arrow.png')}}" />
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right flags_dropdown_menu" aria-labelledby="navbarDropdown">
+                        @if (isset($locale))
+                            @if ($locale!="en")
+                            <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
+                                <img src="{{asset('images/us.png')}}" width="33px" height="23px">
+                                <!--{{ __("English")}}-->English
+                            </a>
+                            @endif
+                        @endif
+                        @if ($locale!="am")
+                        <a class="dropdown-item hue_blue" href="{{ url('loc/lang/am') }}">
+                            <img src="{{asset('images/am.png')}}" width="33px" height="23px">
+                            <!--{{ __("Armenian")}}-->Հայերեն
+                        </a>
+                        @endif
+                        @if ($locale!="ru")
+                        <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
+                            <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
+                            <!--{{ __("Russian")}}-->Русский 
+                        </a>
+                        @endif
+                    </div>
+                </li>
+            </ul>  
         </div>
         <div class="collapse navbar-collapse flex-row-reverse text-center" id="myNavbar">
             <div class="menu-menu-container">
@@ -56,7 +78,7 @@
                         <a id="menu_projects" href="{{ route('projects') }}" class="sembold hue_blue">{{ __("Projects")}}</a>
                     </li>
                     <li id="menu-item-5" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5">
-                        <a id="menu_education" href="{{ url('/#co_workers') }}" class="sembold hue_blue">{{ __("Education")}}</a>
+                        <a id="menu_education" href="{{ url('education') }}" class="sembold hue_blue">{{ __("Education")}}</a>
                     </li>
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
                         <a id="menu_team" href="{{ route('teams') }}" class="sembold hue_blue">{{ __("Team ")}}</a>
@@ -89,18 +111,21 @@
                                         @if ($locale!="en")
                                         <a class="dropdown-item hue_blue" href="{{ url('loc/lang/en') }}">
                                             <img src="{{asset('images/us.png')}}" width="33px" height="23px">
-                                            {{ __("English")}}</a>
+                                            <!--{{ __("English")}}-->English
+                                        </a>
                                         @endif
                                     @endif
                                     @if ($locale!="am")
                                     <a class="dropdown-item hue_blue" href="{{ url('loc/lang/am') }}">
                                         <img src="{{asset('images/am.png')}}" width="33px" height="23px">
-                                        {{ __("Armenian")}}</a>
+                                        <!--{{ __("Armenian")}}-->Հայերեն
+                                    </a>
                                     @endif
                                     @if ($locale!="ru")
                                     <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
                                         <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
-                                        {{ __("Russian")}}</a>
+                                        <!--{{ __("Russian")}}-->Русский 
+                                    </a>
                                     @endif
                                 </div>
                             </li>

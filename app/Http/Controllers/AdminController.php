@@ -10,6 +10,7 @@ use App\Models\TechnologyTool;
 use App\Models\ClientFeedback;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\EducationCategory;
 use Illuminate\Support\Facades\Auth;
 use DataTables;
 use Illuminate\Support\Facades\Validator;
@@ -18,7 +19,6 @@ use Intervention\Image\ImageManagerStatic as Image;
 class AdminController extends Controller
 {
     //
-
     public function index() {
         return view('admin/admin');
     }
@@ -646,6 +646,7 @@ class AdminController extends Controller
             $p->description = $request->description;
             $p->status = $request->status;
             $p->category_id = $request->category;
+            $p->created_by = $request->created_by;
             $p->image = "";
             $p->view = 0;
             if (strtolower($request->status)=="publish") {
@@ -727,6 +728,7 @@ class AdminController extends Controller
             $p->description = $request->description;
             $p->category_id = $request->category;
             $p->status = $request->status;
+            $p->created_by = $request->created_by;
             if (strtolower($request->status)=="publish") {
                 if (strlen($p->published_date) < 5 || strtolower($p->status)=="draft"){
                     $p->published_date = date("Y-m-d H:i:s");
@@ -869,6 +871,87 @@ class AdminController extends Controller
             $id = $request->id;      
             Category::where('id',$id)->delete();
             \Session::flash('success', 'Succesfully deleted category!'); 
+            return response()->json('success', 200);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+    
+    public function educationCategories(Request $request){
+        return view('admin/education-categories');
+    }
+    public function educationCategoryDatatable(Request $request){
+        $category = EducationCategory::orderBy("id","desc")->get();
+        return DataTables::of($category)
+            ->editColumn('name',function($d){
+                return $this->limitWord($d->name);
+            })
+            ->addColumn('action','
+            <a href="{{ route("education-category.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+            ')
+            ->rawColumns(['image','action','description'])
+            ->make(true);
+    }
+    public function educationCategoryCreate(Request $request){
+        return view('admin/education-category-create');
+    }
+    public function storeEducationCategory(Request $request) {
+        $messages = [
+            'name.required' => 'Education category name required!'
+        ];
+        $rule = [
+            'name'=>'required'
+        ];
+        $validator = Validator::make($request->all(),$rule,$messages);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        try {
+
+            $p = new EducationCategory;
+            $p->name = $request->name;
+            $p->save();
+
+            \Session::flash('success', 'Succesfully added education category!'); 
+            return redirect(route('admin.education-categories.index'))->with(['success' => 'Succesfully added education category!']);
+
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+    public function educationCategoryEdit($id){
+        $data['category'] = EducationCategory::where("id",$id)->first();
+        return view('admin/education-category-edit',$data);
+    }
+    public function updateEducationCategory(Request $request) {
+        $messages = [
+            'name.required' => 'Education Category name required!'
+        ];
+        $rule = [
+            'name'=>'required'
+        ];
+        $validator = Validator::make($request->all(),$rule,$messages);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        try {
+
+            $p = EducationCategory::find($request->id);
+            $p->name = $request->name;
+            $p->save();
+
+            \Session::flash('success', 'Succesfully update education category!'); 
+            return redirect(route('admin.education-categories.index'))->with(['success' => 'Succesfully update education category!']);
+
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+    public function deleteEducationCategory(Request $request) {
+        try {
+            $id = $request->id;      
+            EducationCategory::where('id',$id)->delete();
+            \Session::flash('success', 'Succesfully deleted education category!'); 
             return response()->json('success', 200);
         } catch (Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);

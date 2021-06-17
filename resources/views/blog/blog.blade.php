@@ -60,8 +60,12 @@
                                             {{ date("M d, Y", strtotime($b->published_date)) }}
                                         </small>
                                     </p>
-                                    <p class="hue_black">
-                                        By {{ $b->user->name }}
+                                    <p class="hue_black">By
+                                        @if(!empty($b->created_by)) 
+                                            {{ $b->created_by }} 
+                                        @else
+                                            {{ $b->user->name }} 
+                                        @endif
                                     </p>
                                 </div>
                             </div>

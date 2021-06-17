@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCollViewAndCategories extends Migration
+class AddCreatedByToBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,7 @@ class AddCollViewAndCategories extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
-            $table->bigInteger('view')->default(0);             
+            $table->string('created_by')->nullable();
         });
     }
 
@@ -27,6 +25,8 @@ class AddCollViewAndCategories extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('blogs', function (Blueprint $table) {
+            //
+        });
     }
 }

@@ -24,7 +24,12 @@
             <h2 class="hue_blue">{{ $bd->title }}</h2>
             <p>
                 <small>
-                   Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | Created By {{ $bd->user->name }}
+                    Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | Created By 
+                    @if(!empty($bd->created_by)) 
+                        {{ $bd->created_by }} 
+                    @else
+                        {{ $bd->user->name }} 
+                    @endif
                 </small>
             </p>
         </div>
@@ -42,7 +47,14 @@
                     <br><br>
                     <h5 class="hue_blue">{{ $bd->title }}</h5>
                     <p>
-                    <small>Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | By {{ $bd->user->name }}</small>
+                    <small>
+                        Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | By 
+                        @if(!empty($bd->created_by)) 
+                            {{ $bd->created_by }} 
+                        @else
+                            {{ $bd->user->name }} 
+                        @endif
+                    </small>
                     </p>
                     <p class="hue_black">
                         <div class="blog_description">
@@ -75,8 +87,12 @@
                             <p class="hue_black">
                                 {{ limitWord(strip_tags($b->description)) }}
                             </p>
-                            <p class="hue_black">
-                                By {{ $b->user->name }}
+                            <p class="hue_black">By 
+                                @if(!empty($bd->created_by)) 
+                                    {{ $bd->created_by }} 
+                                @else
+                                    {{ $bd->user->name }} 
+                                @endif
                             </p>
                         </div>
                     </div>
