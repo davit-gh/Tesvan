@@ -239,8 +239,6 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'education-category.delete'
     ]);
 
-
 });
-
 
 Route::get('loc/lang/{locale}', 'LocalizationController@index');
