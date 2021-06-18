@@ -203,9 +203,8 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'AdminController@deleteCategory',
         'as' => 'category.delete'
     ]);
-
+    
 
 });
-
 
 Route::get('loc/lang/{locale}', 'LocalizationController@index');
