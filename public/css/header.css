@@ -100,7 +100,7 @@ header ul .menu-btn a {
 }
 
 header ul .menu-btn a:hover {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     background: #143E5A;
 }
 
