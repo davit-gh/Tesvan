@@ -12,7 +12,7 @@
     <link rel="icon" href="{{ url('/uploads/2020/05/logo.png') }}" sizes="192x192">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ url('merged.css') }}?v={{ strtotime(date('YmdHis')) }}"/>
+    <link rel="stylesheet" href="{{ mix('merged.css') }}?v={{ strtotime(date('YmdHis')) }}"/>
     @yield('styles')
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
