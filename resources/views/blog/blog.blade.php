@@ -9,7 +9,8 @@
         cursor: pointer;
     }
     .bradius{
-        border-radius: 12px;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
     }
 </style>
 
@@ -23,7 +24,7 @@
 
         <div class="row hire_row container-content">
 
-            
+
         </div>
 
         <div class="row">
@@ -61,10 +62,10 @@
                                         </small>
                                     </p>
                                     <p class="hue_black">By
-                                        @if(!empty($b->created_by)) 
-                                            {{ $b->created_by }} 
+                                        @if(!empty($b->created_by))
+                                            {{ $b->created_by }}
                                         @else
-                                            {{ $b->user->name }} 
+                                            {{ $b->user->name }}
                                         @endif
                                     </p>
                                 </div>
@@ -160,7 +161,7 @@
             </div>
         </div>
     @endif
-    
+
 </section>
 
 
@@ -187,7 +188,7 @@
              if (i==totalDb){
                 $(".showMoreContainer").hide();
              }
-        } 
+        }
     });
 </script>
 
