@@ -34,7 +34,7 @@
             <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="flag_row">
                     <svg class="flag_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="190" height="126" viewBox="0 0 190 126" fill="none">
-                        <rect width="190" height="125.683" rx="8" fill="url(#pattern1)" />
+                        <rect width="190" height="126" rx="8" fill="url(#pattern1)" />
                         <defs>
                             <pattern id="pattern1" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image1" transform="translate(0 -0.244898) scale(0.00195312 0.00291545)" />
@@ -53,7 +53,7 @@
             <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="flag_row">
                     <svg class="flag_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="190" height="126" viewBox="0 0 190 126" fill="none">
-                        <rect width="190" height="125.689" rx="8" fill="url(#pattern2)" />
+                        <rect width="190" height="126" rx="8" fill="url(#pattern2)" />
                         <defs>
                             <pattern id="pattern2" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image2" transform="translate(0 -0.244186) scale(0.00195312 0.00290698)" />
@@ -71,8 +71,8 @@
 
             <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="flag_row">
-                <img style="height: 107px;position: relative; top: 10px;" src="/images/flags/ukraine.png"></img>
-                    <span style="position: relative; top: 20px !important;" class="flag_txt hue_blue">{{__("Ukraine")}}</span>
+                <img src="/images/flags/ukraine.png"></img>
+                    <span class="flag_txt hue_blue">{{__("Ukraine")}}</span>
                 </div>
             </div>
 
@@ -82,8 +82,8 @@
 
             <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="flag_row">
-                    <svg class="flag_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="187" height="126" viewBox="0 0 187 126" fill="none">
-                        <rect width="187" height="125.68" rx="8" fill="url(#patternSweden)" />
+                    <svg class="flag_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="190" height="126" viewBox="0 0 187 126" fill="none">
+                        <rect width="190" height="126" rx="8" fill="url(#patternSweden)" />
                         <defs>
                             <pattern id="patternSweden" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#imageSweden" transform="translate(0 -0.248) scale(0.00195312 0.00292187)" />
@@ -102,7 +102,7 @@
             <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="flag_row">
                     <svg class="flag_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="190" height="126" viewBox="0 0 190 126" fill="none">
-                        <rect width="190" height="125.683" rx="8" fill="url(#pattern5)" />
+                        <rect width="190" height="126" rx="8" fill="url(#pattern5)" />
                         <defs>
                             <pattern id="pattern5" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image5" transform="translate(0 -0.255635) scale(0.00195312 0.00292989)" />
