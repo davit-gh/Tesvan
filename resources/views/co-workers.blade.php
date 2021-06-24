@@ -71,7 +71,20 @@
 
             <div class="col-xl-2 col-lg-2 col-md-4 col-6">
                 <div class="flag_row">
-                <img src="/images/flags/ukraine.png"></img>
+                    <svg class="flag_svg" width="187" height="126" viewBox="0 0 187 126" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="187" height="126">
+                            <rect width="187" height="126" rx="8" fill="#C4C4C4"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <rect x="-16" y="-37.9854" width="219" height="202.897" rx="8" fill="url(#ukraine-pattern)"/>
+                        </g>
+                        <defs>
+                            <pattern id="ukraine-pattern" patternContentUnits="objectBoundingBox" width="1" height="1">
+                                <use xlink:href="#ukraine-img" transform="translate(0 -0.0396825) scale(0.00456621 0.00492861)"/>
+                            </pattern>
+                            <image id="ukraine-img" width="219" height="219" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANsAAADbCAYAAADkg+RAAAAABHNCSVQICAgIfAhkiAAABdpJREFUeF7t071RVmEYRdHv1kIJVsCMpJZBagcUQEZoBWZ2oREFOBKSk2Dmz2VoYidn3QbOPOu9+7j4CBBIBI5kxQgBAhex+QkIRAJii6DNEBCbf4BAJCC2CNoMAbH5BwhEAmKLoM0QEJt/gEAkILYI2gwBsfkHCEQCYougzRAQm3+AQCQgtgjaDAGx+QcIRAJii6DNEBCbf4BAJCC2CNoMAbH5BwhEAmKLoM0QEJt/gEAkILYI2gwBsfkHCEQCYougzRAQm3+AQCQgtgjaDAGx+QcIRAJii6DNEBCbf4BAJCC2CNoMAbH5BwhEAsftl+9X0ZYZArMCv//9fzluHp6/zQo4nEAlcB5fjw/3r2e1Z4fArMB5uRPb7Os7PBUQW8ptbFlAbMuv7/ZUQGwpt7FlAbEtv77bUwGxpdzGlgXEtvz6bk8FxJZyG1sWENvy67s9FRBbym1sWUBsy6/v9lRAbCm3sWUBsS2/vttTAbGl3MaWBcS2/PpuTwXElnIbWxYQ2/Lruz0VEFvKbWxZQGzLr+/2VEBsKbexZQGxLb++21MBsaXcxpYFxLb8+m5PBcSWchtbFhDb8uu7PRUQW8ptbFlAbMuv7/ZUQGwpt7FlAbEtv77bUwGxpdzGlgXEtvz6bk8FxJZyG1sWENvy67s9FRBbym1sWUBsy6/v9lRAbCm3sWUBsS2/vttTAbGl3MaWBcS2/PpuTwXElnIbWxYQ2/Lruz0VEFvKbWxZQGzLr+/2VEBsKbexZQGxLb++21MBsaXcxpYFxLb8+m5PBcSWchtbFhDb8uu7PRUQW8ptbFlAbMuv7/ZUQGwpt7FlAbEtv77bUwGxpdzGlgXEtvz6bk8FxJZyG1sWENvy67s9FRBbym1sWUBsy6/v9lRAbCm3sWUBsS2/vttTAbGl3MaWBcS2/PpuTwXElnIbWxYQ2/Lruz0VEFvKbWxZQGzLr+/2VEBsKbexZQGxLb++21MBsaXcxpYFxLb8+m5PBcSWchtbFhDb8uu7PRUQW8ptbFlAbMuv7/ZU4D22xx+fz3TUGIFJgfPuOH99FNvk4zu6FRBb621tWEBsw4/v9FZAbK23tWEBsQ0/vtNbAbG13taGBcQ2/PhObwXE1npbGxYQ2/DjO70VEFvrbW1YQGzDj+/0VkBsrbe1YQGxDT++01sBsbXe1oYFxDb8+E5vBcTWelsbFhDb8OM7vRUQW+ttbVhAbMOP7/RWQGytt7VhAbENP77TWwGxtd7WhgXENvz4Tm8FxNZ6WxsWENvw4zu9FRBb621tWEBsw4/v9FZAbK23tWEBsQ0/vtNbAbG13taGBcQ2/PhObwXE1npbGxYQ2/DjO70VEFvrbW1YQGzDj+/0VkBsrbe1YQGxDT++01sBsbXe1oYFxDb8+E5vBcTWelsbFhDb8OM7vRUQW+ttbVhAbMOP7/RWQGytt7VhAbENP77TWwGxtd7WhgXENvz4Tm8FxNZ6WxsWENvw4zu9FRBb621tWEBsw4/v9FZAbK23tWEBsQ0/vtNbAbG13taGBcQ2/PhObwXE1npbGxYQ2/DjO70VEFvrbW1YQGzDj+/0VkBsrbe1YQGxDT++01sBsbXe1oYFxDb8+E5vBcTWelsbFhDb8OM7vRUQW+ttbVhAbMOP7/RWQGytt7VhAbENP77TWwGxtd7WhgXENvz4Tm8FxNZ6WxsWENvw4zu9FRBb621tWEBsw4/v9FZAbK23tWGB99ierj8NCzidQCPw98/Po1myQoCA2PwDBCIBsUXQZgiIzT9AIBIQWwRthoDY/AMEIgGxRdBmCIjNP0AgEhBbBG2GgNj8AwQiAbFF0GYIiM0/QCASEFsEbYaA2PwDBCIBsUXQZgiIzT9AIBIQWwRthoDY/AMEIgGxRdBmCIjNP0AgEhBbBG2GgNj8AwQiAbFF0GYIiM0/QCASEFsEbYaA2PwDBCIBsUXQZgiIzT9AIBIQWwRthoDY/AMEIgGxRdBmCIjNP0AgEngDtJmu/WES9dgAAAAASUVORK5CYII="/>
+                        </defs>
+                    </svg>
                     <span class="flag_txt hue_blue">{{__("Ukraine")}}</span>
                 </div>
             </div>
