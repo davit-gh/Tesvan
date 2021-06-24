@@ -52,12 +52,12 @@
                         @if ($locale!="ru")
                         <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
                             <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
-                            <!--{{ __("Russian")}}-->Русский 
+                            <!--{{ __("Russian")}}-->Русский
                         </a>
                         @endif
                     </div>
                 </li>
-            </ul>  
+            </ul>
         </div>
         <div class="collapse navbar-collapse flex-row-reverse text-center" id="myNavbar">
             <div class="menu-menu-container">
@@ -86,8 +86,7 @@
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
                         <a id="menu_blog" href="{{ route('blogs') }}" class="sembold hue_blue">{{ __("Blog")}}</a>
                     </li>
-                    <li class="menu-btn menu-item menu-item-type-custom menu-item-object-custom
-               menu-item-8" id="menu-item-8">
+                    <li class="menu-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-8" id="menu-item-8">
                         <a id="contact" href="{{ url('/#contact_us') }}" class="sembold hue_blue">{{ __("Contact Us")}}</a>
                     </li>
                     <!-- Localizaton start-->
@@ -124,7 +123,7 @@
                                     @if ($locale!="ru")
                                     <a class="dropdown-item hue_blue" href="{{ url('loc/lang/ru') }}">
                                         <img src="{{asset('images/ru.png')}}" width="33px" height="23px">
-                                        <!--{{ __("Russian")}}-->Русский 
+                                        <!--{{ __("Russian")}}-->Русский
                                     </a>
                                     @endif
                                 </div>
