@@ -33,7 +33,7 @@
                     @if ($key==0)
                     <div class="col-xl-7 col-lg-7 col-md-12">
                         <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
-                            <img class="bradius" style="max-height: 250px;max-width: 635px;" height="auto"  src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
+                            <img class="bradius" style="max-height: 250px;width: 100%;" height="auto"  src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                                 <br><br>
                             <div class="qa_txt_single_blok">
                                 <h5 class="hue_blue">{{ $b->title }}</h5>
