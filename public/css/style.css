@@ -386,3 +386,7 @@ textarea:focus {
 .invalid-feedback {
     font-size: 70%;
 }
+
+.img-responsive {
+    max-width: 100%;
+}

@@ -10431,6 +10431,9 @@ textarea:focus {
     font-size: 70%;
 }
 
+.img-responsive {
+    max-width: 100%;
+}
 header {
     position: fixed;
     z-index: 1000;
@@ -11056,7 +11059,6 @@ header .navbar-toggler {
         text-align: center;
     }
 }
-
 footer {
     padding-top: 90px;
     padding-bottom: 15px;
@@ -11182,40 +11184,4 @@ footer .copyright p {
 
 .icon-bg:hover {
     opacity: 0.6;
-}
-
-/* new style 8 june 2021 */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
-
-header ul li a{font-weight: 400!important;   font-family: 'Open Sans', sans-serif;font-size: 18px;color: #143E59;}
-
-.header .navbar .menu-menu-container .navbar-nav .menu-item,.header .navbar .menu-menu-container .navbar-nav .menu-item a{position: relative;}
-.header .navbar .menu-menu-container .navbar-nav .menu-item a:before{position: absolute;width: 51px;height: 0px;left: 0px;bottom: -10px;border: 1px solid #F4B41A;content: '';opacity: 0;transition: all .4s ease 0s;-webkit-transition: all .4s ease 0s;-moz-transition: all .4s ease 0s;-o-transition: all .4s ease 0s;}
-.header .navbar .menu-menu-container .navbar-nav .menu-item a:after{position: absolute;width: 10px;height: 0px;left: 54px;bottom: -10px;border: 1px solid #F4B41A;content: '';opacity: 0;transition: all .4s ease 0s;-webkit-transition: all .4s ease 0s;-moz-transition: all .4s ease 0s;-o-transition: all .4s ease 0s;}
-.header .navbar .menu-menu-container .navbar-nav .menu-item:before{width: 5px;position: absolute;width: 5px;height: 0px;left: 68px;bottom: -7px;border: 1px solid #F4B41A;content: '';opacity: 0;transition: all .4s ease 0s;-webkit-transition: all .4s ease 0s;-moz-transition: all .4s ease 0s;-o-transition: all .4s ease 0s;}
-.header .navbar .menu-menu-container .navbar-nav .menu-item:hover a:before,.header .navbar .menu-menu-container .navbar-nav .menu-item:hover a:after,.header .navbar .menu-menu-container .navbar-nav .menu-item:hover:before{opacity: 1;}
-.header .navbar .menu-menu-container .navbar-nav .menu-item:last-child a:before,
-.header .navbar .menu-menu-container .navbar-nav .menu-item:last-child a:after,
-.header .navbar .menu-menu-container .navbar-nav .menu-item:last-child::before,
-.header .navbar .menu-menu-container .navbar-nav .menu-item:nth-child(8) a:before,
-.header .navbar .menu-menu-container .navbar-nav .menu-item:nth-child(8) a:after,
-.header .navbar .menu-menu-container .navbar-nav .menu-item:nth-child(8):before {content: unset;}
-header ul li a:hover{text-shadow: unset;}
-#wrapp{padding-top: 150px;}
-header ul .menu-btn a{padding: 16px 42px;}
-
-
-/* for responsive */
-@media (max-width: 1499px){
-      header ul li a{font-size: 16px;}
-      header ul li:not(:last-child){padding-right: 40px;}
-}
-@media (max-width: 1199px){
-  header ul .menu-btn a{padding:15px 32px}
-}
-@media (max-width: 521px){
-  footer{overflow: hidden;}
-}
-@media (max-width: 991px){
-  .navbar-nav .dropdown-menu{position:absolute;}
 }
