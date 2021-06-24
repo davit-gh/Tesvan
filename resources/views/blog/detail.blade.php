@@ -8,7 +8,7 @@
     .qa_txt_blocks{
         cursor: pointer;
     }
-    .blog_description{    
+    .blog_description{
         margin-bottom: 40px;
     }
     .bradius{
@@ -24,11 +24,11 @@
             <h2 class="hue_blue">{{ $bd->title }}</h2>
             <p>
                 <small>
-                    Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | Created By 
-                    @if(!empty($bd->created_by)) 
-                        {{ $bd->created_by }} 
+                    Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | Created By
+                    @if(!empty($bd->created_by))
+                        {{ $bd->created_by }}
                     @else
-                        {{ $bd->user->name }} 
+                        {{ $bd->user->name }}
                     @endif
                 </small>
             </p>
@@ -48,11 +48,11 @@
                     <h5 class="hue_blue">{{ $bd->title }}</h5>
                     <p>
                     <small>
-                        Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | By 
-                        @if(!empty($bd->created_by)) 
-                            {{ $bd->created_by }} 
+                        Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | By
+                        @if(!empty($bd->created_by))
+                            {{ $bd->created_by }}
                         @else
-                            {{ $bd->user->name }} 
+                            {{ $bd->user->name }}
                         @endif
                     </small>
                     </p>
@@ -87,11 +87,11 @@
                             <p class="hue_black">
                                 {{ limitWord(strip_tags($b->description)) }}
                             </p>
-                            <p class="hue_black">By 
-                                @if(!empty($bd->created_by)) 
-                                    {{ $bd->created_by }} 
+                            <p class="hue_black">By
+                                @if(!empty($bd->created_by))
+                                    {{ $bd->created_by }}
                                 @else
-                                    {{ $bd->user->name }} 
+                                    {{ $bd->user->name }}
                                 @endif
                             </p>
                         </div>
@@ -99,7 +99,7 @@
                 @endforeach
             @endif
         </div>
-   
+
         </div>
 
         @if (count($blog_interest)>0)
@@ -124,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 @endforeach
             </div>
         @endif
@@ -141,8 +141,8 @@
 <script src="{{ url('js/customSlick.js') }}"></script>
 
 <script type="text/javascript">
-    const title = "{{ $b->title }}";
-    const description = "{{ $b->description }}";
+    const title = "{{ $bd->title }}";
+    const description = "{{ $bd->description }}";
     $('meta[name="title"]').attr('content', title);
     $('meta[name="description"]').attr('content', description);
     $('meta[property="og:title"]').attr('content', title);

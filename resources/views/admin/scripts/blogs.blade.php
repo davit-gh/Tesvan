@@ -11,6 +11,7 @@
         { data: "category" },
         { data: "image" },
         { data: "status" },
+        { data: "created_by" },
         { data: "published_date" },
         { data: "public_view" },
         { data: "action", bSortable: false, className: "text-center" },

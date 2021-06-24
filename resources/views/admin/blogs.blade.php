@@ -39,7 +39,7 @@
               <th>Category</th>
               <th>Image</th>
               <th>Status</th>
-              <th>Crated By</th>
+              <th>Created By</th>
               <th>Published Date</th>
               <th>Public View</th>
               <th width="200">Action</th>
