@@ -1,8 +1,6 @@
-$(document).ready(function () {
-
-
+$(document).ready(function() {
     // Members Slider
-    $('.members-slider').slick({
+    $(".members-slider").slick({
         swipeToSlide: true,
         infinite: true,
         slidesToShow: 4,
@@ -13,7 +11,6 @@ $(document).ready(function () {
         autoplaySpeed: 2000,
         accessibility: false,
         responsive: [
-
             {
                 breakpoint: 1199,
                 settings: {
@@ -42,15 +39,16 @@ $(document).ready(function () {
     });
 
     // Testimonials Slider
-    $('.testimonials-slider').slick({
+    $(".testimonials-slider").slick({
         swipeToSlide: true,
         infinite: false,
         slidesToShow: 3,
         slidesToScroll: 1,
         arrows: true,
-        dots: false,
+        dots: true,
         accessibility: false,
-        responsive: [{
+        responsive: [
+            {
                 breakpoint: 1199,
                 settings: {
                     centerMode: false,
@@ -70,11 +68,10 @@ $(document).ready(function () {
                     dots: true
                 }
             }
-
         ]
     });
 
-    $('.tech-used-slider').slick({
+    $(".tech-used-slider").slick({
         swipeToSlide: true,
         infinite: false,
         slidesToShow: 6,
@@ -82,7 +79,8 @@ $(document).ready(function () {
         arrows: true,
         dots: true,
         accessibility: false,
-        responsive: [{
+        responsive: [
+            {
                 breakpoint: 1199,
                 settings: {
                     centerMode: false,
@@ -102,11 +100,10 @@ $(document).ready(function () {
                     dots: true
                 }
             }
-
         ]
     });
 
-    $('.other-cases-slider').slick({
+    $(".other-cases-slider").slick({
         swipeToSlide: true,
         infinite: false,
         slidesToShow: 3,
@@ -114,7 +111,8 @@ $(document).ready(function () {
         arrows: true,
         dots: true,
         accessibility: false,
-        responsive: [{
+        responsive: [
+            {
                 breakpoint: 1199,
                 settings: {
                     centerMode: false,
@@ -134,8 +132,6 @@ $(document).ready(function () {
                     dots: true
                 }
             }
-
         ]
     });
-
 });

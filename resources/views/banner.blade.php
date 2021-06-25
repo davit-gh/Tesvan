@@ -150,21 +150,26 @@
         </div>
         <div class="hire-us" id="hire_us">
             <div class="row">
-                <div style="
-                width: 530px;
-                height: 420px;
-                background: #FFFFFF;
-                box-shadow: 0px 0px 25px rgb(0 0 0 / 10%);
-                border-radius: 12px;
-                background-image: url(images/rectangle.png);
-                background-repeat: no-repeat;
-                background-size: 525px 415px;
-                position: absolute;
-                left: 150px;
-                ">
+                {{-- <div style="position: relative">
+                    <div style="
+                        width: 530px;
+                        height: 450px;
+                        background: #FFFFFF;
+                        box-shadow: 0px 0px 25px rgb(0 0 0 / 10%);
+                        border-radius: 12px;
+                        background-image: url(images/rectangle.png);
+                        background-repeat: no-repeat;
+                        background-size: 525px 445px;
+                        position: absolute;
+                        top: 50px;
+                        left: 150px;
+                    "></div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">        
-                    <img src={{asset('images/hire_us.png')}} alt="Hire Us" class="hire_us_svg home_page_header_svg">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <img src={{asset('images/hire_us.png')}} alt="Hire Us" style="width: 95%" class="hire_us_svg home_page_header_svg img-responsive">
+                </div> --}}
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                    <img src={{asset('images/hire_us_2.png')}} alt="Hire Us" class="hire_us_svg home_page_header_svg img-responsive">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 hire_us_col d-flex align-items-center">
                     <div class="hire_us_text">

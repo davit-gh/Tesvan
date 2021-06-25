@@ -63,34 +63,34 @@
     }
 }
 
-.testimonials-slider .slick-dots li button::before {
+.testimonials-slider .slick-dots li button:before {
     color: #A4A4A4;
     opacity: 1;
     font-size: 60px;
 }
 
-.testimonials-slider .slick-dots li.slick-active button::before {
+.testimonials-slider .slick-dots li.slick-active button:before {
     color: #143E5A;
     opacity: 1;
     font-size: 60px;
 }
 
 @media (max-width: 767px) {
-    .testimonials-slider .slick-dots li button::before {
+    .testimonials-slider .slick-dots li button:before {
         font-size: 50px;
     }
 
-    .testimonials-slider .slick-dots li.slick-active button::before {
+    .testimonials-slider .slick-dots li.slick-active button:before {
         font-size: 50px;
     }
 }
 
 @media (max-width: 479px) {
-    .testimonials-slider .slick-dots li button::before {
+    .testimonials-slider .slick-dots li button:before {
         font-size: 40px;
     }
 
-    .testimonials-slider .slick-dots li.slick-active button::before {
+    .testimonials-slider .slick-dots li.slick-active button:before {
         font-size: 40px;
     }
 }
@@ -151,19 +151,19 @@
     .testimonials_row > p {
         font-size: 15px;
     }
-    
+
 }
 
 @media (max-width: 1199px){
     .testimonials_row > p {
         font-size: 16px;
-    } 
+    }
 }
 
 @media (max-width: 991px){
     .testimonials_row > p {
         font-size: 15px;
-    } 
+    }
 }
 
 
@@ -228,35 +228,35 @@
 }
 
 
-.members-slider .slick-dots li button::before {
+.members-slider .slick-dots li button:before {
     color: #A4A4A4;
     opacity: 1;
     font-size: 60px;
 }
 
 
-.members-slider .slick-dots li.slick-active button::before {
+.members-slider .slick-dots li.slick-active button:before {
     color: #143E5A;
     opacity: 1;
     font-size: 60px;
 }
 
 @media (max-width: 767px){
-    .members-slider .slick-dots li button::before {
+    .members-slider .slick-dots li button:before {
         font-size: 50px;
     }
-    
-    .members-slider .slick-dots li.slick-active button::before {
+
+    .members-slider .slick-dots li.slick-active button:before {
         font-size: 50px;
     }
 }
 
 @media (max-width: 479px){
-    .members-slider .slick-dots li button::before {
+    .members-slider .slick-dots li button:before {
         font-size: 40px;
     }
-    
-    .members-slider .slick-dots li.slick-active button::before {
+
+    .members-slider .slick-dots li.slick-active button:before {
         font-size: 40px;
     }
 }
@@ -275,7 +275,7 @@
 }
 
 @media (max-width: 767px){
-    
+
     .team_member_row {
         margin-bottom: 50px;
     }
@@ -319,7 +319,7 @@
     -ms-transform: rotate(-10deg);
     -webkit-transform: rotate(-10deg);
     -o-transform: rotate(-10deg);
-    
+
 } */
 
 

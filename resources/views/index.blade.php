@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="/css/partners.css?v={{ strtotime(date('YmdHis')) }}">
 <link rel="stylesheet" type="text/css" href="/css/contact_us.css?v={{ strtotime(date('YmdHis')) }}">
 
-
 @endsection
 
 

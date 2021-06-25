@@ -1,8 +1,3 @@
-<style type="text/css">
-.slick-dots li button {
-    display: none;
-}
-</style>
 <section id="team">
     <div class="container" align="center">
         <div class="text-center team_heder_txt_col">

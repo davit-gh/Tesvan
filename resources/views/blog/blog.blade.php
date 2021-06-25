@@ -15,7 +15,6 @@
 </style>
 
 @section('content')
-
 <section id="job_hire" class="project-management" style="word-wrap: break-word;">
     <div class="container">
         <div class="text-center job_hire_text_col">
@@ -43,7 +42,7 @@
                                     </small>
                                 </p>
                                 <p class="hue_black">
-                                    {{ limitWord(strip_tags($b->description)) }}
+                                    {{ limitWord(strip_tags($b->translated_description)) }}
                                 </p>
                             </div>
                         </div>
@@ -94,7 +93,7 @@
                             </small>
                         </p>
                         <p class="hue_black">
-                            {{ limitWord(strip_tags($b->description)) }}
+                            {{ limitWord(strip_tags($b->translated_description)) }}
                         </p>
                     </div>
                 </div>
@@ -122,7 +121,7 @@
                                 </small>
                             </p>
                             <p class="hue_black">
-                                {{ limitWord(strip_tags($b->description)) }}
+                                {{ limitWord(strip_tags($b->translated_description)) }}
                             </p>
                         </div>
                     </div>
@@ -139,7 +138,7 @@
                                 </small>
                             </p>
                             <p class="hue_black">
-                                {{ limitWord(strip_tags($b->description)) }}
+                                {{ limitWord(strip_tags($b->translated_description)) }}
                             </p>
                         </div>
                     </div>

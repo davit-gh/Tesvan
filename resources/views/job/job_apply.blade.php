@@ -124,7 +124,7 @@
                                         <div>
                                             <div class="form-group apply_custom_form_group attach_cv">
                                                 <label for="cv">{{__("Attach CV")}}</label>
-                                                <input name="cv" type="file" class="cv form-control " id="cv" onblur="cvValidate()">
+                                                <input name="cv" type="file" class="cv form-control " id="cv" onblur="cvValidate()" accept="application/msword,application/pdf">
                                                 <div class="choosen"></div>
                                                 <div id="cvStatus" class="invalid-feedback cv_status">{{__("CV field is required")}}</div>
                                             </div>

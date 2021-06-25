@@ -52,7 +52,7 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Title</label>
                 <input value="{{ $blog->id }}" type="hidden" class="form-control" name="id">
-                <input value="{{ old('title',$blog->title) }}" type="text" class="form-control" name="title"> 
+                <input value="{{ old('title',$blog->title) }}" type="text" class="form-control" name="title">
             </div>
             <div class="form-group">
                 <label for="exampleInputFile">Image</label>
@@ -61,6 +61,14 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Description</label>
                 <textarea class="form-control" name="description">{{ old('description',$blog->description) }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Description (in Armenian)</label>
+                <textarea class="form-control" name="description_am">{{ old('description_am', $blog->description_am) }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Description (in Russian)</label>
+                <textarea class="form-control" name="description_ru">{{ old('description_ru', $blog->description_ru) }}</textarea>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Category</label>
@@ -85,7 +93,7 @@
             </div>
             <div class="form-group">
                 <label for="createdBy">Created By</label>
-                <input value="{{ old('created_by', $blog->created_by) }}" type="text" class="form-control" placeholder="Created By" name="created_by" id="createdBy"> 
+                <input value="{{ old('created_by', $blog->created_by) }}" type="text" class="form-control" placeholder="Created By" name="created_by" id="createdBy">
             </div>
         </div>
         <!-- /.card-body -->

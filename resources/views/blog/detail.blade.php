@@ -59,7 +59,7 @@
                     </p>
                     <p class="hue_black">
                         <div class="blog_description">
-                            {!! $bd->description !!}
+                            {!! $bd->translated_description !!}
                         </div>
                         <a href="https://www.facebook.com/sharer/sharer.php?u={{ \Request::fullUrl() }}">
                             <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
@@ -86,7 +86,7 @@
                                 </small>
                             </p>
                             <p class="hue_black">
-                                {{ limitWord(strip_tags($b->description)) }}
+                                {{ limitWord(strip_tags($b->translated_description)) }}
                             </p>
                             <p class="hue_black">By
                                 @if(!empty($bd->created_by))
@@ -120,7 +120,7 @@
                                 </small>
                             </p>
                             <p class="hue_black">
-                                {{ limitWord(strip_tags($b->description)) }}
+                                {{ limitWord(strip_tags($b->translated_description)) }}
                             </p>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
 
 <script type="text/javascript">
     const title = "{{ $bd->title }}";
-    const description = "{{ $bd->description }}";
+    const description = "{{ $bd->translated_description }}";
     $('meta[name="title"]').attr('content', title);
     $('meta[name="description"]').attr('content', description);
     $('meta[property="og:title"]').attr('content', title);
