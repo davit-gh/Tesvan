@@ -21,6 +21,20 @@ function nameValidate() {
                 "Поле имени обязательно для заполнения";
         }
         return false;
+    } else if (name.value.trim().length < 3) {
+        name.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("nameStatus").innerHTML =
+                "Name field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("nameStatus").innerHTML =
+                "Անվան դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("nameStatus").innerHTML =
+                "Поле имени должно содержать не менее 3 символов.";
+        }
+
+        return false;
     } else {
         name.className = "form-control is-valid";
         return true;
@@ -41,6 +55,20 @@ function surnameValidate() {
             document.getElementById("surnameStatus").innerHTML =
                 "Фамилия обязательна";
         }
+        return false;
+    } else if (surname.value.trim().length < 3) {
+        surname.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("surnameStatus").innerHTML =
+                "Surname field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("surnameStatus").innerHTML =
+                "Ազգանունի դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("surnameStatus").innerHTML =
+                "Поле фамилии должно состоять не менее чем из 3 символов.";
+        }
+
         return false;
     } else {
         surname.className = "form-control is-valid";
@@ -112,6 +140,20 @@ function phoneValidate() {
         }
         phone.className = "form-control is-invalid";
         return false;
+    } else if (phone.value.trim().length < 9) {
+        phone.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("phoneStatus").innerHTML =
+                "Phone field must be at least 9 characters";
+        } else if (locale == "am") {
+            document.getElementById("phoneStatus").innerHTML =
+                "Հեռախոսի դաշտը պետք է կազմի առնվազն 9 նիշ ";
+        } else if (locale == "ru") {
+            document.getElementById("phoneStatus").innerHTML =
+                "Поле телефона должно содержать не менее 9 символов. ";
+        }
+
+        return false;
     } else {
         phone.className = "form-control is-valid";
         return true;
@@ -132,6 +174,20 @@ function cityValidate() {
             document.getElementById("cityStatus").innerHTML =
                 "Поле города обязательно для заполнения";
         }
+        return false;
+    } else if (city.value.trim().length < 3) {
+        city.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("cityStatus").innerHTML =
+                "City field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("cityStatus").innerHTML =
+                "Քաղաքի դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("cityStatus").innerHTML =
+                "Поле города должно содержать не менее 3 символов.";
+        }
+
         return false;
     } else {
         city.className = "form-control is-valid";
@@ -154,6 +210,20 @@ function educationValidate() {
                 "Обязательное поле образования";
         }
         return false;
+    } else if (education.value.trim().length < 3) {
+        education.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("educationStatus").innerHTML =
+                "Education field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("educationStatus").innerHTML =
+                "Կրթության ոլորտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("educationStatus").innerHTML =
+                'Поле "Образование" должно содержать не менее 3 символов.';
+        }
+
+        return false;
     } else {
         education.className = "form-control is-valid";
         return true;
@@ -174,6 +244,20 @@ function messageValidate() {
             document.getElementById("messageStatus").innerHTML =
                 "Поле сообщения обязательно";
         }
+        return false;
+    } else if (message.value.trim().length < 3) {
+        message.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("messageStatus").innerHTML =
+                "Message field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("messageStatus").innerHTML =
+                "Հաղորդագրության դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("messageStatus").innerHTML =
+                "Поле сообщения должно содержать не менее 3 символов.";
+        }
+
         return false;
     } else {
         message.className = "form-control is-valid";

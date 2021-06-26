@@ -22,6 +22,20 @@ function nameValidate() {
         }
 
         return false;
+    } else if (name.value.trim().length < 3) {
+        name.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("nameStatus").innerHTML =
+                "Name field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("nameStatus").innerHTML =
+                "Անվան դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("nameStatus").innerHTML =
+                "Поле имени должно содержать не менее 3 символов.";
+        }
+
+        return false;
     } else {
         name.className = "form-control is-valid";
         return true;
@@ -42,6 +56,20 @@ function surnameValidate() {
             document.getElementById("surnameStatus").innerHTML =
                 "Фамилия обязательна";
         }
+        return false;
+    } else if (surname.value.trim().length < 3) {
+        surname.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("surnameStatus").innerHTML =
+                "Surname field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("surnameStatus").innerHTML =
+                "Ազգանունի դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("surnameStatus").innerHTML =
+                "Поле фамилии должно состоять не менее чем из 3 символов.";
+        }
+
         return false;
     } else {
         surname.className = "form-control is-valid";
@@ -113,6 +141,20 @@ function phoneValidate() {
         }
         phone.className = "form-control is-invalid";
         return false;
+    } else if (phone.value.trim().length < 9) {
+        phone.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("phoneStatus").innerHTML =
+                "Phone field must be at least 9 characters";
+        } else if (locale == "am") {
+            document.getElementById("phoneStatus").innerHTML =
+                "Հեռախոսի դաշտը պետք է կազմի առնվազն 9 նիշ ";
+        } else if (locale == "ru") {
+            document.getElementById("phoneStatus").innerHTML =
+                "Поле телефона должно содержать не менее 9 символов. ";
+        }
+
+        return false;
     } else {
         phone.className = "form-control is-valid";
         return true;
@@ -133,6 +175,20 @@ function cityValidate() {
             document.getElementById("cityStatus").innerHTML =
                 "Поле города обязательно для заполнения";
         }
+        return false;
+    } else if (city.value.trim().length < 3) {
+        city.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("cityStatus").innerHTML =
+                "City field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("cityStatus").innerHTML =
+                "Քաղաքի դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("cityStatus").innerHTML =
+                "Поле города должно содержать не менее 3 символов.";
+        }
+
         return false;
     } else {
         city.className = "form-control is-valid";
@@ -155,6 +211,20 @@ function educationValidate() {
                 "Обязательное поле образования";
         }
         return false;
+    } else if (education.value.trim().length < 3) {
+        education.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("educationStatus").innerHTML =
+                "Education field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("educationStatus").innerHTML =
+                "Կրթության ոլորտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("educationStatus").innerHTML =
+                'Поле "Образование" должно содержать не менее 3 символов.';
+        }
+
+        return false;
     } else {
         education.className = "form-control is-valid";
         return true;
@@ -176,6 +246,20 @@ function companyValidate() {
                 "Поле компании обязательно для заполнения";
         }
         return false;
+    } else if (company.value.trim().length < 3) {
+        company.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("companyStatus").innerHTML =
+                "Company field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("companyStatus").innerHTML =
+                "Ընկերության դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("companyStatus").innerHTML =
+                "Поле компании должно состоять не менее чем из 3 символов.";
+        }
+
+        return false;
     } else {
         company.className = "form-control is-valid";
         return true;
@@ -196,6 +280,20 @@ function courseValidate() {
             document.getElementById("courseStatus").innerHTML =
                 "Поле курса обязательно для заполнения";
         }
+        return false;
+    } else if (course.value.trim().length < 3) {
+        course.className = "form-control is-invalid";
+        if (locale == "en") {
+            document.getElementById("courseStatus").innerHTML =
+                "Course field must be at least 3 characters";
+        } else if (locale == "am") {
+            document.getElementById("courseStatus").innerHTML =
+                "Դասընթացի դաշտը պետք է կազմի առնվազն 3 նիշ";
+        } else if (locale == "ru") {
+            document.getElementById("courseStatus").innerHTML =
+                "Поле курса должно состоять не менее чем из 3 символов.";
+        }
+
         return false;
     } else {
         course.className = "form-control is-valid";
