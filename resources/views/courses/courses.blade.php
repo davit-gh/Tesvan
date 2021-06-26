@@ -22,6 +22,11 @@
 
 <script src="js/courses/courses_reg.js"></script>
 <script src="js/courses/courses_validation.js"></script>
+<script>
+@if(Session::has('success'))
+    $('#myModal').modal('show');
+@endif
+</script>
 
 
 @endsection
