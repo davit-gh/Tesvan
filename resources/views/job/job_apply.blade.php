@@ -168,14 +168,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    @if(Session::has('success'))
-
-    setTimeout(() => {
-        $('#myModal').modal('toggle');
-    }, 300);
-
-    @endif
-
-</script>

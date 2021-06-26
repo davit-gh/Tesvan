@@ -23,6 +23,11 @@
 
 <script src="js/job/job_apply.js"></script>
 <script src="js/job/job_validation.js"></script>
+<script>
+@if(Session::has('success'))
+    $('#myModal').modal('show');
+@endif
 
+</script>
 
 @endsection

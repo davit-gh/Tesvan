@@ -43,5 +43,9 @@
 <script src="../js/map.js"></script>
 <script src="../js/customSlick.js"></script>
 <script src="../js/home_validation.js"></script>
-
+<script>
+@if(Session::has('success'))
+    $('#myModal').modal('show');
+@endif
+</script>
 @endsection
