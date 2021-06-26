@@ -82,7 +82,7 @@
             if (hash=="#banner"){
                 $("#menu_aboutus").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
-            if (hash=="#co_workers"){
+            if (pathname=="/education"){
                 $("#menu_education").css("font-weight","bold").css("font-weight","bold").css("display","inline-block").css("border-bottom","3px solid #ffc107").css("padding-bottom","4px");
             }
             if (pathname=="/job"){
