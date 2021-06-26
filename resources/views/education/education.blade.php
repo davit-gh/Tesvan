@@ -125,9 +125,6 @@
 
             </div>
         </div>
-        <div class="view__button mt-4 pt-3">
-            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
-        </div>
     </div>
 </section>
 <!-- Testing Methods  -->
@@ -179,11 +176,7 @@
                         </div>
                     </div>
                 </a>
-
             </div>
-        </div>
-        <div class="view__button mt-4 pt-3">
-            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
@@ -207,7 +200,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
                 <a href="">
@@ -222,7 +215,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
                 <a href="">
@@ -237,11 +230,8 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
-        </div>
-        <div class="view__button mt-4 pt-3">
-            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
@@ -265,7 +255,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
                 <a href="">
@@ -280,7 +270,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
                 <a href="">
@@ -295,11 +285,8 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
-        </div>
-        <div class="view__button mt-4 pt-3">
-            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
@@ -323,7 +310,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
                 <a href="">
@@ -338,7 +325,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
                 <a href="">
@@ -353,11 +340,8 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
-        </div>
-        <div class="view__button mt-4 pt-3">
-            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
@@ -381,7 +365,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
                 <a href="">
@@ -396,7 +380,7 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
                 <a href="">
@@ -411,11 +395,8 @@
                     </div>
                 </div>
                 </a>
-                
+
             </div>
-        </div>
-        <div class="view__button mt-4 pt-3">
-            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
