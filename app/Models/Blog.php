@@ -15,6 +15,15 @@ class Blog extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getTranslatedTitleAttribute()
+    {
+        if (app()->getLocale() === 'en') {
+            return $this->title;
+        }
+
+        return $this->{"title_" . app()->getLocale()};
+    }
+
     public function getTranslatedDescriptionAttribute()
     {
         if (app()->getLocale() === 'en') {

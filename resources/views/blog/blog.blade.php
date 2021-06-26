@@ -35,7 +35,7 @@
                             <img class="bradius" style="max-height: 250px;width: 100%;" height="auto"  src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                                 <br><br>
                             <div class="qa_txt_single_blok">
-                                <h5 class="hue_blue">{{ $b->title }}</h5>
+                                <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                                 <p>
                                     <small>
                                         {{ date("M d, Y", strtotime($b->published_date)) }}
@@ -54,7 +54,7 @@
                             @if ($key>0)
                             <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                                 <div class="qa_txt_single_blok"  style="margin-bottom: 10px; !important">
-                                    <h5 class="hue_blue">{{ $b->title }}</h5>
+                                    <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                                     <p>
                                         <small>
                                             {{ date("M d, Y", strtotime($b->published_date)) }}
@@ -86,7 +86,7 @@
                 <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                     <img class="bradius" style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                     <div class="qa_txt_single_blok">
-                        <h5 class="hue_blue">{{ $b->title }}</h5>
+                        <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                         <p>
                             <small>
                                 {{ date("M d, Y", strtotime($b->published_date)) }}
@@ -114,7 +114,7 @@
                     <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                         <img class="bradius" style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                             <div class="qa_txt_single_blok">
-                            <h5 class="hue_blue">{{ $b->title }}</h5>
+                            <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                             <p>
                                 <small>
                                     {{ date("M d, Y", strtotime($b->published_date)) }}
@@ -131,7 +131,7 @@
                     <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                         <img class="bradius" style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
                             <div class="qa_txt_single_blok">
-                            <h5 class="hue_blue">{{ $b->title }}</h5>
+                            <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                             <p>
                                 <small>
                                     {{ date("M d, Y", strtotime($b->published_date)) }}

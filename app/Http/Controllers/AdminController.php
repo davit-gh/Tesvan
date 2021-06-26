@@ -628,8 +628,6 @@ class AdminController extends Controller
         $messages = [
             'title.required' => 'Title required!',
             'description.required' => 'Description required!',
-            'description_am.required' => 'Description (in Armenian) required!',
-            'description_ru.required' => 'Description (in Russian) required!',
             'image.required' => 'Image required!',
             'status.required' => 'Status required!',
             'category.required' => 'Category required!'
@@ -638,8 +636,6 @@ class AdminController extends Controller
         $rule = [
             'title' => 'required',
             'description' => 'required',
-            'description_am' => 'required',
-            'description_ru' => 'required',
             'image' => 'required',
             'status' => 'required',
             'category' => 'required'
@@ -655,9 +651,11 @@ class AdminController extends Controller
 
             $p = new Blog;
             $p->title = $request->title;
+            $p->title_am = $request->title_am;
+            $p->title_ru = $request->title_ru;
             $p->description = $request->description;
-            $p->description_am = $request->description_am;
-            $p->description_ru = $request->description_ru;
+            $p->description_am = $request->description_am ?? null;
+            $p->description_ru = $request->description_ru ?? null;
             $p->status = $request->status;
             $p->category_id = $request->category;
             $p->created_by = $request->created_by;
@@ -719,8 +717,6 @@ class AdminController extends Controller
         $messages = [
             'title.required' => 'Title required!',
             'description.required' => 'Description required!',
-            'description_am.required' => 'Description (in Armenian) required!',
-            'description_ru.required' => 'Description (in Russian) required!',
             'status.required' => 'Status required!',
             'category.required' => 'Category required!'
         ];
@@ -728,8 +724,6 @@ class AdminController extends Controller
         $rule = [
             'title' => 'required',
             'description' => 'required',
-            'description_am' => 'required',
-            'description_ru' => 'required',
             'status' => 'required',
             'category' => 'required'
         ];
@@ -744,9 +738,11 @@ class AdminController extends Controller
 
             $p = Blog::find($request->id);
             $p->title = $request->title;
+            $p->title_am = $request->title_am;
+            $p->title_ru = $request->title_ru;
             $p->description = $request->description;
-            $p->description_am = $request->description_am;
-            $p->description_ru = $request->description_ru;
+            $p->description_am = $request->description_am ?? null;
+            $p->description_ru = $request->description_ru ?? null;
             $p->category_id = $request->category;
             $p->status = $request->status;
             $p->created_by = $request->created_by;

@@ -55,6 +55,14 @@
                 <input value="{{ old('title',$blog->title) }}" type="text" class="form-control" name="title">
             </div>
             <div class="form-group">
+                <label for="exampleInputEmail1">Title (in Armenian)</label>
+                <input value="{{ old('title_am',$blog->title_am) }}" type="text" class="form-control" placeholder="Title (in Armenian)" name="title_am">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title (in Russian)</label>
+                <input value="{{ old('title_ru',$blog->title_ru) }}" type="text" class="form-control" placeholder="Title (in Russian)" name="title_ru">
+            </div>
+            <div class="form-group">
                 <label for="exampleInputFile">Image</label>
                 <input type="file" class="form-control" name="image">
             </div>
