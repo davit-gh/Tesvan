@@ -61,16 +61,6 @@
             </div>
         </div>
     </div>
-
-    @if (count($project)>6)
-    <div class="container showMoreContainer">
-        <div class="text-center job_hire_text_col" style="padding: 49px;">
-            <div class="custom-btn">
-                <a id="showMore" href="#">Show More</a>
-            </div>
-        </div>
-    </div>
-    @endif
 </section>
 <!-- QA Basics -->
 <section class="qa_basics">
@@ -125,6 +115,9 @@
 
             </div>
         </div>
+        <div class="view__button mt-4 pt-3">
+            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
+        </div>
     </div>
 </section>
 <!-- Testing Methods  -->
@@ -177,6 +170,9 @@
                     </div>
                 </a>
             </div>
+        </div>
+        <div class="view__button mt-4 pt-3">
+            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
@@ -233,6 +229,9 @@
 
             </div>
         </div>
+        <div class="view__button mt-4 pt-3">
+            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
+        </div>
     </div>
 </section>
 <!-- Documentation -->
@@ -287,6 +286,9 @@
                 </a>
 
             </div>
+        </div>
+        <div class="view__button mt-4 pt-3">
+            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
@@ -343,6 +345,9 @@
 
             </div>
         </div>
+        <div class="view__button mt-4 pt-3">
+            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
+        </div>
     </div>
 </section>
 <!-- Useful Materials -->
@@ -397,6 +402,9 @@
                 </a>
 
             </div>
+        </div>
+        <div class="view__button mt-4 pt-3">
+            <a href="" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
         </div>
     </div>
 </section>
