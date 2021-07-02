@@ -26,7 +26,7 @@
                     <a href="">
                         <div class="main_box_lft_content">
                             <div class="main_box_image">
-                                <img src="{{ url('images/education/main_image.jpg') }}" alt="main_image" class="img-fluid">
+                                <img src="{{ url('images/example-1.png') }}" alt="main_image" class="img-fluid">
 
                             </div>
                             <div class="main_box_bottom_content">
@@ -73,7 +73,7 @@
                 <a href="">
                     <div class="all_box_1">
                         <div class="all_box_top_image">
-                            <img src="{{ url('images/education/qa1.jpg') }}" class="img-fluid">
+                            <img src="{{ url('images/example-1.png') }}" class="img-fluid">
                         </div>
                         <div class="all_box_bottom_content">
                             <h4 class="font-24 color143E59 semibold">Quality Assurance</h4>
