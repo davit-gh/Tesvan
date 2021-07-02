@@ -3,7 +3,6 @@
 @section('styles')
 
 <link rel="stylesheet" type="text/css" href="/css/education.css?v={{ strtotime(date('YmdHis')) }}">
-
 @endsection
 
 @section('content')
@@ -12,6 +11,13 @@
         background: #FFFFFF;
         color: #143E5A;
         border: 1px solid #143E5A;
+    }
+
+    .img-fluid {
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
     }
 </style>
 <section id="job_hire" class="project-management">
