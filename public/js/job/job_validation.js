@@ -1,6 +1,12 @@
 window.onload = function() {
     document.job_apply.onsubmit = function() {
-        return checkForm();
+        if (!$("#form_apply").is(":visible") && checkForm()) {
+            $(".apply_wizard").slideUp(800);
+            $("#form_apply").slideDown(800);
+            return false;
+        }
+
+        return checkForm() && $("#form_apply").is(":visible");
     };
 };
 
@@ -355,15 +361,11 @@ function validPhone(phone) {
 function checkForm() {
     var valid = true;
 
-    if ($("#apply").is(":visible")) {
-        if (!nameValidate()) valid = false;
-        if (!surnameValidate()) valid = false;
-        if (!emailValidate()) valid = false;
-        if (!phoneValidate()) valid = false;
-        if (!cityValidate()) valid = false;
-
-        valid = false;
-    }
+    if (!nameValidate()) valid = false;
+    if (!surnameValidate()) valid = false;
+    if (!emailValidate()) valid = false;
+    if (!phoneValidate()) valid = false;
+    if (!cityValidate()) valid = false;
 
     if ($("#form_apply").is(":visible")) {
         if (!companyValidate()) valid = false;

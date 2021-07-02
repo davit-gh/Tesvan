@@ -2,14 +2,7 @@ $(document).ready(function() {
     $(".apply_wizard").hide();
     $("#apply").show();
     $(".apply_continue").click(function() {
-        var valid = true;
-        $("#" + $(this).attr("validationApplyDiv"))
-            .find("input")
-            .each(function() {
-                if ($(this).val() == "") valid = false;
-            });
-
-        if (valid) {
+        if (checkForm()) {
             $(".apply_wizard").slideUp(800);
             $("#" + $(this).attr("data-next-id")).slideDown(800);
         }

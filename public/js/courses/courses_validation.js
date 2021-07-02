@@ -1,6 +1,12 @@
 window.onload = function() {
     document.courses_register.onsubmit = function() {
-        return checkForm();
+        if (!$("#form_register").is(":visible") && checkForm()) {
+            $(".register_wizard").slideUp(800);
+            $("#form_register").slideDown(800);
+            return false;
+        }
+
+        return checkForm() && $("#form_register").is(":visible");
     };
 };
 
@@ -283,8 +289,11 @@ function checkForm() {
     if (!emailValidate()) valid = false;
     if (!phoneValidate()) valid = false;
     if (!cityValidate()) valid = false;
-    if (!educationValidate()) valid = false;
-    if (!messageValidate()) valid = false;
+
+    if ($("#form_register").is(":visible")) {
+        if (!educationValidate()) valid = false;
+        if (!messageValidate()) valid = false;
+    }
 
     return valid;
 }
