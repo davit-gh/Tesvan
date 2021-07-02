@@ -5,9 +5,6 @@
 @endsection
 
 <style type="text/css">
-    .qa_txt_blocks{
-        cursor: pointer;
-    }
     .blog_description{
         margin-bottom: 40px;
     }
@@ -21,7 +18,7 @@
 
 <section id="job_hire" class="project-management" style="word-wrap: break-word;">
     <div class="container">
-        <div class="job_hire_text_col">
+        <div class="blog_text_col">
             <h2 class="hue_blue">{{ $bd->translated_title }}</h2>
             <p>
                 <small>
@@ -43,21 +40,15 @@
             </div>
         </div>
         <div class="col-xl-7 col-lg-7 col-md-12">
-            <div>
-                <div class="qa_txt_single_blok">
-                    <p class="hue_black">
-                        <div class="blog_description">
-                            {!! $bd->translated_description !!}
-                        </div>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ \Request::fullUrl() }}">
-                            <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
-                        </a>
-                        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ \Request::fullUrl() }}">
-                            <img width="30" height="30" src="{{url('images/linked_icon.png')}}"/>
-                        </a>
-                    </p>
-                </div>
+            <div class="blog_description">
+                {!! $bd->translated_description !!}
             </div>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ \Request::fullUrl() }}">
+                <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ \Request::fullUrl() }}">
+                <img width="30" height="30" src="{{url('images/linked_icon.png')}}"/>
+            </a>
         </div>
 
         <div class="col-xl-5 col-lg-5 col-md-12">
@@ -92,7 +83,7 @@
         </div>
 
         @if (count($blog_interest)>0)
-            <div class="job_hire_text_col">
+            <div class="blog_text_col">
                 <h2 class="hue_blue">{{__("Interesting For You")}}</h2>
             </div><br><br>
             <div class="row">
