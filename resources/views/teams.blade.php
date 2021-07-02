@@ -107,7 +107,7 @@
                     <img src="{{asset('images/team_images/Ara.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Ara Galsatyan")}}</h4>
                     <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
-                    <div data-cv-name="Ara_Galsatyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <div data-cv-name="Ara_Galstyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
                     <div class="layer hue_aqua"></div>
                 </div>
             </div>
