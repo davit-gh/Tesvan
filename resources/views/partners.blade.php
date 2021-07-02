@@ -12,8 +12,8 @@
             </div>
                 <div class="col-xl-2 col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
                     <div class="logos_col severalnines_col" onmouseover="hvr(this, 'in')" onmouseleave="hvr(this, 'out')">
-                        <img src="images/logo_black/cloudpcr.png" data-col="g" class="img-responsive logo_imgs">
-                        <img src="images/logo_colorfull/cloudpcr.png" style="display:none" data-col="b" class="img-responsive logo_imgs">
+                        <img src="images/logo_black/cloudpcr.png" data-col="g" class="img-responsive logo_imgs" style="height: 50px">
+                        <img src="images/logo_colorfull/cloudpcr.png" data-col="b" class="img-responsive logo_imgs" style="display:none;height: 50px">
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
@@ -35,9 +35,9 @@
                     </div>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <div class="logos_col spreenatuen_col" onmouseover="hvr(this, 'in')" onmouseleave="hvr(this, 'out')">
-                        <img src="images/logo_black/luseen.png" data-col="g" class="img-responsive logo_imgs">
-                        <img src="images/logo_colorfull/luseen.png" style="display:none" data-col="b" class="img-responsive logo_imgs">
+                    <div class="logos_col spreenatuen_col" onmouseover="hvr(this, 'in')" onmouseleave="hvr(this, 'out')" style="margin-bottom: 15px">
+                        <img src="images/logo_black/luseen.png" data-col="g" class="img-responsive logo_imgs" style="height: 50px">
+                        <img src="images/logo_colorfull/luseen.png" data-col="b" class="img-responsive logo_imgs" style="display:none;height: 50px">
                     </div>
                 </div>
             </div>

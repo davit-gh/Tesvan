@@ -60,8 +60,8 @@
 }
 
 .logos_col {
-
     min-height: 100px;
+    margin: 0 50px;
 }
 
 .custo_col,
@@ -96,7 +96,7 @@
     .luseen_col,
     .severalnines_col {
         margin-bottom: 10px;
-    } 
+    }
 }
 
 
@@ -199,7 +199,7 @@
 }
 
 
-/* 
+/*
 
 
 
@@ -221,7 +221,7 @@
     .members-slider .slick-dots li button::before {
         font-size: 50px;
     }
-    
+
     .members-slider .slick-dots li.slick-active button::before {
         font-size: 50px;
     }
@@ -231,7 +231,7 @@
     .members-slider .slick-dots li button::before {
         font-size: 40px;
     }
-    
+
     .members-slider .slick-dots li.slick-active button::before {
         font-size: 40px;
     }
@@ -251,7 +251,7 @@
 }
 
 @media (max-width: 767px){
-    
+
     .team_member_row {
         margin-bottom: 50px;
     }
@@ -295,6 +295,6 @@
     -ms-transform: rotate(-10deg);
     -webkit-transform: rotate(-10deg);
     -o-transform: rotate(-10deg);
-} 
+}
 
 */
