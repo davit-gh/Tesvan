@@ -52,7 +52,7 @@
         </div>
 
         <div class="col-xl-5 col-lg-5 col-md-12">
-        <h4 class="hue_blue">Recent Articles</h4>
+            <h4 style="font-weight: bold;">Recent Articles</h4>
             <br/>
             @if (count($blog)>0)
                 @foreach($blog as $key => $b)
