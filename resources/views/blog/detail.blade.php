@@ -33,53 +33,52 @@
         </div>
 
         <div class="row">
-
-        <div class="col-xl-12 col-lg-12 col-md-12">
-            <div class="qa_txt_blocks">
-                <img class="bradius" style="max-height: 350px;" width="100%" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
+            <div class="col-xl-12 col-lg-12 col-md-12">
+                <div class="qa_txt_blocks">
+                    <img class="bradius" style="max-height: 350px;" width="100%" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
+                </div>
             </div>
         </div>
-        <div class="col-xl-7 col-lg-7 col-md-12">
-            <div class="blog_description">
-                {!! $bd->translated_description !!}
+        <div class="row">
+            <div class="col-lg-7 col-md-12">
+                <div class="blog_description">
+                    {!! $bd->translated_description !!}
+                </div>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ \Request::fullUrl() }}">
+                    <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ \Request::fullUrl() }}">
+                    <img width="30" height="30" src="{{url('images/linked_icon.png')}}"/>
+                </a>
             </div>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ \Request::fullUrl() }}">
-                <img width="30" height="30" src="{{url('images/fb_icon.png')}}"/>
-            </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ \Request::fullUrl() }}">
-                <img width="30" height="30" src="{{url('images/linked_icon.png')}}"/>
-            </a>
-        </div>
-
-        <div class="col-xl-5 col-lg-5 col-md-12">
-            <h4 style="font-weight: bold;">Recent Articles</h4>
-            <br/>
-            @if (count($blog)>0)
-                @foreach($blog as $key => $b)
-                    <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
-                        <div class="qa_txt_single_blok"  style="margin-bottom: 10px; !important">
-                            <h5 class="hue_blue">{{ $b->translated_title }}</h5>
-                            <p>
-                                <small>
-                                    {{ date("M d, Y", strtotime($b->published_date)) }}
-                                </small>
-                            </p>
-                            <p class="hue_black">
-                                {{ limitWord(strip_tags($b->translated_description)) }}
-                            </p>
-                            <p class="hue_black">By
-                                @if(!empty($bd->created_by))
-                                    {{ $bd->created_by }}
-                                @else
-                                    {{ $bd->user->name }}
-                                @endif
-                            </p>
+            <div class="offset-lg-1 col-lg-4 col-md-12">
+                <h4 style="font-weight: bold;">Recent Articles</h4>
+                <br/>
+                @if (count($blog)>0)
+                    @foreach($blog as $key => $b)
+                        <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
+                            <div class="qa_txt_single_blok"  style="margin-bottom: 10px; !important">
+                                <h5 class="hue_blue">{{ $b->translated_title }}</h5>
+                                <p>
+                                    <small>
+                                        {{ date("M d, Y", strtotime($b->published_date)) }}
+                                    </small>
+                                </p>
+                                <p class="hue_black">
+                                    {{ limitWord(strip_tags($b->translated_description)) }}
+                                </p>
+                                <p class="hue_black">By
+                                    @if(!empty($bd->created_by))
+                                        {{ $bd->created_by }}
+                                    @else
+                                        {{ $bd->user->name }}
+                                    @endif
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                @endforeach
-            @endif
-        </div>
-
+                    @endforeach
+                @endif
+            </div>
         </div>
 
         @if (count($blog_interest)>0)
