@@ -45,18 +45,6 @@
         <div class="col-xl-7 col-lg-7 col-md-12">
             <div>
                 <div class="qa_txt_single_blok">
-                    <br><br>
-                    <h5 class="hue_blue">{{ $bd->translated_title }}</h5>
-                    <p>
-                    <small>
-                        Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | By
-                        @if(!empty($bd->created_by))
-                            {{ $bd->created_by }}
-                        @else
-                            {{ $bd->user->name }}
-                        @endif
-                    </small>
-                    </p>
                     <p class="hue_black">
                         <div class="blog_description">
                             {!! $bd->translated_description !!}
