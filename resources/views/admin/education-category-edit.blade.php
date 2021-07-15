@@ -44,13 +44,13 @@
             <strong>{{ session('success') }}</strong>
         </span>
         @endif
-        <form method="POST" enctype="multipart/form-data" action="{{ route('education-category.update') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('admin.education-category.update') }}">
             @csrf
             <div class="card-body">
                 <div class="form-group">
                     <label for="educationCategory">Category Name</label>
                     <input value="{{ $category->id }}" type="hidden" class="form-control" name="id">
-                    <input value="{{ old('name',$category->name) }}" type="text" class="form-control" name="name" id="educationCategory"> 
+                    <input value="{{ old('name',$category->name) }}" type="text" class="form-control" name="name" id="educationCategory">
                 </div>
             </div>
             <!-- /.card-body -->
@@ -60,11 +60,5 @@
             </div>
         </form>
     </div>
-
-@endsection
-
-@section('scripts')
-
-@include('admin.scripts.education-categories')
 
 @endsection

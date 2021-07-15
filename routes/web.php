@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,9 +85,9 @@ Route::get('/team', [
     'as' => 'teams'
 ]);
 
-Route::get('team/cv/{file_name}',[
-    'uses'=>'HomeController@teamsCv',
-    'as'=>'team.cv'
+Route::get('team/cv/{file_name}', [
+    'uses' => 'HomeController@teamsCv',
+    'as' => 'team.cv'
 ]);
 
 Auth::routes();
@@ -172,44 +173,35 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'blog.delete.entity'
     ]);
 
-
-
     Route::get('/admin/category/index', [
         'uses' => 'AdminController@categories',
         'as' => 'admin.category.index'
     ]);
-
     Route::get('/admin/category/create', [
         'uses' => 'AdminController@categoryCreate',
         'as' => 'admin.category.create'
     ]);
-
     Route::get('/category-edit/{id}', [
         'uses' => 'AdminController@categoryEdit',
         'as' => 'category.edit'
     ]);
-
     Route::get('/category-dt', [
         'uses' => 'AdminController@categoryDatatable',
         'as' => 'category.dt'
     ]);
-
     Route::post('/storeCategory', [
         'uses' => 'AdminController@storeCategory',
         'as' => 'category.store'
     ]);
-
     Route::post('/updateCategory', [
         'uses' => 'AdminController@updateCategory',
         'as' => 'category.update'
     ]);
-
     Route::post('/deleteCategory', [
         'uses' => 'AdminController@deleteCategory',
         'as' => 'category.delete'
     ]);
-    
-    
+
     Route::get('/admin/education-category/index', [
         'uses' => 'AdminController@educationCategories',
         'as' => 'admin.education-categories.index'
@@ -224,22 +216,49 @@ Route::middleware(['auth'])->group(function () {
     ]);
     Route::post('/storeEducationCategory', [
         'uses' => 'AdminController@storeEducationCategory',
-        'as' => 'education-category.store'
+        'as' => 'admin.education-category.store'
     ]);
     Route::get('/education-category-edit/{id}', [
         'uses' => 'AdminController@educationCategoryEdit',
-        'as' => 'education-category.edit'
+        'as' => 'admin.education-category.edit'
     ]);
     Route::post('/updateEducationCategory', [
         'uses' => 'AdminController@updateEducationCategory',
-        'as' => 'education-category.update'
+        'as' => 'admin.education-category.update'
     ]);
     Route::post('/deleteEducationCategory', [
         'uses' => 'AdminController@deleteEducationCategory',
-        'as' => 'education-category.delete'
+        'as' => 'admin.education-category.delete'
     ]);
 
-
+    Route::get('/admin/education/index', [
+        'uses' => 'AdminController@educations',
+        'as' => 'admin.educations.index'
+    ]);
+    Route::get('/admin/education-dt', [
+        'uses' => 'AdminController@educationDatatable',
+        'as' => 'education.dt'
+    ]);
+    Route::get('/admin/education/create', [
+        'uses' => 'AdminController@educationCreate',
+        'as' => 'admin.education.create'
+    ]);
+    Route::post('/storeEducation', [
+        'uses' => 'AdminController@storeEducation',
+        'as' => 'admin.education.store'
+    ]);
+    Route::get('/education-edit/{id}', [
+        'uses' => 'AdminController@educationEdit',
+        'as' => 'admin.education.edit'
+    ]);
+    Route::post('/updateEducation', [
+        'uses' => 'AdminController@updateEducation',
+        'as' => 'admin.education.update'
+    ]);
+    Route::post('/deleteEducation', [
+        'uses' => 'AdminController@deleteEducation',
+        'as' => 'admin.education.delete'
+    ]);
 });
 
 

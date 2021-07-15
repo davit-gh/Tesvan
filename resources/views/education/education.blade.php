@@ -420,27 +420,8 @@
 @endsection
 
 @section('scripts')
-
 <script src="{{ url('js/blockRotate.js') }}"></script>
 <script src="{{ url('js/slick.js') }}"></script>
 <script src="{{ url('js/slick.min.js') }}"></script>
 <script src="{{ url('js/customSlick.js') }}"></script>
-
-<script type="text/javascript">
-    $(document).on("click", "#showMore", function(e) {
-        e.preventDefault();
-        showNext = 6;
-        showElement = $(".showElement").length;
-        totalDb = Number("{{ count($project) }}");
-        total = showNext + showElement;
-        for (var i = showElement; i < total; i++) {
-            $("#tab" + i).show();
-            $("#tab" + i).addClass("showElement");
-            if (i == totalDb) {
-                $(".showMoreContainer").hide();
-            }
-        }
-    });
-</script>
-
 @endsection

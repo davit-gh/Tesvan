@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\ClientFeedback;
+use App\Models\Education;
 use App\Models\EducationCategory;
 use App\Models\Project;
 use App\Models\ProjectObjective;
@@ -619,7 +620,6 @@ class AdminController extends Controller
 
     public function storeBlog(Request $request)
     {
-
         $width = 200;
         $height = 200;
 
@@ -708,7 +708,6 @@ class AdminController extends Controller
 
     public function updateBlog(Request $request)
     {
-
         $width = 200;
         $height = 200;
 
@@ -901,8 +900,10 @@ class AdminController extends Controller
 
     public function educationCategories(Request $request)
     {
-        return view('admin/education-categories');
+        $categories = EducationCategory::latest()->get();
+        return view('admin/education-categories', compact('categories'));
     }
+
     public function educationCategoryDatatable(Request $request)
     {
         $category = EducationCategory::orderBy("id", "desc")->get();
@@ -911,7 +912,7 @@ class AdminController extends Controller
                 return $this->limitWord($d->name);
             })
             ->addColumn('action', '
-            <a href="{{ route("education-category.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+            <a href="{{ route("admin.education-category.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
             ')
             ->rawColumns(['image', 'action', 'description'])
             ->make(true);
@@ -983,5 +984,226 @@ class AdminController extends Controller
         } catch (Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);
         }
+    }
+
+    public function educations(Request $request)
+    {
+        return view('admin/educations');
+    }
+
+    public function educationCreate(Request $request)
+    {
+        $data["categories"] = EducationCategory::all();
+        return view('admin/education-create', $data);
+    }
+
+    public function storeEducation(Request $request)
+    {
+        $width = 200;
+        $height = 200;
+
+        $user = Auth::user();
+
+        $messages = [
+            'title.required' => 'Title required!',
+            'description.required' => 'Description required!',
+            'image.required' => 'Image required!',
+            'status.required' => 'Status required!',
+            'category.required' => 'Category required!'
+        ];
+
+        $rule = [
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'status' => 'required',
+            'category' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rule, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+            $p = new Education;
+            $p->title = $request->title;
+            $p->title_am = $request->title_am;
+            $p->title_ru = $request->title_ru;
+            $p->description = $request->description;
+            $p->description_am = $request->description_am ?? null;
+            $p->description_ru = $request->description_ru ?? null;
+            $p->status = $request->status;
+            $p->education_category_id = $request->category;
+            $p->created_by = $request->created_by;
+            $p->image = "";
+            $p->views = 0;
+            if (strtolower($request->status) == "publish") {
+                $p->published_date = date("Y-m-d H:i:s");
+            } else {
+                $p->published_date = "";
+            }
+            $p->user_id = $user->id;
+            $p->save();
+
+            if ($request->file("image")) {
+                $ext = $request->file("image")->getClientOriginalExtension();
+                $file_size = $request->file("image")->getSize();
+                $file_name = date('YmdHis') . rand(1, 500) . rand(501, 1000) . '.' . $ext;
+                $path = 'uploads/images/educations/' . $p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                $image = $request->file("image");
+                $image_resize = Image::make($image->getRealPath());
+                $image_resize->resize($width, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload . '/resize_' . $file_name);
+
+                $request->file("image")->move($dir_upload, $file_name);
+
+                $f = Education::find($p->id);
+                $f->image = $file_name;
+                $f->save();
+            }
+
+            \Session::flash('success', 'Succesfully added education post!');
+            return redirect(route('admin.educations.index'))->with(['success' => 'Succesfully added education post!']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function educationEdit($id)
+    {
+        $data["categories"] = EducationCategory::all();
+        $data['education'] = Education::find($id);
+        return view('admin/education-edit', $data);
+    }
+
+    public function updateEducation(Request $request)
+    {
+        $width = 200;
+        $height = 200;
+
+        $user = Auth::user();
+
+        $messages = [
+            'title.required' => 'Title required!',
+            'description.required' => 'Description required!',
+            'status.required' => 'Status required!',
+            'category.required' => 'Category required!'
+        ];
+
+        $rule = [
+            'title' => 'required',
+            'description' => 'required',
+            'status' => 'required',
+            'category' => 'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rule, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+            $p = Education::find($request->id);
+            $p->title = $request->title;
+            $p->title_am = $request->title_am;
+            $p->title_ru = $request->title_ru;
+            $p->description = $request->description;
+            $p->description_am = $request->description_am ?? null;
+            $p->description_ru = $request->description_ru ?? null;
+            $p->education_category_id = $request->category;
+            $p->status = $request->status;
+            $p->created_by = $request->created_by;
+            if (strtolower($request->status) == "publish") {
+                if (strlen($p->published_date) < 5 || strtolower($p->status) == "draft") {
+                    $p->published_date = date("Y-m-d H:i:s");
+                }
+            } else {
+                $p->published_date = "";
+            }
+            $p->user_id = $user->id;
+            $p->save();
+
+            if ($request->file("image")) {
+                $ext = $request->file("image")->getClientOriginalExtension();
+                $file_size = $request->file("image")->getSize();
+                $file_name = date('YmdHis') . rand(1, 500) . rand(501, 1000) . '.' . $ext;
+                $path = 'uploads/images/educations/' . $p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                $image = $request->file("image");
+                $image_resize = Image::make($image->getRealPath());
+                $image_resize->resize($width, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload . '/resize_' . $file_name);
+
+                $request->file("image")->move($dir_upload, $file_name);
+
+                $f = Education::find($p->id);
+                $f->image = $file_name;
+                $f->save();
+            }
+
+            \Session::flash('success', 'Succesfully update education post!');
+            return redirect(route('admin.educations.index'))->with(['success' => 'Succesfully update education post!']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function deleteEducation(Request $request)
+    {
+        try {
+            $id = $request->id;
+            Education::where('id', $id)->delete();
+            \Session::flash('success', 'Succesfully deleted education post!');
+            return response()->json('success', 200);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function educationDatatable(Request $request)
+    {
+        $education = Education::orderBy("id", "desc")->get();
+        return DataTables::of($education)
+            ->editColumn('title', function ($d) {
+                return $this->limitWord($d->title);
+            })
+            ->editColumn('description', function ($d) {
+                return $this->limitWord($d->description);
+            })
+            ->addColumn('category', function ($d) {
+                $category_name = "";
+                if ($category = EducationCategory::find($d->education_category_id)) {
+                    $category_name = $category->name;
+                }
+                return $this->limitWord($category_name);
+            })
+            ->editColumn('image', function ($d) {
+                return "<img width='100' height='100' src='" . url('uploads/images/educations/' . $d->id . '/resize_' . $d->image) . "'/>";
+            })
+            ->editColumn('published_date', function ($d) {
+                return $this->limitWord($d->published_date);
+            })
+            ->addColumn('created_by', function ($d) {
+                return $d->created_by;
+            })
+            ->addColumn('action', '
+            <a href="{{ route("admin.education.edit", $id) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+            ')
+            ->rawColumns(['image', 'action', 'description'])
+            ->make(true);
     }
 }

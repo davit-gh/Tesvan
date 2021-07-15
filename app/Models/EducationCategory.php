@@ -10,4 +10,8 @@ class EducationCategory extends Model
 {
     protected $table = 'education_categories';
 
+    public function posts()
+    {
+        return $this->hasMany(Education::class);
+    }
 }
