@@ -15,7 +15,6 @@
                             <p class="hue_black beginner_txt">
                                 {{__("By participating in the course, you will get acquainted with the basics of testing, theoretical concepts and approaches to practical work. You will have in-depth knowledge of testing, learn Python programming language, work in Selenium Framework master Automation QA.")}}
                             </p>
-                            <a href="" class="view_details">{{__("View Details")}}</a>
                             <p class="hue_blue contact_you">
                                 {{__("Our specialist will contact you to get acquainted with the conditions")}}
                             </p>

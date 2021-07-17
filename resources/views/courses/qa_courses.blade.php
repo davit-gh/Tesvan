@@ -174,9 +174,6 @@
                     <div class="underline_txt">
                         <span class="hue_black">{{__("The course is conducted by leading experts in the field in a warm and pleasant environment.")}}</span>
                     </div>
-                    <div class="qa_courses_btn">
-                        <a href="" class="hue_blue">{{__("Learn More")}}</a>
-                    </div>
                 </div>
             </div>
 
