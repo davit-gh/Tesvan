@@ -82,7 +82,7 @@
         </div>
 
         @if (count($blog_interest)>0)
-            <div class="blog_text_col">
+            <div class="blog_text_col" style="margin-top: 50px">
                 <h2 class="hue_blue">{{ __("Interesting For You") }}</h2>
             </div><br><br>
             <div class="row">
