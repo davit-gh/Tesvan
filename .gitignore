@@ -13,3 +13,4 @@ yarn-error.log
 /public/uploads/images/project
 /storage/debugbar/
 /public/uploads/
+.DS_Store

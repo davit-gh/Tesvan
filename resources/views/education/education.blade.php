@@ -19,6 +19,7 @@
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
     }
+
 </style>
 <section id="job_hire" class="project-management">
     <div class="container">
@@ -29,19 +30,21 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-7 col-xl-8 px-2">
                 <div class="left_side_content_education">
-                    <a href="">
-                        <div class="main_box_lft_content">
-                            <div class="main_box_image">
-                                <img src="{{ url('images/example-1.png') }}" alt="main_image" class="img-fluid">
+                    <div class="main_box_lft_content">
+                        <div class="main_box_image">
+                            <img src="{{ url('images/example-1.png') }}" alt="main_image" class="img-fluid">
 
-                            </div>
-                            <div class="main_box_bottom_content">
-                                <h3 class="main_title_all_page">What is Quality Assurance?</h3>
-                                <p class="date_text">May 5, 2021</p>
-                                <p class="main_box_content_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry'ssimply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>
                         </div>
-                    </a>
+                        <div class="main_box_bottom_content">
+                            <h3 class="main_title_all_page">What is Quality Assurance?</h3>
+                            <p class="date_text">May 5, 2021</p>
+                            <p class="main_box_content_text">Lorem Ipsum is simply dummy text of the printing and
+                                typesetting industry. Lorem Ipsum has been the industry'ssimply dummy text of the
+                                printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and
+                                typesetting industry.</p>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>
@@ -51,17 +54,17 @@
                     <div class="most_view_box mb-4">
                         <h5 class="color143E59 font-24">If I could change one thing in the Agile Manifesto…</h5>
                         <p class="color6F6F6F font-16 pt-2">May 5, 2021</p>
-                        <p class="by_name_text"> By <span>TESVAN Team</span> </p>
+                        <p class="by_name_text"> by <a href="{{ route('teams') }}" class="blue">Tesvan team</a> </p>
                     </div>
                     <div class="most_view_box mb-4">
                         <h5 class="color143E59 font-24">If I could change one thing in the Agile Manifesto…</h5>
                         <p class="color6F6F6F font-16 pt-2">May 5, 2021</p>
-                        <p class="by_name_text"> By <span>TESVAN Team</span> </p>
+                        <p class="by_name_text"> by <a href="{{ route('teams') }}" class="blue">Tesvan team</a> </p>
                     </div>
                     <div class="most_view_box">
                         <h5 class="color143E59 font-24">If I could change one thing in the Agile Manifesto…</h5>
                         <p class="color6F6F6F font-16 pt-2">May 5, 2021</p>
-                        <p class="by_name_text"> By <span>TESVAN Team</span> </p>
+                        <p class="by_name_text"> by <a href="{{ route('teams') }}" class="blue">Tesvan team</a> </p>
                     </div>
                 </div>
             </div>
@@ -76,48 +79,51 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
-                    <div class="all_box_1">
-                        <div class="all_box_top_image">
-                            <img src="{{ url('images/example-1.png') }}" class="img-fluid">
-                        </div>
-                        <div class="all_box_bottom_content">
-                            <h4 class="font-24 color143E59 semibold">Quality Assurance</h4>
-                            <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                            <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                        </div>
+                <div class="all_box_1">
+                    <div class="all_box_top_image">
+                        <img src="{{ url('images/example-1.png') }}" class="img-fluid">
                     </div>
-                </a>
+                    <div class="all_box_bottom_content">
+                        <h4 class="font-24 color143E59 semibold">Quality Assurance</h4>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    </div>
+                </div>
+
 
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
-                    <div class="all_box_1">
-                        <div class="all_box_top_image">
-                            <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
-                        </div>
-                        <div class="all_box_bottom_content">
-                            <h4 class="font-24 color143E59 semibold">Software testing</h4>
-                            <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                            <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                        </div>
+                <div class="all_box_1">
+                    <div class="all_box_top_image">
+                        <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
                     </div>
-                </a>
+                    <div class="all_box_bottom_content">
+                        <h4 class="font-24 color143E59 semibold">Software testing</h4>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    </div>
+                </div>
+
 
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
-                <a href="">
-                    <div class="all_box_1">
-                        <div class="all_box_top_image">
-                            <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
-                        </div>
-                        <div class="all_box_bottom_content">
-                            <h4 class="font-24 color143E59 semibold">7 Software Testing Principles</h4>
-                            <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                            <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                        </div>
+                <div class="all_box_1">
+                    <div class="all_box_top_image">
+                        <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
                     </div>
-                </a>
+                    <div class="all_box_bottom_content">
+                        <h4 class="font-24 color143E59 semibold">7 Software Testing Principles</h4>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -134,47 +140,50 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
-                    <div class="all_box_1">
-                        <div class="all_box_top_image">
-                            <img src="{{ url('images/education/qa1.jpg') }}" class="img-fluid">
-                        </div>
-                        <div class="all_box_bottom_content">
-                            <h4 class="font-24 color143E59 semibold">Black Box method</h4>
-                            <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                            <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                        </div>
+                <div class="all_box_1">
+                    <div class="all_box_top_image">
+                        <img src="{{ url('images/education/qa1.jpg') }}" class="img-fluid">
                     </div>
-                </a>
+                    <div class="all_box_bottom_content">
+                        <h4 class="font-24 color143E59 semibold">Black Box method</h4>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    </div>
+                </div>
+
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
-                    <div class="all_box_1">
-                        <div class="all_box_top_image">
-                            <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
-                        </div>
-                        <div class="all_box_bottom_content">
-                            <h4 class="font-24 color143E59 semibold">White Box method</h4>
-                            <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                            <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                        </div>
+                <div class="all_box_1">
+                    <div class="all_box_top_image">
+                        <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
                     </div>
-                </a>
+                    <div class="all_box_bottom_content">
+                        <h4 class="font-24 color143E59 semibold">White Box method</h4>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    </div>
+                </div>
+
 
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
-                <a href="">
-                    <div class="all_box_1">
-                        <div class="all_box_top_image">
-                            <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
-                        </div>
-                        <div class="all_box_bottom_content">
-                            <h4 class="font-24 color143E59 semibold">Gray Box method</h4>
-                            <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                            <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-                        </div>
+                <div class="all_box_1">
+                    <div class="all_box_top_image">
+                        <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
                     </div>
-                </a>
+                    <div class="all_box_bottom_content">
+                        <h4 class="font-24 color143E59 semibold">Gray Box method</h4>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="view__button mt-4 pt-3">
@@ -190,48 +199,51 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa1.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Defect, Error, Bug, Failure</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Bug Life Cycle</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Defect Severity and Defect Priority</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
         </div>
@@ -248,48 +260,51 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa1.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Test Case</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Test Script</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Test Plan</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
         </div>
@@ -306,48 +321,51 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa1.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Agile model</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Agile VS Waterfall</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Scrum methodology</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
         </div>
@@ -364,48 +382,51 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa1.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Regular Expressions</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa2.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Linux</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
             <div class="col-12 col-md-4 px-3 px-md-1">
-                <a href="">
                 <div class="all_box_1">
                     <div class="all_box_top_image">
                         <img src="{{ url('images/education/qa3.jpg') }}" class="img-fluid">
                     </div>
                     <div class="all_box_bottom_content">
                         <h4 class="font-24 color143E59 semibold">Git</h4>
-                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | <span class="blue">By</span> Tesvan team</p>
-                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+                        <p class="font-16 color6F6F6F pt-1">May 5, 2021 | by <a href="{{ route('teams') }}"
+                                class="blue">Tesvan team</a></p>
+                        <p class="font-18 color0D171D mb-0 line-height-30">Lorem Ipsum is simply dummy text of the
+                            printing and typesetting industry. Lorem Ipsum has been the industry's</p>
                     </div>
                 </div>
-                </a>
+
 
             </div>
         </div>
