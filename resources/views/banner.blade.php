@@ -174,7 +174,59 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 hire_us_col d-flex align-items-center">
                     <div class="hire_us_text">
                         <h4 class="hire_us_h4 mb-4 hue_blue">{{__("Why Should You Hire Us ?")}}</h4>
-                        <span class="mb-3 d-block hue_blue" style="white-space: pre-wrap">{{ __("You should hire us, because:\n* QUALITY is our number one priority and our ultimate goal\n* we are extremely customer-oriented and prioritize the needs of our clients over our business needs\n* we are young and motivated, ready to face any challenges\n* each of us is different and unique, but we share the ONE vision that unites us\n* we are passionate about our work, anything we do we do that with love and enthusiasm") }}</span>
+                        <div class="mb-3 d-block hue_blue">
+                            {{ __("You should hire us, because:") }}
+                            <div class="row">
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                    <img alt="" src="images/circle_yellow.svg" />
+                                </div>
+                                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+                                    <span>
+                                        {{__("QUALITY is our number one priority and our ultimate goal")}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                    <img alt="" src="images/circle_yellow.svg" />
+                                </div>
+                                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+                                    <span>
+                                        {{__("We are extremely customer-oriented and prioritize the needs of our clients over our business needs")}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                    <img alt="" src="images/circle_yellow.svg" />
+                                </div>
+                                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+                                    <span>
+                                        {{__("We are young and motivated, ready to face any challenges")}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                    <img alt="" src="images/circle_yellow.svg" />
+                                </div>
+                                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+                                    <span>
+                                        {{__("Each of us is different and unique, but we share the ONE vision that unites us")}}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-1">
+                                    <img alt="" src="images/circle_yellow.svg" />
+                                </div>
+                                <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
+                                    <span>
+                                        {{__("We are passionate about our work, anything we do we do that with love and enthusiasm")}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
