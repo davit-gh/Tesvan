@@ -4,10 +4,10 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="productive_col">
                     <h1 class="hue_blue">
-                        <span class="we_are_txt">{{__("A Company Of")}}</span>
-                        <span class="hue_yellow tesvan_txt">{{__("Quality")}}</span>
+                        <span class="we_are_txt">{{ __("A Company Of") }}</span>
+                        <span class="hue_yellow tesvan_txt">{{ __("Quality") }}</span>
                     </h1>
-                    <p class="hue_blue">{{__("We are highly-productive quality assurance team that appreciates clean and elegant solutions to multifaceted real-world business problems.")}}
+                    <p class="hue_blue">{{ __("Quality is the heartbeat of any company. Having high-quality software you will be able to compete with the leaders of the industry and sooner or later YOU WILL LEAD them. We are here to help you on your way to success by providing you high-level quality assurance services.") }}
                     </p>
                     <div class="custom-btn">
                         <a href="{{ url('/#hire_us') }}" class="hue_bg_b hue_blue">{{__("Learn More")}}</a>

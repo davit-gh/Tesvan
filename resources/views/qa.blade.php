@@ -150,6 +150,8 @@
                 <div class="QA_col">
                     <h5 class="hue_blue QA_h5">
                         {{__("Here's the value we bring to the table")}}
+                        <br>
+                        {{__('As “A Company of Quality” we have a range of values we are faithful to:')}}
                     </h5>
                     <div class="QA_col_texts hue_black">
                         <div class="QA_text_row">
@@ -159,8 +161,7 @@
                                 </div>
                                 <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
                                     <span class="QA_text hue_black">
-                                        {{__("Our talented team is comprized of smart, collaborative people who think big, execute quickly and dont take themselves too seriously.")}}
-
+                                        {{__("Quality: as our slogan suggests our main value offered is quality. And here in Tesvan, everything rolls around that.")}}
                                     </span>
                                 </div>
                             </div>
@@ -172,8 +173,7 @@
                                 </div>
                                 <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
                                     <span class="QA_text hue_black">
-                                        {{__("We are commited to agile value delivery and solid engineering principles, as well as continuously improving our craft.")}}
-
+                                        {{__("Responsibility: We approach any issue with a strong sense of responsibility and do the work entrusted to us to the best of our ability.")}}
                                     </span>
                                 </div>
                             </div>
@@ -185,7 +185,7 @@
                                 </div>
                                 <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
                                     <span class="QA_text hue_black">
-                                        {{__("We are devoted to developing extensive quality test systems for small to large-scale companies to ensure the highest quality models and best customer experinece.")}}
+                                        {{__("Reliability: Trusting us you will gain the reliability and guarantee for your product and will perform confidently among your competitors.")}}
                                     </span>
                                 </div>
                             </div>
@@ -197,17 +197,7 @@
                                 </div>
                                 <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-11">
                                     <span class="QA_text hue_black">
-                                        {{__("The constant focus on continuous learning and growth keeps our team members engaged and excited about \"what’s next.\" We know that we win as a team when your product succeeds.")}}
-
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="QA_text_row">
-                            <div class="row">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                    <span class="QA_text hue_black">
-                                        {{__("We gather feedback, do the necessary tweaks, calibrate and move forward by increasing the best coverage.")}}
+                                        {{__("Growth: we grow continuously and never stop improving our skills and qualities to be more competent, to keep up with the times, and easily meet the expectations of our customers.")}}
                                     </span>
                                 </div>
                             </div>
