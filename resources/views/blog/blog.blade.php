@@ -77,7 +77,7 @@
 
         @if (count($blog_popular)>0)
         <div class="job_hire_text_col">
-            <h2 class="hue_blue">{{__("Popular Post")}}</h2>
+            <h2 class="hue_blue">{{__("Popular Posts")}}</h2>
         </div><br><br>
 
         <div class="row">
@@ -104,7 +104,7 @@
 
         @if (count($blog_recent)>0)
         <div class="job_hire_text_col">
-            <h2 class="hue_blue">{{__("Recent Post")}}</h2>
+            <h2 class="hue_blue">{{__("Recent Posts")}}</h2>
         </div><br><br>
 
         <div class="row">
@@ -155,7 +155,7 @@
         <div class="container showMoreContainer">
             <div class="text-center job_hire_text_col" style="padding: 49px;">
                 <div class="custom-btn">
-                    <a id="showMore" class="hue_bg_b hue_blue" href="#">Load More</a>
+                    <a id="showMore" class="hue_bg_b hue_blue" href="#">{{ __('Load More') }}</a>
                 </div>
             </div>
         </div>

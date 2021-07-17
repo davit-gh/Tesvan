@@ -52,7 +52,7 @@
                 </a>
             </div>
             <div class="offset-lg-1 col-lg-4 col-md-12">
-                <h4 style="font-weight: bold;">Recent Articles</h4>
+                <h4 style="font-weight: bold;">{{ __("Recent Articles") }}</h4>
                 <br/>
                 @if (count($blog)>0)
                     @foreach($blog as $key => $b)
@@ -83,7 +83,7 @@
 
         @if (count($blog_interest)>0)
             <div class="blog_text_col">
-                <h2 class="hue_blue">{{__("Interesting For You")}}</h2>
+                <h2 class="hue_blue">{{ __("Interesting For You") }}</h2>
             </div><br><br>
             <div class="row">
                 @foreach($blog_interest as $key => $b)
