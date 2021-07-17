@@ -174,16 +174,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 hire_us_col d-flex align-items-center">
                     <div class="hire_us_text">
                         <h4 class="hire_us_h4 mb-4 hue_blue">{{__("Why Should You Hire Us ?")}}</h4>
-                        <span class="mb-3 d-block hue_blue">
-                            {{__("Tesvan promotes job creation for smart, capable young people by preventing them from emigrating to the capital and abroad.")}}
-                        </span>
-                        <span class="mb-3 d-block hue_black">
-                            {{__("Our activity started in 2019. It pursued one goal: to develop the IT sector in the regions, giving practical training opportunities to the young generation of the region.")}}
-
-                        </span>
-                        <span class="mb-3 d-block hue_black">
-                            {{__("We will drive a new level of quality to your products and services by hunting down and reproducing the trickiest of bugs.")}}
-                        </span>
+                        <span class="mb-3 d-block hue_blue" style="white-space: pre-wrap">{{ __("You should hire us, because:\n* QUALITY is our number one priority and our ultimate goal\n* we are extremely customer-oriented and prioritize the needs of our clients over our business needs\n* we are young and motivated, ready to face any challenges\n* each of us is different and unique, but we share the ONE vision that unites us\n* we are passionate about our work, anything we do we do that with love and enthusiasm") }}</span>
                     </div>
                 </div>
             </div>
