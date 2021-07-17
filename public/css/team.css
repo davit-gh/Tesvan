@@ -280,3 +280,8 @@
     box-sizing: border-box;
     border-radius: 6px;
 }
+
+.custom-btn a:hover {
+    background-color: #143E5A;
+    color: #ffffff;
+}

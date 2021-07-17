@@ -36,7 +36,7 @@
     </div><br>
     <div class="container" align="center">
         <div class="custom-btn">
-            <a href="{{ route('teams') }}">See All</a>
+            <a href="{{ route('teams') }}">{{__('See All')}}</a>
         </div>
     </div>
 </section>
