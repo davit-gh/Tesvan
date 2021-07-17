@@ -17,15 +17,19 @@ $(document).ready(function() {
 
     var applyFiles = function() {
         if (this.files.length <= 0) {
+            var text;
+
             if (locale == "en") {
-                $(".choosen").html("No File Selected");
+                text = "No File Selected";
             }
             if (locale == "am") {
-                $(".choosen").html("Ընտրված չէ");
+                text = "Ընտրված չէ";
             }
             if (locale == "ru") {
-                $(".choosen").html("Файл не выбран");
+                text = "Файл не выбран";
             }
+
+            $(".choosen").html(text + " (pdf, doc & docx)");
         } else {
             $(".choosen").empty();
             var val = $(this)
@@ -34,15 +38,19 @@ $(document).ready(function() {
                 regex = new RegExp("(.*?).(docx|doc|pdf)$");
 
             if (!regex.test(val)) {
+                var text;
+
                 if (locale == "en") {
-                    $(".choosen").html("No File Selected");
+                    text = "No File Selected";
                 }
                 if (locale == "am") {
-                    $(".choosen").html("Ընտրված չէ");
+                    text = "Ընտրված չէ";
                 }
                 if (locale == "ru") {
-                    $(".choosen").html("Файл не выбран");
+                    text = "Файл не выбран";
                 }
+
+                $(".choosen").html(text + " (pdf, doc & docx)");
                 return;
             }
 
