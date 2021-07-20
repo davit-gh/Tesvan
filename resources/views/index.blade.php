@@ -47,5 +47,21 @@
 @if(Session::has('success'))
     $('#myModal').modal('show');
 @endif
+
+function boldBeforeColon(str) {
+    var res = str.split(":");
+    var mynewres = "<b>" + res[0] + ": " + "</b>" + res[1];
+    var i = 2;
+    var newres = mynewres;
+    while (typeof res[i] !== 'undefined') {
+        newres = newres + ":" + res[i];
+        i++;
+    }
+    return newres;
+}
+
+$('.QA_text.hue_black').each(function () {
+    $(this).html(boldBeforeColon($(this).text()));
+})
 </script>
 @endsection

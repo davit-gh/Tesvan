@@ -148,11 +148,10 @@
             </div>
             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center">
                 <div class="QA_col">
-                    <h5 class="hue_blue QA_h5">
-                        {{__("Here's the value we bring to the table")}}
-                        <br>
-                        {{__('As “A Company of Quality” we have a range of values we are faithful to:')}}
-                    </h5>
+                    <h4 style="font-size: 24px !important" class="hire_us_h4 mb-4 hue_blue">{{__("Here's the value we bring to the table")}}</h4>
+                    <div style="font-size: 17px !important" class="d-block hue_blue">
+                        {{ __("You should hire us, because:") }}
+                    </div>
                     <div class="QA_col_texts hue_black">
                         <div class="QA_text_row">
                             <div class="row">

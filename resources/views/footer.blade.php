@@ -4,7 +4,7 @@
             <div class="center pull-center" align="center">
                 <div class="row">
                     <div class="col-md-12">
-                    <img src="/images/logonew.png" alt="" width="50">
+                    <img src="/images/logo.svg" alt="" width="50">
                     </div>
                 </div><br/><br/>
                 <div class="row">
