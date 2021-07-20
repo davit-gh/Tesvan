@@ -150,7 +150,7 @@
                 <div class="QA_col">
                     <h4 style="font-size: 24px !important" class="hire_us_h4 mb-4 hue_blue">{{__("Here's the value we bring to the table")}}</h4>
                     <div style="font-size: 17px !important" class="d-block hue_blue">
-                        {{ __("You should hire us, because:") }}
+                        {{ __("As “A Company of Quality” we have a range of values we are faithful to:") }}
                     </div>
                     <div class="QA_col_texts hue_black">
                         <div class="QA_text_row">
