@@ -6,7 +6,7 @@
           <img src="AdminLTE-3.0.5/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="AdminLTE-3.0.5/#" class="d-block">Username</a>
+          <a href="/project-list" class="d-block">Username</a>
         </div>
       </div>
 

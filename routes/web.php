@@ -60,9 +60,13 @@ Route::get('/education', [
     'uses' => 'EducationController@index',
     'as' => 'education'
 ]);
-Route::get('/education/{education_name}', [
+Route::get('/education/{education_category}', [
     'uses' => 'EducationController@list',
     'as' => 'education.list'
+]);
+Route::get('/education/{education_category}/{education}', [
+    'uses' => 'EducationController@detail',
+    'as' => 'education.detail'
 ]);
 
 Route::get('/blog/{name}', [

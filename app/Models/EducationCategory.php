@@ -14,4 +14,9 @@ class EducationCategory extends Model
     {
         return $this->hasMany(Education::class);
     }
+
+    public function getSlugAttribute()
+    {
+        return slug($this->name);
+    }
 }

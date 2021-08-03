@@ -2,17 +2,17 @@
 
 @section('styles')
 <link rel="stylesheet" type="text/css" href="/css/blog.css?v={{ strtotime(date('YmdHis')) }}">
-@endsection
-
 <style type="text/css">
     .qa_txt_blocks{
         cursor: pointer;
     }
+
     .bradius{
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
     }
 </style>
+@endsection
 
 @section('content')
 <section id="job_hire" class="project-management" style="word-wrap: break-word;">
