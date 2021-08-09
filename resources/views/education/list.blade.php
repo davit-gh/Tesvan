@@ -29,7 +29,7 @@ div@extends("layouts.app")
                                     <h4 class="font-24 color143E59 semibold">{{ $post->translated_title }}</h4>
                                 </a>
                                 <p class="font-16 color6F6F6F pt-1">{{ $post->published_date->format('F d, Y') }} | by <a href="{{ route('teams') }}" class="blue">{{ $post->created_by }}</a></p>
-                                <p class="font-18 color0D171D mb-0 line-height-30">{!! $post->translated_description !!}</p>
+                                <p class="font-18 color0D171D mb-0 line-height-30">{!! $post->meta_description !!}</p>
                             </div>
                         </div>
                     </div>

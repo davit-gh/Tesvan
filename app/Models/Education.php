@@ -48,4 +48,20 @@ class Education extends Model
 
         return EdJSParser::parse($this->{"description_" . app()->getLocale()})->toHtml();
     }
+
+    public function getMetaDescriptionAttribute()
+    {
+        $description = $this->translated_description;
+        // remove special tags
+        $imgRegex = '(<img[^>]+\>)';
+        $tableRegex = '(\<table\ .+\>.+\<\/table\>)';
+        $olRegex = '(\<ol\>.+\<\/ol\>)';
+        $ulRegex = '(\<ul\>.+\<\/ul\>)';
+        $description = trim(preg_replace("/{$imgRegex}|{$tableRegex}|{$olRegex}|{$ulRegex}/i", '', $description));
+        // remove special tags
+
+        $description = strip_tags($description);
+
+        return substr($description, 0, 160);
+    }
 }

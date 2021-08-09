@@ -40,7 +40,7 @@
                                 </a>
                                 <p class="date_text">{{ $featured->published_date->format('F d, Y') }}</p>
                                 <div class="main_box_content_text">
-                                    {!! limitWord(strip_tags($featured->translated_description)) !!}
+                                    {!! $featured->meta_description !!}
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                 <p class="font-16 color6F6F6F pt-1">{{ $post->published_date->format('F d, Y') }} | by <a href="{{ route('teams') }}"
                                         class="blue">{{ $post->created_by }}</a></p>
                                 <div class="font-18 color0D171D mb-0 line-height-30">
-                                    {!! $post->translated_description !!}
+                                    {!! $post->meta_description !!}
                                 </div>
                             </div>
                         </div>

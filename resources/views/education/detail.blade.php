@@ -137,7 +137,6 @@
 @endsection
 
 @section('content')
-
 <section id="job_hire" class="project-management" style="word-wrap: break-word;">
     <div class="container">
         <div class="blog_text_col">
@@ -202,7 +201,7 @@
                                                         @endif
                                                     </a>
                                                 </p>
-                                                <p class="hue_black">{{ limitWord(strip_tags($b->translated_description)) }}</p>
+                                                <p class="hue_black">{{ $b->meta_description }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -227,9 +226,7 @@
                                         {{ date("M d, Y", strtotime($b->published_date)) }}
                                     </small>
                                 </p>
-                                <p class="hue_black">
-                                    {{ limitWord(strip_tags($b->translated_description)) }}
-                                </p>
+                                <p class="hue_black">{{ $b->meta_description }}</p>
                                 <p class="hue_blue">
                                     By
                                     <a href="{{ route('teams') }}" class="blue">
