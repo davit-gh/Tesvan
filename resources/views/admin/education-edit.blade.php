@@ -127,7 +127,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
-<script src="{{ asset('admin/js/hyperlink.js') }}"></script>
+<script src="{{ asset('admin-asset/js/hyperlink.js') }}"></script>
 <script>
     let editors = [];
     let options = {
