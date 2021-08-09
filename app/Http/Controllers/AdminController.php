@@ -11,6 +11,7 @@ use App\Models\Project;
 use App\Models\ProjectObjective;
 use App\Models\ProjectResult;
 use App\Models\TechnologyTool;
+use App\Services\EdJSParser;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -1031,9 +1032,9 @@ class AdminController extends Controller
             $p->title = $request->title;
             $p->title_am = $request->title_am;
             $p->title_ru = $request->title_ru;
-            $p->description = $request->description;
-            $p->description_am = $request->description_am ?? null;
-            $p->description_ru = $request->description_ru ?? null;
+            $p->description = json_decode($request->description);
+            $p->description_am = json_decode($request->description_am ?? null);
+            $p->description_ru = json_decode($request->description_ru ?? null);
             $p->status = $request->status;
             $p->education_category_id = $request->category;
             $p->created_by = $request->created_by;
@@ -1090,7 +1091,6 @@ class AdminController extends Controller
         $height = 200;
 
         $user = Auth::user();
-
         $messages = [
             'title.required' => 'Title required!',
             'description.required' => 'Description required!',
@@ -1116,9 +1116,9 @@ class AdminController extends Controller
             $p->title = $request->title;
             $p->title_am = $request->title_am;
             $p->title_ru = $request->title_ru;
-            $p->description = $request->description;
-            $p->description_am = $request->description_am ?? null;
-            $p->description_ru = $request->description_ru ?? null;
+            $p->description = json_decode($request->description);
+            $p->description_am = json_decode($request->description_am ?? null);
+            $p->description_ru = json_decode($request->description_ru ?? null);
             $p->education_category_id = $request->category;
             $p->status = $request->status;
             $p->created_by = $request->created_by;
@@ -1182,7 +1182,7 @@ class AdminController extends Controller
                 return $this->limitWord($d->title);
             })
             ->editColumn('description', function ($d) {
-                return $this->limitWord($d->description);
+                return $this->limitWord(EdJSParser::parse($d->description)->toHtml());
             })
             ->addColumn('category', function ($d) {
                 $category_name = "";

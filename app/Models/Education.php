@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Services\EdJSParser;
 use Illuminate\Database\Eloquent\Model;
 
 class Education extends Model
@@ -10,6 +11,9 @@ class Education extends Model
 
     protected $casts = [
         'published_date' => 'date',
+        'description' => 'json',
+        'description_am' => 'json',
+        'description_ru' => 'json',
     ];
 
     public function category()
@@ -39,9 +43,9 @@ class Education extends Model
     public function getTranslatedDescriptionAttribute()
     {
         if (app()->getLocale() === 'en') {
-            return $this->description;
+            return EdJSParser::parse($this->description)->toHtml();
         }
 
-        return $this->{"description_" . app()->getLocale()};
+        return EdJSParser::parse($this->{"description_" . app()->getLocale()})->toHtml();
     }
 }

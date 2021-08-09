@@ -263,6 +263,11 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'AdminController@deleteEducation',
         'as' => 'admin.education.delete'
     ]);
+
+    Route::post('upload', [
+        'uses' => 'StorageController@upload',
+        'as' => 'admin.upload',
+    ]);
 });
 
 

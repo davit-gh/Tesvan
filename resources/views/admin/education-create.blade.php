@@ -67,15 +67,18 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Description</label>
-                <textarea class="form-control" name="description">{{ old('description') }}</textarea>
+                <input type="hidden" name="description">
+                <div id="description" class="textarea form-control" style="height: auto;" name="description"></div>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Description (in Armenian)</label>
-                <textarea class="form-control" name="description_am">{{ old('description_am') }}</textarea>
+                <input type="hidden" name="description_am">
+                <div id="description_am" class="textarea form-control" style="height: auto;" name="description_am"></div>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Description (in Russian)</label>
-                <textarea class="form-control" name="description_ru">{{ old('description_ru') }}</textarea>
+                <input type="hidden" name="description_ru">
+                <div id="description_ru" class="textarea form-control" style="height: auto;" name="description_ru"></div>
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Category</label>
@@ -110,5 +113,74 @@
 @endsection
 
 @section('scripts')
-@include('admin.scripts.blogcreate')
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/link@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/nested-list@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/code@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
+<script src="{{ asset('admin/js/hyperlink.js') }}"></script>
+<script>
+    let editors = [];
+    let options = {
+        placeholder: 'Let`s write an awesome education content!',
+        tools: {
+            header: {
+                class: Header,
+                inlineToolbar: true,
+                config: {
+                    placeholder: 'Enter a header',
+                    levels: [1, 2, 3, 4],
+                    defaultLevel: 1
+                },
+            },
+            image: {
+                class: ImageTool,
+                config: {
+                    endpoints: {
+                        byFile: '{{ route('admin.upload') }}',
+                    }
+                }
+            },
+            link: LinkTool,
+            list: NestedList,
+            table: Table,
+            code: CodeTool,
+            delimiter: Delimiter,
+            quote: Quote,
+            hyperlink: Hyperlink,
+        },
+    };
+
+    let description = new EditorJS({
+        holder: $('#description')[0],
+        ...options,
+        data: {!! old('description') ?? json_encode([]) !!}
+    });
+
+    let description_am = new EditorJS({
+        holder: $('#description_am')[0],
+        ...options,
+        data: {!! old('description_am') ?? json_encode([]) !!}
+    });
+
+    let description_ru = new EditorJS({
+        holder: $('#description_ru')[0],
+        ...options,
+        data: {!! old('description_ru') ?? json_encode([]) !!}
+    });
+
+    window.editors = [
+        description, description_am, description_ru
+    ];
+
+    $('form').on('submit', async function () {
+        $(this).find('[name="description"]').val(JSON.stringify(await description.save()))
+        $(this).find('[name="description_am"]').val(JSON.stringify(await description_am.save()))
+        $(this).find('[name="description_ru"]').val(JSON.stringify(await description_ru.save()))
+    });
+</script>
 @endsection

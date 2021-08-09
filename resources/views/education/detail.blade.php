@@ -10,9 +10,128 @@
     .blog_description{
         margin-bottom: 40px;
     }
+
     .bradius{
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
+    }
+
+    .prs-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    .prs-table th,
+    .prs-table td {
+        padding: 10px 15px;
+        border: 1px solid #D9DAD9;
+    }
+
+    .prs-table thead {
+        color: white;
+        background: #143E59;
+    }
+
+    .prs-table thead tr th:first-child {
+        border-top-left-radius: 12px;
+    }
+
+    .prs-table thead tr th:last-child {
+        border-top-right-radius: 12px;
+    }
+
+    .prs-table tbody tr:nth-child(odd) {
+        background: #ECEDEC;
+    }
+
+    .prs-table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 12px;
+    }
+
+    .prs-table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 12px;
+    }
+
+    .prs-delimiter {
+        border-top: 1px dashed #F4B41A;
+    }
+
+    .prs-code {
+        position: relative;
+        width: 100%;
+        border: 1px solid #D9DAD9;
+        border-left: 10px solid #143E59;
+        border-radius: 12px;
+        padding: 7.5px 12px;
+    }
+
+    .prs-code .copy-btn {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        background: #143E59;
+        padding: 7.5px 10px;
+        border-top-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+
+    .prs-quote {
+        width: 100%;
+    }
+
+    .prs-quote .prs-quote-title {
+        display: inline-block;
+        background: #143E59;
+        color: white;
+        padding: 5px 12px;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+    }
+
+    .prs-quote .prs-quote-content {
+        border: 1px solid #D9DAD9;
+        padding: 7.5px 12px;
+    }
+
+    .prs-list ul li {
+        list-style: none;
+        position: relative;
+    }
+
+    .prs-list ul li::before{
+        content: '';
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        background-image: url(/images/ul-icon.png);
+        background-size: contain;
+        margin-right: 10px;
+    }
+
+    .prs-list ol {
+        counter-reset: myOrderedListItemsCounter;
+    }
+
+    .prs-list ol li {
+        list-style-type: none;
+        position: relative;
+    }
+
+    .prs-list ol li::before{
+        text-align: center;
+        color: white;
+        counter-increment: myOrderedListItemsCounter;
+        content: counter(myOrderedListItemsCounter)" ";
+        margin-right: 10px;
+        display: inline-block;
+        font-size: 12px;
+        height: 18px;
+        width: 18px;
+        background-image: url(/images/ol-icon.png);
+        background-size: contain;
     }
 </style>
 @endsection
@@ -179,15 +298,13 @@
 @endsection
 
 @section('scripts')
-
 <script src="{{ url('js/blockRotate.js') }}"></script>
 <script src="{{ url('js/slick.js') }}"></script>
 <script src="{{ url('js/slick.min.js') }}"></script>
 <script src="{{ url('js/customSlick.js') }}"></script>
-
 <script type="text/javascript">
     const title = "{{ $post->translated_title }}";
-    const description = "{{ $post->translated_description }}";
+    const description = $('.blog_description').text();
     $('meta[name="title"]').attr('content', title);
     $('meta[name="description"]').attr('content', description);
     $('meta[property="og:title"]').attr('content', title);
@@ -196,6 +313,56 @@
     @if(empty($post->translated_title) || empty($post->translated_description))
         $('#myModal').modal('show');
     @endif
+
+    function fallbackCopyTextToClipboard(text) {
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+
+        // Avoid scrolling to bottom
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Fallback: Copying text command was ' + msg);
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+
+        document.body.removeChild(textArea);
+    }
+
+    function copyTextToClipboard(text) {
+        if (!navigator.clipboard) {
+            fallbackCopyTextToClipboard(text);
+            return;
+        }
+        navigator.clipboard.writeText(text).then(function() {
+            console.log('Async: Copying to clipboard was successful!');
+        }, function(err) {
+            console.error('Async: Could not copy text: ', err);
+        });
+        }
+
+
+    $('.prs-code .copy-btn').on('click', function () {
+        let self = $(this);
+        copyTextToClipboard($(this).parent().find('code').text());
+
+        $(this).find('img').attr('src', '{{ asset('images/icon-check.png') }}');
+        $(this).find('img').attr('height', '');
+
+        setTimeout(function () {
+            self.find('img').attr('src', '{{ asset('images/copy-icon.png') }}');
+            self.find('img').attr('height', '16px');
+        }, 2000)
+    });
 </script>
 
 @endsection
