@@ -27,25 +27,26 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-7 col-xl-8 px-2">
-                <div class="left_side_content_education">
-                    <div class="main_box_lft_content">
-                        <div class="main_box_image">
-                            <img src="{{ url('images/example-1.png') }}" alt="main_image" class="img-fluid">
-                        </div>
-                        <div class="main_box_bottom_content">
-                            <a href="{{ route('education.detail', ['education_category' => 'asd', 'education' => 'dsa']) }}">
-                                <h3 class="main_title_all_page">What is Quality Assurance?</h3>
-                            </a>
-                            <p class="date_text">May 5, 2021</p>
-                            <p class="main_box_content_text">Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry. Lorem Ipsum has been the industry'ssimply dummy text of the
-                                printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and
-                                typesetting industry.</p>
+            @if($featured)
+                <div class="col-12 col-md-6 col-lg-7 col-xl-8 px-2">
+                    <div class="left_side_content_education">
+                        <div class="main_box_lft_content">
+                            <div class="main_box_image">
+                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/resize_' . $featured->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
+                            </div>
+                            <div class="main_box_bottom_content">
+                                <a href="{{ route('education.detail', ['education_category' => $featured->category->slug, 'education' => $featured->slug]) }}">
+                                    <h3 class="main_title_all_page">{{ $featured->translated_title }}</h3>
+                                </a>
+                                <p class="date_text">{{ $featured->published_date->format('F d, Y') }}</p>
+                                <div class="main_box_content_text">
+                                    {!! limitWord(strip_tags($featured->translated_description)) !!}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
             <div class="col-12 col-md-6 col-lg-5 col-xl-4 px-2">
                 <div class="right_side_content_education">
                     <h4 class="most_view_title mb-5">Most viewed</h4>

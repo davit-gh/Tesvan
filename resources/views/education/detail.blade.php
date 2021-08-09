@@ -54,7 +54,7 @@
     }
 
     .prs-delimiter {
-        border-top: 1px dashed #F4B41A;
+        border-top: 2px dashed #F4B41A;
     }
 
     .prs-code {

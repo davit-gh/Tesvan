@@ -22,6 +22,7 @@ class EducationController extends Controller
                 $query->published()->latest('published_date')->limit(3);
             }])
             ->get();
+        $data['featured'] = Education::with('category')->published()->where('is_featured', true)->latest('published_date')->first();
         $data['most_viewed'] = Education::with('category')->orderByDesc('views')->limit(3)->get();
 
         return view('education.education', $data);
@@ -51,8 +52,11 @@ class EducationController extends Controller
         $timestamp = array_pop($slugs);
         $slug = implode(' ', $slugs);
 
-        $data['category'] = EducationCategory::whereRaw('LOWER(name) like "%' . $category . '%" ')->first();
-        $data['post'] = Education::whereRaw('LOWER(title) like "%' . $slug . '%" ')->where('created_at', date('Y-m-d H:i:s', $timestamp))->first();
+        $data['category'] = EducationCategory::whereRaw('LOWER(name) like "%' . $category . '%" ')
+            ->firstOrFail();
+        $data['post'] = Education::whereRaw('LOWER(title) like "%' . $slug . '%" ')
+            ->where('created_at', date('Y-m-d H:i:s', $timestamp))
+            ->firstOrFail();
         $data['blog_interest'] = Education::orderByRaw('RAND()')->limit(2)->get();
         $data['blog'] = [];
         $data['next_lessons'] = Education::with('category')
