@@ -101,6 +101,15 @@
                 <label for="createdBy">Created By</label>
                 <input value="{{ old('created_by') ?? auth()->user()->name }}" type="text" class="form-control" placeholder="Created By" name="created_by" id="createdBy">
             </div>
+            <div class="form-group">
+                <input type="hidden" name="is_featured" value="0">
+                <label for="is_featured">
+                    <input value="1" type="checkbox" name="is_featured" id="is_featured"
+                        @if(old('is_featured') == 1) checked @endif
+                    >
+                    Is Featured
+                </label>
+            </div>
         </div>
         <!-- /.card-body -->
 
@@ -122,7 +131,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
 <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@latest"></script>
-<script src="{{ asset('admin/js/hyperlink.js') }}"></script>
+<script src="{{ asset('admin-asset/js/hyperlink.js') }}"></script>
 <script>
     let editors = [];
     let options = {

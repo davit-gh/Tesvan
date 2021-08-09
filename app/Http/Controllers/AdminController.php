@@ -1038,6 +1038,7 @@ class AdminController extends Controller
             $p->status = $request->status;
             $p->education_category_id = $request->category;
             $p->created_by = $request->created_by;
+            $p->is_featured = $request->is_featured;
             $p->image = "";
             $p->views = 0;
             if (strtolower($request->status) == "publish") {
@@ -1122,6 +1123,7 @@ class AdminController extends Controller
             $p->education_category_id = $request->category;
             $p->status = $request->status;
             $p->created_by = $request->created_by;
+            $p->is_featured = $request->is_featured;
             if (strtolower($request->status) == "publish") {
                 if (strlen($p->published_date) < 5 || strtolower($p->status) == "draft") {
                     $p->published_date = date("Y-m-d H:i:s");

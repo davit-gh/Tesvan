@@ -106,6 +106,15 @@
                 <label for="createdBy">Created By</label>
                 <input value="{{ old('created_by', $education->created_by) }}" type="text" class="form-control" placeholder="Created By" name="created_by" id="createdBy">
             </div>
+            <div class="form-group">
+                <input type="hidden" name="is_featured" value="0">
+                <label for="is_featured">
+                    <input value="1" type="checkbox" name="is_featured" id="is_featured"
+                        @if(old('is_featured') == 1 || $education->is_featured) checked @endif
+                    >
+                    Is Featured
+                </label>
+            </div>
         </div>
         <!-- /.card-body -->
 
