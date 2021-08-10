@@ -99,6 +99,7 @@
     .prs-list ul li {
         list-style: none;
         position: relative;
+        margin-left: 20px;
     }
 
     .prs-list ul li::before{
@@ -109,6 +110,7 @@
         background-image: url(/images/ul-icon.png);
         background-size: contain;
         margin-right: 10px;
+        margin-left: -20px;
     }
 
     .prs-list ol {
@@ -118,6 +120,7 @@
     .prs-list ol li {
         list-style-type: none;
         position: relative;
+        margin-left: 20px;
     }
 
     .prs-list ol li::before{
@@ -125,6 +128,7 @@
         color: white;
         counter-increment: myOrderedListItemsCounter;
         content: counter(myOrderedListItemsCounter)" ";
+        margin-left: -20px;
         margin-right: 10px;
         display: inline-block;
         font-size: 12px;
