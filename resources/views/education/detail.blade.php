@@ -201,7 +201,7 @@
                                                         @endif
                                                     </a>
                                                 </p>
-                                                <p class="hue_black">{{ $b->meta_description }}</p>
+                                                <p class="hue_black">{!! $b->meta_description !!}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -226,7 +226,7 @@
                                         {{ date("M d, Y", strtotime($b->published_date)) }}
                                     </small>
                                 </p>
-                                <p class="hue_black">{{ $b->meta_description }}</p>
+                                <p class="hue_black">{!! $b->meta_description !!}</p>
                                 <p class="hue_blue">
                                     By
                                     <a href="{{ route('teams') }}" class="blue">
