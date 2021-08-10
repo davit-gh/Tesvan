@@ -61,6 +61,7 @@ class Education extends Model
         // remove special tags
 
         $description = strip_tags($description);
+        $description = html_entity_decode($description, ENT_QUOTES, "UTF-8");
 
         return mb_substr($description, 0, 160) . '...';
     }
