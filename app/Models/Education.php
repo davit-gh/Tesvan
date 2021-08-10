@@ -62,6 +62,6 @@ class Education extends Model
 
         $description = strip_tags($description);
 
-        return substr($description, 0, 160);
+        return mb_substr($description, 0, 160) . '...';
     }
 }
