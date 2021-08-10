@@ -48,14 +48,11 @@ class EducationController extends Controller
     public function detail($category, $slug)
     {
         $category = strtr($category, '-', ' ');
-        $slugs = explode('-', $slug);
-        $timestamp = array_pop($slugs);
-        $slug = implode(' ', $slugs);
+        $slug = strtr($slug, '-', ' ');
 
         $data['category'] = EducationCategory::whereRaw('LOWER(name) like "%' . $category . '%" ')
             ->firstOrFail();
         $data['post'] = Education::whereRaw('LOWER(title) like "%' . $slug . '%" ')
-            ->where('created_at', date('Y-m-d H:i:s', $timestamp))
             ->firstOrFail();
         $data['blog_interest'] = Education::orderByRaw('RAND()')->limit(2)->get();
         $data['blog'] = [];

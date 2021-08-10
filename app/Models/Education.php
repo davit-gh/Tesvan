@@ -28,7 +28,7 @@ class Education extends Model
 
     public function getSlugAttribute()
     {
-        return slug($this->title . ' ' . strtotime($this->created_at));
+        return slug($this->title);
     }
 
     public function getTranslatedTitleAttribute()

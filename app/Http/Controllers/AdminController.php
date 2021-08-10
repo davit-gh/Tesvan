@@ -16,6 +16,7 @@ use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class AdminController extends Controller
@@ -1014,7 +1015,7 @@ class AdminController extends Controller
         ];
 
         $rule = [
-            'title' => 'required',
+            'title' => ['required', Rule::unique('educations')],
             'description' => 'required',
             'image' => 'required',
             'status' => 'required',
@@ -1100,7 +1101,7 @@ class AdminController extends Controller
         ];
 
         $rule = [
-            'title' => 'required',
+            'title' => ['required', Rule::unique('educations')->ignore($request->id)],
             'description' => 'required',
             'status' => 'required',
             'category' => 'required'
