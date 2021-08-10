@@ -9,6 +9,7 @@
 
     .blog_description{
         margin-bottom: 40px;
+        text-align: justify;
     }
 
     .bradius{
