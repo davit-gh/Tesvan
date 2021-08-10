@@ -22,7 +22,7 @@
                     <div class="col-12 col-md-4 mb-5 px-3 px-md-1">
                         <div class="all_box_1">
                             <div class="all_box_top_image">
-                                <img src="{{ url('uploads/images/educations/' . $post->id . '/resize_' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
+                                <img src="{{ url('uploads/images/educations/' . $post->id . '/' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
                             </div>
                             <div class="all_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}">

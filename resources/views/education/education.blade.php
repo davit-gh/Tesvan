@@ -32,7 +32,7 @@
                     <div class="left_side_content_education">
                         <div class="main_box_lft_content">
                             <div class="main_box_image">
-                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/resize_' . $featured->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
+                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/' . $featured->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
                             </div>
                             <div class="main_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $featured->category->slug, 'education' => $featured->slug]) }}">
@@ -75,7 +75,7 @@
                     <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
                         <div class="all_box_1">
                             <div class="all_box_top_image">
-                                <img src="{{ url('uploads/images/educations/' . $post->id . '/resize_' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
+                                <img src="{{ url('uploads/images/educations/' . $post->id . '/' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
                             </div>
                             <div class="all_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}">
