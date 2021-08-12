@@ -184,7 +184,7 @@
                     </div><br><br>
                     <div class="row">
                         @foreach($blog_interest as $key => $b)
-                            <div class="col-md-12">
+                            <div class="col-md-12" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}'" style="cursor: pointer;">
                                 <div class="qa_txt_blocks">
                                     <div class="row">
                                         <div class="col-md-4">
