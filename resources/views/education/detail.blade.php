@@ -217,11 +217,11 @@
                 @endif
             </div>
             <div class="offset-lg-1 col-lg-4 col-md-12">
-                <h4 style="font-weight: bold;">{{ __("Next Lessons") }}</h4>
-                <br/>
                 @if (count($next_lessons)>0)
+                    <h4 style="font-weight: bold;">{{ __("Next Lessons") }}</h4>
+                    <br/>
                     @foreach($next_lessons as $key => $b)
-                        <div class="qa_txt_blocks">
+                        <div class="qa_txt_blocks" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}'" style="cursor: pointer;">
                             <div class="qa_txt_single_blok"  style="margin-bottom: 10px; !important">
                                 <a href="{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}">
                                     <h5 class="hue_blue">{{ $b->translated_title }}</h5>

@@ -60,7 +60,6 @@ class EducationController extends Controller
             ->where('education_category_id', $data['post']->education_category_id)
             ->where('created_at', '>', $data['post']->created_at)
             ->limit(4)
-            ->latest('created_at')
             ->get();
 
         return view('education.detail', $data);
