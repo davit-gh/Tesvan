@@ -63,7 +63,7 @@
     "We are not only providing our service to global companies but also work for them within cross-team development on remote": "Մենք ոչ միայն մեր ծառայությունն ենք մատուցում ընկերություններին, այլ նաև համագործակցում ենք նրանց հետ հեռավար համակարգում",
     "Customers": "Պատվիրատուներ",
     "Over the last few years we have worked on a lot of products from USA, Belgium, Italy, UK, France, Netherlands, Germany, Russia, Ukraine, Australia": "Մենք ստանում ենք պատվերներ այնպիսի երկրներից, ինչպիսիք են․ ԱՄՆ, Բելգիա, Ֆրանսիա, Գերմանիա, Ռուսաստան",
-    "Our Team": "Մեր թիմը",
+    "Our Team": "Մեր Թիմը",
     "Meet our talented team members who shine when it comes to what they do the best": "Ահա և մեր նպատակասլաց, աշխատասեր և նորարարական տեխնոլոգիաներ փնտրող թիմը",
     "Davit Grigoryan": "Դավիթ Գրիգորյան",
     "Davit Kartashyan": "Դավիթ Քարտաշյան",
@@ -183,6 +183,12 @@
     "Responsibility: We approach any issue with a strong sense of responsibility and do the work entrusted to us to the best of our ability.": "Պատասխանատվություն: Մենք ցանկացած հարցի մոտենում ենք մեծ պատասխանատվությամբ և կատարում ենք մեզ վստահված ցանկացած աշխատանք՝ օգտագործելով մեր լավագույն կարողությունները։",
     "Reliability: Trusting us you will gain the reliability and guarantee for your product and will perform confidently among your competitors.": "Հուսալիություն: Վստահելով մեզ ՝ դու կստանաս հուսալիություն և երաշխիք քո պրոդուկտի համար, այդպիսով կկարողանաս վստահ հանդես գալ մրցակիցներիդ շրջանում:",
     "Growth: we grow continuously and never stop improving our skills and qualities to be more competent, to keep up with the times, and easily meet the expectations of our customers.": "Աճ: Մենք շարունակաբար աճում ենք․ երբեք չենք դադարում զարգացնել մեր հմտություններն ու գիտելիքները՝ ավելի կոմպետենտ դառնալու, ժամանակի հետ համահունչ քայլելու և հաճախորդների սպասելիքներն հեշտությամբ բավարարելու համար։",
-    "See All": "Տեսնել Բոլորին"
+    "See All": "Տեսնել Բոլորին",
+    "Our Services": "Մեր Ծառայությունները",
+    "Manual QA": "Ձեռքով QA",
+    "Define, execute, and document manual tests, test data, and test results with necessary detail.": "Սահմանում ենք, կատարում ենք և փաստաթղթավորում ենք ձեռքով թեստերը, տեստային տվյալները և տեստային արդյունքները ՝ անհրաժեշտ մանրամասնությամբ:",
+    "Automation QA": "Ավտոմատացված QA",
+    "Implement Automated Testing to enhance your product’s growth and shorten your deliver cycles.": "Իրականացնում ենք ավտոմատացված փորձարկում ՝ ձեր արտադրանքի աճն արագացնելու և առաքման ցիկլերը կրճատելու համար:",
+    "Drive automation, integration with CI/CD pipelines": "Խթանում ենք ավտոմատացումը, ինտեգրումը CI/CD փայփլայների հետ",
+    "Understand product specifications, develop wireframes and prototypes around customer needs.": "Ապրանքի բնութագրերի ըմբռնում, մակետների ու նախատիպեր մշակում՝ հաճախորդի կարիքների համապատասխան:"
 }
-

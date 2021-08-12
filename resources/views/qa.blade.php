@@ -57,7 +57,7 @@
                                 </g>
                             </g>
                         </svg>
-                        <h5 class="hue_blue">Manual QA</h5>
+                        <h5 class="hue_blue">{{ __('Manual QA') }}</h5>
                         <p class="pl-3 pr-3 hue_blue">
                             {{__("Define, execute, and document manual tests, test data, and test results with necessary detail.")}}
                         </p>
@@ -108,7 +108,7 @@
                             <path d="m59 35h-2v-2h2zm-4 0h-2v-2h2zm-4 0h-2v-2h2z" />
                             <path d="m59 21h-2v-14h-4v-2h4c1.103 0 2 .897 2 2z" />
                         </svg>
-                        <h5 class="hue_blue">Automation QA</h5>
+                        <h5 class="hue_blue">{{ __('Automation QA') }}</h5>
                         <p class="hue_blue">
                             {{__("Implement Automated Testing to enhance your product’s growth and shorten your deliver cycles.")}}
                         </p>

@@ -28,11 +28,11 @@
 
         <div class="row">
             @if($featured)
-                <div class="col-12 col-md-6 col-lg-7 col-xl-8 px-2">
+                <div class="col-12 col-md-6 col-lg-7 col-xl-8 px-2" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $featured->category->slug, 'education' => $featured->slug]) }}'" style="cursor: pointer;">
                     <div class="left_side_content_education">
                         <div class="main_box_lft_content">
                             <div class="main_box_image">
-                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/' . $featured->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
+                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/' . $featured->image) }}" class="img-fluid" style="width:100%; height: 470px; object-fit: cover; object-position: left;">
                             </div>
                             <div class="main_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $featured->category->slug, 'education' => $featured->slug]) }}">
@@ -51,7 +51,7 @@
                 <div class="right_side_content_education">
                     <h4 class="most_view_title mb-5">Most viewed</h4>
                     @foreach($most_viewed as $post)
-                        <div class="most_view_box mb-4">
+                        <div class="most_view_box mb-4" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $post->category->slug, 'education' => $post->slug]) }}'" style="cursor: pointer;">
                             <a href="{{ route('education.detail', ['education_category' => $post->category->slug, 'education' => $post->slug]) }}">
                                 <h5 class="color143E59 font-24">{{ $post->translated_title }}</h5>
                             </a>
@@ -72,10 +72,10 @@
             </div>
             <div class="row">
                 @foreach($category->posts as $post)
-                    <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1">
+                    <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}'" style="cursor: pointer;">
                         <div class="all_box_1">
                             <div class="all_box_top_image">
-                                <img src="{{ url('uploads/images/educations/' . $post->id . '/' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover;">
+                                <img src="{{ url('uploads/images/educations/' . $post->id . '/' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover; object-position: left;">
                             </div>
                             <div class="all_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}">
