@@ -7,6 +7,7 @@
 <style type="text/css">
     .blog_description{
         margin-bottom: 40px;
+        font-family: 'OpenSans-Regular';
     }
     .bradius{
         border-top-left-radius: 12px;
