@@ -54,6 +54,7 @@ class EducationController extends Controller
             ->firstOrFail();
         $data['post'] = Education::whereRaw('LOWER(title) like "%' . $slug . '%" ')
             ->firstOrFail();
+        $data['post']->increment('views');
         $data['blog_interest'] = Education::orderByRaw('RAND()')->limit(2)->get();
         $data['blog'] = [];
         $data['next_lessons'] = Education::with('category')
