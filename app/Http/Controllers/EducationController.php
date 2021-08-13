@@ -18,9 +18,7 @@ class EducationController extends Controller
     public function index()
     {
         $data['categories'] = EducationCategory::query()
-            ->with(['posts' => function ($query) {
-                $query->published()->latest('published_date')->limit(3);
-            }])
+            ->with('latestPosts')
             ->get();
         $data['featured'] = Education::with('category')->published()->where('is_featured', true)->latest('published_date')->first();
         $data['most_viewed'] = Education::with('category')->orderByDesc('views')->limit(3)->get();
