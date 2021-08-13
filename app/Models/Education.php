@@ -28,7 +28,7 @@ class Education extends Model
 
     public function getSlugAttribute()
     {
-        return slug(str_replace('-', '%2D', $this->title));
+        return slug(str_replace('-', '~', $this->title));
     }
 
     public function getTranslatedTitleAttribute()
