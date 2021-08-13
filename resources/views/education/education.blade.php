@@ -71,7 +71,7 @@
                 <h3 class="all_title1 color143E59 pb-3">{{ $category->name }}</h3>
             </div>
             <div class="row">
-                @foreach($category->posts as $post)
+                @foreach($category->latestPosts as $post)
                     <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}'" style="cursor: pointer;">
                         <div class="all_box_1">
                             <div class="all_box_top_image">
