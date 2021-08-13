@@ -31,7 +31,7 @@ class EducationController extends Controller
 
     public function list($education_category)
     {
-        $education_category = str_replace('~', '-', str_replace($education_category, '-', ' '));
+        $education_category = str_replace('~', '-', str_replace('-', ' ', $education_category));
         $data['category'] = EducationCategory::query()
             ->with(['posts' => function ($query) {
                 $query->published();
@@ -48,8 +48,8 @@ class EducationController extends Controller
 
     public function detail($category, $slug)
     {
-        $category = str_replace('~', '-', str_replace($category, '-', ' '));
-        $slug = str_replace('~', '-', str_replace($slug, '-', ' '));
+        $category = str_replace('~', '-', str_replace('-', ' ', $category));
+        $slug = str_replace('~', '-', str_replace('-', ' ', $slug));
 
         $data['category'] = EducationCategory::whereRaw('LOWER(name) like "%' . $category . '%" ')
             ->firstOrFail();
