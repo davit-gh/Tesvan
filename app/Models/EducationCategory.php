@@ -15,11 +15,6 @@ class EducationCategory extends Model
         return $this->hasMany(Education::class);
     }
 
-    public function latestPosts()
-    {
-        return $this->hasMany(Education::class)->published()->latest('published_date')->limit(3);
-    }
-
     public function getSlugAttribute()
     {
         return slug(str_replace('-', '%2D', $this->name));
