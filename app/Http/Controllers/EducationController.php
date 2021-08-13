@@ -30,7 +30,7 @@ class EducationController extends Controller
 
     public function list($education_category)
     {
-        $education_category = strtr($education_category, ["-" => " "]);
+        $education_category = urldecode(strtr($education_category, '-', ' '));
         $data['category'] = EducationCategory::query()
             ->with(['posts' => function ($query) {
                 $query->published();
@@ -47,8 +47,8 @@ class EducationController extends Controller
 
     public function detail($category, $slug)
     {
-        $category = strtr($category, '-', ' ');
-        $slug = strtr($slug, '-', ' ');
+        $category = urldecode(strtr($category, '-', ' '));
+        $slug = urldecode(strtr($slug, '-', ' '));
 
         $data['category'] = EducationCategory::whereRaw('LOWER(name) like "%' . $category . '%" ')
             ->firstOrFail();

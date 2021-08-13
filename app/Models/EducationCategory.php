@@ -17,6 +17,6 @@ class EducationCategory extends Model
 
     public function getSlugAttribute()
     {
-        return slug($this->name);
+        return slug(str_replace('-', '%2D', $this->name));
     }
 }
