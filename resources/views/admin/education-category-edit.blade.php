@@ -52,6 +52,14 @@
                     <input value="{{ $category->id }}" type="hidden" class="form-control" name="id">
                     <input value="{{ old('name',$category->name) }}" type="text" class="form-control" name="name" id="educationCategory">
                 </div>
+                <div class="form-group">
+                    <label for="name_am">Category Name (Armenian)</label>
+                    <input value="{{ old('name_am', $category->name_am) }}" type="text" class="form-control" placeholder="Category Name (Armenian)" name="name_am" id="name_am">
+                </div>
+                <div class="form-group">
+                    <label for="name_ru">Category Name (Russian)</label>
+                    <input value="{{ old('name_ru', $category->name_ru) }}" type="text" class="form-control" placeholder="Category Name (Russian)" name="name_ru" id="name_ru">
+                </div>
             </div>
             <!-- /.card-body -->
 

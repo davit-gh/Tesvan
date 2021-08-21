@@ -103,6 +103,10 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="order">Order</label>
+                <input id="order" value="{{ old('order', $education->order) }}" type="text" class="form-control" placeholder="Order Number" name="order">
+            </div>
+            <div class="form-group">
                 <label for="createdBy">Created By</label>
                 <input value="{{ old('created_by', $education->created_by) }}" type="text" class="form-control" placeholder="Created By" name="created_by" id="createdBy">
             </div>

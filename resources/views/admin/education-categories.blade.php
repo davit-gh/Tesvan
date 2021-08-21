@@ -29,7 +29,9 @@
         <table id="datatable" class="table table-bordered table-hover">
             <thead>
                 <tr>
-                    <th>Education Category Name</th>
+                    <th>Name</th>
+                    <th>Name (Armenian)</th>
+                    <th>Name (Russian)</th>
                     <th width="200">Action</th>
                 </tr>
             </thead>
@@ -46,8 +48,15 @@
             processing: true,
             serverSide: true,
             ajax: "{!! route('education-category.dt') !!}",
-            columns: [{
+            columns: [
+                {
                     data: "name"
+                },
+                {
+                    data: "name_am"
+                },
+                {
+                    data: "name_ru"
                 },
                 {
                     data: "action",

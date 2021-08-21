@@ -14,7 +14,7 @@
 <section class="all_inner_page_content">
     <div class="container">
         <div class="text-center job_hire_text_col">
-            <h2 class="hue_blue mb-4">{{ $category->name }}</h2>
+            <h2 class="hue_blue mb-4">{{ $category->translated_name }}</h2>
         </div>
         @foreach($category->posts->chunk(3) as $chunk)
             <div class="row">

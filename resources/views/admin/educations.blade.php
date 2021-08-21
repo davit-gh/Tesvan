@@ -39,6 +39,7 @@
               <th>Category</th>
               <th>Image</th>
               <th>Status</th>
+              <th>Order Number</th>
               <th>Created By</th>
               <th>Published Date</th>
               <th width="200">Action</th>
@@ -64,6 +65,7 @@
           { data: "category" },
           { data: "image" },
           { data: "status" },
+          { data: "order" },
           { data: "created_by" },
           { data: "published_date" },
           { data: "action", bSortable: false, className: "text-center" },

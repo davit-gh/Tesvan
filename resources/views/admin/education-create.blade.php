@@ -98,6 +98,10 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="order">Order</label>
+                <input id="order" value="{{ old('order') }}" type="text" class="form-control" placeholder="Order Number" name="order">
+            </div>
+            <div class="form-group">
                 <label for="createdBy">Created By</label>
                 <input value="{{ old('created_by') ?? auth()->user()->name }}" type="text" class="form-control" placeholder="Created By" name="created_by" id="createdBy">
             </div>

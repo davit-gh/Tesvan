@@ -7,6 +7,10 @@
         cursor: pointer;
     }
 
+    .qa_txt_single_blok h5 {
+        font-family: 'OpenSans-Bold';
+    }
+
     .bradius{
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
@@ -113,7 +117,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-12" style="display: none;" id="tab{{ $key }}">
                     <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                         <img class="bradius" style="max-height: 250px;" height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
-                            <div class="qa_txt_single_blok">
+                        <div class="qa_txt_single_blok">
                             <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                             <p>
                                 <small>

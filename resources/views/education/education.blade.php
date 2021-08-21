@@ -68,7 +68,7 @@
     <section class="qa_basics pb-45">
         <div class="container">
             <div class="all_section_title">
-                <h3 class="all_title1 color143E59 pb-3">{{ $category->name }}</h3>
+                <h3 class="all_title1 color143E59 pb-3">{{ $category->translated_name }}</h3>
             </div>
             <div class="row">
                 @foreach($posts[$category->id] as $post)

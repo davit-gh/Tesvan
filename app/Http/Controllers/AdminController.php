@@ -913,6 +913,12 @@ class AdminController extends Controller
             ->editColumn('name', function ($d) {
                 return $this->limitWord($d->name);
             })
+            ->editColumn('name_am', function ($d) {
+                return $this->limitWord($d->name_am);
+            })
+            ->editColumn('name_ru', function ($d) {
+                return $this->limitWord($d->name_ru);
+            })
             ->addColumn('action', '
             <a href="{{ route("admin.education-category.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
             ')
@@ -939,6 +945,8 @@ class AdminController extends Controller
 
             $p = new EducationCategory;
             $p->name = $request->name;
+            $p->name_am = $request->name_am;
+            $p->name_ru = $request->name_ru;
             $p->save();
 
             \Session::flash('success', 'Succesfully added education category!');
@@ -968,6 +976,8 @@ class AdminController extends Controller
 
             $p = EducationCategory::find($request->id);
             $p->name = $request->name;
+            $p->name_am = $request->name_am;
+            $p->name_ru = $request->name_ru;
             $p->save();
 
             \Session::flash('success', 'Succesfully update education category!');
@@ -1019,7 +1029,7 @@ class AdminController extends Controller
             'description' => 'required',
             'image' => 'required',
             'status' => 'required',
-            'category' => 'required'
+            'category' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rule, $messages);
@@ -1040,6 +1050,7 @@ class AdminController extends Controller
             $p->education_category_id = $request->category;
             $p->created_by = $request->created_by;
             $p->is_featured = $request->is_featured;
+            $p->order = $request->order;
             $p->image = "";
             $p->views = 0;
             if (strtolower($request->status) == "publish") {
@@ -1123,6 +1134,7 @@ class AdminController extends Controller
             $p->description_ru = json_decode($request->description_ru ?? null);
             $p->education_category_id = $request->category;
             $p->status = $request->status;
+            $p->order = $request->order;
             $p->created_by = $request->created_by;
             $p->is_featured = $request->is_featured;
             if (strtolower($request->status) == "publish") {
@@ -1193,6 +1205,9 @@ class AdminController extends Controller
                     $category_name = $category->name;
                 }
                 return $this->limitWord($category_name);
+            })
+            ->addColumn('order', function ($education) {
+                return $education->order;
             })
             ->editColumn('image', function ($d) {
                 return "<img width='100' height='100' src='" . url('uploads/images/educations/' . $d->id . '/resize_' . $d->image) . "'/>";

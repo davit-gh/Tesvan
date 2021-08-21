@@ -19,11 +19,15 @@ class EducationController extends Controller
     {
         $data['posts'] = [];
         $data['categories'] = EducationCategory::query()->get();
-        $data['featured'] = Education::with('category')->published()->where('is_featured', true)->latest('published_date')->first();
+        $data['featured'] = Education::with('category')
+            ->published()
+            ->where('is_featured', true)
+            ->latest('published_date')
+            ->first();
         $data['most_viewed'] = Education::with('category')->orderByDesc('views')->limit(3)->get();
 
         foreach ($data['categories'] as $category) {
-            $data['posts'][$category->id] = $category->posts()->published()->latest('published_date')->limit(3)->get();
+            $data['posts'][$category->id] = $category->posts()->published()->orderBy('order')->limit(3)->get();
         }
 
         return view('education.education', $data);
@@ -34,7 +38,7 @@ class EducationController extends Controller
         $education_category = str_replace('~', '-', str_replace('-', ' ', $education_category));
         $data['category'] = EducationCategory::query()
             ->with(['posts' => function ($query) {
-                $query->published();
+                $query->published()->orderBy('order');
             }])
             ->whereRaw('LOWER(name) like "%' . $education_category . '%" ')
             ->first();
