@@ -32,7 +32,7 @@
                     <div class="left_side_content_education">
                         <div class="main_box_lft_content">
                             <div class="main_box_image">
-                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/' . $featured->image) }}" class="img-fluid" style="width:100%; height: 470px; object-fit: cover; object-position: left;">
+                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/' . $featured->image) }}" class="img-fluid" style="width:100%; height: 470px; object-fit: contain; object-position: left;">
                             </div>
                             <div class="main_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $featured->category->slug, 'education' => $featured->slug]) }}">
@@ -49,7 +49,7 @@
             @endif
             <div class="col-12 col-md-6 col-lg-5 col-xl-4 px-2">
                 <div class="right_side_content_education">
-                    <h4 class="most_view_title mb-5">Most viewed</h4>
+                    <h4 class="most_view_title mb-5">{{ __('Most Viewed') }}</h4>
                     @foreach($most_viewed as $post)
                         <div class="most_view_box mb-4" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $post->category->slug, 'education' => $post->slug]) }}'" style="cursor: pointer;">
                             <a href="{{ route('education.detail', ['education_category' => $post->category->slug, 'education' => $post->slug]) }}">
@@ -75,7 +75,7 @@
                     <div class="col-12 col-md-4 mb-4 mb-md-0 px-3 px-md-1" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}'" style="cursor: pointer;">
                         <div class="all_box_1">
                             <div class="all_box_top_image">
-                                <img src="{{ url('uploads/images/educations/' . $post->id . '/' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: cover; object-position: left;">
+                                <img src="{{ url('uploads/images/educations/' . $post->id . '/' . $post->image) }}" class="img-fluid" style="width:100%; height: 272px; object-fit: contain; object-position: left;">
                             </div>
                             <div class="all_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}">
@@ -92,7 +92,7 @@
                 @endforeach
             </div>
             <div class="view__button mt-4 pt-3">
-                <a href="{{ route('education.list', ['education_category' => $category->slug]) }}" class="color143E59 font-weight-bold text-center view_more_btn">View More</a>
+                <a href="{{ route('education.list', ['education_category' => $category->slug]) }}" class="color143E59 font-weight-bold text-center view_more_btn">{{ __('View More') }}</a>
             </div>
         </div>
     </section>

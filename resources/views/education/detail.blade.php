@@ -164,7 +164,7 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="qa_txt_blocks">
-                    <img class="bradius" style="max-height: 672px; object-fit: cover; object-position: left;" width="100%" height="auto" src="{{ asset("uploads/images/educations/$post->id/$post->image") }}"/>
+                    <img class="bradius" style="max-height: 672px; object-fit: contain; object-position: left;" width="100%" height="auto" src="{{ asset("uploads/images/educations/$post->id/$post->image") }}"/>
                 </div>
             </div>
         </div>
@@ -189,7 +189,7 @@
                                 <div class="qa_txt_blocks">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <img class="bradius" style="height: 100%; object-fit: cover; object-position: left;" width="100%" src="{{ asset("uploads/images/educations/$b->id/$b->image") }}" />
+                                            <img class="bradius" style="height: 100%; object-fit: contain; object-position: left;" width="100%" src="{{ asset("uploads/images/educations/$b->id/$b->image") }}" />
                                         </div>
                                         <div class="col-md-8">
                                             <div class="qa_txt_single_blok">
@@ -247,7 +247,7 @@
                         </div>
                     @endforeach
                     <div class="text-right">
-                        <a href="{{ route('education.list', ['education_category' => $post->category->slug])}}">See more</a>
+                        <a href="{{ route('education.list', ['education_category' => $post->category->slug])}}">{{ __('See More') }}</a>
                     </div>
                 @endif
             </div>
