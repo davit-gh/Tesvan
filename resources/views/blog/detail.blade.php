@@ -5,7 +5,11 @@
 @endsection
 
 <style type="text/css">
-    .blog_description{
+    .blog_description * {
+        font-family: 'OpenSans-Regular' !important;
+    }
+
+    .blog_description {
         margin-bottom: 40px;
         font-family: 'OpenSans-Regular' !important;
     }
