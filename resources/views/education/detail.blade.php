@@ -235,7 +235,7 @@
                                 <div class="qa_txt_blocks">
                                     <div class="row no-gutters">
                                         <div class="col-md-5">
-                                            <img class="bradius" style="height: 100%; object-fit: cover; object-position: left;" width="100%" src="{{ asset("uploads/images/educations/$b->id/$b->image") }}" />
+                                            <img class="bradius" style="height: 100%; object-fit: cover; object-position: left; border-top-right-radius: 0;" width="100%" src="{{ asset("uploads/images/educations/$b->id/$b->image") }}" />
                                         </div>
                                         <div class="col-md-7">
                                             <div class="qa_txt_single_blok">
