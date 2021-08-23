@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="/css/blog.css?v={{ strtotime(date('YmdHis')) }}">
 <style type="text/css">
     .qa_txt_single_blok {
-        padding: 30px 28px !important;
+        padding: 18px 25px !important;
     }
 
     .qa_txt_single_blok:first-child {
@@ -224,7 +224,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 @if (count($blog_interest)>0)
                     <div class="blog_text_col" style="margin-top: 50px">
                         <h2 class="hue_blue">{{ __("Interesting For You") }}</h2>
@@ -233,7 +233,7 @@
                         @foreach($blog_interest as $key => $b)
                             <div class="col-md-12" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}'" style="cursor: pointer;">
                                 <div class="qa_txt_blocks">
-                                    <div class="row">
+                                    <div class="row no-gutters">
                                         <div class="col-md-5">
                                             <img class="bradius" style="height: 100%; object-fit: cover; object-position: left;" width="100%" src="{{ asset("uploads/images/educations/$b->id/$b->image") }}" />
                                         </div>
