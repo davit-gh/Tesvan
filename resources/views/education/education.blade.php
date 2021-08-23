@@ -32,7 +32,7 @@
                     <div class="left_side_content_education">
                         <div class="main_box_lft_content">
                             <div class="main_box_image">
-                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/' . $featured->image) }}" class="img-fluid" style="width:100%; height: 470px; object-fit: contain; object-position: left;">
+                                <img src="{{ url('uploads/images/educations/' . $featured->id . '/' . $featured->image) }}" class="img-fluid" style="width:100%; height: 470px; object-fit: cover; object-position: left;">
                             </div>
                             <div class="main_box_bottom_content">
                                 <a href="{{ route('education.detail', ['education_category' => $featured->category->slug, 'education' => $featured->slug]) }}">
