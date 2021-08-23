@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 d-flex">
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 d-flex align-content-center">
                 <div class="QA_col" style="margin-top: 80px;">
                     <h4 style="font-size: 24px !important" class="hire_us_h4 mb-4 hue_blue">{{__("Here's the value we bring to the table")}}</h4>
                     <div style="font-size: 17px !important" class="d-block hue_blue">

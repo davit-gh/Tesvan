@@ -11,7 +11,15 @@
 <link rel="stylesheet" type="text/css" href="/css/testiomanials.css?v={{ strtotime(date('YmdHis')) }}">
 <link rel="stylesheet" type="text/css" href="/css/partners.css?v={{ strtotime(date('YmdHis')) }}">
 <link rel="stylesheet" type="text/css" href="/css/contact_us.css?v={{ strtotime(date('YmdHis')) }}">
+<style>
+    .square_pt {
+        padding: 36px 0;
+    }
 
+    .square_d {
+        min-height: 315px;
+    }
+</style>
 @endsection
 
 
