@@ -3,6 +3,14 @@
 @section('styles')
 <link rel="stylesheet" type="text/css" href="/css/blog.css?v={{ strtotime(date('YmdHis')) }}">
 <style type="text/css">
+    .qa_txt_single_blok {
+        padding: 30px 28px !important;
+    }
+
+    .qa_txt_single_blok:first-child {
+        margin: 0;
+    }
+
     .qa_txt_blocks{
         margin-bottom: 28px;
     }
@@ -179,6 +187,45 @@
                 <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ \Request::fullUrl() }}">
                     <img width="30" height="30" src="{{url('images/linked_icon.png')}}"/>
                 </a>
+            </div>
+            <div class="offset-lg-1 col-lg-4 col-md-12">
+                @if (count($next_lessons)>0)
+                    <h4 style="font-weight: bold;">{{ __("Next Lessons") }}</h4>
+                    <br/>
+                    @foreach($next_lessons as $key => $b)
+                        <div class="qa_txt_blocks" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}'" style="cursor: pointer;">
+                            <div class="qa_txt_single_blok"  style="margin-bottom: 10px; !important">
+                                <a href="{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}">
+                                    <h5 class="hue_blue">{{ $b->translated_title }}</h5>
+                                </a>
+                                <p>
+                                    <small>
+                                        {{ date("M d, Y", strtotime($b->published_date)) }}
+                                    </small>
+                                </p>
+                                <p class="hue_black">{!! $b->meta_description !!}</p>
+                                <p class="hue_blue">
+                                    By
+                                    <a href="{{ route('teams') }}" class="blue">
+                                        @if(!empty($post->created_by))
+                                            {{ $post->created_by }}
+                                        @else
+                                            {{ $post->user->name }}
+                                        @endif
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                    <div class="text-right">
+                        <a href="{{ route('education.list', ['education_category' => $post->category->slug])}}">{{ __('See More') }}</a>
+                    </div>
+                @endif
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+
                 @if (count($blog_interest)>0)
                     <div class="blog_text_col" style="margin-top: 50px">
                         <h2 class="hue_blue">{{ __("Interesting For You") }}</h2>
@@ -214,40 +261,6 @@
                                 </div>
                             </div>
                         @endforeach
-                    </div>
-                @endif
-            </div>
-            <div class="offset-lg-1 col-lg-4 col-md-12">
-                @if (count($next_lessons)>0)
-                    <h4 style="font-weight: bold;">{{ __("Next Lessons") }}</h4>
-                    <br/>
-                    @foreach($next_lessons as $key => $b)
-                        <div class="qa_txt_blocks" onclick="window.location.href = '{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}'" style="cursor: pointer;">
-                            <div class="qa_txt_single_blok"  style="margin-bottom: 10px; !important">
-                                <a href="{{ route('education.detail', ['education_category' => $b->category->slug, 'education' => $b->slug]) }}">
-                                    <h5 class="hue_blue">{{ $b->translated_title }}</h5>
-                                </a>
-                                <p>
-                                    <small>
-                                        {{ date("M d, Y", strtotime($b->published_date)) }}
-                                    </small>
-                                </p>
-                                <p class="hue_black">{!! $b->meta_description !!}</p>
-                                <p class="hue_blue">
-                                    By
-                                    <a href="{{ route('teams') }}" class="blue">
-                                        @if(!empty($post->created_by))
-                                            {{ $post->created_by }}
-                                        @else
-                                            {{ $post->user->name }}
-                                        @endif
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
-                    <div class="text-right">
-                        <a href="{{ route('education.list', ['education_category' => $post->category->slug])}}">{{ __('See More') }}</a>
                     </div>
                 @endif
             </div>
