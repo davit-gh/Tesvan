@@ -32,4 +32,19 @@ class Blog extends Model
 
         return $this->{"description_" . app()->getLocale()};
     }
+
+    public function getTranslatedPublishedDateAttribute()
+    {
+        $months = months();
+        return str_replace(
+            $months['en'],
+            $months[app()->getLocale()],
+            date("M d, Y", strtotime($this->published_date))
+        );
+    }
+
+    public function getFormattedTranslatedPublishedDateAttribute()
+    {
+        return __('Published on ') . $this->translated_published_date;
+    }
 }

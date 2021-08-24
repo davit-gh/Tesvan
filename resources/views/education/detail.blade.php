@@ -157,11 +157,11 @@
             <h2 class="hue_blue">{{ $post->translated_title }}</h2>
             <p>
                 <small>
-                    Published on {{ date("M d, Y", strtotime($post->published_date)) }} |
-                    By
+                    {{ $post->formatted_translated_published_date }} |
+                    @if(app()->getLocale() == 'en') By @endif
                     <a href="{{ route('teams') }}" class="blue">
                         @if(!empty($post->created_by))
-                            {{ $post->created_by }}
+                            {{ __($post->created_by) }}
                         @else
                             {{ $post->user->name }}
                         @endif
@@ -200,15 +200,15 @@
                                 </a>
                                 <p>
                                     <small>
-                                        {{ date("M d, Y", strtotime($b->published_date)) }}
+                                        {{ $b->translated_published_date }}
                                     </small>
                                 </p>
                                 <p class="hue_black">{!! $b->meta_description !!}</p>
                                 <p class="hue_blue">
-                                    By
+                                    @if(app()->getLocale() == 'en') By @endif
                                     <a href="{{ route('teams') }}" class="blue">
                                         @if(!empty($post->created_by))
-                                            {{ $post->created_by }}
+                                            {{ __($post->created_by) }}
                                         @else
                                             {{ $post->user->name }}
                                         @endif
@@ -243,11 +243,11 @@
                                                     <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                                                 </a>
                                                 <p>
-                                                    {{ date("M d, Y", strtotime($b->published_date)) }} |
-                                                    By
+                                                    {{ $b->translated_published_date }} |
+                                                    @if(app()->getLocale() == 'en') By @endif
                                                     <a href="{{ route('teams') }}" class="blue">
                                                         @if(!empty($post->created_by))
-                                                            {{ $post->created_by }}
+                                                            {{ __($post->created_by) }}
                                                         @else
                                                             {{ $post->user->name }}
                                                         @endif

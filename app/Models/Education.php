@@ -65,4 +65,19 @@ class Education extends Model
 
         return mb_substr($description, 0, 160) . '...';
     }
+
+    public function getTranslatedPublishedDateAttribute()
+    {
+        $months = months();
+        return str_replace(
+            $months['en'],
+            $months[app()->getLocale()],
+            date("M d, Y", strtotime($this->published_date))
+        );
+    }
+
+    public function getFormattedTranslatedPublishedDateAttribute()
+    {
+        return __('Published on ') . $this->translated_published_date;
+    }
 }

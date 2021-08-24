@@ -38,7 +38,7 @@
                                 <a href="{{ route('education.detail', ['education_category' => $featured->category->slug, 'education' => $featured->slug]) }}">
                                     <h3 class="main_title_all_page">{{ $featured->translated_title }}</h3>
                                 </a>
-                                <p class="date_text">{{ $featured->published_date->format('F d, Y') }}</p>
+                                <p class="date_text">{{ $featured->translated_published_date }}</p>
                                 <div class="main_box_content_text">
                                     {!! $featured->meta_description !!}
                                 </div>
@@ -55,8 +55,8 @@
                             <a href="{{ route('education.detail', ['education_category' => $post->category->slug, 'education' => $post->slug]) }}">
                                 <h5 class="color143E59 font-24">{{ $post->translated_title }}</h5>
                             </a>
-                            <p class="color6F6F6F font-16 pt-2">{{ $post->published_date->format('F d, Y') }}</p>
-                            <p class="by_name_text"> by <a href="{{ route('teams') }}" class="blue">{{ $post->created_by }}</a> </p>
+                            <p class="color6F6F6F font-16 pt-2">{{ $post->translated_published_date }}</p>
+                            <p class="by_name_text">@if(app()->getLocale() == 'en') by @endif <a href="{{ route('teams') }}" class="blue">{{ __($post->created_by) }}</a> </p>
                         </div>
                     @endforeach
                 </div>
@@ -81,8 +81,8 @@
                                 <a href="{{ route('education.detail', ['education_category' => $category->slug, 'education' => $post->slug]) }}">
                                     <h4 class="font-24 color143E59 semibold">{{ $post->translated_title }}</h4>
                                 </a>
-                                <p class="font-16 color6F6F6F pt-1">{{ $post->published_date->format('F d, Y') }} | by <a href="{{ route('teams') }}"
-                                        class="blue">{{ $post->created_by }}</a></p>
+                                <p class="font-16 color6F6F6F pt-1">{{ $post->translated_published_date }} | @if(app()->getLocale() == 'en') by @endif <a href="{{ route('teams') }}"
+                                        class="blue">{{ __($post->created_by) }}</a></p>
                                 <div class="font-18 color0D171D mb-0 line-height-30">
                                     {!! $post->meta_description !!}
                                 </div>

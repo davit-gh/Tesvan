@@ -27,9 +27,9 @@
             <h2 class="hue_blue">{{ $bd->translated_title }}</h2>
             <p>
                 <small>
-                    Published on {{ date("M d, Y", strtotime($bd->published_date)) }} | Created By
+                    {{ $bd->formatted_translated_published_date }} | @if(app()->getLocale() == 'en') by @endif
                     @if(!empty($bd->created_by))
-                        {{ $bd->created_by }}
+                        {{ __($bd->created_by) }}
                     @else
                         {{ $bd->user->name }}
                     @endif
@@ -66,15 +66,16 @@
                                 <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                                 <p>
                                     <small>
-                                        {{ date("M d, Y", strtotime($b->published_date)) }}
+                                        {{ $b->translated_published_date }}
                                     </small>
                                 </p>
                                 <p class="hue_black">
                                     {{ limitWord(strip_tags($b->translated_description)) }}
                                 </p>
-                                <p class="hue_black">By
+                                <p class="hue_black">
+                                    @if(app()->getLocale() == 'en') By @endif
                                     @if(!empty($bd->created_by))
-                                        {{ $bd->created_by }}
+                                        {{ __($bd->created_by) }}
                                     @else
                                         {{ $bd->user->name }}
                                     @endif
@@ -99,7 +100,7 @@
                             <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                             <p>
                                 <small>
-                                    {{ date("M d, Y", strtotime($b->published_date)) }}
+                                    {{ $b->translated_published_date }}
                                 </small>
                             </p>
                             <p class="hue_black">

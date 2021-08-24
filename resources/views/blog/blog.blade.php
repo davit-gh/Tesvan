@@ -42,7 +42,7 @@
                                 <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                                 <p>
                                     <small>
-                                        {{ date("M d, Y", strtotime($b->published_date)) }}
+                                        {{ $b->translated_published_date }}
                                     </small>
                                 </p>
                                 <p class="hue_black">
@@ -61,7 +61,7 @@
                                     <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                                     <p>
                                         <small>
-                                            {{ date("M d, Y", strtotime($b->published_date)) }}
+                                            {{ $b->translated_published_date }}
                                         </small>
                                     </p>
                                     <p class="hue_black">By
@@ -93,7 +93,7 @@
                         <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                         <p>
                             <small>
-                                {{ date("M d, Y", strtotime($b->published_date)) }}
+                                {{ $b->translated_published_date }}
                             </small>
                         </p>
                         <p class="hue_black">
@@ -121,7 +121,7 @@
                             <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                             <p>
                                 <small>
-                                    {{ date("M d, Y", strtotime($b->published_date)) }}
+                                    {{ $b->translated_published_date }}
                                 </small>
                             </p>
                             <p class="hue_black">
@@ -138,7 +138,7 @@
                             <h5 class="hue_blue">{{ $b->translated_title }}</h5>
                             <p>
                                 <small>
-                                    {{ date("M d, Y", strtotime($b->published_date)) }}
+                                    {{ $b->translated_published_date }}
                                 </small>
                             </p>
                             <p class="hue_black">
