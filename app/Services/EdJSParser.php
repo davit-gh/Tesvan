@@ -443,7 +443,8 @@ class EdJSParser
         $rows = [];
         $textsPerRow = explode('<br>', $block['data']['text']);
         foreach ($textsPerRow as $row) {
-            $rows[] = preg_replace('/\[(.+)\]\((.+)\)/', '<a href="$2" target="_blank">$1</a>', $row);
+            $row = preg_replace('/\[(.+)\]\((.+)\)/', '<a href="$2" target="_blank">$1</a>', $row);
+            $rows[] = preg_replace('/(\d+\.)/', '<span class="bullets">$1</span>', $row);
         }
 
         $content->appendChild($this->html5->loadHTMLFragment(implode("<br>", $rows)));

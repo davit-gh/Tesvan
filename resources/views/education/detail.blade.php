@@ -92,6 +92,10 @@
         width: 100%;
     }
 
+    .prs-quote .bullets {
+        color: #F6B401;
+    }
+
     .prs-quote .prs-quote-title {
         display: inline-block;
         background: #143E59;
