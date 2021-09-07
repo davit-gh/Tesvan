@@ -155,6 +155,7 @@
     .prs-toc {
         border: 1px solid #D9DAD9;
         border-radius: 12px;
+        margin-bottom: 20px;
     }
 
     .prs-toc > div {
