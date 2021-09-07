@@ -63,8 +63,8 @@ class EducationController extends Controller
         $data['blog_interest'] = Education::orderByRaw('RAND()')->limit(2)->get();
         $data['blog'] = [];
         $data['next_lessons'] = Education::with('category')
-            ->where('education_category_id', $data['post']->education_category_id)
-            ->where('created_at', '>', $data['post']->created_at)
+            ->published()
+            ->where('published_date', '>', $data['post']->published_date)
             ->limit(4)
             ->get();
 

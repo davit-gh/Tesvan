@@ -73,7 +73,7 @@ class EdJSParser
 
     public function getBlocks()
     {
-        return isset($this->data['blocks']) ? $this->data['blocks'] : null;
+        return isset($this->data['blocks']) ? collect($this->data['blocks']) : null;
     }
 
     public function toHtml()
@@ -92,48 +92,19 @@ class EdJSParser
             return;
         };
 
-        foreach ($this->getBlocks() as $block) {
-            switch ($block['type']) {
-                case 'header':
-                    $this->parseHeader($block);
-                    break;
-                case 'table':
-                    $this->parseTable($block);
-                    break;
-                case 'delimiter':
-                    $this->parseDelimiter();
-                    break;
-                case 'code':
-                    $this->parseCode($block);
-                    break;
-                case 'paragraph':
-                    $this->parseParagraph($block);
-                    break;
-                case 'link':
-                    $this->parseLink($block);
-                    break;
-                case 'embed':
-                    $this->parseEmbed($block);
-                    break;
-                case 'raw':
-                    $this->parseRaw($block);
-                    break;
-                case 'list':
-                    $this->parseList($block);
-                    break;
-                case 'warning':
-                    $this->parseWarning($block);
-                    break;
-                case 'image':
-                case 'simpleImage':
-                    $this->parseImage($block);
-                    break;
-                case 'quote':
-                    $this->parseQuote($block);
-                    break;
-                default:
-                    break;
+        $blocks = $this->getBlocks();
+        if (count($headings = $blocks->where('type', 'header')->values()) > 0) {
+            $this->parseToc($headings);
+        }
+
+        foreach ($blocks as $block) {
+            ['type' => $type] = $block;
+
+            if ($type == 'simpleImage') {
+                $type = 'image';
             }
+
+            $this->{'parse' . ucfirst($type)}($block);
         }
     }
 
@@ -142,9 +113,53 @@ class EdJSParser
         return isset($this->data['blocks']) && count($this->data['blocks']) !== 0;
     }
 
+    public function parseToc($headings)
+    {
+        $dom = $this->dom->createElement('div');
+        $dom->setAttribute('id', "{$this->prefix}-toc");
+        $dom->setAttribute('class', "{$this->prefix}-toc");
+
+        $collapse = $this->dom->createElement('div');
+        $tocHeading = $this->dom->createElement('h1');
+        $tocHeading->appendChild(new DOMText('Content'));
+        $collapse->appendChild($tocHeading);
+
+        $collapseBtn = $this->dom->createElement('a');
+        $collapseBtn->setAttribute('class', 'collapse-btn');
+        $collapseBtn->setAttribute('data-toggle', 'collapse');
+        $collapseBtn->setAttribute('href', "#{$this->prefix}-toc-collapse");
+        $collapse->appendChild($collapseBtn);
+
+        $dom->appendChild($collapse);
+
+        $toc = $this->dom->createElement('div');
+        $toc->setAttribute('id', "{$this->prefix}-toc-collapse");
+        $toc->setAttribute('class', 'collapse');
+
+        $ol = $this->dom->createElement('ol');
+        foreach ($headings as $heading) {
+            $link = $this->dom->createElement('a');
+            $link->setAttribute('href', '#' . $heading['id']);
+            $link->setAttribute('class', 'prs-toc-link');
+            $link->appendChild(new DOMText($heading['data']['text']));
+
+            $li = $this->dom->createElement('li');
+            $li->setAttribute('data-level', $heading['data']['level']);
+            $li->appendChild($link);
+
+            $ol->appendChild($li);
+        }
+
+        $toc->appendChild($ol);
+        $dom->appendChild($toc);
+
+        $this->dom->appendChild($dom);
+    }
+
     private function parseHeader($block)
     {
         $header = $this->dom->createElement('h' . $block['data']['level']);
+        $header->setAttribute('id', $block['id']);
         $header->setAttribute('class', "{$this->prefix}-h{$block['data']['level']}");
         $header->appendChild(new DOMText($block['data']['text']));
 

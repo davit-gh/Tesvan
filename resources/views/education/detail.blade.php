@@ -151,6 +151,97 @@
         background-image: url(/images/ol-icon.png);
         background-size: contain;
     }
+
+    .prs-toc {
+        border: 1px solid #D9DAD9;
+        border-radius: 12px;
+    }
+
+    .prs-toc > div {
+        position: relative;
+    }
+
+    .prs-toc h1 {
+        display: inline-block;
+        font-size: 20px;
+        margin: 15px 24px;
+        color: #143E59;
+    }
+
+    .prs-toc .collapse-btn[aria-expanded="true"] {
+        border-bottom-left-radius: 12px;
+    }
+
+    .prs-toc .collapse-btn[aria-expanded="true"]::before {
+        content: '-';
+    }
+
+    .prs-toc .collapse-btn::before {
+        content: '+';
+    }
+
+    .prs-toc .collapse-btn {
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        color: #ffffff;
+        background: #143E59;
+        padding: 15px 0;
+        width: 48px;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        border-top-right-radius: 12px;
+        border-bottom-left-radius: 0;
+    }
+
+    #prs-toc #prs-toc-collapse ol {
+        margin: 0 40px 15px;
+        list-style: none;
+    }
+
+    #prs-toc #prs-toc-collapse ol {
+        counter-reset: level1;
+    }
+
+    #prs-toc #prs-toc-collapse ol li {
+        color: #F4B41A;
+    }
+
+    #prs-toc #prs-toc-collapse ol li[data-level="1"] {
+        counter-reset: level2;
+    }
+
+    #prs-toc #prs-toc-collapse ol li[data-level="1"]:before {
+        counter-increment: level1;
+        content: counter(level1) ". ";
+    }
+
+    #prs-toc #prs-toc-collapse ol li[data-level="2"] {
+        counter-reset: level3;
+    }
+
+    #prs-toc #prs-toc-collapse ol li[data-level="2"]:before {
+        margin-left: 20px;
+        counter-increment: level2;
+        content: counter(level1) "." counter(level2) ". ";
+    }
+
+    #prs-toc #prs-toc-collapse ol li[data-level="3"] {
+        counter-reset: level4;
+    }
+
+    #prs-toc #prs-toc-collapse ol li[data-level="3"]:before {
+        margin-left: 40px;
+        counter-increment: level3;
+        content: counter(level1) "." counter(level2) "." counter(level3) ". ";
+    }
+
+    #prs-toc #prs-toc-collapse ol li[data-level="4"]:before {
+        margin-left: 60px;
+        counter-increment: level4;
+        content: counter(level1) "." counter(level2) "." counter(level3) "." counter(level4) ". ";
+    }
 </style>
 @endsection
 
