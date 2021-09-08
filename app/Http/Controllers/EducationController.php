@@ -64,8 +64,8 @@ class EducationController extends Controller
         $data['blog'] = [];
         $data['next_lessons'] = Education::with('category')
             ->published()
-            ->where('published_date', '>', $data['post']->published_date)
-            ->limit(4)
+            ->where('order', '>', $data['post']->order)
+            ->limit(5)
             ->get();
 
         return view('education.detail', $data);

@@ -136,6 +136,11 @@ class EdJSParser
         $toc->setAttribute('id', "{$this->prefix}-toc-collapse");
         $toc->setAttribute('class', 'collapse');
 
+        $levels = [];
+        foreach ($headings->pluck('data.level')->unique()->values() as $index => $level) {
+            $levels[$level] = $index + 1;
+        }
+
         $ol = $this->dom->createElement('ol');
         foreach ($headings as $heading) {
             $link = $this->dom->createElement('a');
@@ -144,7 +149,7 @@ class EdJSParser
             $link->appendChild(new DOMText($heading['data']['text']));
 
             $li = $this->dom->createElement('li');
-            $li->setAttribute('data-level', $heading['data']['level']);
+            $li->setAttribute('data-level', $levels[$heading['data']['level']]);
             $li->appendChild($link);
 
             $ol->appendChild($li);
