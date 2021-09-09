@@ -63,7 +63,7 @@ class Education extends Model
         $description = strip_tags($description);
         $description = html_entity_decode($description, ENT_QUOTES, "UTF-8");
 
-        if (str_starts_with('Content', $description)) {
+        if (str_starts_with($description, 'Content')) {
             $description = str_replace('Content', '', $description, 1);
         }
 
