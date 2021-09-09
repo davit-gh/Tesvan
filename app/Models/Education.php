@@ -65,7 +65,7 @@ class Education extends Model
 
         if (str_starts_with($description, 'Content')) {
             $replaceCount = 1;
-            $description = str_replace('Content', '', $description, $replaceCount);
+            $description = trim(str_replace('Content', '', $description, $replaceCount));
         }
 
         return mb_substr($description, 0, 160) . '...';
