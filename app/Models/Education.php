@@ -64,7 +64,8 @@ class Education extends Model
         $description = html_entity_decode($description, ENT_QUOTES, "UTF-8");
 
         if (str_starts_with($description, 'Content')) {
-            $description = str_replace('Content', '', $description, 1);
+            $replaceCount = 1;
+            $description = str_replace('Content', '', $description, $replaceCount);
         }
 
         return mb_substr($description, 0, 160) . '...';
