@@ -60,12 +60,12 @@ class Education extends Model
         $description = trim(preg_replace("/{$imgRegex}|{$tableRegex}|{$olRegex}|{$ulRegex}/i", '', $description));
         // remove special tags
 
+        $description = strip_tags($description);
+        $description = html_entity_decode($description, ENT_QUOTES, "UTF-8");
+
         if (str_starts_with('Content', $description)) {
             $description = str_replace('Content', '', $description, 1);
         }
-
-        $description = strip_tags($description);
-        $description = html_entity_decode($description, ENT_QUOTES, "UTF-8");
 
         return mb_substr($description, 0, 160) . '...';
     }
