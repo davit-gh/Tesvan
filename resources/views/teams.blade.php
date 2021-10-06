@@ -70,7 +70,7 @@
                 <div class="team_member_row">
                     <img src="{{asset('images/team_images/Lena.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Lena Hambardzumyan")}}</h4>
-                    <p class="hue_black pb-3"><small>{{__("HR/Marketing Specialist")}}</small></p>
+                    <p class="hue_black pb-3"><small>{{__("Project Manager")}}</small></p>
                     <div data-cv-name="Lena_Hambardzumyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
                     <div class="layer hue_aqua"></div>
                 </div>
@@ -86,20 +86,11 @@
             </div>
             <div class="col-md-3">
                 <div class="team_member_row">
-                    <img src="{{asset('images/team_images/Mariam_H.png')}}" alt="Arpine" class="img-fluid m-auto">
-                    <h4 class="hue_black pt-3">{{__("Mariam Harutyunyan")}}</h4>
-                    <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
-                    <div data-cv-name="Mariam_Harutyunyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <img src="{{asset('images/team_images/Nina.png')}}" alt="Arpine" class="img-fluid m-auto">
+                    <h4 class="hue_black pt-3">{{__("Nina Antonyan")}}</h4>
+                    <p class="hue_black pb-3"><small>{{__("Project Manager")}}</small></p>
+                    <div data-cv-name="Nina_Antonyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
                     <div class="layer hue_aqua"></div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="team_member_row">
-                    <img src="{{asset('images/team_images/Merine.png')}}" alt="Arpine" class="img-fluid m-auto">
-                    <h4 class="hue_black pt-3">{{__("Merine Margaryan")}}</h4>
-                    <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
-                    <div data-cv-name="Merine_Margaryan.pdf" class="go_to_cv cv_corner_yellow_md3"></div>
-                    <div class="layer hue_royal"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -122,11 +113,20 @@
             </div>
             <div class="col-md-3">
                 <div class="team_member_row">
+                    <img src="{{asset('images/team_images/Merine.png')}}" alt="Arpine" class="img-fluid m-auto">
+                    <h4 class="hue_black pt-3">{{__("Merine Margaryan")}}</h4>
+                    <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
+                    <div data-cv-name="Merine_Margaryan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <div class="layer hue_aqua"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="team_member_row">
                     <img src="{{asset('images/team_images/Ani.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Ani Vardanyan")}}</h4>
                     <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
-                    <div data-cv-name="Ani_Vardanyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
-                    <div class="layer hue_aqua"></div>
+                    <div data-cv-name="Ani_Vardanyan.pdf" class="go_to_cv cv_corner_yellow_md3"></div>
+                    <div class="layer hue_royal"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -158,27 +158,18 @@
             </div>
             <div class="col-md-3">
                 <div class="team_member_row">
-                    <img src="{{asset('images/team_images/Nina.png')}}" alt="Arpine" class="img-fluid m-auto">
-                    <h4 class="hue_black pt-3">{{__("Nina Antonyan")}}</h4>
-                    <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
-                    <div data-cv-name="Nina_Antonyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
-                    <div class="layer hue_aqua"></div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="team_member_row">
                     <img src="{{asset('images/team_images/Arman.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Arman Poghosyan")}}</h4>
-                    <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
-                    <div data-cv-name="Arman_Poghosyan.pdf" class="go_to_cv cv_corner_yellow_md3"></div>
-                    <div class="layer hue_royal"></div>
+                    <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
+                    <div data-cv-name="Arman_Poghosyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="team_member_row">
                     <img src="{{asset('images/team_images/Norayr.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Norayr Hakobyan")}}</h4>
-                    <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
+                    <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
                     <div data-cv-name="Norayr_Hakobyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
                     <div class="layer hue_aqua"></div>
                 </div>
@@ -196,7 +187,7 @@
                 <div class="team_member_row">
                     <img src="{{asset('images/team_images/Mane.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Mane Shahbazyan")}}</h4>
-                    <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
+                    <p class="hue_black pb-3"><small>{{__("QA Engineer")}}</small></p>
                     <div data-cv-name="Mane_Shahbazyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
                     <div class="layer hue_aqua"></div>
                 </div>
@@ -215,8 +206,8 @@
                     <img src="{{asset('images/team_images/Mari.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Mari Baghdasaryan")}}</h4>
                     <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
-                    <div data-cv-name="Mari_Baghdasaryan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
-                    <div class="layer hue_aqua"></div>
+                    <div data-cv-name="Mari_Baghdasaryan.pdf" class="go_to_cv cv_corner_yellow_md3"></div>
+                    <div class="layer hue_royal"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -224,8 +215,8 @@
                     <img src="{{asset('images/team_images/Mariam.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Mariam Martirosyan")}}</h4>
                     <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
-                    <div data-cv-name="Mariam_Martirosyan.pdf" class="go_to_cv cv_corner_yellow_md3"></div>
-                    <div class="layer hue_royal"></div>
+                    <div data-cv-name="Mariam_Martirosyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <div class="layer hue_aqua"></div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -233,7 +224,25 @@
                     <img src="{{asset('images/team_images/DavitOhanyan.png')}}" alt="Arpine" class="img-fluid m-auto">
                     <h4 class="hue_black pt-3">{{__("Davit Ohanyan")}}</h4>
                     <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
-                    <div data-cv-name="Davit_Ohanyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <div data-cv-name="Davit_Ohanyan.pdf" class="go_to_cv cv_corner_yellow_md3"></div>
+                    <div class="layer hue_royal"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="team_member_row">
+                    <img src="{{asset('images/team_images/Armenak-Shakaryan.png')}}" alt="Arpine" class="img-fluid m-auto">
+                    <h4 class="hue_black pt-3">{{__("Armenak Shakaryan")}}</h4>
+                    <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
+                    <div data-cv-name="Armenak_Shakaryan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
+                    <div class="layer hue_aqua"></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="team_member_row">
+                    <img src="{{asset('images/team_images/Armen-Simonyan.png')}}" alt="Arpine" class="img-fluid m-auto">
+                    <h4 class="hue_black pt-3">{{__("Armen Simonyan")}}</h4>
+                    <p class="hue_black pb-3"><small>{{__("Junior QA Engineer")}}</small></p>
+                    <div data-cv-name="Armen_Simonyan.pdf" class="go_to_cv cv_corner_blue_md3"></div>
                     <div class="layer hue_aqua"></div>
                 </div>
             </div>
