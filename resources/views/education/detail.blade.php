@@ -108,6 +108,8 @@
     .prs-quote .prs-quote-content {
         border: 1px solid #D9DAD9;
         padding: 7.5px 12px;
+        border-radius:12px;
+        border-top-left-radius:0px;
     }
 
     .prs-list ul li {

@@ -94,7 +94,7 @@ Route::get('team/cv/{file_name}', [
     'as' => 'team.cv'
 ]);
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [
