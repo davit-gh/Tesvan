@@ -196,6 +196,7 @@
         right: 0;
         border-top-right-radius: 12px;
         border-bottom-left-radius: 0;
+        border-bottom-right-radius: 12px;
     }
 
     #prs-toc #prs-toc-collapse ol {
