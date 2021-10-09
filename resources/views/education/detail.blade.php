@@ -477,6 +477,25 @@
             self.find('img').attr('height', '16px');
         }, 2000)
     });
+
+    $(document).on("click",".collapse-btn", function(){
+
+        collapse = $(".collapse-btn");
+        sign = $(".blog_description");
+
+        if (typeof sign.attr("id")=="undefined"){
+            sign.attr('id','trigerId');
+            collapse.css("border-top-right-radius","0px");
+            collapse.css("border-bottom-right-radius","0px");
+            $(".prs-toc").css("border-radius","0px");
+        } else {
+            sign.removeAttr('id');
+            collapse.css("border-top-right-radius","12px");
+            collapse.css("border-bottom-right-radius","12px");
+            $(".prs-toc").css("border-radius","12px");
+        }
+        
+    });
 </script>
 
 @endsection
