@@ -33,7 +33,7 @@
                     <div class="col-md-4" style="padding: 40px; display: none;" id="tab{{ $key }}">
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >
-                                    <img class="lozad img-entry" style="max-height: 130px;" width="auto" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
+                                    <img class="lozad img-entry" style="max-height: 130px;" width="auto" src='https://www.tesvan.com/uploads/images/project/logo/2008/20210426205909413828.jpg'>
                                 
                             </div>
                         </a>
@@ -42,7 +42,7 @@
                     <div class="col-md-4 showElement" style="padding: 40px;" id="tab{{ $key }}">
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
                             <div class="rectangle" >                                
-                                <img class="lozad img-entry" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
+                                <img class="lozad img-entry" src='https://www.tesvan.com/uploads/images/project/logo/2008/20210426205909413828.jpg'>
                             </div>
                         </a>
                     </div>

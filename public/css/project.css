@@ -438,3 +438,67 @@
         overflow-x: hidden;
     }
 }
+
+@media (max-width: 375px) {
+
+    .custom-btn a {
+        font-size: 14px;
+        padding: 12px 30px;
+    }
+
+    .img-entry {
+        position: relative;
+        top: 45px;
+        left: 35px;
+        width: 78%;
+        height: 105px;
+    }
+
+    .rectangle {
+        width: 298px;
+        height: 180px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 25px rgb(0 0 0 / 10%);
+        border-radius: 12px;
+        background-image: url(images/rectangle.png);
+        background-repeat: no-repeat;
+        background-size: 295px 176px;
+    }
+    
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 414px) {
+
+    .custom-btn a {
+        font-size: 14px;
+        padding: 12px 30px;
+    }
+
+    .img-entry {
+        position: relative;
+        top: 45px;
+        left: 35px;
+        width: 78%;
+        height: 105px;
+    }
+
+    .rectangle {
+        width: 298px;
+        height: 180px;
+        background: #FFFFFF;
+        box-shadow: 0px 0px 25px rgb(0 0 0 / 10%);
+        border-radius: 12px;
+        background-image: url(images/rectangle.png);
+        background-repeat: no-repeat;
+        background-size: 295px 176px;
+    }
+    
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
