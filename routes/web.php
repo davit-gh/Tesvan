@@ -102,6 +102,21 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'admin'
     ]);
 
+    Route::get('/create-team', [
+        'uses' => 'AdminController@createTeam',
+        'as' => 'create.team'
+    ]);
+
+    Route::get('/team-list', [
+        'uses' => 'AdminController@teamList',
+        'as' => 'team.list'
+    ]);
+
+    Route::get('/team-dt', [
+        'uses' => 'AdminController@teamListDatatable',
+        'as' => 'team.list.dt'
+    ]);
+
     Route::get('/project-list', [
         'uses' => 'AdminController@projectList',
         'as' => 'project.list'
@@ -120,6 +135,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/storeProject', [
         'uses' => 'AdminController@storeProject',
         'as' => 'project.store'
+    ]);
+
+    Route::post('/storeTeam', [
+        'uses' => 'AdminController@storeTeam',
+        'as' => 'team.store'
     ]);
 
     Route::post('/updateProject', [

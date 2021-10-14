@@ -11,6 +11,7 @@ use App\Models\Project;
 use App\Models\ProjectObjective;
 use App\Models\ProjectResult;
 use App\Models\TechnologyTool;
+use App\Models\Team;
 use App\Services\EdJSParser;
 use DataTables;
 use Illuminate\Http\Request;
@@ -25,6 +26,11 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin/admin');
+    }
+
+    public function createTeam()
+    {
+        return view('admin/create-team');
     }
 
     public function logout(Request $request)
@@ -42,6 +48,11 @@ class AdminController extends Controller
     public function projectList(Request $request)
     {
         return view('admin/projects');
+    }
+
+    public function teamList(Request $request)
+    {
+        return view('admin/teams');
     }
 
     public function blogs(Request $request)
@@ -137,6 +148,40 @@ class AdminController extends Controller
             ->addColumn('action', '
             <a href="{{ route("project.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
             ')->toJson();
+    }
+
+    public function teamListDatatable(Request $request)
+    {
+        $project = Team::orderBy("id", "desc")->get();
+        return DataTables::of($project)
+            ->editColumn('name', function ($d) {
+                return $this->limitWord($d->name);
+            })
+            ->editColumn('name_ru', function ($d) {
+                return $this->limitWord($d->name_ru);
+            })
+            ->editColumn('name_am', function ($d) {
+                return $this->limitWord($d->name_am);
+            })
+            ->editColumn('position', function ($d) {
+                return $this->limitWord($d->position);
+            })
+            ->editColumn('position_ru', function ($d) {
+                return $this->limitWord($d->position_ru);
+            })
+            ->editColumn('position_am', function ($d) {
+                return $this->limitWord($d->position_am);
+            })->editColumn('place_number', function ($d) {
+                return $this->limitWord($d->place_number);
+            })->editColumn('cv', function ($d) {
+                return $this->limitWord($d->cv);
+            })
+            ->editColumn('photo', function ($d) {
+                return $this->limitWord($d->photo);
+            })
+            ->editColumn('background_color', function ($d) {
+                return $this->limitWord($d->background_color);
+            })->toJson();
     }
 
     public function storeProject(Request $request)
@@ -343,6 +388,102 @@ class AdminController extends Controller
             //$tt = new TechnologyTool;
             //$tt->save();
             \Session::flash('success', 'Succesfully added project!');
+            return redirect(route('admin'))->with(['success' => 'Succesfully added project!']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function storeTeam(Request $request)
+    {
+
+        $width = 200;
+        $height = 200;
+
+        $user = Auth::user();
+
+        $messages = [
+            'name.required' => 'Name required!',
+            'position.required' => 'Position required!',
+            'place_number.required' => 'Place Number required!',
+            'background_color.required'=>'Background color required!',
+        ];
+
+        $rule = [
+            'name' => 'required',
+            'name_ru' => 'required',
+            'name_am' => 'required',
+            'position' => 'required',
+            'position_ru' => 'required',
+            'position_am' => 'required',
+            'background_color' => 'required',
+            'place_number'=>'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rule, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+
+            $p = new Team;
+            $p->name = $request->name;
+            $p->name_ru = $request->name_ru;
+            $p->name_am = $request->name_am;
+            $p->position = $request->position;
+            $p->position_ru = $request->position_ru;
+            $p->position_am = $request->position_am;
+            $p->photo = "";
+            $p->cv = "";
+            $p->place_number = $request->place_number;
+            $p->background_color = $request->background_color;
+            $p->save();
+
+            if ($request->file("photo")) {
+                $ext = $request->file("photo")->getClientOriginalExtension();
+                $file_size = $request->file("photo")->getSize();
+                $file_name = date('YmdHis') . rand(1, 500) . rand(501, 1000) . '.' . $ext;
+                $path = 'uploads/team/photo/' . $p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                // upload file
+
+                $image = $request->file("photo");
+                $image_resize = Image::make($image->getRealPath());
+                $image_resize->resize($width, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload . '/resize_' . $file_name);
+
+                $request->file("photo")->move($dir_upload, $file_name);
+
+                $f = Team::find($p->id);
+                $f->photo = $file_name;
+                $f->save();
+            }
+
+            if ($request->file("cv")) {
+                $ext = $request->file("cv")->getClientOriginalExtension();
+                $file_size = $request->file("cv")->getSize();
+                $file_name = date('YmdHis') . rand(1, 500) . rand(501, 1000) . '.' . $ext;
+                $path = 'uploads/team/cv/' . $p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                // upload file
+                $request->file("cv")->move($dir_upload, $file_name);
+
+                $f = Team::find($p->id);
+                $f->cv = $file_name;
+                $f->save();
+            }
+            
+            \Session::flash('success', 'Succesfully added team!');
             return redirect(route('admin'))->with(['success' => 'Succesfully added project!']);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);
