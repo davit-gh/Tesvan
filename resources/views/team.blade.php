@@ -36,7 +36,7 @@
                                 @endphp
                                 </small>
                             </p>
-                            <div data-cv-name="{{asset('uploads/team/cv/$team->id/$team->cv')}}" class="go_to_cv {{ ($team->background_color=='Aqua') ?  'cv_corner_blue' : 'cv_corner_yellow_md3' }}"></div>
+                            <div data-cv-name='{{asset("uploads/team/cv/$team->id/$team->cv")}}' class="go_to_cv {{ ($team->background_color=='Aqua') ?  'cv_corner_blue' : 'cv_corner_yellow_md3' }}"></div>
                             <div class="layer {{ ($team->background_color=='Aqua') ?  'hue_aqua' : 'hue_royal' }}"></div>
                         </div>
                     </div>
