@@ -173,7 +173,8 @@ class AdminController extends Controller
                 return $this->limitWord($d->position_am);
             })->editColumn('place_number', function ($d) {
                 return $this->limitWord($d->place_number);
-            // })->editColumn('cv', function ($d) {
+            })
+            //->editColumn('cv', function ($d) {
             //     return $this->limitWord($d->cv);
             // })
             ->editColumn('photo', function ($d) {
