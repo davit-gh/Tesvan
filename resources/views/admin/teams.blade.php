@@ -50,7 +50,6 @@
               <th>Position | Armenian</th>
               <th>Place Number</th>
               <th>Photo</th>
-              <th>CV</th>
               <th>Background Color</th>
           </tr>
       </thead>

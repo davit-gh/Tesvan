@@ -14,7 +14,6 @@
         { data: "position_am" },
         { data: "place_number" },
         { data: "photo" },
-        { data: "cv" },
         { data: "background_color" },
         ],
     });
