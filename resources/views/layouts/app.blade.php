@@ -107,7 +107,7 @@
 
         $(document).on("click",".go_to_cv",function(e){
             cv_name = $(this).data("cv-name");
-            window.open('{{url("team/cv")}}'+"/"+cv_name);
+            window.open(cv_name);
         });
 
     </script>
