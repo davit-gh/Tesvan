@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Response;
+use App\Models\Team;
 
 use Mail;
 
@@ -11,7 +12,8 @@ class HomeController extends Controller
 {
 
     public function index() {
-        return view('index');
+        $data["teams"] = Team::orderBy("place_number","asc")->get();
+        return view('index',$data);
     }
 
     public function ContactUsForm(Request $request) {
@@ -33,7 +35,8 @@ class HomeController extends Controller
     }
 
     public function teams() {
-        return view('teams');
+        $data["teams"] = Team::orderBy("place_number","asc")->get();
+        return view('teams', $data);
     }
 
     public function teamsCv($file_name){
