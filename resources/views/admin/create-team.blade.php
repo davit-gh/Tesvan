@@ -51,15 +51,15 @@
     <div class="card-body">
       <div class="form-group">
         <label for="exampleInputEmail1">Name</label>
-        <input value="{{ old('name') }}" type="text" class="form-control" placeholder="English Name" name="name">
-        <input value="{{ old('name_ru') }}" type="text" class="form-control" placeholder="Russian Name" name="name_ru">
-        <input value="{{ old('name_am') }}" type="text" class="form-control" placeholder="Armenian Name" name="name_am"> 
+        <input value="{{ old('name') }}" type="text" class="form-control" placeholder="English Name" name="name"><br/>
+        <input value="{{ old('name_ru') }}" type="text" class="form-control" placeholder="Russian Name" name="name_ru"><br/>
+        <input value="{{ old('name_am') }}" type="text" class="form-control" placeholder="Armenian Name" name="name_am"><br/>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Position</label>
-        <input value="{{ old('position') }}" type="text" class="form-control" placeholder="English Position" name="position">
-        <input value="{{ old('position_ru') }}" type="text" class="form-control" placeholder="Russian Position" name="position_ru">
-        <input value="{{ old('position_am') }}" type="text" class="form-control" placeholder="Armenian Position" name="position_am"> 
+        <input value="{{ old('position') }}" type="text" class="form-control" placeholder="English Position" name="position"><br/>
+        <input value="{{ old('position_ru') }}" type="text" class="form-control" placeholder="Russian Position" name="position_ru"><br/>
+        <input value="{{ old('position_am') }}" type="text" class="form-control" placeholder="Armenian Position" name="position_am"><br/> 
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Place Number</label>
