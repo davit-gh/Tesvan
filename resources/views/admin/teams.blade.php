@@ -33,6 +33,12 @@
      </span>
   @endif
   <div class="container">
+    <style type="text/css">
+      table.dataTable tbody td {
+        word-break: break-word;
+        vertical-align: top;
+      }
+    </style>
   <table id="datatable" class="table table-bordered table-hover">
       <thead>
           <tr>

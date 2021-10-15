@@ -177,11 +177,13 @@ class AdminController extends Controller
                 return $this->limitWord($d->cv);
             })
             ->editColumn('photo', function ($d) {
-                return $this->limitWord($d->photo);
+                return '<image width=150 height=auto src="'.asset('uploads/team/photo/'.$d->id.'/'.$d->photo.'').'"/>';
             })
             ->editColumn('background_color', function ($d) {
                 return $this->limitWord($d->background_color);
-            })->toJson();
+            })
+            ->rawColumns(['photo'])
+            ->toJson();
     }
 
     public function storeProject(Request $request)
