@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File; 
 
 class AdminController extends Controller
 {
@@ -116,6 +117,12 @@ class AdminController extends Controller
         return view('admin/project-edit', $data);
     }
 
+    public function teamEdit($id)
+    {
+        $data['team'] = Team::where("id", $id)->first();
+        return view('admin/team-edit', $data);
+    }
+
 
     private function limitWord($word)
     {
@@ -183,7 +190,10 @@ class AdminController extends Controller
             ->editColumn('background_color', function ($d) {
                 return $this->limitWord($d->background_color);
             })
-            ->rawColumns(['photo'])
+            ->addColumn('action', '
+            <a href="{{ route("team.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+            ')
+            ->rawColumns(['photo','action'])
             ->toJson();
     }
 
@@ -487,7 +497,103 @@ class AdminController extends Controller
             }
             
             \Session::flash('success', 'Succesfully added team!');
-            return redirect(route('admin'))->with(['success' => 'Succesfully added project!']);
+            return redirect(route('team.list'))->with(['success' => 'Succesfully added project!']);
+        } catch (\Exception $e) {
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function updateTeam(Request $request)
+    {
+
+        $width = 200;
+        $height = 200;
+
+        $user = Auth::user();
+
+        $messages = [
+            'id.required'=>'ID required!',
+            'name.required' => 'Name required!',
+            'position.required' => 'Position required!',
+            'place_number.required' => 'Place Number required!',
+            'background_color.required'=>'Background color required!',
+        ];
+
+        $rule = [
+            'name' => 'required',
+            'name_ru' => 'required',
+            'name_am' => 'required',
+            'position' => 'required',
+            'position_ru' => 'required',
+            'position_am' => 'required',
+            'background_color' => 'required',
+            'place_number'=>'required',
+            'id'=>'required'
+        ];
+
+        $validator = Validator::make($request->all(), $rule, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        try {
+
+            $p = Team::find($request->id);
+            $p->name = $request->name;
+            $p->name_ru = $request->name_ru;
+            $p->name_am = $request->name_am;
+            $p->position = $request->position;
+            $p->position_ru = $request->position_ru;
+            $p->position_am = $request->position_am;
+            $p->place_number = $request->place_number;
+            $p->background_color = $request->background_color;
+            $p->save();
+
+            if ($request->file("photo")) {
+                $ext = $request->file("photo")->getClientOriginalExtension();
+                $file_size = $request->file("photo")->getSize();
+                $file_name = date('YmdHis') . rand(1, 500) . rand(501, 1000) . '.' . $ext;
+                $path = 'uploads/team/photo/' . $p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                // upload file
+
+                $image = $request->file("photo");
+                $image_resize = Image::make($image->getRealPath());
+                $image_resize->resize($width, $height, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+                $image_resize->save($dir_upload . '/resize_' . $file_name);
+
+                $request->file("photo")->move($dir_upload, $file_name);
+
+                $f = Team::find($p->id);
+                $f->photo = $file_name;
+                $f->save();
+            }
+
+            if ($request->file("cv")) {
+                $ext = $request->file("cv")->getClientOriginalExtension();
+                $file_size = $request->file("cv")->getSize();
+                $file_name = date('YmdHis') . rand(1, 500) . rand(501, 1000) . '.' . $ext;
+                $path = 'uploads/team/cv/' . $p->id;
+                $dir_upload = public_path($path);
+                if (!file_exists($dir_upload)) {
+                    mkdir($dir_upload, 0777, true);
+                }
+                // upload file
+                $request->file("cv")->move($dir_upload, $file_name);
+
+                $f = Team::find($p->id);
+                $f->cv = $file_name;
+                $f->save();
+            }
+            
+            \Session::flash('success', 'Succesfully update team!');
+            return redirect(route('team.list'))->with(['success' => 'Succesfully added project!']);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);
         }
@@ -727,6 +833,29 @@ class AdminController extends Controller
             return response()->json('success', 200);
         } catch (Exception $e) {
             return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        }
+    }
+
+    public function deleteTeam(Request $request)
+    {
+        try {
+            $id = $request->id;
+            $t = Team::where('id', $id)->first();
+            $cv = "uploads/team/cv/".$t->id."/".$t->cv;
+            $photo = "uploads/team/photo/".$t->id."/".$t->photo;
+            if ($t->cv){
+                $deletephoto = File::delete($cv);
+            }
+            if ($t->photo){
+                $deletecv = File::delete($photo);
+            }
+            if (Team::where('id', $id)->delete()){
+                \Session::flash('success', 'Succesfully deleted team!');
+                return response()->json('success', 200);
+            }
+            return response()->json(['message' => 'Internal Error', 'data' => []], 500);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage(), 'data' => []], 500);
         }
     }
 

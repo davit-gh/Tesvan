@@ -127,6 +127,11 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'project.edit'
     ]);
 
+    Route::get('/team-edit/{id}', [
+        'uses' => 'AdminController@teamEdit',
+        'as' => 'team.edit'
+    ]);
+
     Route::get('/projects-dt', [
         'uses' => 'AdminController@projectListDatatable',
         'as' => 'project.list.dt'
@@ -147,9 +152,19 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'project.update'
     ]);
 
+    Route::post('/updateTeam', [
+        'uses' => 'AdminController@updateTeam',
+        'as' => 'team.update'
+    ]);
+
     Route::post('/deleteProject', [
         'uses' => 'AdminController@deleteProject',
         'as' => 'project.delete'
+    ]);
+
+    Route::post('/deleteTeam', [
+        'uses' => 'AdminController@deleteTeam',
+        'as' => 'team.delete'
     ]);
 
     Route::post('/deleteEntity', [

@@ -51,6 +51,7 @@
               <th>Place Number</th>
               <th>Photo</th>
               <th>Background Color</th>
+              <th width="200">Action</th>
           </tr>
       </thead>
   </table>

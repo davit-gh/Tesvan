@@ -15,6 +15,7 @@
         { data: "place_number" },
         { data: "photo" },
         { data: "background_color" },
+        { data: "action", bSortable: false, className: "text-center" },
         ],
     });
   });
@@ -29,7 +30,7 @@
        }
 
       $.ajax({
-          url: "{{ route('project.delete') }}",
+          url: "{{ route('team.delete') }}",
           data: data,
           type: "POST",
           dataType : "json",
