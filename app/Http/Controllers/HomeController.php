@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
 
     public function index() {
-        $data["teams"] = Team::orderBy("place_number","asc")->get();
+        $data["teams"] = Team::orderBy("place_number","asc")->limit(3)->get();
         return view('index',$data);
     }
 
