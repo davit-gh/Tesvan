@@ -7,11 +7,7 @@
         ajax: "{!! route('team.list.dt') !!}",
         columns: [
         { data: "name" },
-        { data: "name_ru" },
-        { data: "name_am" },
         { data: "position" },
-        { data: "position_ru" },
-        { data: "position_am" },
         { data: "place_number" },
         { data: "photo" },
         { data: "background_color" },

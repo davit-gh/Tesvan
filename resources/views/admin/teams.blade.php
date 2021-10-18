@@ -42,12 +42,8 @@
   <table id="datatable" class="table table-bordered table-hover">
       <thead>
           <tr>
-              <th>Name | English</th>
-              <th>Name | Russian</th>
-              <th>Name | Armenian</th>
-              <th>Position | English</th>
-              <th>Position | Russian</th>
-              <th>Position | Armenian</th>
+              <th>Name</th>
+              <th>Position</th>
               <th>Place Number</th>
               <th>Photo</th>
               <th>Background Color</th>
