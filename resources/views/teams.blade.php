@@ -32,7 +32,7 @@
         <div class="row">
             @if (count($teams)>0)
                 @foreach ($teams as $key => $team)
-                    @if ($key<=3)
+                    @if ($key<=2)
                     <div class="col-md-4">
                         <div class="team_member_row">
                             <img src='{{asset("uploads/team/photo/$team->id/$team->photo")}}' alt="Davit" class="img-fluid m-auto">
