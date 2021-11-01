@@ -36,11 +36,16 @@ class Blog extends Model
     public function getTranslatedPublishedDateAttribute()
     {
         $months = months();
-        return str_replace(
-            $months['en'],
-            $months[app()->getLocale()],
-            date("M d, Y", strtotime($this->published_date))
-        );
+        $dateIndex = str_replace("0","",date("m", strtotime($this->published_date)));
+
+        if (app()->getLocale() === 'en') {
+            return date("M d, Y", strtotime($this->published_date));
+        } elseif (app()->getLocale() === 'ru') {
+            return  str_replace("0","",date("d", strtotime($this->published_date)))." ".$months['ru'][$dateIndex]." ".date("Y", strtotime($this->published_date))." r.";
+        } elseif (app()->getLocale() === 'am') {
+            return date("M d, Y", strtotime($this->published_date));
+        }
+
     }
 
     public function getFormattedTranslatedPublishedDateAttribute()

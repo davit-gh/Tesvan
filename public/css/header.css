@@ -116,6 +116,10 @@ header ul .menu-btn a:hover {
     [lang="am"] header ul .menu-btn a {
         padding: 15px 15px;
     }
+    
+    [lang="ru"] header ul .menu-btn a {
+        padding: 18px 32px;
+    }
 }
 
 @media (max-width: 991px) {

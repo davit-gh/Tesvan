@@ -44,7 +44,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
                     <div class="project-overview-title">
-                        Project Overview
+                        {{__("Project Overview")}}
                     </div>
                     <div class="newLine project-overview-description" align="left">
                         {{ $project->project_overview }}
@@ -55,7 +55,7 @@
         <div class="row flex-wrap">
             <div class="newLine col-xl-6 col-lg-6 col-md-12 col-sm-12 home_page_col">
                 <div class="project-overview-title">
-                    Objectives
+                    {{__("Objectives")}}
                 </div>
                 <div class="project-overview-description" align="left">
                 @if (count($project_objective)>0)
@@ -79,7 +79,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="project-overview">
                     <div class="project-overview-title">
-                        Challenge
+                        {{__("Challenge")}}
                     </div>
                     <div class="newLine project-overview-description" align="left">
                         {{ $project->project_challenge }}
@@ -88,7 +88,7 @@
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
                     <div class="project-overview-title">
-                        Our Solution
+                        {{__("Our Solution")}}
                     </div>
                     <div class="newLine project-overview-description" align="left">
                         {{ $project->project_solution }}
@@ -101,7 +101,7 @@
         <div class="row flex-wrap" style="padding: 40px;">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                 <div class="project-overview-title">
-                    Results
+                    {{__("Results")}}
                 </div>
                 <div class="newLine project-overview-description" align="left" style="position: relative;bottom: 30px;">
                     {{ $project->project_result_desc }}
@@ -161,7 +161,7 @@
     <div class="container">
         <div class="testmonail_container">
             <div class="text-center testiomanials_heder_txt_col">
-                <h2 class="hue_blue">Client Feedback</h2>
+                <h2 class="hue_blue">{{__("Client Feedback")}}</h2>
                 <!-- <p class="hue_black"></p> -->
             </div>
             <div class="testimonials-slider" align="center">

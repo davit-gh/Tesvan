@@ -78,7 +78,7 @@
                     <li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-7">
                         <a id="menu_blog" href="{{ route('blogs') }}" class="hue_blue">{{ __("Blog")}}</a>
                     </li>
-                    <li class="menu-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-8" id="menu-item-8">
+                    <li style="min-width: 245px;" class="menu-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-8" id="menu-item-8">
                         <a id="contact" href="{{ url('/#contact_us') }}" class="hue_blue">{{ __("Contact Us")}}</a>
                     </li>
                     <!-- Localizaton start-->

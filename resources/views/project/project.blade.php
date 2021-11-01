@@ -57,7 +57,7 @@
     <div class="container showMoreContainer">
         <div class="text-center job_hire_text_col" style="padding: 49px;">
             <div class="custom-btn">
-                <a id="showMore" href="#">Show More</a>
+                <a id="showMore" href="#">{{__("Show More")}}</a>
             </div>
         </div>
     </div>
