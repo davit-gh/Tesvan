@@ -46,7 +46,7 @@
                     <a target="_blank" href="https://www.topdevelopers.co/directory/software-development-companies"><img src="https://www.topdevelopers.co/assets/badges/app-2021/Software-Development/rectangle-Top-Software-Development-Companies-2021.png" alt="Custom Software Development Companies" title="Custom Software Development Companies" style="height:45px;width:auto"></a>
                 </div>
                 <br/>
-                <p class="hue_black">{{__("Copyright © 2021 Tesvan LLC. All rights reserved.")}}</p>
+                <p class="hue_black">{{ __("Copyright © 2021 Tesvan LLC. All rights reserved.") }} / <a href="{{ route('privacy') }}">{{ __('Privacy Policy') }}</a></p>
         </div>
     </div>
 </div>

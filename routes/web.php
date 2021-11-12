@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/', [
     'uses' => 'HomeController@index',
     'as' => 'home'
+]);
+
+Route::get('/privacy', [
+    'uses' => 'HomeController@privacy',
+    'as' => 'privacy'
 ]);
 
 Route::post('/', [
