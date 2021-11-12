@@ -129,6 +129,13 @@
                                                 <div id="cvStatus" class="invalid-feedback cv_status">{{__("CV field is required")}}</div>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="form-control" style="border: none;" for="privacy-check">
+                                                <input type="checkbox" id="privacy-check" class="privacy-checks" required style="height: auto" onchange="privacyValidate()">
+                                                I have read and agreed to the <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a>.
+                                            </label>
+                                            <div id="privacyStatus" class="invalid-feedback">{{__("You must agree to the privacy policy")}}</div>
+                                        </div>
                                         <div class="btn_group d-flex justify-content-between pt-4">
                                             <button type="button" class="job_btn job_back_btn">{{__("Back")}}</button>
                                             <button type="submit" class="job_btn job_apply_btn">{{__("Apply")}}</button>

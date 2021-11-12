@@ -116,6 +116,13 @@
                                             <textarea maxlength="250" class="message form-control register_message custom_form_input" maxlength="1000" id="message" rows="7" name="message" onblur="messageValidate()"></textarea>
                                             <div id="messageStatus" class="invalid-feedback">{{__("Message field is required")}}</div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="form-control" style="border: none;" for="privacy-check">
+                                                <input type="checkbox" id="privacy-check" class="privacy-checks" required style="height: auto" onchange="privacyValidate()">
+                                                I have read and agreed to the <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a>.
+                                            </label>
+                                            <div id="privacyStatus" class="invalid-feedback">{{__("You must agree to the privacy policy")}}</div>
+                                        </div>
                                         <div class="btn_group d-flex justify-content-between pt-3">
                                             <button type="button" class="reg_btn register_back_btn">{{__("Back")}}</button>
                                             <button type="submit" class="reg_btn register_btn">{{__("Register")}}</button>

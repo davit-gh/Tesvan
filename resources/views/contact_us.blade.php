@@ -80,6 +80,13 @@
                                         <textarea maxlength="250" name="message" class="message form-control message custom_form_input" maxlength="1000" id="message" rows="7" onblur="messageValidate()"></textarea>
                                         <div id="messageStatus" class="invalid-feedback">{{__("Message field is required")}}</div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="form-control" style="border: none;" for="privacy-check">
+                                            <input type="checkbox" id="privacy-check" class="privacy-checks" required style="height: auto" onchange="privacyValidate()">
+                                            I have read and agreed to the <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a>.
+                                        </label>
+                                        <div id="privacyStatus" class="invalid-feedback">{{__("You must agree to the privacy policy")}}</div>
+                                    </div>
                                     <button type="submit" class="hue_blue tesvan_form_btn">{{__("Submit")}}</button>
                                 </form>
                             </div>

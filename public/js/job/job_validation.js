@@ -348,6 +348,21 @@ function cvValidate() {
     }
 }
 
+function privacyValidate() {
+    var checked = $("#privacy-check").is(":checked");
+    var input = $('[for="privacy-check"]')[0];
+
+    if (checked) {
+        input.className = "form-control is-valid";
+    } else {
+        document.getElementById("privacyStatus").innerHTML =
+            "You must agree to the privacy policy";
+        input.className = "form-control is-invalid";
+    }
+
+    return checked;
+}
+
 function validEmail(email) {
     var pattern = /^[a-zA-Z0-9._-]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     return pattern.test(email);
@@ -372,6 +387,7 @@ function checkForm() {
         if (!educationValidate()) valid = false;
         if (!cvValidate()) valid = false;
         if (!courseValidate()) valid = false;
+        if (!privacyValidate()) valid = false;
     }
 
     return valid;
