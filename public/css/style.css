@@ -340,13 +340,15 @@ button:focus {
 }
 
 
-input[type] {
+input[type],
+select.form-control {
     font-size: 18px;
     height: 61px;
     color: #143E59;
 }
 
-input[type]:focus {
+input[type]:focus,
+select:focus {
     font-size: 18px;
     height: 61px;
     color: #143E59;
@@ -365,11 +367,13 @@ textarea:focus {
 }
 
 @media (max-width: 767px) {
-    input[type] {
+    input[type],
+    select {
         font-size: 17px;
     }
 
-    input[type]:focus {
+    input[type]:focus,
+    select:focus, {
         font-size: 17px;
     }
 

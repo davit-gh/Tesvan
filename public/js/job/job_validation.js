@@ -6,7 +6,22 @@ window.onload = function() {
             return false;
         }
 
-        return checkForm() && $("#form_apply").is(":visible");
+        if (checkForm() && $("#form_apply").is(":visible")) {
+            var data = new FormData(this);
+            fetch("/job", {
+                method: "post",
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                },
+                body: data
+            }).then(response => {
+                if (response.ok) {
+                    $("#job_success").show();
+                }
+            });
+        }
+
+        return false;
     };
 };
 
@@ -272,6 +287,118 @@ function companyValidate() {
     }
 }
 
+function experienceValidate() {
+    var exp = document.getElementById("experience");
+    var expStatus = document.getElementById("experienceStatus");
+    exp.nextElementSibling
+        .querySelector(".select2-selection")
+        .removeAttribute("style");
+    exp.className =
+        "experience form-control apply_custom_form_input select2-hidden-accessible ";
+
+    if (exp.value == "") {
+        if (locale == "en") {
+            expStatus.innerHTML = "Experience field is required";
+        } else if (locale == "am") {
+            expStatus.innerHTML = "Փորձի դաշտը պարտադիր է";
+        } else if (locale == "ru") {
+            expStatus.innerHTML = "Поле с опытом обязательно";
+        }
+
+        exp.nextElementSibling
+            .querySelector(".select2-selection")
+            .setAttribute("style", "border-color: #dc3545 !important");
+        exp.className += "is-invalid";
+        return false;
+    }
+
+    exp.className += "is-valid";
+    return true;
+}
+
+function frameworksValidate() {
+    var frameworks = document.getElementById("frameworks");
+    var frameworksStatus = document.getElementById("frameworksStatus");
+    var selectedCount = Array.from(frameworks.options).filter(o => o.selected)
+        .length;
+    frameworks.nextElementSibling
+        .querySelector(".select2-selection")
+        .removeAttribute("style");
+    frameworks.className =
+        "frameworks form-control apply_custom_form_input select2-hidden-accessible ";
+
+    if (selectedCount < 3) {
+        if (locale == "en") {
+            frameworksStatus.innerHTML = "You must select 3 frameworks";
+        } else if (locale == "am") {
+            frameworksStatus.innerHTML = "Դուք պետք է ընտրեք 3 ֆրեյմվորք";
+        } else if (locale == "ru") {
+            frameworksStatus.innerHTML = "Вы должны выбрать 3 фреймворка";
+        }
+
+        frameworks.nextElementSibling
+            .querySelector(".select2-selection")
+            .setAttribute("style", "border-color: #dc3545 !important");
+        frameworks.className += "is-invalid";
+        return false;
+    }
+
+    frameworks.className += "is-valid";
+    return true;
+}
+
+function toolsValidate() {
+    var tools = document.getElementById("tools");
+    var toolsStatus = document.getElementById("toolsStatus");
+    var selectedCount = Array.from(tools.options).filter(o => o.selected)
+        .length;
+    tools.nextElementSibling
+        .querySelector(".select2-selection")
+        .removeAttribute("style");
+    tools.className =
+        "tools form-control apply_custom_form_input select2-hidden-accessible ";
+
+    if (selectedCount < 3) {
+        if (locale == "en") {
+            toolsStatus.innerHTML = "You must select 3 tools";
+        } else if (locale == "am") {
+            toolsStatus.innerHTML = "Դուք պետք է ընտրեք 3 գործիք";
+        } else if (locale == "ru") {
+            toolsStatus.innerHTML = "Вы должны выбрать 3 инструмента";
+        }
+
+        tools.nextElementSibling
+            .querySelector(".select2-selection")
+            .setAttribute("style", "border-color: #dc3545 !important");
+        tools.className += "is-invalid";
+        return false;
+    }
+
+    tools.className += "is-valid";
+    return true;
+}
+
+function salaryValidate() {
+    var salary = document.getElementById("salary");
+    var salaryStatus = document.getElementById("salaryStatus");
+
+    if (salary.value == "") {
+        if (locale == "en") {
+            salaryStatus.innerHTML = "Salary field is required";
+        } else if (locale == "am") {
+            salaryStatus.innerHTML = "Աշխատավարձի դաշտը պարտադիր է";
+        } else if (locale == "ru") {
+            salaryStatus.innerHTML = "Поле Зарплата обязательно";
+        }
+
+        salary.className = "form-control is-invalid";
+        return false;
+    }
+
+    salary.className = "form-control is-valid";
+    return true;
+}
+
 function courseValidate() {
     var course = document.getElementById("course");
     if (course.value == "") {
@@ -383,10 +510,15 @@ function checkForm() {
     if (!cityValidate()) valid = false;
 
     if ($("#form_apply").is(":visible")) {
-        if (!companyValidate()) valid = false;
-        if (!educationValidate()) valid = false;
+        if (!experienceValidate()) valid = false;
+        if ($("#experience").val() == "0") {
+            if (!courseValidate()) valid = false;
+        } else {
+            if (!frameworksValidate()) valid = false;
+            if (!toolsValidate()) valid = false;
+        }
+        if (!salaryValidate()) valid = false;
         if (!cvValidate()) valid = false;
-        if (!courseValidate()) valid = false;
         if (!privacyValidate()) valid = false;
     }
 

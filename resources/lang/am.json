@@ -78,7 +78,6 @@
     "Anna Rudomyotkina": "Աննա Ռուդամյոտկինա",
     "Lilit Galstyan": "Լիլիթ Գալստյան",
     "Satenik Miraqyan": "Սաթենիկ Միրաքյան",
-    "Armen Simonyan" : "Արմեն Սիմոնյան",
     "Lena Hambardzumyan" : "Լենա Համբարձումյան",
     "Hasmik Hovhannisayan" : "Հասմիկ Հովհաննիսյան",
     "Ani Vardanyan" : "Անի Վարդանյան",
@@ -212,5 +211,14 @@
     "Next Lessons": "Հաջորդ Դասերը",
     "See More": "Տեսնել Ավելին",
     "Published on ": "Հրատարակված է ",
-    "Tesvan team": "Tesvan Թիմ"
+    "Tesvan team": "Tesvan Թիմ",
+    "Experience level": "Աշխատանքային փորձ",
+    "The place you have passed the course": "Դասընթացի անցկացման վայրը",
+    "The most 3 experienced frameworks": "3 ֆրեյմվորք, որոնց ամենալավն եք տիրապետում",
+    "The most 3 experienced tools": "3 գործիք, որոնց ամենալավն եք տիրապետում",
+    "What is the salary you will be excited about": "Նախընտրելի աշխատավարձ",
+    "No experience, but I have passed the QA courses": "Չունեմ փորձ, բայց անցել եմ QA դասընթաց",
+    "1-2 years": "1-2 տարի",
+    "3-5 years": "3-5 տարի",
+    "5+ years": "5+ տարի"
 }

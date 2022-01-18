@@ -15,11 +15,18 @@
 <br>
 <code><b>City:</b>  {{ $city }}</code>
 <br>
-<code><b>Education:</b>  {{ $education }}</code>
+<code><b>Experience Level:</b>  {{ $experience }}</code>
 <br>
-<code><b>Company:</b>  {{ $company }}</code>
-<br>
-<code><b>Course:</b>  {{ $course }}</code>
+@if(\Illuminate\Support\Str::contains($experience, 'No experience'))
+    <code><b>The course you have passed the test:</b>  {{ $course }}</code>
+    <br>
+@else
+    <code><b>The most 3 experienced frameworks:</b>  {{ implode(', ', $frameworks) }}</code>
+    <br>
+    <code><b>The most 3 experienced tools:</b>  {{ implode(', ', $tools) }}</code>
+    <br>
+@endif
+<code><b>What is the salary you will be excited aboout:</b>  {{ $salary }}</code>
 <br>
 <code><b>English level:</b>  {{ $level }}</code>
 <br>

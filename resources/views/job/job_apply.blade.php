@@ -34,7 +34,12 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12">
                     <div class="row">
-                        <div class="apply_form_col" id="job-apply">
+                        <div class="apply_form_col" id="job-apply" style="position: relative;">
+                            <div id="job_success" style="display: none; position: absolute; width: 90%; height: 90%; z-index: 999; background: white;" class="text-center">
+                                <img src="{{ asset('images/submit_success.svg') }}" alt="Success" width="137px" height="137px" style="margin-top: 34px; margin-bottom: 112px;">
+                                <p style="font-size: 30px; font-weight: 600; line-height: 1.685;">{{ __('Your request was sent successfully!') }}</p>
+                                <p style="font-size: 25px; font-weight: 400;">{{ __('Thank You!') }}</p>
+                            </div>
                             <h5 class="hue_blue text-center">{{__("Join our talented team")}}</h5>
                             <div class="apply_tesvan_form">
                                 <p class="hue_blue">{{__("All fields are required")}}</p>
@@ -71,20 +76,55 @@
                                     </div>
                                     <div id="form_apply" class="apply_wizard">
                                         <div class="pt-2"></div>
-                                        <div class="form-group apply_custom_form_group">
-                                            <label for="education">{{__("Education")}}</label>
-                                            <input name="education" type="text" class="education form-control apply_custom_form_input" maxlength="50" id="education" onblur="educationValidate()">
-                                            <div id="educationStatus" class="invalid-feedback">{{__("Education field is required")}}</div>
+                                        <div class="form-group apply_custom_form_group dropdown" style="margin-bottom: 2rem">
+                                            <label for="experience">{{__("Experience level")}}</label>
+                                            <select name="experience" id="experience" class="experience form-control apply_custom_form_input" data-placeholder="{{ __('Select level') }}">
+                                                <option></option>
+                                                <option value="0">{{ __('No experience, but I have passed the QA courses') }}</option>
+                                                <option value="1">{{ __('1-2 years') }}</option>
+                                                <option value="2">{{ __('3-5 years') }}</option>
+                                                <option value="3">{{ __('5+ years') }}</option>
+                                            </select>
+                                            <div id="experienceStatus" class="invalid-feedback">{{__("Experience field is required")}}</div>
                                         </div>
-                                        <div class="form-group apply_custom_form_group">
-                                            <label for="company">{{__("Company")}}</label>
-                                            <input name="company" type="text" class="company form-control apply_custom_form_input" maxlength="50" id="company" onblur="companyValidate()">
-                                            <div id="companyStatus" class="invalid-feedback">{{__("Company field is required")}}</div>
-                                        </div>
-                                        <div class="form-group apply_custom_form_group">
-                                            <label for="course">{{__("Course")}}</label>
+                                        <div id="no-experience-fields" class="form-group apply_custom_form_group" style="display: none; margin-bottom: 2rem">
+                                            <label for="course">{{__("The place you have passed the course")}}</label>
                                             <input name="course" type="text" class="course form-control apply_custom_form_input" maxlength="50" id="course" onblur="courseValidate()">
                                             <div id="courseStatus" class="invalid-feedback">{{__("Course field is required")}}</div>
+                                        </div>
+                                        <div id="experienced-fields" style="display: none;">
+                                            <div class="form-group apply_custom_form_group dropdown" style="margin-bottom: 2rem">
+                                                <label for="frameworks">{{__("The most 3 experienced frameworks")}}</label>
+                                                <select name="frameworks[]" id="frameworks" class="frameworks form-control apply_custom_form_input" multiple>
+                                                    <option value="Cucumber">Cucumber</option>
+                                                    <option value="Jasmine">Jasmine</option>
+                                                    <option value="JEST">JEST</option>
+                                                    <option value="JUnit">JUnit</option>
+                                                    <option value="Karma">Karma</option>
+                                                    <option value="Mocha">Mocha</option>
+                                                    <option value="Robot">Robot</option>
+                                                    <option value="Selenide">Selenide</option>
+                                                    <option value="Serenity">Serenity</option>
+                                                    <option value="TestNG">TestNG</option>
+                                                </select>
+                                                <div id="frameworksStatus" class="invalid-feedback">{{__("Frameworks field is required")}}</div>
+                                            </div>
+                                            <div class="form-group apply_custom_form_group dropdown" style="margin-bottom: 2rem">
+                                                <label for="tools">{{__("The most 3 experienced tools")}}</label>
+                                                <select name="tools[]" id="tools" class="tools form-control apply_custom_form_input" multiple>
+                                                    <option value="Appium">Appium</option>
+                                                    <option value="BrowserStack">BrowserStack</option>
+                                                    <option value="Cypress">Cypress</option>
+                                                    <option value="Selenium">Selenium</option>
+                                                    <option value="TestRail">TestRail</option>
+                                                </select>
+                                                <div id="toolsStatus" class="invalid-feedback">{{__("Tools field is required")}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group apply_custom_form_group">
+                                            <label for="salary">{{__("What is the salary you will be excited about")}}</label>
+                                            <input name="salary" type="text" class="salary form-control apply_custom_form_input" maxlength="50" id="salary" onblur="salaryValidate()">
+                                            <div id="salaryStatus" class="invalid-feedback">{{__("Salary field is required")}}</div>
                                         </div>
                                         <div class="form-group apply_custom_radio_group">
                                             <h6 class="en_level_txt">{{__("English level")}}</h6>

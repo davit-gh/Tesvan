@@ -10394,13 +10394,15 @@ button:focus {
 }
 
 
-input[type] {
+input[type],
+select.form-control {
     font-size: 18px;
     height: 61px;
     color: #143E59;
 }
 
-input[type]:focus {
+input[type]:focus,
+select:focus {
     font-size: 18px;
     height: 61px;
     color: #143E59;
@@ -10419,11 +10421,13 @@ textarea:focus {
 }
 
 @media (max-width: 767px) {
-    input[type] {
+    input[type],
+    select {
         font-size: 17px;
     }
 
-    input[type]:focus {
+    input[type]:focus,
+    select:focus {
         font-size: 17px;
     }
 
@@ -10562,7 +10566,7 @@ header ul .menu-btn a:hover {
     [lang="am"] header ul .menu-btn a {
         padding: 15px 15px;
     }
-    
+
     [lang="ru"] header ul .menu-btn a {
         padding: 18px 32px;
     }

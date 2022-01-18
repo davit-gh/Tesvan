@@ -88,7 +88,7 @@
     "Mane Shahbazyan":"Мане Шахбазян",
     "Vanuhi Melikyan":"Вануи Меликян",
     "Mari Baghdasaryan":"Мари Багдасарян",
-    "Mariam Martirosyan":"Мариам Мартиросян", 
+    "Mariam Martirosyan":"Мариам Мартиросян",
     "Davit Ohanyan":"Давид Оганян",
     "Armenak Shakaryan":"Арменак Шакарян",
     "Armen Simonyan":"Армен Симонян",
@@ -220,5 +220,14 @@
     "Client Feedback":"Отзыв клиента",
     "Other Cases":"Другие проекты",
     "Objectives":"Цели",
-    "Results":"Результаты"
+    "Results":"Результаты",
+    "Experience level": "Уровень опыта",
+    "The place you have passed the course": "Место, где вы прошли курс",
+    "The most 3 experienced frameworks": "3 наиболее опытных фреймворка",
+    "The most 3 experienced tools": "3 самых опытных инструмента",
+    "What is the salary you will be excited about": "Какая зарплата вас порадует",
+    "No experience, but I have passed the QA courses": "Опыта нет, но я прошел курсы QA",
+    "1-2 years": "1-2 года",
+    "3-5 years": "3-5 лет",
+    "5+ years": "5+ лет"
 }
