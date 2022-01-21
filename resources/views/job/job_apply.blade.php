@@ -77,7 +77,7 @@
                                     <div id="form_apply" class="apply_wizard">
                                         <div class="pt-2"></div>
                                         <div class="form-group apply_custom_form_group dropdown" style="margin-bottom: 2rem">
-                                            <label for="experience">{{__("Experience level")}}</label>
+                                            <label for="experience">{{__("Experience level") }}</label>
                                             <select name="experience" id="experience" class="experience form-control apply_custom_form_input" data-placeholder="{{ __('Select level') }}">
                                                 <option></option>
                                                 <option value="0">{{ __('No experience, but I have passed the QA courses') }}</option>
@@ -95,7 +95,7 @@
                                         <div id="experienced-fields" style="display: none;">
                                             <div class="form-group apply_custom_form_group dropdown" style="margin-bottom: 2rem">
                                                 <label for="frameworks">{{__("The most 3 experienced frameworks")}}</label>
-                                                <select name="frameworks[]" id="frameworks" class="frameworks form-control apply_custom_form_input" multiple>
+                                                <select name="frameworks[]" id="frameworks" class="frameworks form-control apply_custom_form_input" multiple data-placeholder="{{ __('Select frameworks') }}">
                                                     <option value="Cucumber">Cucumber</option>
                                                     <option value="Jasmine">Jasmine</option>
                                                     <option value="JEST">JEST</option>
@@ -111,7 +111,7 @@
                                             </div>
                                             <div class="form-group apply_custom_form_group dropdown" style="margin-bottom: 2rem">
                                                 <label for="tools">{{__("The most 3 experienced tools")}}</label>
-                                                <select name="tools[]" id="tools" class="tools form-control apply_custom_form_input" multiple>
+                                                <select name="tools[]" id="tools" class="tools form-control apply_custom_form_input" multiple data-placeholder="{{ __('Select tools') }}">
                                                     <option value="Appium">Appium</option>
                                                     <option value="BrowserStack">BrowserStack</option>
                                                     <option value="Cypress">Cypress</option>
@@ -164,7 +164,7 @@
                                         <div>
                                             <div class="form-group apply_custom_form_group attach_cv">
                                                 <label for="cv">{{__("Attach CV")}}</label>
-                                                <input name="cv" type="file" class="cv form-control " id="cv" onblur="cvValidate()" accept="application/msword,application/pdf">
+                                                <input name="cv" type="file" class="cv form-control " id="cv" onblur="cvValidate()" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/msword,application/pdf">
                                                 <div class="choosen"></div>
                                                 <div id="cvStatus" class="invalid-feedback cv_status">{{__("CV field is required")}}</div>
                                             </div>

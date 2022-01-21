@@ -35,10 +35,25 @@
         flex: 1;
     }
 
+    .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+        padding-top: 20px;
+    }
+
     .select2-container--default .select2-selection__arrow {
-        background: url('{{ asset('images/arrow_down.svg') }}') center no-repeat;
         height: 20px !important;
+        background: url('{{ asset('images/arrow_down.svg') }}') center no-repeat;
         position: relative !important;
+    }
+
+    .select2-selection.select2-selection--multiple {
+        background: url('{{ asset('images/arrow_down.svg') }}') right no-repeat;
+        position: relative !important;
+        background-origin: content-box;
+        padding-right: 15px;
+    }
+
+    .select2-selection.select2-selection--multiple {
+        width: 100%;
     }
 
     .select2-container--default .select2-selection__arrow b {
@@ -47,6 +62,12 @@
 
     .select2-container--default.select2-container--open .select2-selection__arrow {
         background: url('{{ asset('images/arrow_up.svg') }}') center no-repeat;
+    }
+
+    .select2-container--open .select2-selection.select2-selection--multiple {
+        background: url('{{ asset('images/arrow_up.svg') }}') right no-repeat;
+        background-origin: content-box;
+        padding-right: 15px;
     }
 
     .select2-container--default .select2-results__option--highlighted[aria-selected] {
@@ -112,10 +133,6 @@
         z-index: 3;
     }
 
-    .select2-selection.select2-selection--multiple .select2-selection__rendered {
-        padding-top: 25px !important;
-    }
-
     .select2-selection--multiple .select2-selection__choice {
         padding-right: 15px !important;
     }
@@ -136,6 +153,14 @@
     .select2-selection__choice__remove {
         position: absolute;
         right: 0;
+    }
+
+    .select2-selection.select2-selection--single {
+        padding-right: 10px;
+    }
+
+    .select2-selection.select2-selection--multiple .select2-search {
+        margin-top: -25px;
     }
 </style>
 @endsection
@@ -161,11 +186,20 @@
 @if(Session::has('success'))
     $('#myModal').modal('show');
 @endif
-    $('select').select2({
+    $('#experience').select2({
         minimumResultsForSearch: Infinity,
     });
 
-    $('select').on('select2:opening select2:closing', function (event) {
+    $('#frameworks').select2({
+        placeholder: '{{ __('Select frameworks') }}',
+    });
+
+    $('#tools').select2({
+        placeholder: '{{ __('Select tools') }}',
+    });
+    $('.select2-search__field').css('width', '100%');
+
+    $('#frameworks,#tools').on('select2:opening select2:closing', function (event) {
         var $searchfield = $(this).parent().find('.select2-search__field');
         $searchfield.prop('disabled', true);
 

@@ -220,5 +220,8 @@
     "No experience, but I have passed the QA courses": "Չունեմ փորձ, բայց անցել եմ QA դասընթաց",
     "1-2 years": "1-2 տարի",
     "3-5 years": "3-5 տարի",
-    "5+ years": "5+ տարի"
+    "5+ years": "5+ տարի",
+    "Select level": "Ընտրեք մակարդակը",
+    "Select frameworks": "Ընտրեք շրջանակներ",
+    "Select tools": "Ընտրեք գործիքներ"
 }
