@@ -503,11 +503,11 @@ function validPhone(phone) {
 function checkForm() {
     var valid = true;
 
-    // if (!nameValidate()) valid = false;
-    // if (!surnameValidate()) valid = false;
-    // if (!emailValidate()) valid = false;
-    // if (!phoneValidate()) valid = false;
-    // if (!cityValidate()) valid = false;
+    if (!nameValidate()) valid = false;
+    if (!surnameValidate()) valid = false;
+    if (!emailValidate()) valid = false;
+    if (!phoneValidate()) valid = false;
+    if (!cityValidate()) valid = false;
 
     if ($("#form_apply").is(":visible")) {
         if (!experienceValidate()) valid = false;
