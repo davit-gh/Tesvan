@@ -80,6 +80,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('job_applications.index') }}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Job Applications
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
 

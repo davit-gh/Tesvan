@@ -10,16 +10,16 @@ use App\Models\EducationCategory;
 use App\Models\Project;
 use App\Models\ProjectObjective;
 use App\Models\ProjectResult;
-use App\Models\TechnologyTool;
 use App\Models\Team;
+use App\Models\TechnologyTool;
 use App\Services\EdJSParser;
 use DataTables;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Intervention\Image\ImageManagerStatic as Image;
-use Illuminate\Support\Facades\File; 
 
 class AdminController extends Controller
 {
@@ -54,6 +54,11 @@ class AdminController extends Controller
     public function teamList(Request $request)
     {
         return view('admin/teams');
+    }
+
+    public function jobApplications(Request $request)
+    {
+        return view('admin.job_applications.index');
     }
 
     public function blogs(Request $request)
@@ -174,7 +179,7 @@ class AdminController extends Controller
             //     return $this->limitWord($d->cv);
             // })
             ->editColumn('photo', function ($d) {
-                return '<image width=150 height=auto src="'.asset('uploads/team/photo/'.$d->id.'/'.$d->photo.'').'"/>';
+                return '<image width=150 height=auto src="' . asset('uploads/team/photo/' . $d->id . '/' . $d->photo . '') . '"/>';
             })
             ->editColumn('background_color', function ($d) {
                 return $this->limitWord($d->background_color);
@@ -182,7 +187,7 @@ class AdminController extends Controller
             ->addColumn('action', '
             <a href="{{ route("team.edit",["id"=>$id]) }}" class="editItem" data-id="{{ $id }}"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a> <a href="javascript:void(0)" class="deleteItem" data-id="{{ $id }}"><button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
             ')
-            ->rawColumns(['photo','action'])
+            ->rawColumns(['photo', 'action'])
             ->toJson();
     }
 
@@ -408,7 +413,7 @@ class AdminController extends Controller
             'name.required' => 'Name required!',
             'position.required' => 'Position required!',
             'place_number.required' => 'Place Number required!',
-            'background_color.required'=>'Background color required!',
+            'background_color.required' => 'Background color required!',
         ];
 
         $rule = [
@@ -419,7 +424,7 @@ class AdminController extends Controller
             'position_ru' => 'required',
             'position_am' => 'required',
             'background_color' => 'required',
-            'place_number'=>'required',
+            'place_number' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rule, $messages);
@@ -484,7 +489,7 @@ class AdminController extends Controller
                 $f->cv = $file_name;
                 $f->save();
             }
-            
+
             \Session::flash('success', 'Succesfully added team!');
             return redirect(route('team.list'))->with(['success' => 'Succesfully added project!']);
         } catch (\Exception $e) {
@@ -501,11 +506,11 @@ class AdminController extends Controller
         $user = Auth::user();
 
         $messages = [
-            'id.required'=>'ID required!',
+            'id.required' => 'ID required!',
             'name.required' => 'Name required!',
             'position.required' => 'Position required!',
             'place_number.required' => 'Place Number required!',
-            'background_color.required'=>'Background color required!',
+            'background_color.required' => 'Background color required!',
         ];
 
         $rule = [
@@ -516,8 +521,8 @@ class AdminController extends Controller
             'position_ru' => 'required',
             'position_am' => 'required',
             'background_color' => 'required',
-            'place_number'=>'required',
-            'id'=>'required'
+            'place_number' => 'required',
+            'id' => 'required'
         ];
 
         $validator = Validator::make($request->all(), $rule, $messages);
@@ -580,7 +585,7 @@ class AdminController extends Controller
                 $f->cv = $file_name;
                 $f->save();
             }
-            
+
             \Session::flash('success', 'Succesfully update team!');
             return redirect(route('team.list'))->with(['success' => 'Succesfully added project!']);
         } catch (\Exception $e) {
@@ -830,15 +835,15 @@ class AdminController extends Controller
         try {
             $id = $request->id;
             $t = Team::where('id', $id)->first();
-            $cv = "uploads/team/cv/".$t->id."/".$t->cv;
-            $photo = "uploads/team/photo/".$t->id."/".$t->photo;
-            if ($t->cv){
+            $cv = "uploads/team/cv/" . $t->id . "/" . $t->cv;
+            $photo = "uploads/team/photo/" . $t->id . "/" . $t->photo;
+            if ($t->cv) {
                 $deletephoto = File::delete($cv);
             }
-            if ($t->photo){
+            if ($t->photo) {
                 $deletecv = File::delete($photo);
             }
-            if (Team::where('id', $id)->delete()){
+            if (Team::where('id', $id)->delete()) {
                 \Session::flash('success', 'Succesfully deleted team!');
                 return response()->json('success', 200);
             }
