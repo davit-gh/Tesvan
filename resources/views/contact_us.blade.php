@@ -27,7 +27,7 @@
                                     <div class="icons_phone_col">
                                         <div class="phone_row">
                                             <h5 class="hue_blue">{{__("Phone Number")}}</h5>
-                                            <p style="font-size: 13px;">+(374) 96 88 23 08</p>
+                                            <p style="font-size: 13px;">+(374) 91 75 19 00</p>
                                         </div>
                                         <div class="icons_row">
                                             <div class="single-icon">
