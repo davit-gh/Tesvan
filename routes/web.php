@@ -175,7 +175,7 @@ Route::middleware(['auth'])->group(function () {
         'as' => 'project.delete.entity'
     ]);
 
-    Route::get('/job_applications', [
+    Route::get('/jobs', [
         'uses' => 'AdminController@jobApplications',
         'as' => 'job_applications.index'
     ]);
