@@ -40,9 +40,9 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="qa_txt_blocks">
-                    <img class="bradius" style="max-height: 350px;" width="100%" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
-                </div>
-            </div>
+                    <img class="bradius"  width="100%" height="auto" src="{{ $pathimage.'/'.$bd->id.'/'.$bd->image }}"/>
+                </div>             
+            </div>            
         </div>
         <div class="row">
             <div class="col-lg-7 col-md-12">
