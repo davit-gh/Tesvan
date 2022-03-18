@@ -61,6 +61,9 @@
                 <br/>
                 @if (count($blog)>0)
                     @foreach($blog as $key => $b)
+                    @if($key == 5) 
+                    @break
+                    @endif
                         <div class="qa_txt_blocks" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                             <div class="qa_txt_single_blok"  style="margin-bottom: 10px; !important">
                                 <h5 class="hue_blue">{{ $b->translated_title }}</h5>
@@ -93,6 +96,9 @@
             </div><br><br>
             <div class="row">
                 @foreach($blog_interest as $key => $b)
+                 @if($key == 5) 
+                    @break
+                    @endif
                     <div class="col-xl-4 col-lg-4 col-md-12" onclick="window.open('{{ url('blog').'/'.slug($b->title) }}');">
                         <div class="qa_txt_blocks">
                             <img class="bradius" style="max-height: 250px;" max-height="00px"; height="auto" width="100%" src="{{ $pathimage.'/'.$b->id.'/'.$b->image }}"/>
