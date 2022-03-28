@@ -24,28 +24,25 @@
                 <div>
                     <a href="https://www.facebook.com/tesvanllc" target="_blank">
 
-                            <img style="display: inline-block;margin: 5px;" src="/images/social_icons/facebook.svg">
+                            <img style="display: inline-block;margin: 5px;filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25))" src="/images/social_icons/facebook.svg">
 
                     </a>
                     <a href="https://www.upwork.com/o/companies/~01e834c1caa24e2f82/" target="_blank">
 
-                            <img style="display: inline-block;margin: 5px;" src="/images/social_icons/upwork.svg">
+                            <img style="display: inline-block;margin: 5px;filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25))" src="/images/social_icons/upwork.svg">
 
                     </a>
                     <a href="https://www.linkedin.com/company/tesvan/" target="_blank">
 
-                            <img style="display: inline-block;margin: 5px;" src="/images/social_icons/linkedin.svg">
+                            <img style="display: inline-block;margin: 5px;filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25))" src="/images/social_icons/linkedin.svg">
 
                     </a>
                 </div>
                 <br/>
                 <div>
-                <a target="_blank" href="https://www.topdevelopers.co/profile/tesvanllc">
-                <img src="https://www.topdevelopers.co/assets/badges/app-2021/Software-Development/rectangle-Top-Software-Development-Companies-2021.png" alt="Custom Software Development Companies" title="Custom Software Development Companies" style="height:41.4px;width:auto;display: inline-block">
-                </a>
-                <a href="https://www.sortlist.com/agency/tesvan-qa-outsourcing-service-provider">
-                <img src="https://core.sortlist.com//_/apps/core/images/badges-nl/badge-flag-blue-light-xl.svg" alt="flag" style="display:inline-block; width:auto; height:32px;"/>
-                </a>
+                <a target="_blank" href="https://www.topdevelopers.co/profile/tesvanllc"><img src="https://www.topdevelopers.co/assets/badges/app-2021/Software-Development/rectangle-Top-Software-Development-Companies-2021.png" alt="Custom Software Development Companies" title="Custom Software Development Companies" style="height:41.4px;width:auto;display: inline-block;margin: 5px;filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25))"></a>           
+                <a target="_blank" href="https://clutch.co/review/1764714?utm_source=widget&utm_medium=7&utm_campaign=widget&utm_content=num_reviews"><img src="/images/social_icons/clutch.png" alt="Clutch Review" title="Clutch Review" style="height:32px;width:auto;display: inline-block;margin: 5px;filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25))"></a>           
+                <a target="_blank" href="https://www.sortlist.com/agency/tesvan-qa-outsourcing-service-provider"><img src="https://core.sortlist.com//_/apps/core/images/badges-nl/badge-flag-blue-light-xl.svg" alt="flag" style="display:inline-block; width:auto; height:32px;margin: 5px;filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25))"/></a>
                 </div>
                 <br/>
                 <p class="hue_black">{{ __("Copyright © 2021 Tesvan LLC. All rights reserved.") }} / <a href="{{ route('privacy') }}">{{ __('Privacy Policy') }}</a></p>
