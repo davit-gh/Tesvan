@@ -3,7 +3,7 @@
         <div class="text-center co_workers_text_col">
             <h2 class="hue_blue">{{__("Co-Workers ")}}</h2>
             <p class="hue_black">
-                {{__("Our comapny cooperates qith both local and foreign customers.Our partners are spread all over the world.")}}
+                {{__("Our company cooperates with both local and foreign customers. Our partners are spread all over the world.")}}
 
             </p>
         </div>

@@ -35,7 +35,7 @@
 
 .partners_heder_txt_col>p {
     font-size: 18px;
-    max-width: 730px;
+    max-width: 680px;
     margin: 45px auto;
 }
 
@@ -95,3 +95,10 @@
 .logos_col {
     margin: 0 25px;
 }
+
+@media (min-width: 1439px) {
+    .logo_imgs {
+        height: 90px;
+    }
+}
+
