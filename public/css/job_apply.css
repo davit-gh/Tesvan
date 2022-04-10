@@ -161,27 +161,69 @@
 
 
  .apply_tesvan_form {
+     max-width: 488px;
+     width: 100%;
+     margin: 0 auto;
+ }
+
+ .apply_tesvan_text_tesvan_form {
      max-width: 434px;
      width: 100%;
      margin: 0 auto;
  }
 
+ 
+ .apply_tesvan_checkbox {
+    margin-left: 27px;
+ }
+
+ .apply_tesvan_invalid_text {
+    margin: 0;
+ }
+
+
  @media (max-width: 1439px) {
-     .apply_tesvan_form {
-         max-width: 350px;
-     }
+    .apply_tesvan_form {
+        max-width: 350px;
+    }
+    .apply_tesvan_checkbox {
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+    .apply_tesvan_invalid_text {
+        margin-top: 1.25rem;
+    }
  }
 
  @media (max-width: 1199px) {
-     .apply_tesvan_form {
-         max-width: 330px;
-     }
+    .apply_tesvan_form {
+        max-width: 330px;
+    }
  }
 
  @media (max-width: 991px) {
-     .apply_tesvan_form {
-         max-width: 70%;
-     }
+    .apply_tesvan_form {
+        max-width: 70%;
+    }
+    .apply_tesvan_text_tesvan_form {
+        max-width: 100%;
+    }
+    .apply_tesvan_checkbox {
+        margin-bottom: 1rem;
+    }
+    .apply_tesvan_invalid_text {
+        margin-top: 0;
+    }
+ }
+
+ @media (max-width: 767px) {
+    
+    .apply_tesvan_invalid_text {
+        margin-top: 1.25rem;
+    }
+    .apply_tesvan_checkbox {
+        margin-bottom: 3rem;
+    }
  }
 
 

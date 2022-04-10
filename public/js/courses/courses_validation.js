@@ -278,8 +278,15 @@ function privacyValidate() {
     if (checked) {
         input.className = "form-control is-valid";
     } else {
+        if(locale == "en") {
         document.getElementById("privacyStatus").innerHTML =
-            "You must agree to the privacy policy";
+            "You must agree to the privacy policy"};
+            if(locale == "am") {
+        document.getElementById("privacyStatus").innerHTML =
+            "Դուք պետք է ընդունեք գաղտնիության քաղաքականությունը"};
+            if(locale == "ru") {
+        document.getElementById("privacyStatus").innerHTML =
+            "Вы должны согласиться с Политикой конфиденциальности"};
         input.className = "form-control is-invalid";
     }
 
@@ -313,3 +320,9 @@ function checkForm() {
 
     return valid;
 }
+
+$(document).ready(function disablecp() {
+      $('input').bind('copy paste', function (e) {
+         e.preventDefault();
+      });
+   });

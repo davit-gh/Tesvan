@@ -42,10 +42,11 @@
                             </div>
                             <h5 class="hue_blue text-center">{{__("Join our talented team")}}</h5>
                             <div class="apply_tesvan_form">
-                                <p class="hue_blue">{{__("All fields are required")}}</p>
+                                <p class="hue_blue apply_tesvan_text_tesvan_form">{{__("All fields are required")}}</p>
                                 <form method="post" action="{{ url('/job#job_apply') }}" enctype="multipart/form-data" autocomplete="off" name="job_apply" novalidate="novalidate">
                                     @csrf
                                     <div id="apply" class="apply_wizard">
+                                     <div class="apply_tesvan_text_tesvan_form">
                                         <div class="pt-2"></div>
                                         <div class="form-group apply_custom_form_group">
                                             <label for="name">{{__("Name")}}</label>
@@ -73,8 +74,10 @@
                                             <div id="cityStatus" class="invalid-feedback">{{("City field is required")}}</div>
                                         </div>
                                         <button data-next-id="form_apply" validationApplyDiv="apply" type="submit" class="job_btn job_next_btn apply_continue button button-action hue_blue">{{__("Next")}}</button>
+                                     </div>
                                     </div>
                                     <div id="form_apply" class="apply_wizard">
+                                     <div class="apply_tesvan_text_tesvan_form">
                                         <div class="pt-2"></div>
                                         <div class="form-group apply_custom_form_group dropdown" style="margin-bottom: 2rem">
                                             <label for="experience">{{__("Experience level") }}</label>
@@ -169,17 +172,20 @@
                                                 <div id="cvStatus" class="invalid-feedback cv_status">{{__("CV field is required")}}</div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="form-control" style="border: none;" for="privacy-check">
+                                     </div>
+                                        <div class="form-group apply_tesvan_checkbox">
+                                            <label class="form-control" style="border: none; background: none; padding: 0; margin: 0;height: 1.5rem" for="privacy-check">
                                                 <input type="checkbox" id="privacy-check" class="privacy-checks" required style="height: auto" onchange="privacyValidate()">
-                                                I have read and agreed to the <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a>.
+                                                {{__("I have read and agreed to the ")}}<a href="{{ route('privacy') }}" target="_blank">{{__("Privacy Policy")}}</a>{{__(".")}}
                                             </label>
-                                            <div id="privacyStatus" class="invalid-feedback">{{__("You must agree to the privacy policy")}}</div>
+                                            <div id="privacyStatus" class="invalid-feedback apply_tesvan_invalid_text">{{__("You must agree to the privacy policy")}}</div>
                                         </div>
+                                       <div class="apply_tesvan_text_tesvan_form">
                                         <div class="btn_group d-flex justify-content-between pt-4">
                                             <button type="button" class="job_btn job_back_btn">{{__("Back")}}</button>
                                             <button type="submit" class="job_btn job_apply_btn">{{__("Apply")}}</button>
                                         </div>
+                                       </div>
                                     </div>
                                 </form>
                             </div>

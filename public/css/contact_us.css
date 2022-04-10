@@ -199,14 +199,35 @@
 }
 
 .tesvan_form {
+    max-width: 488px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tesvan_text_input_form {
     max-width: 434px;
     width: 100%;
     margin: 0 auto;
 }
 
+.tesvan_form_checkbox {
+    margin-left: 27px;
+}
+
+.tesvan_form_invalid_text {
+    margin: 0;
+}
+
 @media (max-width: 1439px) {
     .tesvan_form {
         max-width: 350px;
+    }
+    .tesvan_form_checkbox {
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+    .tesvan_form_invalid_text {
+        margin-top: 1.25rem;
     }
 }
 
@@ -219,6 +240,25 @@
 @media (max-width: 991px) {
     .tesvan_form {
         max-width: 70%;
+    }
+    .tesvan_text_input_form {
+        max-width: 100%;
+    }
+    .tesvan_form_checkbox {
+        margin-bottom: 1rem;
+    }
+    .tesvan_form_invalid_text {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    .tesvan_form_invalid_text {
+        margin-top: 1.25rem;
+    }
+    .tesvan_form_checkbox {
+        margin-bottom: 3rem;
     }
 }
 

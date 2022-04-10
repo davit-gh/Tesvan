@@ -56,10 +56,11 @@
                     <div class="row">
                         <div class="form_col" id="contact-us">
                             <h5 class="hue_blue text-center">{{__("Let’s discuss your project!")}}</h5>
-                            <div class="tesvan_form">
-                                <p class="hue_blue">{{__("All fields are required")}}</p>
+                            <div class="tesvan_form">             
+                                <p class="hue_blue tesvan_text_input_form">{{__("All fields are required")}}</p>
                                 <form method="post" action="{{ url('/#contact-us') }}" autocomplete="off" id="form_contact_us" name="contact_us" novalidate="novalidate">
                                     @csrf
+                                    <div class="tesvan_text_input_form">
                                     <div class="form-group custom_form_group">
                                         <label for="name">{{__("Name")}}</label>
                                         <input type="text" class="name form-control custom_form_input" maxlength="50" id="name" name="name" onblur="nameValidate()">
@@ -80,12 +81,13 @@
                                         <textarea maxlength="250" name="message" class="message form-control message custom_form_input" maxlength="1000" id="message" rows="7" onblur="messageValidate()"></textarea>
                                         <div id="messageStatus" class="invalid-feedback">{{__("Message field is required")}}</div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="form-control" style="border: none;" for="privacy-check">
+                                    </div>
+                                    <div class="form-group tesvan_form_checkbox">
+                                        <label class="form-control" style="border: none; background: none; padding: 0; margin: 0;height: 1.5rem" for="privacy-check">
                                             <input type="checkbox" id="privacy-check" class="privacy-checks" required style="height: auto" onchange="privacyValidate()">
-                                            I have read and agreed to the <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a>.
+                                            {{__("I have read and agreed to the ")}}<a href="{{ route('privacy') }}" target="_blank">{{__("Privacy Policy")}}</a>{{__(".")}}
                                         </label>
-                                        <div id="privacyStatus" class="invalid-feedback">{{__("You must agree to the privacy policy")}}</div>
+                                        <div id="privacyStatus" class="invalid-feedback tesvan_form_invalid_text">{{__("You must agree to the privacy policy")}}</div>
                                     </div>
                                     <button type="submit" class="hue_blue tesvan_form_btn">{{__("Submit")}}</button>
                                 </form>

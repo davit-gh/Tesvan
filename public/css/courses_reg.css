@@ -161,27 +161,67 @@
 
 
  .courses_reg_tesvan_form {
+     max-width: 488px;
+     width: 100%;
+     margin: 0 auto;
+ }
+
+ .courses_reg_text_tesvan_form {
      max-width: 434px;
      width: 100%;
      margin: 0 auto;
  }
 
+ .courses_reg_checkbox {
+    margin-left: 27px;
+ }
+
+ .courses_reg_invalid_text {
+    margin: 0;
+ }
+
  @media (max-width: 1439px) {
-     .courses_reg_tesvan_form {
-         max-width: 350px;
-     }
+    .courses_reg_tesvan_form {
+        max-width: 350px;
+    }
+    .courses_reg_checkbox {
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+    .courses_reg_invalid_text {
+        margin-top: 1.25rem;
+    }
  }
 
  @media (max-width: 1199px) {
-     .courses_reg_tesvan_form {
-         max-width: 330px;
-     }
+    .courses_reg_tesvan_form {
+        max-width: 330px;
+    }
  }
 
  @media (max-width: 991px) {
-     .courses_reg_tesvan_form {
-         max-width: 70%;
-     }
+    .courses_reg_tesvan_form {
+        max-width: 70%;
+    }
+    .courses_reg_text_tesvan_form {
+        max-width: 100%;
+    }
+    .courses_reg_checkbox {
+        margin-bottom: 1rem;
+    }
+    .courses_reg_invalid_text {
+        margin-top: 0;
+    }
+ }
+
+ @media (max-width: 767px) {
+    
+    .courses_reg_invalid_text {
+        margin-top: 1.25rem;
+    }
+    .courses_reg_checkbox {
+        margin-bottom: 3rem;
+    }
  }
 
 

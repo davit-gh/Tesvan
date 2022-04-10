@@ -37,10 +37,11 @@
                         <div class="courses_reg_form_col" id="courses-register">
                             <h5 class="hue_blue text-center">{{__("Join our talented team ")}}</h5>
                             <div class="courses_reg_tesvan_form">
-                                <p class="hue_blue">{{__("All fields are required")}}</p>
+                                <p class="hue_blue courses_reg_text_tesvan_form">{{__("All fields are required")}}</p>
                                 <form method="post" action="{{ url('/courses') }}" autocomplete="off" id="form_courses_register" name="courses_register" novalidate>
                                     @csrf
                                     <div id="register" class="register_wizard">
+                                     <div class="courses_reg_text_tesvan_form">
                                         <div class="pt-2"></div>
                                         <div class="form-group courses_reg_custom_form_group">
                                             <label for="name">{{__("Name")}}</label>
@@ -68,8 +69,10 @@
                                             <div id="cityStatus" class="invalid-feedback">{{__("City field is required")}}</div>
                                         </div>
                                         <button data-next-id="form_register" validationRegisterDiv="register" type="button" class="hue_blue register_next_btn reg_btn register_continue courses_reg_tesvan_form_btn">{{__("Next")}}</button>
-                                    </div>
+                                     </div>
+                                    </div>                                   
                                     <div id="form_register" class="register_wizard">
+                                    <div class="courses_reg_text_tesvan_form">
                                         <div class="pt-2"></div>
                                         <div class="education form-group courses_reg_custom_form_group" name="education">
                                             <label for="education">{{__("Education")}}</label>
@@ -116,17 +119,20 @@
                                             <textarea maxlength="250" class="message form-control register_message custom_form_input" maxlength="1000" id="message" rows="7" name="message" onblur="messageValidate()"></textarea>
                                             <div id="messageStatus" class="invalid-feedback">{{__("Message field is required")}}</div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="form-control" style="border: none;" for="privacy-check">
+                                    </div>
+                                        <div class="form-group courses_reg_checkbox">
+                                            <label class="form-control" style="border: none; background: none; padding: 0; margin: 0;height: 1.5rem" for="privacy-check">
                                                 <input type="checkbox" id="privacy-check" class="privacy-checks" required style="height: auto" onchange="privacyValidate()">
-                                                I have read and agreed to the <a href="{{ route('privacy') }}" target="_blank">Privacy Policy</a>.
+                                                {{__("I have read and agreed to the ")}}<a href="{{ route('privacy') }}" target="_blank">{{__("Privacy Policy")}}</a>{{__(".")}}
                                             </label>
-                                            <div id="privacyStatus" class="invalid-feedback">{{__("You must agree to the privacy policy")}}</div>
+                                            <div id="privacyStatus" class="invalid-feedback courses_reg_invalid_text">{{__("You must agree to the privacy policy")}}</div>
                                         </div>
+                                       <div class="courses_reg_text_tesvan_form">
                                         <div class="btn_group d-flex justify-content-between pt-3">
                                             <button type="button" class="reg_btn register_back_btn">{{__("Back")}}</button>
                                             <button type="submit" class="reg_btn register_btn">{{__("Register")}}</button>
                                         </div>
+                                       </div>
                                     </div>
                                 </form>
                             </div>
