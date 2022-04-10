@@ -483,16 +483,16 @@ function privacyValidate() {
         input.className = "form-control is-valid";
     } else {
         input.className = "form-control is-invalid";
-            if (locale == "en") {
-        document.getElementById("privacyStatus").innerHTML =
-            "You must agree to the privacy policy";
-            } else if (locale == "am") {
-        document.getElementById("privacyStatus").innerHTML =
-            "Դուք պետք է ընդունեք գաղտնիության քաղաքականությունը";
-            } else if (locale == "ru") {
-        document.getElementById("privacyStatus").innerHTML =
-            "Вы должны согласиться с Политикой конфиденциальности";
-            }
+        if (locale == "en") {
+            document.getElementById("privacyStatus").innerHTML =
+                "You must agree to the privacy policy";
+        } else if (locale == "am") {
+            document.getElementById("privacyStatus").innerHTML =
+                "Դուք պետք է ընդունեք գաղտնիության քաղաքականությունը";
+        } else if (locale == "ru") {
+            document.getElementById("privacyStatus").innerHTML =
+                "Вы должны согласиться с Политикой конфиденциальности";
+        }
     }
 
     return checked;
