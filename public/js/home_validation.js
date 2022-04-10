@@ -172,10 +172,10 @@ function privacyValidate() {
     if(locale == "en") {
         document.getElementById("privacyStatus").innerHTML =
             "You must agree to the privacy policy"};
-            if(locale == "am") {
+            else if(locale == "am") {
         document.getElementById("privacyStatus").innerHTML =
             "Դուք պետք է ընդունեք գաղտնիության քաղաքականությունը"};
-            if(locale == "ru") {
+            else if(locale == "ru") {
         document.getElementById("privacyStatus").innerHTML =
             "Вы должны согласиться с Политикой конфиденциальности"};
         input.className = "form-control is-invalid";
