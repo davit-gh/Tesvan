@@ -10,7 +10,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-center" style="font-weight: 700; font-size: 54px;">{{ __('Privacy Policy') }}</h1>
+    <h1 class="text-center" style="font-weight: 700; font-size: 54px;">{{ __(' Privacy Policy ') }}</h1>
     <div class="mb-3">{!! __('privacy.paragraph_1') !!}</div>
     <div class="mb-3">{!! __('privacy.paragraph_2') !!}</div>
     <div class="mb-3">{!! __('privacy.paragraph_3') !!}</div>
