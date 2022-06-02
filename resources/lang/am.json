@@ -212,6 +212,15 @@
     "See More": "Տեսնել Ավելին",
     "Published on ": "Հրատարակված է ",
     "Tesvan team": "Tesvan Թիմ",
+    "Project Overview":"Նախագծի մասին",
+    "Challenge":"Խնդիրներ",
+    "Our Solution":"Լուծում",
+    "Technology We Used":"Օգտագործված տեխնոլոգիաներ",
+    "Client Feedback":"Պատվիրատուների կարծիքը",
+    "Other Cases":"Այլ նախագծեր",
+    "Objectives":"Նպատակներ",
+    "Results":"Արդյունքներ",
+    "Show More": "Տեսնել Ավելին",
     "Experience level": "Աշխատանքային փորձ",
     "The place you have passed the course": "Դասընթացի անցկացման վայրը",
     "The most 3 experienced frameworks": "3 ֆրեյմվորք, որոնց ամենալավն եք տիրապետում",
@@ -229,7 +238,5 @@
     "Copyright © 2021 Tesvan LLC. All rights reserved.": "Copyright © 2021 Tesvan ՍՊԸ։ Բոլոր իրավունքները պաշտպանված են",
     "I have read and agreed to the ": "Ես համաձայն եմ ",
     "Privacy Policy": "Գաղտնիության քաղաքականությանը",
-    ".": " ",
-
-    "Show More": "Ցույց Տալ Ավելին"
+    ".": " "    
 }
