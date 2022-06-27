@@ -169,7 +169,7 @@
                     <img src={{asset('images/hire_us.png')}} alt="Hire Us" style="width: 95%" class="hire_us_svg home_page_header_svg img-responsive">
                 </div> --}}
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <img src={{asset('images/hire_us_2.png')}} alt="Hire Us" class="hire_us_svg home_page_header_svg img-responsive">
+                    <img src="{{asset('images/hire_us_2.png')}}" alt="Hire Us" class="hire_us_svg home_page_header_svg img-responsive">
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 hire_us_col d-flex align-items-center">
                     <div class="hire_us_text">

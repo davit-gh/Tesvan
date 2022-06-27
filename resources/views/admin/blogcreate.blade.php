@@ -62,8 +62,40 @@
                 <input value="{{ old('title_ru') }}" type="text" class="form-control" placeholder="Title (in Russian)" name="title_ru">
             </div>
             <div class="form-group">
+                <label for="exampleInputEmail1">URL Slug</label>
+                <input value="{{ old('url_slug') }}" type="text" class="form-control" placeholder="URL Slug" name="url_slug">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Meta Title</label>
+                <input value="{{ old('meta_title') }}" type="text" class="form-control" placeholder="Meta Title" name="meta_title">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Meta Title (in Armenian)</label>
+                <input value="{{ old('meta_title_am') }}" type="text" class="form-control" placeholder="Meta Title (in Armenian)" name="meta_title_am">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Meta Title (in Russian)</label>
+                <input value="{{ old('meta_title_ru') }}" type="text" class="form-control" placeholder="Meta Title (in Russian)" name="meta_title_ru">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Meta Description</label>
+                <textarea class="form-control" name="meta_description">{{ old('meta_description') }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Meta Description (in Armenian)</label>
+                <textarea class="form-control" name="meta_description_am">{{ old('meta_description_am') }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Meta Description (in Russian)</label>
+                <textarea class="form-control" name="meta_description_ru">{{ old('meta_description_ru') }}</textarea>
+            </div>
+            <div class="form-group">
                 <label for="exampleInputFile">Image</label>
                 <input value="{{ old('image') }}" type="file" class="form-control" name="image">
+            </div>
+            <div class="form-group col-md-6 container" >
+                <label for="exampleInputFile">Alternative Description</label>
+                <input value="{{ old('image_alt_description') }}" type="text" class="form-control" name="image_alt_description">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Description</label>

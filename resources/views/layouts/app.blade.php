@@ -6,8 +6,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @yield('meta_description')
+    <title>@yield('title','Tesvan Team')</title>
 
-    <title>Tesvan Team</title>
 
     <link rel="icon" href="{{ url('/uploads/2020/05/logo.png') }}" sizes="192x192">
 

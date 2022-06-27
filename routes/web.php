@@ -258,29 +258,57 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'AdminController@educationCategories',
         'as' => 'admin.education-categories.index'
     ]);
+    Route::get('/admin/service-category/index', [
+            'uses' => 'AdminController@serviceCategories',
+            'as' => 'admin.service-categories.index'
+        ]);
     Route::get('/admin/education-category-dt', [
         'uses' => 'AdminController@educationCategoryDatatable',
         'as' => 'education-category.dt'
+    ]);
+    Route::get('/admin/service-category-dt', [
+        'uses' => 'AdminController@serviceCategoryDatatable',
+        'as' => 'service-category.dt'
     ]);
     Route::get('/admin/education-category/create', [
         'uses' => 'AdminController@educationCategoryCreate',
         'as' => 'admin.education-category.create'
     ]);
+    Route::get('/admin/service-category/create', [
+        'uses' => 'AdminController@serviceCategoryCreate',
+        'as' => 'admin.service-category.create'
+    ]);
     Route::post('/storeEducationCategory', [
         'uses' => 'AdminController@storeEducationCategory',
         'as' => 'admin.education-category.store'
+    ]);
+    Route::post('/storeServiceCategory', [
+        'uses' => 'AdminController@storeServiceCategory',
+        'as' => 'admin.service-category.store'
     ]);
     Route::get('/education-category-edit/{id}', [
         'uses' => 'AdminController@educationCategoryEdit',
         'as' => 'admin.education-category.edit'
     ]);
+    Route::get('/service-category-edit/{id}', [
+        'uses' => 'AdminController@serviceCategoryEdit',
+        'as' => 'admin.service-category.edit'
+    ]);
     Route::post('/updateEducationCategory', [
         'uses' => 'AdminController@updateEducationCategory',
         'as' => 'admin.education-category.update'
     ]);
+    Route::post('/updateServiceCategory', [
+        'uses' => 'AdminController@updateServiceCategory',
+        'as' => 'admin.service-category.update'
+    ]);
     Route::post('/deleteEducationCategory', [
         'uses' => 'AdminController@deleteEducationCategory',
         'as' => 'admin.education-category.delete'
+    ]);
+    Route::post('/deleteServiceCategory', [
+        'uses' => 'AdminController@deleteServiceCategory',
+        'as' => 'admin.service-category.delete'
     ]);
 
     Route::get('/admin/education/index', [
@@ -311,6 +339,35 @@ Route::middleware(['auth'])->group(function () {
         'uses' => 'AdminController@deleteEducation',
         'as' => 'admin.education.delete'
     ]);
+
+    Route::get('/admin/service/index', [
+            'uses' => 'AdminController@services',
+            'as' => 'admin.services.index'
+        ]);
+        Route::get('/admin/service-dt', [
+            'uses' => 'AdminController@serviceDatatable',
+            'as' => 'service.dt'
+        ]);
+        Route::get('/admin/service/create', [
+            'uses' => 'AdminController@serviceCreate',
+            'as' => 'admin.service.create'
+        ]);
+        Route::post('/storeService', [
+            'uses' => 'AdminController@storeService',
+            'as' => 'admin.service.store'
+        ]);
+        Route::get('/service-edit/{id}', [
+            'uses' => 'AdminController@serviceEdit',
+            'as' => 'admin.service.edit'
+        ]);
+        Route::post('/updateService', [
+            'uses' => 'AdminController@updateService',
+            'as' => 'admin.service.update'
+        ]);
+        Route::post('/deleteService', [
+            'uses' => 'AdminController@deleteService',
+            'as' => 'admin.service.delete'
+        ]);
 
     Route::post('upload', [
         'uses' => 'StorageController@upload',

@@ -22,8 +22,14 @@ class ProjectController extends Controller
     public function detail($project_name) {
 
         $project_name = strtr($project_name, ["-"=>" "]);
+        $url_slug = Project::getUrl()->url_slug;
+        if ($url_slug != null){
+            $data['project'] = Project::whereRaw('LOWER(url_slug) like "%' . $project_name . '%" ')->first();
+        } else {
+            $data['project'] = Project::whereRaw('LOWER(project_name) like "%' . $project_name . '%" ')->first();
+        }
 
-    	$data['project'] = Project::whereRaw('LOWER(project_name) like "%'.$project_name.'%" ')->first();
+
 
         if (!$data['project']){
             abort(404);

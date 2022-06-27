@@ -52,15 +52,47 @@
       <div class="form-group">
         <label for="exampleInputEmail1">Project Name</label>
         <input value="{{ $project->id }}" type="hidden" class="form-control" name="id">
-        <input value="{{ old('project_name',$project->project_name) }}" type="text" class="form-control" name="project_name"> 
+        <input value="{{ old('project_name',$project->project_name) }}" type="text" class="form-control" name="project_name">
       </div>
+      <div class="form-group">
+              <label for="exampleInputEmail1">URL Slug</label>
+              <input value="{{ old('url_slug',$project->url_slug) }}" type="text" class="form-control" placeholder="URL Slug" name="url_slug">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Meta Title</label>
+              <input value="{{ old('meta_title',$project->meta_title) }}" type="text" class="form-control" placeholder="Meta Title" name="meta_title">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Meta Description</label>
+              <textarea class="form-control" name="meta_description">{{ old('meta_description', $project->meta_description) }}</textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Meta Description (in Armenian)</label>
+              <textarea class="form-control" name="meta_description_am">{{ old('meta_description_am', $project->meta_description_am) }}</textarea>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Meta Description (in Russian)</label>
+              <textarea class="form-control" name="meta_description_ru">{{ old('meta_description_ru', $project->meta_description_ru) }}</textarea>
+            </div>
       <div class="form-group">
         <label for="exampleInputFile">Project Logo</label>
         <input type="file" class="form-control" name="project_logo">
       </div>
+      <div class="form-group col-md-6 container" >
+        <label for="exampleInputFile">Alternative Description</label>
+        <input value="{{ old('project_logo_alt_description', $project->project_logo_alt_description) }}" type="text" class="form-control" name="project_logo_alt_description">
+      </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Project Overview</label>
         <textarea class="form-control" name="project_overview">{{ old('project_overview',$project->project_overview) }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Project Overview (in Armenian)</label>
+        <textarea class="form-control" name="project_overview_am">{{ old('project_overview_am',$project->project_overview_am) }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Project Overview (in Russian)</label>
+        <textarea class="form-control" name="project_overview_ru">{{ old('project_overview_ru',$project->project_overview_ru) }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Objective</label>
@@ -69,21 +101,37 @@
           @if (count($project_objective)>0)
             @foreach($project_objective as $key => $po)
                 @if($key>0)
+                <div id="objective-container-field-gen">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Objective</label>
-                  <div class="input-group">
                     <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
                     <input value="{{ old('project_objective.0',$po->objective) }}" class="form-control" type="text" name="project_objective[]">
-                    <div class="input-group-prepend">
-                      <button data-id="{{ $po->id }}" class="rmObjective btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
-                    </div>
-                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Objective (in Armenian)</label>
+                    <input value="{{ old('project_objective_am.0',$po->objective_am) }}" class="form-control" type="text" name="project_objective_am[]">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Objective (in Russian)</label>
+                    <input value="{{ old('project_objective_ru.0',$po->objective_ru) }}" class="form-control" type="text" name="project_objective_ru[]">
+                </div>
+                <div class="form-group input-group-prepend">
+                   <button data-id="{{ $po->id }}" class="rmObjective btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+                </div>
                 </div>
                 @else
                     <div class="form-group">
                       <label for="exampleInputEmail1">Objective</label>
                        <input class="form-control" value="{{ $po->id }}" type="hidden" name="project_objective_id[]">
                        <input class="form-control" value="{{ old('project_objective.0',$po->objective) }}" type="text" name="project_objective[]">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Objective (in Armenian)</label>
+                       <input class="form-control" value="{{ old('project_objective_am.0',$po->objective_am) }}" type="text" name="project_objective_am[]">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Objective (in Russian)</label>
+                       <input class="form-control" value="{{ old('project_objective_ru.0',$po->objective_ru) }}" type="text" name="project_objective_ru[]">
                     </div>
                 @endif
             @endforeach
@@ -98,30 +146,66 @@
         <textarea class="form-control" name="project_challenge">{{ old('project_challenge',$project->project_challenge) }}</textarea>
       </div>
       <div class="form-group">
+        <label for="exampleInputEmail1">Challenge (in Armenian)</label>
+        <textarea class="form-control" name="project_challenge_am">{{ old('project_challenge_am',$project->project_challenge_am) }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Challenge (in Russian)</label>
+        <textarea class="form-control" name="project_challenge_ru">{{ old('project_challenge_ru',$project->project_challenge_ru) }}</textarea>
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Our Solution</label>
         <textarea class="form-control" name="project_solution">{{ old('project_solution',$project->project_solution) }}</textarea>
       </div>
       <div class="form-group">
+        <label for="exampleInputEmail1">Our Solution (in Armenian)</label>
+        <textarea class="form-control" name="project_solution_am">{{ old('project_solution_am',$project->project_solution_am) }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Our Solution (in Russian)</label>
+        <textarea class="form-control" name="project_solution_ru">{{ old('project_solution_ru',$project->project_solution_ru) }}</textarea>
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Result</label>
         <textarea class="form-control" name="project_result_desc">{{ $project->project_result_desc }}</textarea>
+        <label for="exampleInputEmail1">Result (in Armenian)</label>
+        <textarea class="form-control" name="project_result_desc_am">{{ $project->project_result_desc_am }}</textarea>
+        <label for="exampleInputEmail1">Result (in Russian)</label>
+        <textarea class="form-control" name="project_result_desc_ru">{{ $project->project_result_desc_ru }}</textarea>
         <div class="result-container container col-md-6 pull-right">
           @if (count($project_result)>0)
             @foreach($project_result as $key => $pr)
+              <div id="result-container-field-gen">
               <div class="form-group">
                 <label for="exampleInputEmail1">Result</label>
-                <div class="input-group">
                   <input class="form-control" value="{{ $pr->id }}" type="hidden" name="project_result_id[]">
                   <input value="{{ old('project_result.0',$pr->result) }}" class="form-control" type="text" name="project_result[]">
-                  <div class="input-group-prepend">
-                    <button data-id="{{ $pr->id }}" class="rmResult btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
-                  </div>
-                </div>
-              </div>  
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Result (in Armenian)</label>
+                  <input value="{{ old('project_result_am.0',$pr->result_am) }}" class="form-control" type="text" name="project_result_am[]">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Result (in Russian)</label>
+                  <input value="{{ old('project_result_ru.0',$pr->result_ru) }}" class="form-control" type="text" name="project_result_ru[]">
+              </div>
+              <div class="form-group input-group-prepend">
+                <button data-id="{{ $pr->id }}" class="rmResult btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+              </div>
+              </div>
             @endforeach
           @else
               <div class="form-group">
                 <label for="exampleInputEmail1">Result</label>
                  <input class="form-control" type="text" name="project_result[]">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Result (in Armenian)</label>
+                 <input class="form-control" type="text" name="project_result_am[]">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Result (in Russian)</label>
+                 <input class="form-control" type="text" name="project_result_ru[]">
               </div>
           @endif
           <div class="form-group" id="result-action">
@@ -135,26 +219,26 @@
             <div class="twu-container container col-md-6 pull-right">
               @if (count($technology_tool)>0)
                 @foreach($technology_tool as $key => $t)
-                      <div id="twu-container-field">
-                        <div class="form-group hidden">
-                          <label for="exampleInputEmail1">Name</label>
-                          <input class="form-control" value="{{ old('project_twu_id.0',$t->id) }}" type="hidden" name="project_twu_id[]">
-                           <input class="form-control" value="{{ old('project_twu_name.0',$t->name) }}" type="text" name="project_twu_name[]">
-                        </div>
+                      <div id="twu-container-field-gen">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Logo</label>
+                           <input class="form-control" value="{{ old('project_twu_id.0',$t->id) }}" type="hidden" name="project_twu_id[]">
                            <input class="form-control" value="{{ $t->logo }}" type="file" name="project_twu_logo[]">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Name</label>
+                           <input class="form-control" value="{{ old('project_twu_name.0',$t->name) }}" type="text" name="project_twu_name[]">
                         </div>
                       </div>
                 @endforeach
                 @else
-                      <div class="form-group hidden">
-                        <label for="exampleInputEmail1">Name</label>
-                         <input class="form-control" value="{{ old('project_twu_name.0') }}" type="text" name="project_twu_name[]">
-                      </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Logo</label>
                          <input class="form-control" type="file" name="project_twu_logo[]">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Name</label>
+                         <input class="form-control" value="{{ old('project_twu_name.0') }}" type="text" name="project_twu_name[]">
                       </div>
               @endif
               <div class="form-group" id="twu-action">

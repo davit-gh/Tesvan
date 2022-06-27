@@ -23,28 +23,58 @@
 		$(document).on("click",".addMoreObjective",function(e){
 			e.preventDefault();
 			$(`
+			<div id="objective-container-field-gen">
 			<div class="form-group">
             <label for="exampleInputEmail1">Objective</label>
             <div class="input-group">
               <input value="{{ old('project_objective.0') }}" class="form-control" type="text" name="project_objective[]">
-              <div class="input-group-prepend">
-                <button class="rmObjective btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
-              </div>
             </div>
-          </div>`).insertBefore("#objective-action");
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Objective (in Armenian)</label>
+            <div class="input-group">
+              <input value="{{ old('project_objective_am.0') }}" class="form-control" type="text" name="project_objective_am[]">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Objective (in Russian)</label>
+            <div class="input-group">
+              <input value="{{ old('project_objective_ru.0') }}" class="form-control" type="text" name="project_objective_ru[]">
+            </div>
+          </div>
+          <div class="form-group input-group-prepend">
+             <button class="rmObjective btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+          </div></div>`).insertBefore("#objective-action");
 		});
 
 		$(document).on("click",".addMoreResult",function(e){
 			e.preventDefault();
 			$(`
+			<div id="result-container-field-gen">
 			<div class="form-group">
             <label for="exampleInputEmail1">Result</label>
             <div class="input-group">
               <input value="{{ old('project_result.0') }}" class="form-control" type="text" name="project_result[]">
-              <div class="input-group-prepend">
-                <button class="rmResult btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
-              </div>
+
             </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Result(in Armenian)</label>
+            <div class="input-group">
+              <input value="{{ old('project_result_am.0') }}" class="form-control" type="text" name="project_result_am[]">
+
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Result(in Russian)</label>
+            <div class="input-group">
+              <input value="{{ old('project_result_ru.0') }}" class="form-control" type="text" name="project_result_ru[]">
+
+            </div>
+          </div>
+          <div class="form-group input-group-prepend">
+             <button class="rmResult btn btn-danger" type="button"><i class="fas fa-trash"></i></button>
+          </div>
           </div>`).insertBefore("#result-action");
 		});
 
@@ -54,6 +84,10 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Logo</label>
              <input class="form-control" type="file" name="project_twu_logo[]">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+             <input class="form-control" value="{{ old('project_twu_name.0') }}" type="text" name="project_twu_name[]">
           </div></div>`).insertBefore("#twu-action");
 		});
 
@@ -83,14 +117,14 @@
     $(document).on("click",".rmObjective",function(e){
       e.preventDefault();
       thisEl = $(this);
-      
+
       con = $(".objective-container > div").length;
       if (con>2){
           deleteEntity($(this).data('id'), "objective", function(returnData){
             //if(returnData=="success"){
-              thisEl.parent().parent().parent().remove();
+              thisEl.parent().parent().remove();
             //} else {
-              
+
             //}
           });
       }
@@ -99,16 +133,17 @@
     $(document).on("click",".rmResult",function(e){
       e.preventDefault();
       thisEl = $(this);
-      
+
       con = $(".result-container > div").length;
       if (con>2){
           deleteEntity($(this).data('id'), "result", function(returnData){
             //if(returnData=="success"){
-              thisEl.parent().parent().parent().remove();
+              thisEl.parent().parent().remove();
             //} else {
-              
+
             //}
           });
+
       }
     });
 
@@ -118,9 +153,9 @@
         //if(returnData=="success"){
           $('.twu-container > #twu-container-field-gen:last').remove();
         //} else {
-          
+
         //}
-      });  
+      });
     });
 
     $(document).on("click",".rmCf",function(e){
@@ -129,12 +164,12 @@
         //if(returnData=="success"){
           $('.cf-container > #cf-container-gen:last').remove();
         //} else {
-          
+
         //}
-      });   
+      });
     });
 
-    
+
 
 	});
 </script>

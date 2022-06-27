@@ -1,5 +1,11 @@
 @extends("layouts.app")
 
+@section('title', $project->meta_title)
+@section('meta_description')
+
+<meta name="description" content="{{ $project->translated_meta_description }}">
+
+@endsection
 @section('styles')
 
 <link rel="stylesheet" type="text/css" href="/css/slick-theme.css?v={{ strtotime(date('YmdHis')) }}">
@@ -39,7 +45,7 @@
     <div class="container">
         <div class="row flex-wrap" style="padding: 40px;">
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                <img style="height: auto;" src='{{ url("uploads/images/project/logo/$project->id/$project->project_logo") }}' alt="Job" class="job_page_header_svg maxImage">
+                <img style="height: auto;" src='{{ url("uploads/images/project/logo/$project->id/$project->project_logo") }}' alt="{{ $project->project_logo_alt_description }}" class="job_page_header_svg maxImage">
             </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
@@ -47,7 +53,7 @@
                         {{__("Project Overview")}}
                     </div>
                     <div class="newLine project-overview-description" align="left">
-                        {{ $project->project_overview }}
+                        {{ $project->translated_overview }}
                     </div>
                 </div>
             </div>
@@ -63,7 +69,7 @@
                     <div class="ability_col">
                         <img alt="Circle Yellow" src="/images/circle_yellow.svg">
                         <span class="hue_black">
-                            {{ $pr->objective }}
+                            {{ $pr->translated_objective }}
                         </span>
                     </div>
                     @endforeach
@@ -82,16 +88,17 @@
                         {{__("Challenge")}}
                     </div>
                     <div class="newLine project-overview-description" align="left">
-                        {{ $project->project_challenge }}
+                        {{ $project->translated_challenge }}
                     </div>
-                </div>            </div>
+                </div>
+            </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 text-center home_page_col">
                 <div class="project-overview">
                     <div class="project-overview-title">
                         {{__("Our Solution")}}
                     </div>
                     <div class="newLine project-overview-description" align="left">
-                        {{ $project->project_solution }}
+                        {{ $project->translated_solution }}
                     </div>
                 </div>
             </div>
@@ -104,28 +111,28 @@
                     {{__("Results")}}
                 </div>
                 <div class="newLine project-overview-description" align="left" style="position: relative;bottom: 30px;">
-                    {{ $project->project_result_desc }}
+                    {{ $project->translated_result_desc }}
                 </div>
-            </div>            
+            </div>
             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 home_page_col" style="padding: 40px;position: relative;">
                 @if (count($project_result)>0)
-                    
+
                         @foreach($project_result as $k => $pr)
                             @if($k >= 4)
                                 <div class="ability_col">
                                     <img alt="Circle Yellow" src="/images/circle_yellow.svg">
-                                    <span class="hue_black"> {{ $pr->result }}</span>
+                                    <span class="hue_black"> {{ $pr->translated_result }}</span>
                                 </div>
                             @else
                                 <div class="ability_col">
                                     <img width="22px" alt="Circle Yellow" src="/images/results/{{ $k + 1 }}.png">
-                                    <span class="hue_black"> {{ $pr->result }}</span>
+                                    <span class="hue_black"> {{ $pr->translated_result }}</span>
                                 </div>
                             @endif
                         @endforeach
-                    
+
                 @endif
-                
+
             </div>
         </div>
         @endif
@@ -141,18 +148,19 @@
         <div class="newLine text-center job_hire_text_col">
             <h2 class="hue_blue">{{__("Technology We Used")}}</h2>
             <!-- <p class="hue_black newLine">
-                
+
             </p> -->
         </div>
         <div class="tech-used-slider row hire_row">
             @if (count($technology_tool)>0)
                 @foreach($technology_tool as $tt)
                     <div class="col-md-3" style="padding: 20px;">
-                        <img style="max-height: 110px;" width="auto" class="img-responsive" src='{{ url("uploads/images/project/twu/$tt->project_id/$tt->logo") }}'>
+                        <img style="max-height: 110px;" alt="{{ $tt->name }}" width="auto" class="img-responsive" src='{{ url("uploads/images/project/twu/$tt->project_id/$tt->logo") }}'>
                     </div>
                 @endforeach
             @endif
         </div>
+    </div>
 </section>
 @endif
 
@@ -177,7 +185,7 @@
                                     <p class="hue_black newLine">{{ $cf->client_website }}</p>
                                 </div>
                             </div>
-                       
+
                         @endforeach
             </div>
         </div>
@@ -192,14 +200,14 @@
         <div class="text-center job_hire_text_col newLine">
             <h2 class="hue_blue">{{__("Other Cases")}}</h2>
             <!-- <p class="hue_black">
-                
+
             </p> -->
         </div>
 
         <div class='row hire_row {{ (count($related)>2) ? "other-cases-slider" : "" }}'>
             @if (count($related)>0)
                 @foreach($related as $key => $r)
-                    @php 
+                    @php
                         $project_name[$key] = strtolower(preg_replace('/\s+/', '-', $r->project_name));
                     @endphp
                     <div class="col-md-4">
@@ -212,6 +220,7 @@
                 @endforeach
             @endif
         </div>
+    </div>
 </section>
 
 @endsection
@@ -222,5 +231,11 @@
 <script src="/js/slick.js?v={{ strtotime(date('YmdHis')) }}"></script>
 <script src="/js/slick.min.js?v={{ strtotime(date('YmdHis')) }}"></script>
 <script src="/js/customSlick.js?v={{ strtotime(date('YmdHis')) }}"></script>
+
+<script type="text/javascript">
+
+
+
+</script>
 
 @endsection

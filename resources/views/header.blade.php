@@ -125,5 +125,6 @@
                     <!-- Localizaton end-->
                 </ul>
             </div>
+        </div>
     </nav>
 </div>

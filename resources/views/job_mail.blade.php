@@ -26,9 +26,9 @@
     <code><b>The most 3 experienced tools:</b>  {{ implode(', ', $tools) }}</code>
     <br>
 @endif
-<code><b>What is the salary you will be excited aboout:</b>  {{ $salary }}</code>
+<code><b>What is the salary you will be excited about:</b>  {{ $salary }}</code>
 <br>
 <code><b>English level:</b>  {{ $level }}</code>
 <br>
 
-<h4>Thanks</4>
+<h4>Thanks</h4>

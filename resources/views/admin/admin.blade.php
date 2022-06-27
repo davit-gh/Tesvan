@@ -51,15 +51,47 @@
     <div class="card-body">
       <div class="form-group">
         <label for="exampleInputEmail1">Project Name</label>
-        <input value="{{ old('project_name') }}" type="text" class="form-control" placeholder="Project Name" name="project_name"> 
+        <input value="{{ old('project_name') }}" type="text" class="form-control" placeholder="Project Name" name="project_name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">URL Slug</label>
+        <input value="{{ old('url_slug') }}" type="text" class="form-control" placeholder="URL Slug" name="url_slug">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Meta Title</label>
+        <input value="{{ old('meta_title') }}" type="text" class="form-control" placeholder="Meta Title" name="meta_title">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Meta Description</label>
+        <textarea class="form-control" name="meta_description">{{ old('meta_description') }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Meta Description (in Armenian)</label>
+        <textarea class="form-control" name="meta_description_am">{{ old('meta_description_am') }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Meta Description (in Russian)</label>
+        <textarea class="form-control" name="meta_description_ru">{{ old('meta_description_ru') }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputFile">Project Logo</label>
         <input value="{{ old('project_logo') }}" type="file" class="form-control" name="project_logo">
       </div>
+      <div class="form-group col-md-6 container" >
+        <label for="exampleInputFile">Alternative Description</label>
+        <input value="{{ old('project_logo_alt_description') }}" type="text" class="form-control" name="project_logo_alt_description">
+      </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Project Overview</label>
         <textarea class="form-control" name="project_overview">{{ old('project_overview') }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Project Overview (in Armenian)</label>
+        <textarea class="form-control" name="project_overview_am">{{ old('project_overview_am') }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Project Overview (in Russian)</label>
+        <textarea class="form-control" name="project_overview_ru">{{ old('project_overview_ru') }}</textarea>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1">Objective</label>
@@ -68,6 +100,14 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Objective</label>
               <input value="{{ old('project_objective.0') }}" class="form-control" type="text" name="project_objective[]">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Objective (in Armenian)</label>
+              <input value="{{ old('project_objective_am.0') }}" class="form-control" type="text" name="project_objective_am[]">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Objective (in Russian)</label>
+              <input value="{{ old('project_objective_ru.0') }}" class="form-control" type="text" name="project_objective_ru[]">
           </div>
           <div class="form-group" id="objective-action">
             <button class="btn btn-primary btn-sm addMoreObjective">Add More</button>
@@ -79,16 +119,44 @@
         <textarea class="form-control" name="project_challenge">{{ old('project_challenge') }}</textarea>
       </div>
       <div class="form-group">
+        <label for="exampleInputEmail1">Challenge (in Armenian)</label>
+        <textarea class="form-control" name="project_challenge_am">{{ old('project_challenge_am') }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Challenge (in Russian)</label>
+        <textarea class="form-control" name="project_challenge_ru">{{ old('project_challenge_ru') }}</textarea>
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Our Solution</label>
         <textarea class="form-control" name="project_solution">{{ old('project_solution') }}</textarea>
       </div>
       <div class="form-group">
+        <label for="exampleInputEmail1">Our Solution (in Armenian)</label>
+        <textarea class="form-control" name="project_solution_am">{{ old('project_solution_am') }}</textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Our Solution (in Russian)</label>
+        <textarea class="form-control" name="project_solution_ru">{{ old('project_solution_ru') }}</textarea>
+      </div>
+      <div class="form-group">
         <label for="exampleInputEmail1">Result</label>
         <textarea class="form-control" name="project_result_desc">{{ old('project_result_desc') }}</textarea>
+        <label for="exampleInputEmail1">Result (in Armenian)</label>
+        <textarea class="form-control" name="project_result_desc_am">{{ old('project_result_desc_am') }}</textarea>
+        <label for="exampleInputEmail1">Result (in Russian)</label>
+        <textarea class="form-control" name="project_result_desc_ru">{{ old('project_result_desc_ru') }}</textarea>
         <div class="result-container container col-md-6 pull-right">
           <div class="form-group">
-            <label for="exampleInputEmail1">Result</label>  
+            <label for="exampleInputEmail1">Result</label>
             <input value="{{ old('project_result.0') }}" class="form-control" type="text" name="project_result[]">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Result (in Armenian)</label>
+            <input value="{{ old('project_result_am.0') }}" class="form-control" type="text" name="project_result_am[]">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Result (in Russian)</label>
+            <input value="{{ old('project_result_ru.0') }}" class="form-control" type="text" name="project_result_ru[]">
           </div>
           <div class="form-group" id="result-action">
             <button class="btn btn-primary btn-sm addMoreResult">Add More</button>
@@ -100,13 +168,13 @@
         <textarea class="form-control hidden" name="project_twu_desc">{{ old('project_twu_desc') }}</textarea>
         <div class="twu-container container col-md-6 pull-right">
           <div id="twu-container-field">
-            <div class="form-group hidden">
-              <label for="exampleInputEmail1">Name</label>
-               <input value="tname" class="form-control" type="text" name="project_twu_name[]">
-            </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Logo</label>
                <input class="form-control" type="file" name="project_twu_logo[]">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Alternative Description</label>
+               <input value="{{ old('project_twu_name') }}" class="form-control" type="text" name="project_twu_name[]">
             </div>
           </div>
           <div class="form-group" id="twu-action">

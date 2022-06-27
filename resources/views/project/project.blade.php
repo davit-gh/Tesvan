@@ -26,25 +26,44 @@
 
             @if (count($project)>0)
                 @foreach($project as $key => $p)
-                    @php 
-                        $project_name[$key] = strtolower(preg_replace('/\s+/', '-', $p->project_name));
+                    @php
+                        $url_slug = $p->url_slug;
                     @endphp
+                    @if ($url_slug != null)
+                        @php
+                    $project_name[$key] = strtolower(preg_replace('/\s+/', '-', $p->url_slug));
+                    @endphp
+                    @else
+                        @php
+                        $project_name[$key] = strtolower(preg_replace('/\s+/', '-', $p->project_name));
+                        @endphp
+                    @endif
                     @if ($key>=6)
                     <div class="col-md-4" style="padding: 40px; display: none;" id="tab{{ $key }}">
-                        <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
+                        @if ($url_slug != null)
+                            <a href="{{ route('project.detail',['url_slug'=>$project_name[$key]]) }}">
+                        @else
+                                    <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
+                            @endif
                             <div class="rectangle" >
                                     <img class="lozad img-entry" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
-                                
+
                             </div>
                         </a>
+                            </a>
                     </div>
                     @else
                     <div class="col-md-4 showElement" style="padding: 40px;" id="tab{{ $key }}">
+                        @if ($url_slug != null)
+                            <a href="{{ route('project.detail',['url_slug'=>$project_name[$key]]) }}">
+                                @else
                         <a href="{{ route('project.detail',['project_name'=>$project_name[$key]]) }}">
-                            <div class="rectangle" >                                
+                            @endif
+                            <div class="rectangle" >
                                 <img class="lozad img-entry" src='{{ url("uploads/images/project/logo/$p->id/$p->project_logo") }}'>
                             </div>
                         </a>
+                            </a>
                     </div>
                     @endif
                 @endforeach
@@ -88,7 +107,7 @@
              if (i==totalDb){
                 $(".showMoreContainer").hide();
              }
-        } 
+        }
     });
 </script>
 

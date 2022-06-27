@@ -72,6 +72,26 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item has-treeview">
+                      <a href="javascript:void(0);" class="nav-link">
+                        <i class="nav-icon fas fa-edit"></i>
+                        <p>Services<i class="fas fa-angle-left right"></i> </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          <a href="{{ route('admin.service-categories.index') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Categories</p>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="{{ route('admin.educations.index') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Services(!!!in development)</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
           <li class="nav-item">
             <a href="{{ route('team.list') }}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
