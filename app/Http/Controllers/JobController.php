@@ -66,7 +66,7 @@ class JobController extends Controller
         ]);
 
         Mail::send('job_mail', $data, function ($message) use ($path, $name, $mime) {
-            $message->from("davidg.tesvan@gmail.com");
+            $message->from(env('MAIL_FROM_ADDRESS'));
             $message->to('jobs@tesvan.com', 'Admin')->subject("Tesvan");
 
             $message->attach(asset($path . '/' . $name), [

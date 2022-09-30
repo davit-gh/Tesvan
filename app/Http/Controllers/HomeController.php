@@ -26,7 +26,7 @@ class HomeController extends Controller
             'email' => $request->get('email'),
             'msg' => $request->get('message'),
         ), function ($message) use ($request) {
-            $message->from('davidg.tesvan@gmail.com');
+            $message->from(env('MAIL_FROM_ADDRESS'));
             $message->to('info@tesvan.com', 'Admin')->subject("Tesvan");
         });
 

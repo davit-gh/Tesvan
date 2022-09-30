@@ -27,8 +27,8 @@ class CoursesController extends Controller
             'level' => $request->get('level'),
             'msg' => $request->get('message'),
         ), function($message) use ($request){
-            $message->from("davidg.tesvan@gmail.com");
-            $message->to('davidg@tesvan.com', 'Admin')->subject("Tesvan");
+            $message->from(env('MAIL_FROM_ADDRESS'));
+            $message->to(env('MAIL_FROM_ADDRESS'), 'Admin')->subject("Tesvan");
             
          });
 

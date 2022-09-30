@@ -45,7 +45,7 @@
                 <a target="_blank" href="https://www.sortlist.com/agency/tesvan-qa-outsourcing-service-provider"><img src="https://core.sortlist.com//_/apps/core/images/badges-nl/badge-flag-blue-light-xl.svg" alt="flag" style="display:inline-block; width:auto; height:32px;margin: 5px;filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.25))"/></a>
                 </div>
                 <br/>
-                <p class="hue_black">{{ __("Copyright © 2021 Tesvan LLC. All rights reserved.") }} /<a href="{{ route('privacy') }}">{{ __(' Privacy Policy') }}</a></p>
+                <p class="hue_black">{{ __("Copyright © ".date('Y')." Tesvan LLC. All rights reserved.") }} /<a href="{{ route('privacy') }}">{{ __(' Privacy Policy') }}</a></p>
         </div>
     </div>
 </div>
